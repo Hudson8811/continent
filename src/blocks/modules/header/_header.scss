@@ -1,0 +1,88 @@
+.site-header {
+    background: #2A2C37;
+    position: fixed;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    color: #fff;
+}
+
+.sh-left-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: auto;
+    img{
+        height: 100%;
+        width: auto;
+    }
+}
+
+.sh-container {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+
+    &__left {
+        display: flex;}
+
+    &__right {
+        display: flex;}
+}
+
+.container {}
+
+.sh-logo {}
+
+.sh-menu {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: -0.02em;
+}
+
+.sh-menu-list {
+    display: flex;
+    list-style: none;
+}
+
+.sh-menu-item {
+    a{
+
+        color: #fff;
+    }
+}
+
+.sh-mega-menu-trigger {}
+
+.js-mega-menu-trigger {}
+
+.sh-phone {}
+
+.sh-buttons {
+    display: flex;}
+
+.sh-button {
+
+    &__icon {}
+
+    &__counter {}
+}
+
+.mega-menu-wrap {}
+
+.mega-menu {
+    display: flex;
+
+    &__col {}
+
+    &__col-title {}
+}
+
+.mega-menu-list {
+
+    &__item {}
+}

@@ -1,0 +1,153 @@
+h1, h2, h3, h4, h5, h6, ul {
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3, h4, h5, h6{
+    text-wrap: balance;
+}
+
+
+
+
+input,
+button,
+textarea,
+select {
+	font-size: inherit;
+	font-family: inherit;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+div,
+input,
+textarea,
+select,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+span {
+	outline: none;
+	font-size: inherit;
+	background: transparent;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a,
+a:hover {
+	text-decoration: none;
+}
+
+img,picture {
+	display: block;
+	max-width: 100%;
+}
+
+textarea {
+	resize: none;
+}
+
+a {
+	color: inherit;
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	color: #252831;
+	background: #FCFCFC;
+	font-family: $mainFont;
+	font-size: 16px;
+    line-height: 1.2;
+}
+
+.main {
+	flex-grow: 1;
+}
+html,body{
+	height: 100%;
+}
+.container {
+	box-sizing: border-box;
+	width: 1472px;
+	max-width: 95%;
+	max-width: calc(100% - 64px * 2);
+	margin: 0 auto;
+
+    @media screen and (max-width: 550px) {
+        max-width: calc(100% - 30px * 2);
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+	.container {
+		max-width: calc(100% - 15px * 2);
+	}
+}
+
+#jGrowl {
+	z-index: 999999;
+}
+
+*:focus {
+	outline: none;
+}
+
+.hide {
+	display: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+	min-height: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+
+	-webkit-locale: auto;
+	white-space: normal;
+	&.compensate-for-scrollbar{
+		overflow: hidden;
+	}
+}
+
+html {
+	-moz-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-o-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+.site-main{
+    width: 100%;
+    flex-grow: 1;
+}
+
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
