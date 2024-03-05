@@ -1,0 +1,161 @@
+.site-footer {
+    background: #263344;
+    padding: 65px 0 80px;
+}
+
+.container--footer {}
+
+.sf-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo {
+        width: 219px;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        @include hov();
+    }
+
+    &__menu {}
+
+    &__btns {}
+}
+
+.sf-menu {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -48px;
+    margin-bottom: -15px;
+    padding: 0 20px;
+    list-style: none;
+}
+
+.sf-menu-item {
+    margin-left: 48px;
+    margin-bottom: 15px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: -0.02em;
+    color: #fff;
+    padding: 4px 16px;
+
+    a {
+
+        @include hov();
+    }
+}
+
+.sf-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding-top: 48px;
+    margin-top: 33px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+.sf-copyright {
+    width: 373px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: -0.02em;
+    color: rgba(255, 255, 255, 0.5);
+    p{
+        &+p{
+            margin-top: 14px;
+        }
+    }
+}
+
+.sf-bottom-links {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 17px;
+    margin-left: -32px;
+    margin-bottom: -20px;
+    list-style: none;
+}
+
+.sf-bottom-link {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin-left: 32px;
+    margin-bottom: 20px;
+
+    a {
+        @include hov();
+    }
+
+
+}
+
+.sf-contacts {
+    text-align: right;
+
+    a {
+        display: block;
+        font-weight: 600;
+        font-size: 24px;
+        color: #fff;
+        @include hov();
+
+        &+a {
+            margin-top: 10px;
+        }
+    }
+}
+
+.sf-socials {
+    margin-top: 20px;
+}
+
+.socials {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -16px;
+    margin-bottom: -10px;
+
+    &__item {
+        width: 48px;
+        min-width: 48px;
+        height: 48px;
+        margin-left: 16px;
+        margin-bottom: 10px;
+        border-radius: 83px;
+        background: rgba(255, 255, 255, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include hov();
+
+        svg,
+        img {
+            width: 24px;
+            height: 24px;
+
+        }
+    }
+}

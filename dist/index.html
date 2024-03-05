@@ -27,7 +27,7 @@
   </head>
   <body>
     <header class="site-header">
-      <div class="sh-left-icon"><img src="img/header-left-icon.jpg" alt=""></div>
+      <div class="sh-left-icon"><img src="img/header-left-icon.png" alt=""></div>
       <div class="sh-container container">
         <div class="sh-container__left"><a class="sh-logo" href=""><img src="img/header-logo.svg" alt="logo"></a>
           <nav class="sh-menu">
@@ -98,7 +98,8 @@
       <section class="front-top-banner">
         <div class="swiper ftb-slider js-ftb-slider">
           <div class="swiper-wrapper ftb-slider__swiper-wrapper">
-            <div class="swiper-slide ftb-slider-slide"><img class="ftb-slider-slide__pic" src="img/home/top-slider-picture.jpg" alt="">
+            <div class="swiper-slide ftb-slider-slide">
+              <div class="ftb-slider-slide__bg"><img src="img/home/top-slider-picture.jpg" alt=""></div>
               <div class="container ftb-slider-slide__container">
                 <div class="ftb-slde-info">
                   <div class="ftb-slde-info__title">Красивые<br> квартиры<br> в&nbsp;Краснодаре</div>
@@ -107,7 +108,8 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-slide ftb-slider-slide"><img class="ftb-slider-slide__pic" src="img/home/top-slider-picture.jpg" alt="">
+            <div class="swiper-slide ftb-slider-slide">
+              <div class="ftb-slider-slide__bg"><img src="img/home/top-slider-picture.jpg" alt=""></div>
               <div class="container ftb-slider-slide__container">
                 <div class="ftb-slde-info">
                   <div class="ftb-slde-info__title">Красивые<br> квартиры<br> в&nbsp;Краснодаре</div>
@@ -116,7 +118,8 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-slide ftb-slider-slide"><img class="ftb-slider-slide__pic" src="img/home/top-slider-picture.jpg" alt="">
+            <div class="swiper-slide ftb-slider-slide">
+              <div class="ftb-slider-slide__bg"><img src="img/home/top-slider-picture.jpg" alt=""></div>
               <div class="container ftb-slider-slide__container">
                 <div class="ftb-slde-info">
                   <div class="ftb-slde-info__title">Красивые<br> квартиры<br> в&nbsp;Краснодаре</div>
@@ -125,7 +128,8 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-slide ftb-slider-slide"><img class="ftb-slider-slide__pic" src="img/home/top-slider-picture.jpg" alt="">
+            <div class="swiper-slide ftb-slider-slide">
+              <div class="ftb-slider-slide__bg"><img src="img/home/top-slider-picture.jpg" alt=""></div>
               <div class="container ftb-slider-slide__container">
                 <div class="ftb-slde-info">
                   <div class="ftb-slde-info__title">Красивые<br> квартиры<br> в&nbsp;Краснодаре</div>
@@ -154,8 +158,177 @@
           </div>
         </div>
       </section>
+      <section class="filters">
+        <div class="container container--sec-filters">
+          <h2 class="section-title section-title--filters">Наши проекты</h2>
+          <div class="filters-row">
+            <div class="filters-row-item">
+              <div class="filters-row-item__name">Проект</div>
+              <div class="filters-row-item__field"></div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name">Кол-во комнат</div>
+              <div class="filters-row-item__field">
+                <div class="chb-group">
+                  <label class="chb-item">
+                    <input type="checkbox" name="rooms_count" value="c">
+                    <div class="chb-item__pseudo">С</div>
+                  </label>
+                  <label class="chb-item">
+                    <input type="checkbox" name="rooms_count" value="1">
+                    <div class="chb-item__pseudo">1</div>
+                  </label>
+                  <label class="chb-item">
+                    <input type="checkbox" name="rooms_count" value="2">
+                    <div class="chb-item__pseudo">2</div>
+                  </label>
+                  <label class="chb-item">
+                    <input type="checkbox" name="rooms_count" value="3">
+                    <div class="chb-item__pseudo">3</div>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name filters-row-item__name--range"><span>Стоимость от</span><span>Стоимость до</span></div>
+              <div class="filters-row-item__field">
+                <div class="rs-block custom-style-rs js-range-slider" data-min="0" data-max="500" data-format="int" data-step="1">
+                  <div class="rs-block__top">
+                    <input class="rs-block__inp rs-block__inp-left js-range-slider__inp-left" type="text">
+                    <input class="rs-block__inp rs-block__inp-right js-range-slider__inp-right" type="text">
+                  </div>
+                  <div class="rs-block__bottom">
+                    <div class="rs-block__rs js-range-slider__range"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name filters-row-item__name--range"><span>Площадь от</span><span>Площадь до</span></div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name">Срок сдачи</div>
+              <div class="filters-row-item__field">
+                <div class="rs-block custom-style-rs js-range-slider" data-min="0" data-max="500" data-format="int" data-step="1">
+                  <div class="rs-block__top">
+                    <input class="rs-block__inp rs-block__inp-left js-range-slider__inp-left" type="text">
+                    <input class="rs-block__inp rs-block__inp-right js-range-slider__inp-right" type="text">
+                  </div>
+                  <div class="rs-block__bottom">
+                    <div class="rs-block__rs js-range-slider__range"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name">Класс жилья</div>
+              <div class="filters-row-item__field"></div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name">Отделка</div>
+              <div class="filters-row-item__field">
+                <div class="chb-group">
+                  <label class="chb-item">
+                    <input type="checkbox" name="otdelka" value="1">
+                    <div class="chb-item__pseudo">Без отделки</div>
+                  </label>
+                  <label class="chb-item">
+                    <input type="checkbox" name="otdelka" value="2">
+                    <div class="chb-item__pseudo">Предчистовая</div>
+                  </label>
+                  <label class="chb-item">
+                    <input type="checkbox" name="otdelka" value="3">
+                    <div class="chb-item__pseudo">Вариант 3</div>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name filters-row-item__name--range"><span>Этаж от</span><span>Этаж до</span></div>
+              <div class="filters-row-item__field">
+                <div class="rs-block custom-style-rs js-range-slider" data-min="0" data-max="30" data-format="int" data-step="1">
+                  <div class="rs-block__top">
+                    <input class="rs-block__inp rs-block__inp-left js-range-slider__inp-left" type="text">
+                    <input class="rs-block__inp rs-block__inp-right js-range-slider__inp-right" type="text">
+                  </div>
+                  <div class="rs-block__bottom">
+                    <div class="rs-block__rs js-range-slider__range"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name">Технология</div>
+              <div class="filters-row-item__field"></div>
+            </div>
+          </div>
+          <div class="filters-bottom">
+            <div class="filters-bottom__left">
+              <div class="filters-toggle-state">
+                <div class="filters-toggle-state__icon">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#filters-hide"></use>
+                  </svg>
+                </div>
+                <div class="filters-toggle-state__name">Скрыть дополнительные фильтры</div>
+              </div>
+              <div class="filters-toggle-state">
+                <div class="filters-toggle-state__icon">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#filters-clear"></use>
+                  </svg>
+                </div>
+                <div class="filters-toggle-state__name">Сбросить фильтр</div>
+              </div>
+            </div>
+            <div class="filters-bottom__right"><a class="btn" href=""><span> Показать<span class="js-filter-result-items-count"> 146</span> квартир</span></a></div>
+          </div>
+        </div>
+        <div class="half-container half-container--invert half-container--filters-art">
+          <div class="filters-art"><img src="img/svg/filters-bottom-art.svg" alt=""></div>
+        </div>
+      </section>
     </main>
-    <footer class="site-footer">footer</footer>
+    <footer class="site-footer">
+      <div class="container container--footer">
+        <div class="sf-top"><a class="sf-top__logo" href="/"><img src="img/footer-logo.png" alt=""></a>
+          <ul class="sf-top__menu sf-menu">
+            <li class="sf-menu-item"><a href="">Квартиры</a></li>
+            <li class="sf-menu-item"><a href="">Ипотека</a></li>
+            <li class="sf-menu-item"><a href="">О компании</a></li>
+          </ul>
+          <div class="sf-top__btns"><a class="btn" href=""> Заказать звонок</a></div>
+        </div>
+        <div class="sf-bottom">
+          <div class="sf-bottom__left">
+            <div class="sf-copyright">
+              <p>© 2023. Все права защищены.</p>
+              <p>Сайт носит информационный характер и не является публичной офертой согласно положениям Статьи 437 Гражданского кодекса Российской Федерации.</p>
+            </div>
+            <ul class="sf-bottom-links">
+              <li class="sf-bottom-link"><a href="">Положение о защите персональных данных</a></li>
+              <li class="sf-bottom-link"><a href=""> Пользовательское соглашение</a></li>
+            </ul>
+          </div>
+          <div class="sf-bottom__right">
+            <div class="sf-contacts"><a href="">+7 (861) 202-22-01</a></div>
+            <div class="socials sf-socials"><a class="socials__item" href="">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#soc-vk"></use>
+                </svg></a><a class="socials__item" href="">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#soc-ok"></use>
+                </svg></a><a class="socials__item" href="">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#soc-tg"></use>
+                </svg></a><a class="socials__item" href="">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#soc-yt"></use>
+                </svg></a></div>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script src="js/main.js"></script>
   </body>
 </html>

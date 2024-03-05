@@ -1,6 +1,7 @@
 .site-header {
 	background: #2A2C37;
 	position: fixed;
+	z-index: 99;
 	left: 0;
 	top: 0;
 	width: 100%;
@@ -10,8 +11,9 @@
 }
 
 .sh-placeholder {
-	height: 88px;
+	min-height: 88px;
 	display: block;
+	width: 100%;
 }
 
 .sh-left-icon {

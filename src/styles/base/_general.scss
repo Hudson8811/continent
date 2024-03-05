@@ -124,18 +124,31 @@ body {
 	@media screen and (max-width: 550px) {
 		max-width: calc(100% - 30px * 2);
 	}
-
 	&--flex{
 		display: flex;
 	}
-
-}
-
-@media screen and (max-width: 550px) {
-	.container {
+	@media screen and (max-width: 550px) {
 		max-width: calc(100% - 15px * 2);
+
 	}
 }
+
+
+.half-container {
+	box-sizing: border-box;
+	width: calc(50% + 736px);
+	max-width: 95%;
+	max-width: calc(100% - 64px);
+	margin-left: auto;
+	margin-right: 0;
+
+	&--invert{
+		margin-left: 0;
+		margin-right: auto;
+
+	}
+}
+
 
 #jGrowl {
 	z-index: 999999;
@@ -214,3 +227,5 @@ table {
 		}
 	}
 }
+
+
