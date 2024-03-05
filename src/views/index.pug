@@ -2,9 +2,61 @@ extends layouts/default
 include helpers/mixins
 
 block variables
-	- const title = "Project title"
+	- const title = "Главная"
 
 block content
-	p Lorem ipsum
 
-	
+	section.front-top-banner
+		.swiper.ftb-slider.js-ftb-slider
+			.swiper-wrapper.ftb-slider__swiper-wrapper
+				.swiper-slide.ftb-slider-slide
+					img.ftb-slider-slide__pic(src="img/home/top-slider-picture.jpg", alt="")
+					.container.ftb-slider-slide__container
+						.ftb-slde-info
+							.ftb-slde-info__title Красивые<br> квартиры<br> в&nbsp;Краснодаре
+							.ftb-slde-info__desc Квартиры от 5 млн руб.
+							.ftb-slde-info__btn-wrap
+								a.btn(href="")
+									span Узнать цены
+
+				.swiper-slide.ftb-slider-slide
+					img.ftb-slider-slide__pic(src="img/home/top-slider-picture.jpg", alt="")
+					.container.ftb-slider-slide__container
+						.ftb-slde-info
+							.ftb-slde-info__title Красивые<br> квартиры<br> в&nbsp;Краснодаре
+							.ftb-slde-info__desc Квартиры от 5 млн руб.
+							.ftb-slde-info__btn-wrap
+								a.btn(href="")
+									span Узнать цены
+
+				.swiper-slide.ftb-slider-slide
+					img.ftb-slider-slide__pic(src="img/home/top-slider-picture.jpg", alt="")
+					.container.ftb-slider-slide__container
+						.ftb-slde-info
+							.ftb-slde-info__title Красивые<br> квартиры<br> в&nbsp;Краснодаре
+							.ftb-slde-info__desc Квартиры от 5 млн руб.
+							.ftb-slde-info__btn-wrap
+								a.btn(href="")
+									span Узнать цены
+
+				.swiper-slide.ftb-slider-slide
+					img.ftb-slider-slide__pic(src="img/home/top-slider-picture.jpg", alt="")
+					.container.ftb-slider-slide__container
+						.ftb-slde-info
+							.ftb-slde-info__title Красивые<br> квартиры<br> в&nbsp;Краснодаре
+							.ftb-slde-info__desc Квартиры от 5 млн руб.
+							.ftb-slde-info__btn-wrap
+								a.btn(href="")
+									span Узнать цены
+			.ftb-slider__controls-wrap
+				.container.container--flex
+					.slider-controls
+						.js-swiper-button-prev.slider-controls__arrow.slider-controls__arrow--prev
+							svg
+								use(xlink:href="img/sprites/sprite.svg#slider-arrow-next")
+						.js-swiper-pagination.slider-controls-pagination
+						.js-swiper-button-next.slider-controls__arrow.slider-controls__arrow--next
+							svg
+								use(xlink:href="img/sprites/sprite.svg#slider-arrow-next")
+
+

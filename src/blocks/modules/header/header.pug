@@ -3,31 +3,32 @@ header.site-header
 		img(src="img/header-left-icon.jpg", alt="")
 	.sh-container.container
 		.sh-container__left
-			.sh-logo
+			a.sh-logo(href="")
 				img(src="img/header-logo.svg", alt="logo")
 			nav.sh-menu
 				ul.sh-menu-list
 					li.sh-menu-item
-						a(href="") Квартиры
+						a.sh-menu-item__link(href="") Квартиры
 					li.sh-menu-item
-						a(href="") Объекты
+						a.sh-menu-item__link(href="") Объекты
 					li.sh-menu-item
-						a(href="") Ипотека
+						a.sh-menu-item__link(href="") Ипотека
 					li.sh-menu-item
-						a(href="") О компании
+						a.sh-menu-item__link(href="") О компании
 			.sh-mega-menu-trigger.js-mega-menu-trigger
+				img(src="img/svg/sh-mega-trigger.svg")
 		.sh-container__right
 			a.sh-phone(href="") +7 900 00 01 02
 			.sh-buttons
 				a.sh-button(href="")
 					.sh-button__icon
 						svg
-							use(xlink:href="img/sprites/sh-sprite.svg#heart")
+							use(xlink:href="img/sprites/sprite.svg#sh-heart")
 					.sh-button__counter 1
 				a.sh-button(href="")
 					.sh-button__icon
 						svg
-							use(xlink:href="img/sprites/sh-sprite.svg#phone")
+							use(xlink:href="img/sprites/sprite.svg#sh-phone")
 
 	.mega-menu-wrap
 		.container
@@ -36,36 +37,38 @@ header.site-header
 					.mega-menu__col-title Все объекты
 					ul.mega-menu-list
 						li.mega-menu-list__item
-							a(href="") ЖК «Эстет»
+							a.mega-menu-list__link(href="") ЖК «Эстет»
 
 				.mega-menu__col
 					.mega-menu__col-title Квартиры
 					ul.mega-menu-list
 						li.mega-menu-list__item
-							a(href="")  Студии
+							a.mega-menu-list__link(href="")  Студии
 						li.mega-menu-list__item
-							a(href="")  1-комнатные квартиры
+							a.mega-menu-list__link(href="")  1-комнатные квартиры
 						li.mega-menu-list__item
-							a(href="")  2-комнатные квартиры
+							a.mega-menu-list__link(href="")  2-комнатные квартиры
 						li.mega-menu-list__item
-							a(href="")  3-комнатные квартиры
+							a.mega-menu-list__link(href="")  3-комнатные квартиры
 
 				.mega-menu__col
 					.mega-menu__col-title Покупка
 					ul.mega-menu-list
 						li.mega-menu-list__item
-							a(href="")  Способы покупки
+							a.mega-menu-list__link(href="")  Способы покупки
 						li.mega-menu-list__item
-							a(href="")  Ипотека
+							a.mega-menu-list__link(href="")  Ипотека
 
 				.mega-menu__col
 					.mega-menu__col-title Еще
 					ul.mega-menu-list
 						li.mega-menu-list__item
-							a(href="") Контакты
+							a.mega-menu-list__link(href="") Контакты
 						li.mega-menu-list__item
-							a(href="") Новости и Акции
+							a.mega-menu-list__link(href="") Новости и Акции
 						li.mega-menu-list__item
-							a(href="") Коммерческая недвижимость
+							a.mega-menu-list__link(href="") Коммерческая недвижимость
 						li.mega-menu-list__item
-							a(href="") Разрешительная документация
+							a.mega-menu-list__link(href="") Разрешительная документация
+
+.sh-placeholder

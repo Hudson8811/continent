@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Project title</title>
+    <title>Главная</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -29,29 +29,28 @@
     <header class="site-header">
       <div class="sh-left-icon"><img src="img/header-left-icon.jpg" alt=""></div>
       <div class="sh-container container">
-        <div class="sh-container__left">
-          <div class="sh-logo"><img src="img/header-logo.svg" alt="logo"></div>
+        <div class="sh-container__left"><a class="sh-logo" href=""><img src="img/header-logo.svg" alt="logo"></a>
           <nav class="sh-menu">
             <ul class="sh-menu-list">
-              <li class="sh-menu-item"><a href="">Квартиры</a></li>
-              <li class="sh-menu-item"><a href="">Объекты</a></li>
-              <li class="sh-menu-item"><a href="">Ипотека</a></li>
-              <li class="sh-menu-item"><a href="">О компании</a></li>
+              <li class="sh-menu-item"><a class="sh-menu-item__link" href="">Квартиры</a></li>
+              <li class="sh-menu-item"><a class="sh-menu-item__link" href="">Объекты</a></li>
+              <li class="sh-menu-item"><a class="sh-menu-item__link" href="">Ипотека</a></li>
+              <li class="sh-menu-item"><a class="sh-menu-item__link" href="">О компании</a></li>
             </ul>
           </nav>
-          <div class="sh-mega-menu-trigger js-mega-menu-trigger"></div>
+          <div class="sh-mega-menu-trigger js-mega-menu-trigger"><img src="img/svg/sh-mega-trigger.svg"></div>
         </div>
         <div class="sh-container__right"><a class="sh-phone" href="">+7 900 00 01 02</a>
           <div class="sh-buttons"><a class="sh-button" href="">
               <div class="sh-button__icon">
                 <svg>
-                  <use xlink:href="img/sprites/sh-sprite.svg#heart"></use>
+                  <use xlink:href="img/sprites/sprite.svg#sh-heart"></use>
                 </svg>
               </div>
               <div class="sh-button__counter">1</div></a><a class="sh-button" href="">
               <div class="sh-button__icon">
                 <svg>
-                  <use xlink:href="img/sprites/sh-sprite.svg#phone"></use>
+                  <use xlink:href="img/sprites/sprite.svg#sh-phone"></use>
                 </svg>
               </div></a></div>
         </div>
@@ -62,40 +61,99 @@
             <div class="mega-menu__col">
               <div class="mega-menu__col-title">Все объекты</div>
               <ul class="mega-menu-list">
-                <li class="mega-menu-list__item"><a href="">ЖК «Эстет»</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href="">ЖК «Эстет»</a></li>
               </ul>
             </div>
             <div class="mega-menu__col">
               <div class="mega-menu__col-title">Квартиры</div>
               <ul class="mega-menu-list">
-                <li class="mega-menu-list__item"><a href=""> Студии</a></li>
-                <li class="mega-menu-list__item"><a href=""> 1-комнатные квартиры</a></li>
-                <li class="mega-menu-list__item"><a href=""> 2-комнатные квартиры</a></li>
-                <li class="mega-menu-list__item"><a href=""> 3-комнатные квартиры</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href=""> Студии</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href=""> 1-комнатные квартиры</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href=""> 2-комнатные квартиры</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href=""> 3-комнатные квартиры</a></li>
               </ul>
             </div>
             <div class="mega-menu__col">
               <div class="mega-menu__col-title">Покупка</div>
               <ul class="mega-menu-list">
-                <li class="mega-menu-list__item"><a href=""> Способы покупки</a></li>
-                <li class="mega-menu-list__item"><a href=""> Ипотека</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href=""> Способы покупки</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href=""> Ипотека</a></li>
               </ul>
             </div>
             <div class="mega-menu__col">
               <div class="mega-menu__col-title">Еще</div>
               <ul class="mega-menu-list">
-                <li class="mega-menu-list__item"><a href="">Контакты</a></li>
-                <li class="mega-menu-list__item"><a href="">Новости и Акции</a></li>
-                <li class="mega-menu-list__item"><a href="">Коммерческая недвижимость</a></li>
-                <li class="mega-menu-list__item"><a href="">Разрешительная документация</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href="">Контакты</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href="">Новости и Акции</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href="">Коммерческая недвижимость</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href="">Разрешительная документация</a></li>
               </ul>
             </div>
           </div>
         </div>
       </div>
     </header>
+    <div class="sh-placeholder"></div>
     <main class="site-main">
-      <p>Lorem ipsum</p>
+      <section class="front-top-banner">
+        <div class="swiper ftb-slider js-ftb-slider">
+          <div class="swiper-wrapper ftb-slider__swiper-wrapper">
+            <div class="swiper-slide ftb-slider-slide"><img class="ftb-slider-slide__pic" src="img/home/top-slider-picture.jpg" alt="">
+              <div class="container ftb-slider-slide__container">
+                <div class="ftb-slde-info">
+                  <div class="ftb-slde-info__title">Красивые<br> квартиры<br> в&nbsp;Краснодаре</div>
+                  <div class="ftb-slde-info__desc">Квартиры от 5 млн руб.</div>
+                  <div class="ftb-slde-info__btn-wrap"><a class="btn" href=""><span>Узнать цены</span></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide ftb-slider-slide"><img class="ftb-slider-slide__pic" src="img/home/top-slider-picture.jpg" alt="">
+              <div class="container ftb-slider-slide__container">
+                <div class="ftb-slde-info">
+                  <div class="ftb-slde-info__title">Красивые<br> квартиры<br> в&nbsp;Краснодаре</div>
+                  <div class="ftb-slde-info__desc">Квартиры от 5 млн руб.</div>
+                  <div class="ftb-slde-info__btn-wrap"><a class="btn" href=""><span>Узнать цены</span></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide ftb-slider-slide"><img class="ftb-slider-slide__pic" src="img/home/top-slider-picture.jpg" alt="">
+              <div class="container ftb-slider-slide__container">
+                <div class="ftb-slde-info">
+                  <div class="ftb-slde-info__title">Красивые<br> квартиры<br> в&nbsp;Краснодаре</div>
+                  <div class="ftb-slde-info__desc">Квартиры от 5 млн руб.</div>
+                  <div class="ftb-slde-info__btn-wrap"><a class="btn" href=""><span>Узнать цены</span></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide ftb-slider-slide"><img class="ftb-slider-slide__pic" src="img/home/top-slider-picture.jpg" alt="">
+              <div class="container ftb-slider-slide__container">
+                <div class="ftb-slde-info">
+                  <div class="ftb-slde-info__title">Красивые<br> квартиры<br> в&nbsp;Краснодаре</div>
+                  <div class="ftb-slde-info__desc">Квартиры от 5 млн руб.</div>
+                  <div class="ftb-slde-info__btn-wrap"><a class="btn" href=""><span>Узнать цены</span></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ftb-slider__controls-wrap">
+            <div class="container container--flex">
+              <div class="slider-controls">
+                <div class="js-swiper-button-prev slider-controls__arrow slider-controls__arrow--prev">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#slider-arrow-next"></use>
+                  </svg>
+                </div>
+                <div class="js-swiper-pagination slider-controls-pagination"></div>
+                <div class="js-swiper-button-next slider-controls__arrow slider-controls__arrow--next">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#slider-arrow-next"></use>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <footer class="site-footer">footer</footer>
     <script src="js/main.js"></script>

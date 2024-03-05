@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Project title</title>
+    <title>DevMap</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -29,29 +29,28 @@
     <header class="site-header">
       <div class="sh-left-icon"><img src="img/header-left-icon.jpg" alt=""></div>
       <div class="sh-container container">
-        <div class="sh-container__left">
-          <div class="sh-logo"><img src="img/header-logo.svg" alt="logo"></div>
+        <div class="sh-container__left"><a class="sh-logo" href=""><img src="img/header-logo.svg" alt="logo"></a>
           <nav class="sh-menu">
             <ul class="sh-menu-list">
-              <li class="sh-menu-item"><a href="">Квартиры</a></li>
-              <li class="sh-menu-item"><a href="">Объекты</a></li>
-              <li class="sh-menu-item"><a href="">Ипотека</a></li>
-              <li class="sh-menu-item"><a href="">О компании</a></li>
+              <li class="sh-menu-item"><a class="sh-menu-item__link" href="">Квартиры</a></li>
+              <li class="sh-menu-item"><a class="sh-menu-item__link" href="">Объекты</a></li>
+              <li class="sh-menu-item"><a class="sh-menu-item__link" href="">Ипотека</a></li>
+              <li class="sh-menu-item"><a class="sh-menu-item__link" href="">О компании</a></li>
             </ul>
           </nav>
-          <div class="sh-mega-menu-trigger js-mega-menu-trigger"></div>
+          <div class="sh-mega-menu-trigger js-mega-menu-trigger"><img src="img/svg/sh-mega-trigger.svg"></div>
         </div>
         <div class="sh-container__right"><a class="sh-phone" href="">+7 900 00 01 02</a>
           <div class="sh-buttons"><a class="sh-button" href="">
               <div class="sh-button__icon">
                 <svg>
-                  <use xlink:href="img/sprites/sh-sprite.svg#heart"></use>
+                  <use xlink:href="img/sprites/sprite.svg#sh-heart"></use>
                 </svg>
               </div>
               <div class="sh-button__counter">1</div></a><a class="sh-button" href="">
               <div class="sh-button__icon">
                 <svg>
-                  <use xlink:href="img/sprites/sh-sprite.svg#phone"></use>
+                  <use xlink:href="img/sprites/sprite.svg#sh-phone"></use>
                 </svg>
               </div></a></div>
         </div>
@@ -62,38 +61,39 @@
             <div class="mega-menu__col">
               <div class="mega-menu__col-title">Все объекты</div>
               <ul class="mega-menu-list">
-                <li class="mega-menu-list__item"><a href="">ЖК «Эстет»</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href="">ЖК «Эстет»</a></li>
               </ul>
             </div>
             <div class="mega-menu__col">
               <div class="mega-menu__col-title">Квартиры</div>
               <ul class="mega-menu-list">
-                <li class="mega-menu-list__item"><a href=""> Студии</a></li>
-                <li class="mega-menu-list__item"><a href=""> 1-комнатные квартиры</a></li>
-                <li class="mega-menu-list__item"><a href=""> 2-комнатные квартиры</a></li>
-                <li class="mega-menu-list__item"><a href=""> 3-комнатные квартиры</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href=""> Студии</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href=""> 1-комнатные квартиры</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href=""> 2-комнатные квартиры</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href=""> 3-комнатные квартиры</a></li>
               </ul>
             </div>
             <div class="mega-menu__col">
               <div class="mega-menu__col-title">Покупка</div>
               <ul class="mega-menu-list">
-                <li class="mega-menu-list__item"><a href=""> Способы покупки</a></li>
-                <li class="mega-menu-list__item"><a href=""> Ипотека</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href=""> Способы покупки</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href=""> Ипотека</a></li>
               </ul>
             </div>
             <div class="mega-menu__col">
               <div class="mega-menu__col-title">Еще</div>
               <ul class="mega-menu-list">
-                <li class="mega-menu-list__item"><a href="">Контакты</a></li>
-                <li class="mega-menu-list__item"><a href="">Новости и Акции</a></li>
-                <li class="mega-menu-list__item"><a href="">Коммерческая недвижимость</a></li>
-                <li class="mega-menu-list__item"><a href="">Разрешительная документация</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href="">Контакты</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href="">Новости и Акции</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href="">Коммерческая недвижимость</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href="">Разрешительная документация</a></li>
               </ul>
             </div>
           </div>
         </div>
       </div>
     </header>
+    <div class="sh-placeholder"></div>
     <main class="site-main">
       <div class="container">
         <ul>

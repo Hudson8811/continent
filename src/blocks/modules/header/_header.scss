@@ -1,104 +1,230 @@
 .site-header {
-    background: #2A2C37;
-    position: fixed;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: auto;
-    color: #fff;
+	background: #2A2C37;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: auto;
+	color: #fff;
+	padding: 24px 0;
+}
+
+.sh-placeholder {
+	height: 88px;
+	display: block;
 }
 
 .sh-left-icon {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: auto;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: auto;
 
-    img {
-        height: 100%;
-        width: auto;
-    }
+	img {
+		height: 100%;
+		width: auto;
+	}
 }
 
 .sh-container {
-    display: flex;
-    position: relative;
-    justify-content: space-between;
+	display: flex;
+	position: relative;
+	justify-content: space-between;
+	align-items: center;
 
-    &__left {
-        display: flex;
-    }
+	&__left {
+		display: flex;
+		align-items: center;
+		flex-grow: 1;
+	}
 
-    &__right {
-        display: flex;
-    }
+	&__right {
+		display: flex;
+		align-items: center;
+	}
 }
 
-.container {}
 
-.sh-logo {}
+.sh-logo {
+	display: block;
+	width: 178px;
+	@include hov();
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
 
 .sh-menu {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 140%;
-    letter-spacing: -0.02em;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 140%;
+	letter-spacing: -0.02em;
+	margin-left: 80px;
+	margin-right: 24px;
 }
 
 .sh-menu-list {
-    display: flex;
-    list-style: none;
+	display: flex;
+	list-style: none;
 }
 
 .sh-menu-item {
-    a {
+	&__link {
+		font: inherit;
+		color: #fff;
+		@include hov();
+	}
 
-        color: #fff;
-    }
+	&+.sh-menu-item {
+		margin-left: 41px;
+	}
+
 }
 
-.sh-mega-menu-trigger {}
+.sh-mega-menu-trigger {
+	padding: 0 8px;
+	display: block;
+	@include hov();
 
-.js-mega-menu-trigger {}
+	img,
+	svg {
+		width: 32px;
+		height: 32px;
+	}
+}
 
-.sh-phone {}
+
+.sh-phone {
+	margin-right: 24px;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 140%;
+	letter-spacing: -0.02em;
+	color: #fff;
+	@include hov();
+}
 
 .sh-buttons {
-    display: flex;
+	display: flex;
 }
 
 .sh-button {
-    width: 40px;
-    height: 40px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	@include hov();
 
-    &__icon {
 
-        svg,
-        img {
-            width: 18px;
-            height: auto;
-            fill: #fff;
-            stroke: #fff;
-        }
-    }
+	&__icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
-    &__counter {}
+		svg,
+		img {
+			width: 20px;
+			height: 20px;
+			fill: #fff;
+			stroke: #fff;
+		}
+	}
+
+	&__counter {
+		position: absolute;
+		left: 24px;
+		top: 0;
+		border-radius: 100px;
+		padding: 0 5px 0 4px;
+		min-width: 16px;
+		height: 16px;
+		background: #ff4d4d;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		font-weight: 600;
+		font-size: 10px;
+		letter-spacing: -0.04em;
+		color: #fff;
+		//font-family: $inter;
+		font-family: $songer;
+	}
+
+	&+.sh-button {
+		margin-left: 16px;
+	}
 }
 
-.mega-menu-wrap {}
+.mega-menu-wrap {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	background: #2a2c37;
+	opacity: 0;
+	pointer-events: none;
+	transition-duration: .3s;
+	&--active{
+		opacity: 1;
+		pointer-events: all;
+	}
+}
 
 .mega-menu {
-    display: flex;
+	display: flex;
+    width: 1340px;
+	flex-wrap: wrap;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 140%;
+	letter-spacing: -0.02em;
+	color: #fff;
+	padding: 32px 0;
 
-    &__col {}
+	&__col {
 
-    &__col-title {}
+
+		&+.mega-menu__col {
+			border-left: 1px solid rgba(255, 255, 255, 0.25);
+		}
+
+		&:nth-child(1){
+			width: 260px;
+		}
+		&:not(:nth-child(1)){
+			padding-left: 39px;
+			width: calc((100% - 260px) / 3);
+		}
+
+	}
+
+
+	&__col-title {
+		color: #fff;
+		opacity: 0.5;
+	}
 }
 
 .mega-menu-list {
+	list-style: none;
+    margin-top: 36px;
 
-    &__item {}
+	&__item {
+		&+.mega-menu-list__item{
+			margin-top: 15px;
+		}
+	}
+
+	&__link {
+		color: #fff;
+		@include hov();
+	}
 }
