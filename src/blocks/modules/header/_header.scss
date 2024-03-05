@@ -15,7 +15,8 @@
     top: 0;
     height: 100%;
     width: auto;
-    img{
+
+    img {
         height: 100%;
         width: auto;
     }
@@ -27,10 +28,12 @@
     justify-content: space-between;
 
     &__left {
-        display: flex;}
+        display: flex;
+    }
 
     &__right {
-        display: flex;}
+        display: flex;
+    }
 }
 
 .container {}
@@ -50,7 +53,7 @@
 }
 
 .sh-menu-item {
-    a{
+    a {
 
         color: #fff;
     }
@@ -63,11 +66,24 @@
 .sh-phone {}
 
 .sh-buttons {
-    display: flex;}
+    display: flex;
+}
 
 .sh-button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
 
-    &__icon {}
+    &__icon {
+
+        svg,
+        img {
+            width: 18px;
+            height: auto;
+            fill: #fff;
+            stroke: #fff;
+        }
+    }
 
     &__counter {}
 }
