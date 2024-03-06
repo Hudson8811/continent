@@ -160,16 +160,24 @@
       </section>
       <section class="filters">
         <div class="container container--sec-filters">
-          <h2 class="section-title section-title--filters">Наши проекты</h2>
+          <h2 class="section-title section-title--filters">Подберите квартиру</h2>
           <div class="filters-row">
             <div class="filters-row-item">
               <div class="filters-row-item__name">Проект</div>
-              <div class="filters-row-item__field"></div>
+              <div class="filters-row-item__field">
+                <div class="simple-select2-wrap">
+                  <select class="js-simple-select2-outer-dropdown" data-placeholder="Плейсходер">
+                    <option selected></option>
+                    <option value="msk">Москва</option>
+                    <option value="spb">Санкт-Петербург</option>
+                  </select>
+                </div>
+              </div>
             </div>
             <div class="filters-row-item">
               <div class="filters-row-item__name">Кол-во комнат</div>
               <div class="filters-row-item__field">
-                <div class="chb-group">
+                <div class="chb-group chb-group--fg">
                   <label class="chb-item">
                     <input type="checkbox" name="rooms_count" value="c">
                     <div class="chb-item__pseudo">С</div>
@@ -192,7 +200,8 @@
             <div class="filters-row-item">
               <div class="filters-row-item__name filters-row-item__name--range"><span>Стоимость от</span><span>Стоимость до</span></div>
               <div class="filters-row-item__field">
-                <div class="rs-block custom-style-rs js-range-slider" data-min="0" data-max="500" data-format="int" data-step="1">
+                <div class="rs-block custom-style-rs js-range-slider" data-min="3000000" data-max="9700000" data-suffix=" ₽" data-format="int" data-step="100000">
+                  <!--data-start-left data-start-right-->
                   <div class="rs-block__top">
                     <input class="rs-block__inp rs-block__inp-left js-range-slider__inp-left" type="text">
                     <input class="rs-block__inp rs-block__inp-right js-range-slider__inp-right" type="text">
@@ -205,11 +214,9 @@
             </div>
             <div class="filters-row-item">
               <div class="filters-row-item__name filters-row-item__name--range"><span>Площадь от</span><span>Площадь до</span></div>
-            </div>
-            <div class="filters-row-item">
-              <div class="filters-row-item__name">Срок сдачи</div>
               <div class="filters-row-item__field">
-                <div class="rs-block custom-style-rs js-range-slider" data-min="0" data-max="500" data-format="int" data-step="1">
+                <div class="rs-block custom-style-rs js-range-slider" data-min="24" data-max="124" data-suffix=" м²" data-format="int" data-step="1">
+                  <!--data-start-left data-start-right-->
                   <div class="rs-block__top">
                     <input class="rs-block__inp rs-block__inp-left js-range-slider__inp-left" type="text">
                     <input class="rs-block__inp rs-block__inp-right js-range-slider__inp-right" type="text">
@@ -221,32 +228,61 @@
               </div>
             </div>
             <div class="filters-row-item">
+              <div class="filters-row-item__name">Срок сдачи</div>
+              <div class="filters-row-item__field">
+                <div class="simple-select2-wrap">
+                  <select class="js-simple-select2-outer-dropdown" data-placeholder="Плейсходер">
+                    <option selected></option>
+                    <option value="msk">Москва</option>
+                    <option value="spb">Санкт-Петербург</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="filters-row-item">
               <div class="filters-row-item__name">Класс жилья</div>
-              <div class="filters-row-item__field"></div>
+              <div class="filters-row-item__field">
+                <div class="simple-select2-wrap">
+                  <select class="js-simple-select2-outer-dropdown" data-placeholder="Плейсходер">
+                    <option selected></option>
+                    <option value="msk">Москва</option>
+                    <option value="spb">Санкт-Петербург</option>
+                  </select>
+                </div>
+              </div>
             </div>
             <div class="filters-row-item">
               <div class="filters-row-item__name">Отделка</div>
               <div class="filters-row-item__field">
-                <div class="chb-group">
-                  <label class="chb-item">
-                    <input type="checkbox" name="otdelka" value="1">
-                    <div class="chb-item__pseudo">Без отделки</div>
-                  </label>
-                  <label class="chb-item">
-                    <input type="checkbox" name="otdelka" value="2">
-                    <div class="chb-item__pseudo">Предчистовая</div>
-                  </label>
-                  <label class="chb-item">
-                    <input type="checkbox" name="otdelka" value="3">
-                    <div class="chb-item__pseudo">Вариант 3</div>
-                  </label>
+                <div class="simple-select2-wrap">
+                  <select class="js-simple-select2-outer-dropdown" data-placeholder="Плейсходер">
+                    <option selected></option>
+                    <option value="msk">Москва</option>
+                    <option value="spb">Санкт-Петербург</option>
+                  </select>
                 </div>
               </div>
             </div>
             <div class="filters-row-item">
               <div class="filters-row-item__name filters-row-item__name--range"><span>Этаж от</span><span>Этаж до</span></div>
               <div class="filters-row-item__field">
-                <div class="rs-block custom-style-rs js-range-slider" data-min="0" data-max="30" data-format="int" data-step="1">
+                <div class="rs-block custom-style-rs js-range-slider" data-min="1" data-max="10" data-suffix=" этаж" data-format="int" data-step="1">
+                  <!--data-start-left data-start-right-->
+                  <div class="rs-block__top">
+                    <input class="rs-block__inp rs-block__inp-left js-range-slider__inp-left" type="text">
+                    <input class="rs-block__inp rs-block__inp-right js-range-slider__inp-right" type="text">
+                  </div>
+                  <div class="rs-block__bottom">
+                    <div class="rs-block__rs js-range-slider__range"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name filters-row-item__name--range"><span>Кухня от</span><span>Кухня до</span></div>
+              <div class="filters-row-item__field">
+                <div class="rs-block custom-style-rs js-range-slider" data-min="5" data-max="24" data-suffix=" м²" data-format="int" data-step="1">
+                  <!--data-start-left data-start-right-->
                   <div class="rs-block__top">
                     <input class="rs-block__inp rs-block__inp-left js-range-slider__inp-left" type="text">
                     <input class="rs-block__inp rs-block__inp-right js-range-slider__inp-right" type="text">
@@ -259,7 +295,15 @@
             </div>
             <div class="filters-row-item">
               <div class="filters-row-item__name">Технология</div>
-              <div class="filters-row-item__field"></div>
+              <div class="filters-row-item__field">
+                <div class="simple-select2-wrap">
+                  <select class="js-simple-select2-outer-dropdown" data-placeholder="Плейсходер">
+                    <option selected></option>
+                    <option value="msk">Москва</option>
+                    <option value="spb">Санкт-Петербург</option>
+                  </select>
+                </div>
+              </div>
             </div>
           </div>
           <div class="filters-bottom">

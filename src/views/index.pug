@@ -66,15 +66,22 @@ block content
 
 	section.filters
 		.container.container--sec-filters
-			h2.section-title.section-title--filters Наши проекты
+			h2.section-title.section-title--filters Подберите квартиру
 			.filters-row
 				.filters-row-item
 					.filters-row-item__name Проект
 					.filters-row-item__field
+						.simple-select2-wrap
+							select.js-simple-select2-outer-dropdown(data-placeholder="Плейсходер")
+								option(selected)
+								option(value="msk") Москва
+								option(value="spb") Санкт-Петербург
+
+
 				.filters-row-item
 					.filters-row-item__name Кол-во комнат
 					.filters-row-item__field
-						.chb-group
+						.chb-group.chb-group--fg
 							label.chb-item
 								input(type="checkbox" name="rooms_count" value="c")
 								.chb-item__pseudo С
@@ -92,7 +99,8 @@ block content
 						span Стоимость от
 						span Стоимость до
 					.filters-row-item__field
-						.rs-block.custom-style-rs.js-range-slider(data-min="0" data-max="500" data-format="int" data-step="1"/* data-start-left data-start-right*/)
+						.rs-block.custom-style-rs.js-range-slider(data-min="3000000" data-max="9700000" data-suffix=" ₽" data-format="int" data-step="100000" )
+							//data-start-left data-start-right
 							.rs-block__top
 								input.rs-block__inp.rs-block__inp-left.js-range-slider__inp-left(type="text")
 								input.rs-block__inp.rs-block__inp-right.js-range-slider__inp-right(type="text")
@@ -103,42 +111,62 @@ block content
 					.filters-row-item__name.filters-row-item__name--range
 						span Площадь от
 						span Площадь до
-				.filters-row-item
-					.filters-row-item__name Срок сдачи
 					.filters-row-item__field
-						.rs-block.custom-style-rs.js-range-slider(data-min="0" data-max="500" data-format="int" data-step="1"/* data-start-left data-start-right*/)
+						.rs-block.custom-style-rs.js-range-slider(data-min="24" data-max="124" data-suffix=" м²" data-format="int" data-step="1" )
+							//data-start-left data-start-right
 							.rs-block__top
 								input.rs-block__inp.rs-block__inp-left.js-range-slider__inp-left(type="text")
 								input.rs-block__inp.rs-block__inp-right.js-range-slider__inp-right(type="text")
 							.rs-block__bottom
 								.rs-block__rs.js-range-slider__range
 
-
-
+				.filters-row-item
+					.filters-row-item__name Срок сдачи
+					.filters-row-item__field
+						.simple-select2-wrap
+							select.js-simple-select2-outer-dropdown(data-placeholder="Плейсходер")
+								option(selected)
+								option(value="msk") Москва
+								option(value="spb") Санкт-Петербург
 
 				.filters-row-item
 					.filters-row-item__name Класс жилья
 					.filters-row-item__field
+						.simple-select2-wrap
+							select.js-simple-select2-outer-dropdown(data-placeholder="Плейсходер")
+								option(selected)
+								option(value="msk") Москва
+								option(value="spb") Санкт-Петербург
+
 				.filters-row-item
 					.filters-row-item__name Отделка
 					.filters-row-item__field
-						.chb-group
-							label.chb-item
-								input(type="checkbox" name="otdelka" value="1")
-								.chb-item__pseudo Без отделки
-							label.chb-item
-								input(type="checkbox" name="otdelka" value="2")
-								.chb-item__pseudo Предчистовая
-							label.chb-item
-								input(type="checkbox" name="otdelka" value="3")
-								.chb-item__pseudo Вариант 3
+						.simple-select2-wrap
+							select.js-simple-select2-outer-dropdown(data-placeholder="Плейсходер")
+								option(selected)
+								option(value="msk") Москва
+								option(value="spb") Санкт-Петербург
 
 				.filters-row-item
 					.filters-row-item__name.filters-row-item__name--range
 						span Этаж от
 						span Этаж до
 					.filters-row-item__field
-						.rs-block.custom-style-rs.js-range-slider(data-min="0" data-max="30" data-format="int" data-step="1"/* data-start-left data-start-right*/)
+						.rs-block.custom-style-rs.js-range-slider(data-min="1" data-max="10" data-suffix=" этаж" data-format="int" data-step="1" )
+							//data-start-left data-start-right
+							.rs-block__top
+								input.rs-block__inp.rs-block__inp-left.js-range-slider__inp-left(type="text")
+								input.rs-block__inp.rs-block__inp-right.js-range-slider__inp-right(type="text")
+							.rs-block__bottom
+								.rs-block__rs.js-range-slider__range
+
+				.filters-row-item
+					.filters-row-item__name.filters-row-item__name--range
+						span Кухня от
+						span Кухня до
+					.filters-row-item__field
+						.rs-block.custom-style-rs.js-range-slider(data-min="5" data-max="24" data-suffix=" м²" data-format="int" data-step="1" )
+							//data-start-left data-start-right
 							.rs-block__top
 								input.rs-block__inp.rs-block__inp-left.js-range-slider__inp-left(type="text")
 								input.rs-block__inp.rs-block__inp-right.js-range-slider__inp-right(type="text")
@@ -149,6 +177,12 @@ block content
 				.filters-row-item
 					.filters-row-item__name Технология
 					.filters-row-item__field
+						.simple-select2-wrap
+							select.js-simple-select2-outer-dropdown(data-placeholder="Плейсходер")
+								option(selected)
+								option(value="msk") Москва
+								option(value="spb") Санкт-Петербург
+
 
 			.filters-bottom
 				.filters-bottom__left
