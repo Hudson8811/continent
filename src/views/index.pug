@@ -67,15 +67,16 @@ block content
 	section.filters
 		.container.container--sec-filters
 			h2.section-title.section-title--filters Подберите квартиру
-			.filters-row
+			.js-filters-row.filters-row.filters-row--hidden
 				.filters-row-item
 					.filters-row-item__name Проект
 					.filters-row-item__field
 						.simple-select2-wrap
-							select.js-simple-select2-outer-dropdown(data-placeholder="Плейсходер")
-								option(selected)
+							select.js-simple-select2-outer-dropdown()
+								option(selected value="all") Любой
 								option(value="msk") Москва
 								option(value="spb") Санкт-Петербург
+								option(value="spb1") Lorem ipsum dolor sit amet consectetur.
 
 
 				.filters-row-item
@@ -83,16 +84,16 @@ block content
 					.filters-row-item__field
 						.chb-group.chb-group--fg
 							label.chb-item
-								input(type="checkbox" name="rooms_count" value="c")
+								input(type="radio" name="rooms_count" value="c")
 								.chb-item__pseudo С
 							label.chb-item
-								input(type="checkbox" name="rooms_count" value="1")
+								input(type="radio" name="rooms_count" value="1")
 								.chb-item__pseudo 1
 							label.chb-item
-								input(type="checkbox" name="rooms_count" value="2")
+								input(type="radio" name="rooms_count" value="2")
 								.chb-item__pseudo 2
 							label.chb-item
-								input(type="checkbox" name="rooms_count" value="3")
+								input(type="radio" name="rooms_count" value="3")
 								.chb-item__pseudo 3
 				.filters-row-item
 					.filters-row-item__name.filters-row-item__name--range
@@ -124,8 +125,8 @@ block content
 					.filters-row-item__name Срок сдачи
 					.filters-row-item__field
 						.simple-select2-wrap
-							select.js-simple-select2-outer-dropdown(data-placeholder="Плейсходер")
-								option(selected)
+							select.js-simple-select2-outer-dropdown()
+								option(selected value="all") Любой
 								option(value="msk") Москва
 								option(value="spb") Санкт-Петербург
 
@@ -133,8 +134,8 @@ block content
 					.filters-row-item__name Класс жилья
 					.filters-row-item__field
 						.simple-select2-wrap
-							select.js-simple-select2-outer-dropdown(data-placeholder="Плейсходер")
-								option(selected)
+							select.js-simple-select2-outer-dropdown()
+								option(selected value="all") Любой
 								option(value="msk") Москва
 								option(value="spb") Санкт-Петербург
 
@@ -142,8 +143,8 @@ block content
 					.filters-row-item__name Отделка
 					.filters-row-item__field
 						.simple-select2-wrap
-							select.js-simple-select2-outer-dropdown(data-placeholder="Плейсходер")
-								option(selected)
+							select.js-simple-select2-outer-dropdown()
+								option(selected value="all") Любой
 								option(value="msk") Москва
 								option(value="spb") Санкт-Петербург
 
@@ -178,24 +179,26 @@ block content
 					.filters-row-item__name Технология
 					.filters-row-item__field
 						.simple-select2-wrap
-							select.js-simple-select2-outer-dropdown(data-placeholder="Плейсходер")
-								option(selected)
+							select.js-simple-select2-outer-dropdown()
+								option(selected value="all") Любой
 								option(value="msk") Москва
 								option(value="spb") Санкт-Петербург
 
 
 			.filters-bottom
 				.filters-bottom__left
-					.filters-toggle-state
-						.filters-toggle-state__icon
+					.twi-switch.twi-switch--filter-sec.twi-switch--more-filters.js-twi-switch--more-filters
+						.twi-switch__icon
 							svg
 								use(xlink:href="img/sprites/sprite.svg#filters-hide")
-						.filters-toggle-state__name Скрыть дополнительные фильтры
-					.filters-toggle-state
-						.filters-toggle-state__icon
+						.twi-switch__name
+							span Дополнительные фильтры
+							span Скрыть дополнительные фильтры
+					.twi-switch.twi-switch--filter-sec
+						.twi-switch__icon
 							svg
 								use(xlink:href="img/sprites/sprite.svg#filters-clear")
-						.filters-toggle-state__name Сбросить фильтр
+						.twi-switch__name Сбросить фильтр
 				.filters-bottom__right
 					a.btn(href="")
 						span
@@ -207,3 +210,197 @@ block content
 		.half-container.half-container--invert.half-container--filters-art
 			.filters-art
 				img(src="img/svg/filters-bottom-art.svg", alt="")
+
+	.blue-sections-bg
+		section.our-projects.section-margin
+			.container
+				.our-projects__top
+					.our-projects__top-left
+						h2.section-title Наши проекты
+					.our-projects__top-right
+						a.btn(href="")
+							span Все проекты
+				.our-projects-flex
+					.project-card
+						.project-card__pic
+							img(src="img/home/project-card-pic.jpg", alt="")
+							.card-labels.project-card__labels
+								.card-label(style="background: #41b1d9;") В продаже
+								.card-label Комфорт +
+
+						.project-card-content
+							.project-card-content__top
+								.project-card-content__title ЖК Эстет
+								.project-card-content__price от 4.3 млн ₽
+							.project-card-info-wrap
+								.project-card-info
+									.project-card-info__name Адрес
+									.project-card-info__description г. Краснодар, Адмиралтейский бульвар, 1
+
+								.project-card-info
+									.project-card-info__name Сдача
+									.project-card-info__description 1 кв. 2025 г.
+					.project-card
+						.project-card__pic
+							img(src="img/home/project-card-placeholder.jpg", alt="")
+							.project-card__pic-text СКОРО
+
+						.project-card-content
+							.project-card-content__top
+								.project-card-content__title ЖК новый
+								.project-card-content__price
+							.project-card-info-wrap
+								.project-card-info
+									.project-card-info__name Адрес
+									.project-card-info__description г. Краснодар, ул. Новая, 1
+
+								.project-card-info
+									.project-card-info__name Сдача
+									.project-card-info__description 1 кв. 2027 г.
+
+
+				.showmore-wrap
+					a.btn.btn--dark(href="")
+						span Показать еще
+
+		section.purchase-ways.section-margin
+			.container
+				h2.section-title Способы покупки
+				.purchase-ways-flex
+					.purchase-ways-flex__main
+						.purchase-ways-form
+							.purchase-ways-form__top
+								.purchase-ways-form__top-left
+									.purchase-ways-form__title  Ипотека
+									.purchase-ways-form__desc Более 10 банков-партнеров с выгодными условиями
+								.purchase-ways-form__top-right
+									a.btn.btn--with-arrow.btn--dark(href="")
+										span Получить расчет
+							.purchase-ways-form__main
+								.pw-contols
+									.pw-controls
+										.pw-control.pw-control--w33
+											.pw-control__name Ипотечная программа
+											.pw-control__field
+												.simple-select2-wrap
+													select.js-simple-select2-outer-dropdown()
+														option(selected value="1") Субсидированная Lorem, ipsum dolor.
+														option(value="2") Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, dolor!
+										.pw-control.pw-control--w33
+											.pw-control__name Стоимость недвижимости
+											.pw-control__field
+												.rs-block.rs-block--single.rs-block--start-at-0.rs-block--style-2.custom-style-rs.js-range-slider(data-single="true" data-min="1000000" data-max="10000000" data-suffix=" ₽" data-format="int" data-step="100000" )
+													//data-start-left data-start-right
+													.rs-block__top
+														input.rs-block__inp.rs-block__inp-single.js-range-slider__inp-single(type="text")
+													.rs-block__bottom
+														.rs-block__rs.js-range-slider__range
+										.pw-control.pw-control--w33
+											.pw-control__name Срок
+											.pw-control__field
+												.rs-block.rs-block--single.rs-block--start-at-0.rs-block--style-2.custom-style-rs.js-range-slider(data-single="true" data-min="1" data-max="30" data-suffix="year" data-format="int" data-step="1" )
+													//data-start-left data-start-right
+													.rs-block__top
+														input.rs-block__inp.rs-block__inp-single.js-range-slider__inp-single(type="text")
+													.rs-block__bottom
+														.rs-block__rs.js-range-slider__range
+
+									.pw-banks.pw-banks--in-form
+										.pw-bank
+											.pw-bank__col.pw-bank__col--name
+												.pw-bank__icon
+													img(src="img/svg/bank-psb.svg", alt="")
+												.pw-bank__name ПромСвязьБанк
+											.pw-bank__col.pw-bank__col--payment
+												.pw-bank__info-top Ежемесячный платеж
+												.pw-bank__info-bottom 54 679 ₽/мес.
+											.pw-bank__col.pw-bank__col--rate
+												.pw-bank__info-top Ставка
+												.pw-bank__info-bottom 5.7%
+											.pw-bank__col.pw-bank__col--btn
+												a.pw-bank__btn(href="")
+
+										.pw-bank
+											.pw-bank__col.pw-bank__col--name
+												.pw-bank__icon
+													img(src="img/svg/bank-sber.svg", alt="")
+												.pw-bank__name Сбербанк
+											.pw-bank__col.pw-bank__col--payment
+												.pw-bank__info-top Ежемесячный платеж
+												.pw-bank__info-bottom 54 679 ₽/мес.
+											.pw-bank__col.pw-bank__col--rate
+												.pw-bank__info-top Ставка
+												.pw-bank__info-bottom 5.7%
+											.pw-bank__col.pw-bank__col--btn
+												a.pw-bank__btn(href="")
+
+										.pw-bank
+											.pw-bank__col.pw-bank__col--name
+												.pw-bank__icon
+													img(src="img/svg/bank-alfa.svg", alt="")
+												.pw-bank__name Альфа Банк
+											.pw-bank__col.pw-bank__col--payment
+												.pw-bank__info-top Ежемесячный платеж
+												.pw-bank__info-bottom 54 679 ₽/мес.
+											.pw-bank__col.pw-bank__col--rate
+												.pw-bank__info-top Ставка
+												.pw-bank__info-bottom 5.7%
+											.pw-bank__col.pw-bank__col--btn
+												a.pw-bank__btn(href="")
+
+										.pw-bank
+											.pw-bank__col.pw-bank__col--name
+												.pw-bank__icon
+													img(src="img/svg/bank-skb.svg", alt="")
+												.pw-bank__name СовКомБанк
+											.pw-bank__col.pw-bank__col--payment
+												.pw-bank__info-top Ежемесячный платеж
+												.pw-bank__info-bottom 54 679 ₽/мес.
+											.pw-bank__col.pw-bank__col--rate
+												.pw-bank__info-top Ставка
+												.pw-bank__info-bottom 5.7%
+											.pw-bank__col.pw-bank__col--btn
+												a.pw-bank__btn(href="")
+
+					.purchase-ways-flex__side
+						.purchase-way-card
+							.purchase-way-card__top
+								.purchase-way-card__name Рассрочка
+								.purchase-way-card__desc Согласуем индивидуальные условия рассрочки
+								.purchase-way-card__btn-wrap
+									a.btn.btn--with-arrow.btn--dark(href="")
+										span Согласовать условия
+							.purchase-way-card__pic
+								img(src="img/home/purchase-way-card-pic.png", alt="")
+
+
+
+
+		section.newssec.section-margin
+			.container
+				.newssec-top
+					.newssec-top__left
+						h2.section-title Акции и новости
+					.newssec-top__right
+				.newssec-grid.newssec-grid--front
+					.news-card.news-card--front
+						.news-card__pic
+							img(src="", alt="")
+						.news-card__text
+							.news-card__title Выбирай свой паркинг
+							.news-card__desc Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.
+					.news-card.news-card--front
+						.news-card__pic
+							img(src="", alt="")
+						.news-card__text
+							.news-card__title Ипотека 1% до 30 сентября
+							.news-card__desc Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.
+					.news-card.news-card--front
+						.news-card__pic
+							img(src="", alt="")
+						.news-card__text
+							.news-card__title Коммерческие помещения
+							.news-card__desc Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.
+				.showmore-wrap
+					a.btn.btn--dark(href="")
+						span Все акции и новости

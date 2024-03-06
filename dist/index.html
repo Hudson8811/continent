@@ -161,15 +161,16 @@
       <section class="filters">
         <div class="container container--sec-filters">
           <h2 class="section-title section-title--filters">Подберите квартиру</h2>
-          <div class="filters-row">
+          <div class="js-filters-row filters-row filters-row--hidden">
             <div class="filters-row-item">
               <div class="filters-row-item__name">Проект</div>
               <div class="filters-row-item__field">
                 <div class="simple-select2-wrap">
-                  <select class="js-simple-select2-outer-dropdown" data-placeholder="Плейсходер">
-                    <option selected></option>
+                  <select class="js-simple-select2-outer-dropdown">
+                    <option selected value="all">Любой</option>
                     <option value="msk">Москва</option>
                     <option value="spb">Санкт-Петербург</option>
+                    <option value="spb1">Lorem ipsum dolor sit amet consectetur.</option>
                   </select>
                 </div>
               </div>
@@ -179,19 +180,19 @@
               <div class="filters-row-item__field">
                 <div class="chb-group chb-group--fg">
                   <label class="chb-item">
-                    <input type="checkbox" name="rooms_count" value="c">
+                    <input type="radio" name="rooms_count" value="c">
                     <div class="chb-item__pseudo">С</div>
                   </label>
                   <label class="chb-item">
-                    <input type="checkbox" name="rooms_count" value="1">
+                    <input type="radio" name="rooms_count" value="1">
                     <div class="chb-item__pseudo">1</div>
                   </label>
                   <label class="chb-item">
-                    <input type="checkbox" name="rooms_count" value="2">
+                    <input type="radio" name="rooms_count" value="2">
                     <div class="chb-item__pseudo">2</div>
                   </label>
                   <label class="chb-item">
-                    <input type="checkbox" name="rooms_count" value="3">
+                    <input type="radio" name="rooms_count" value="3">
                     <div class="chb-item__pseudo">3</div>
                   </label>
                 </div>
@@ -231,8 +232,8 @@
               <div class="filters-row-item__name">Срок сдачи</div>
               <div class="filters-row-item__field">
                 <div class="simple-select2-wrap">
-                  <select class="js-simple-select2-outer-dropdown" data-placeholder="Плейсходер">
-                    <option selected></option>
+                  <select class="js-simple-select2-outer-dropdown">
+                    <option selected value="all">Любой</option>
                     <option value="msk">Москва</option>
                     <option value="spb">Санкт-Петербург</option>
                   </select>
@@ -243,8 +244,8 @@
               <div class="filters-row-item__name">Класс жилья</div>
               <div class="filters-row-item__field">
                 <div class="simple-select2-wrap">
-                  <select class="js-simple-select2-outer-dropdown" data-placeholder="Плейсходер">
-                    <option selected></option>
+                  <select class="js-simple-select2-outer-dropdown">
+                    <option selected value="all">Любой</option>
                     <option value="msk">Москва</option>
                     <option value="spb">Санкт-Петербург</option>
                   </select>
@@ -255,8 +256,8 @@
               <div class="filters-row-item__name">Отделка</div>
               <div class="filters-row-item__field">
                 <div class="simple-select2-wrap">
-                  <select class="js-simple-select2-outer-dropdown" data-placeholder="Плейсходер">
-                    <option selected></option>
+                  <select class="js-simple-select2-outer-dropdown">
+                    <option selected value="all">Любой</option>
                     <option value="msk">Москва</option>
                     <option value="spb">Санкт-Петербург</option>
                   </select>
@@ -297,8 +298,8 @@
               <div class="filters-row-item__name">Технология</div>
               <div class="filters-row-item__field">
                 <div class="simple-select2-wrap">
-                  <select class="js-simple-select2-outer-dropdown" data-placeholder="Плейсходер">
-                    <option selected></option>
+                  <select class="js-simple-select2-outer-dropdown">
+                    <option selected value="all">Любой</option>
                     <option value="msk">Москва</option>
                     <option value="spb">Санкт-Петербург</option>
                   </select>
@@ -308,21 +309,21 @@
           </div>
           <div class="filters-bottom">
             <div class="filters-bottom__left">
-              <div class="filters-toggle-state">
-                <div class="filters-toggle-state__icon">
+              <div class="twi-switch twi-switch--filter-sec twi-switch--more-filters js-twi-switch--more-filters">
+                <div class="twi-switch__icon">
                   <svg>
                     <use xlink:href="img/sprites/sprite.svg#filters-hide"></use>
                   </svg>
                 </div>
-                <div class="filters-toggle-state__name">Скрыть дополнительные фильтры</div>
+                <div class="twi-switch__name"><span>Дополнительные фильтры</span><span>Скрыть дополнительные фильтры</span></div>
               </div>
-              <div class="filters-toggle-state">
-                <div class="filters-toggle-state__icon">
+              <div class="twi-switch twi-switch--filter-sec">
+                <div class="twi-switch__icon">
                   <svg>
                     <use xlink:href="img/sprites/sprite.svg#filters-clear"></use>
                   </svg>
                 </div>
-                <div class="filters-toggle-state__name">Сбросить фильтр</div>
+                <div class="twi-switch__name">Сбросить фильтр</div>
               </div>
             </div>
             <div class="filters-bottom__right"><a class="btn" href=""><span> Показать<span class="js-filter-result-items-count"> 146</span> квартир</span></a></div>
@@ -332,6 +333,235 @@
           <div class="filters-art"><img src="img/svg/filters-bottom-art.svg" alt=""></div>
         </div>
       </section>
+      <div class="blue-sections-bg">
+        <section class="our-projects section-margin">
+          <div class="container">
+            <div class="our-projects__top">
+              <div class="our-projects__top-left">
+                <h2 class="section-title">Наши проекты</h2>
+              </div>
+              <div class="our-projects__top-right"><a class="btn" href=""><span>Все проекты</span></a></div>
+            </div>
+            <div class="our-projects-flex">
+              <div class="project-card">
+                <div class="project-card__pic"><img src="img/home/project-card-pic.jpg" alt="">
+                  <div class="card-labels project-card__labels">
+                    <div class="card-label" style="background: #41b1d9;">В продаже</div>
+                    <div class="card-label">Комфорт +</div>
+                  </div>
+                </div>
+                <div class="project-card-content">
+                  <div class="project-card-content__top">
+                    <div class="project-card-content__title">ЖК Эстет</div>
+                    <div class="project-card-content__price">от 4.3 млн ₽</div>
+                  </div>
+                  <div class="project-card-info-wrap">
+                    <div class="project-card-info">
+                      <div class="project-card-info__name">Адрес</div>
+                      <div class="project-card-info__description">г. Краснодар, Адмиралтейский бульвар, 1</div>
+                    </div>
+                    <div class="project-card-info">
+                      <div class="project-card-info__name">Сдача</div>
+                      <div class="project-card-info__description">1 кв. 2025 г.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project-card">
+                <div class="project-card__pic"><img src="img/home/project-card-placeholder.jpg" alt="">
+                  <div class="project-card__pic-text">СКОРО</div>
+                </div>
+                <div class="project-card-content">
+                  <div class="project-card-content__top">
+                    <div class="project-card-content__title">ЖК новый</div>
+                    <div class="project-card-content__price"></div>
+                  </div>
+                  <div class="project-card-info-wrap">
+                    <div class="project-card-info">
+                      <div class="project-card-info__name">Адрес</div>
+                      <div class="project-card-info__description">г. Краснодар, ул. Новая, 1</div>
+                    </div>
+                    <div class="project-card-info">
+                      <div class="project-card-info__name">Сдача</div>
+                      <div class="project-card-info__description">1 кв. 2027 г.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="showmore-wrap"><a class="btn btn--dark" href=""><span>Показать еще</span></a></div>
+          </div>
+        </section>
+        <section class="purchase-ways section-margin">
+          <div class="container">
+            <h2 class="section-title">Способы покупки</h2>
+            <div class="purchase-ways-flex">
+              <div class="purchase-ways-flex__main">
+                <div class="purchase-ways-form">
+                  <div class="purchase-ways-form__top">
+                    <div class="purchase-ways-form__top-left">
+                      <div class="purchase-ways-form__title"> Ипотека</div>
+                      <div class="purchase-ways-form__desc">Более 10 банков-партнеров с выгодными условиями</div>
+                    </div>
+                    <div class="purchase-ways-form__top-right"><a class="btn btn--with-arrow btn--dark" href=""><span>Получить расчет</span></a></div>
+                  </div>
+                  <div class="purchase-ways-form__main">
+                    <div class="pw-contols">
+                      <div class="pw-controls">
+                        <div class="pw-control pw-control--w33">
+                          <div class="pw-control__name">Ипотечная программа</div>
+                          <div class="pw-control__field">
+                            <div class="simple-select2-wrap">
+                              <select class="js-simple-select2-outer-dropdown">
+                                <option selected value="1">Субсидированная Lorem, ipsum dolor.</option>
+                                <option value="2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, dolor!</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="pw-control pw-control--w33">
+                          <div class="pw-control__name">Стоимость недвижимости</div>
+                          <div class="pw-control__field">
+                            <div class="rs-block rs-block--single rs-block--start-at-0 rs-block--style-2 custom-style-rs js-range-slider" data-single="true" data-min="1000000" data-max="10000000" data-suffix=" ₽" data-format="int" data-step="100000">
+                              <!--data-start-left data-start-right-->
+                              <div class="rs-block__top">
+                                <input class="rs-block__inp rs-block__inp-single js-range-slider__inp-single" type="text">
+                              </div>
+                              <div class="rs-block__bottom">
+                                <div class="rs-block__rs js-range-slider__range"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="pw-control pw-control--w33">
+                          <div class="pw-control__name">Срок</div>
+                          <div class="pw-control__field">
+                            <div class="rs-block rs-block--single rs-block--start-at-0 rs-block--style-2 custom-style-rs js-range-slider" data-single="true" data-min="1" data-max="30" data-suffix="year" data-format="int" data-step="1">
+                              <!--data-start-left data-start-right-->
+                              <div class="rs-block__top">
+                                <input class="rs-block__inp rs-block__inp-single js-range-slider__inp-single" type="text">
+                              </div>
+                              <div class="rs-block__bottom">
+                                <div class="rs-block__rs js-range-slider__range"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="pw-banks pw-banks--in-form">
+                        <div class="pw-bank">
+                          <div class="pw-bank__col pw-bank__col--name">
+                            <div class="pw-bank__icon"><img src="img/svg/bank-psb.svg" alt=""></div>
+                            <div class="pw-bank__name">ПромСвязьБанк</div>
+                          </div>
+                          <div class="pw-bank__col pw-bank__col--payment">
+                            <div class="pw-bank__info-top">Ежемесячный платеж</div>
+                            <div class="pw-bank__info-bottom">54 679 ₽/мес.</div>
+                          </div>
+                          <div class="pw-bank__col pw-bank__col--rate">
+                            <div class="pw-bank__info-top">Ставка</div>
+                            <div class="pw-bank__info-bottom">5.7%</div>
+                          </div>
+                          <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn" href=""></a></div>
+                        </div>
+                        <div class="pw-bank">
+                          <div class="pw-bank__col pw-bank__col--name">
+                            <div class="pw-bank__icon"><img src="img/svg/bank-sber.svg" alt=""></div>
+                            <div class="pw-bank__name">Сбербанк</div>
+                          </div>
+                          <div class="pw-bank__col pw-bank__col--payment">
+                            <div class="pw-bank__info-top">Ежемесячный платеж</div>
+                            <div class="pw-bank__info-bottom">54 679 ₽/мес.</div>
+                          </div>
+                          <div class="pw-bank__col pw-bank__col--rate">
+                            <div class="pw-bank__info-top">Ставка</div>
+                            <div class="pw-bank__info-bottom">5.7%</div>
+                          </div>
+                          <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn" href=""></a></div>
+                        </div>
+                        <div class="pw-bank">
+                          <div class="pw-bank__col pw-bank__col--name">
+                            <div class="pw-bank__icon"><img src="img/svg/bank-alfa.svg" alt=""></div>
+                            <div class="pw-bank__name">Альфа Банк</div>
+                          </div>
+                          <div class="pw-bank__col pw-bank__col--payment">
+                            <div class="pw-bank__info-top">Ежемесячный платеж</div>
+                            <div class="pw-bank__info-bottom">54 679 ₽/мес.</div>
+                          </div>
+                          <div class="pw-bank__col pw-bank__col--rate">
+                            <div class="pw-bank__info-top">Ставка</div>
+                            <div class="pw-bank__info-bottom">5.7%</div>
+                          </div>
+                          <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn" href=""></a></div>
+                        </div>
+                        <div class="pw-bank">
+                          <div class="pw-bank__col pw-bank__col--name">
+                            <div class="pw-bank__icon"><img src="img/svg/bank-skb.svg" alt=""></div>
+                            <div class="pw-bank__name">СовКомБанк</div>
+                          </div>
+                          <div class="pw-bank__col pw-bank__col--payment">
+                            <div class="pw-bank__info-top">Ежемесячный платеж</div>
+                            <div class="pw-bank__info-bottom">54 679 ₽/мес.</div>
+                          </div>
+                          <div class="pw-bank__col pw-bank__col--rate">
+                            <div class="pw-bank__info-top">Ставка</div>
+                            <div class="pw-bank__info-bottom">5.7%</div>
+                          </div>
+                          <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn" href=""></a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="purchase-ways-flex__side">
+                <div class="purchase-way-card">
+                  <div class="purchase-way-card__top">
+                    <div class="purchase-way-card__name">Рассрочка</div>
+                    <div class="purchase-way-card__desc">Согласуем индивидуальные условия рассрочки</div>
+                    <div class="purchase-way-card__btn-wrap"><a class="btn btn--with-arrow btn--dark" href=""><span>Согласовать условия</span></a></div>
+                  </div>
+                  <div class="purchase-way-card__pic"><img src="img/home/purchase-way-card-pic.png" alt=""></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="newssec section-margin">
+          <div class="container">
+            <div class="newssec-top">
+              <div class="newssec-top__left">
+                <h2 class="section-title">Акции и новости</h2>
+              </div>
+              <div class="newssec-top__right"></div>
+            </div>
+            <div class="newssec-grid newssec-grid--front">
+              <div class="news-card news-card--front">
+                <div class="news-card__pic"><img src="" alt=""></div>
+                <div class="news-card__text">
+                  <div class="news-card__title">Выбирай свой паркинг</div>
+                  <div class="news-card__desc">Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.</div>
+                </div>
+              </div>
+              <div class="news-card news-card--front">
+                <div class="news-card__pic"><img src="" alt=""></div>
+                <div class="news-card__text">
+                  <div class="news-card__title">Ипотека 1% до 30 сентября</div>
+                  <div class="news-card__desc">Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.</div>
+                </div>
+              </div>
+              <div class="news-card news-card--front">
+                <div class="news-card__pic"><img src="" alt=""></div>
+                <div class="news-card__text">
+                  <div class="news-card__title">Коммерческие помещения</div>
+                  <div class="news-card__desc">Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.</div>
+                </div>
+              </div>
+            </div>
+            <div class="showmore-wrap"><a class="btn btn--dark" href=""><span>Все акции и новости</span></a></div>
+          </div>
+        </section>
+      </div>
     </main>
     <footer class="site-footer">
       <div class="container container--footer">
