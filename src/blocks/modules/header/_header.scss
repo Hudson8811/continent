@@ -53,6 +53,10 @@
 	width: 178px;
 	@include hov();
 
+	@include max(lg){
+		width: 104px;
+	}
+
 	img {
 		width: 100%;
 		height: auto;
@@ -66,6 +70,9 @@
 	letter-spacing: -0.02em;
 	margin-left: 80px;
 	margin-right: 24px;
+	@include max(lg){
+		display: none;
+	}
 }
 
 .sh-menu-list {
@@ -91,13 +98,84 @@
 	display: block;
 	@include hov();
 
+	@include max(lg){
+		display: none;
+	}
 	img,
 	svg {
 		width: 32px;
 		height: 32px;
 	}
 }
+.sh-burger{
+	position: relative;
+	//display: none;
+	width: 24px;
+	height: 14px;
+	cursor: pointer;
+	transition-duration: .2s;
+	cursor: pointer;
 
+	&::before{
+		content: '';
+		display: block;
+		left: -10px;
+		top: -15px;
+		right: -10px;
+		bottom: -15px;
+		position: absolute;
+	}
+
+	span{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 24px;
+		height: 1px;
+		margin-left: -12px;
+		margin-top: -1px;
+		background: #fff;
+		transition: 0.2s;
+		transform-origin: left center;
+
+	}
+
+
+	span:nth-child(1) {
+		transform: translateY(-6px);
+	}
+	span:nth-child(2) {
+		transform: scaleX(0.7);
+	}
+
+	span:nth-child(3) {
+		transform: translateY(6px) scaleX(0.5);
+	}
+
+	&--active {
+
+		span {
+			transform-origin: center center;
+		}
+		span {
+			&:nth-child(1) {
+				transform: rotate(45deg);
+			}
+
+			&:nth-child(2) {
+				transform: rotate(-45deg);
+			}
+			&:nth-child(3) {
+				opacity: 0;
+			}
+		}
+	}
+}
+.sh-mob-menu-trigger{
+	@include min(lg){
+		display: none;
+	}
+}
 
 .sh-phone {
 	margin-right: 24px;
@@ -157,7 +235,6 @@
 		letter-spacing: -0.04em;
 		color: #fff;
 		//font-family: $inter;
-		font-family: $songer;
 	}
 
 	&+.sh-button {

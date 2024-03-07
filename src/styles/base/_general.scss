@@ -124,9 +124,11 @@ body {
 	@media screen and (max-width: 550px) {
 		max-width: calc(100% - 30px * 2);
 	}
-	&--flex{
+
+	&--flex {
 		display: flex;
 	}
+
 	@media screen and (max-width: 550px) {
 		max-width: calc(100% - 15px * 2);
 
@@ -142,7 +144,7 @@ body {
 	margin-left: auto;
 	margin-right: 0;
 
-	&--invert{
+	&--invert {
 		margin-left: 0;
 		margin-right: auto;
 
@@ -209,23 +211,111 @@ table {
 	background: #53667f;
 	font-weight: 700;
 	font-size: 16px;
-    line-height: 125%;
+	line-height: 125%;
 	letter-spacing: -0.02em;
 	color: #fff;
 	transition-duration: .3s;
 
-	&:hover{
+	&:hover {
 		background: rgba(83, 102, 127, 0.7);
 	}
 
-	&--dark{
+	&--with-arrow {
+		&::after {
+			content: '';
+			display: block;
+			margin-left: 16px;
+			width: 7px;
+			height: 11px;
+			background: url(../img/svg/btn-arrow-dark.svg) no-repeat center center;
+			background-size: contain;
+		}
+	}
+
+	&--dark {
 		border: 1px solid rgba(255, 255, 255, 0.2);
 		background: none;
-		&:hover{
+
+		&:hover {
 			background: none;
 			border-color: rgba(255, 255, 255, 0.5);
 		}
 	}
+
+	&--light {
+		border: 1px solid rgba(37, 40, 49, 0.2);
+		background: none;
+
+		&:hover {
+			background: none;
+			border-color: rgba(37, 40, 49, 0.5);
+		}
+
+		&.btn--with-arrow {
+			&::after {
+				background: url(../img/svg/btn-arrow-light.svg) no-repeat center center;
+				background-size: contain;
+			}
+		}
+	}
+	&--w100{
+		width: 100%;
+	}
 }
 
 
+
+
+
+
+
+.tabs-controls {
+	display: flex;
+	margin-left: -16px;
+	margin-bottom: -10px;
+
+	&__item {
+		background: rgba(255, 255, 255, 0.1);
+		border: 1px solid rgba(255, 255, 255, 0);
+		border-radius: 6px;
+		padding: 8px 16px;
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 125%;
+		letter-spacing: -0.02em;
+		color: #fff;
+		margin-left: 16px;
+		margin-bottom: 10px;
+		transition-duration: .3s;
+		cursor: pointer;
+
+		&--active {
+			pointer-events: none;
+		}
+
+		&--active,
+		&:hover {
+			background: #53667f;
+			border: 1px solid rgba(255, 255, 255, 0.15);
+		}
+	}
+
+	&--light {
+		.tabs-controls__item {
+
+			color: #252831;
+			background: rgba(37, 40, 49, 0.1);
+			border: 1px solid rgba(255, 255, 255, 0.15);
+
+			&--active,
+			&:hover {
+				border: 1px solid rgba(255, 255, 255, 0.15);
+				background: #53667f;
+				color: #fff;
+			}
+		}
+	}
+}
+.prefooter-padding{
+	padding-top: 160px;
+}

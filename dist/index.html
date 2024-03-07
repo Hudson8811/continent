@@ -47,12 +47,13 @@
                   <use xlink:href="img/sprites/sprite.svg#sh-heart"></use>
                 </svg>
               </div>
-              <div class="sh-button__counter">1</div></a><a class="sh-button" href="">
+              <div class="sh-button__counter">1</div></a><a class="sh-button js-call-me-modal" href="#">
               <div class="sh-button__icon">
                 <svg>
                   <use xlink:href="img/sprites/sprite.svg#sh-phone"></use>
                 </svg>
               </div></a></div>
+          <div class="sh-burger sh-mob-menu-trigger js-mob-menu-trigger"><span></span><span></span><span></span></div>
         </div>
       </div>
       <div class="mega-menu-wrap">
@@ -342,8 +343,7 @@
               </div>
               <div class="our-projects__top-right"><a class="btn" href=""><span>Все проекты</span></a></div>
             </div>
-            <div class="our-projects-flex">
-              <div class="project-card">
+            <div class="our-projects-flex"><a class="project-card" href="">
                 <div class="project-card__pic"><img src="img/home/project-card-pic.jpg" alt="">
                   <div class="card-labels project-card__labels">
                     <div class="card-label" style="background: #41b1d9;">В продаже</div>
@@ -365,8 +365,7 @@
                       <div class="project-card-info__description">1 кв. 2025 г.</div>
                     </div>
                   </div>
-                </div>
-              </div>
+                </div></a>
               <div class="project-card">
                 <div class="project-card__pic"><img src="img/home/project-card-placeholder.jpg" alt="">
                   <div class="project-card__pic-text">СКОРО</div>
@@ -412,7 +411,7 @@
                           <div class="pw-control__name">Ипотечная программа</div>
                           <div class="pw-control__field">
                             <div class="simple-select2-wrap">
-                              <select class="js-simple-select2-outer-dropdown">
+                              <select class="js-simple-select2-outer-dropdown" data-style="select2-container--style-2">
                                 <option selected value="1">Субсидированная Lorem, ipsum dolor.</option>
                                 <option value="2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, dolor!</option>
                               </select>
@@ -462,7 +461,10 @@
                             <div class="pw-bank__info-top">Ставка</div>
                             <div class="pw-bank__info-bottom">5.7%</div>
                           </div>
-                          <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn" href=""></a></div>
+                          <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn js-pw-bank__btn" href="#">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#bank-arrow"></use>
+                              </svg></a></div>
                         </div>
                         <div class="pw-bank">
                           <div class="pw-bank__col pw-bank__col--name">
@@ -477,7 +479,10 @@
                             <div class="pw-bank__info-top">Ставка</div>
                             <div class="pw-bank__info-bottom">5.7%</div>
                           </div>
-                          <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn" href=""></a></div>
+                          <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn js-pw-bank__btn" href="#">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#bank-arrow"></use>
+                              </svg></a></div>
                         </div>
                         <div class="pw-bank">
                           <div class="pw-bank__col pw-bank__col--name">
@@ -492,7 +497,10 @@
                             <div class="pw-bank__info-top">Ставка</div>
                             <div class="pw-bank__info-bottom">5.7%</div>
                           </div>
-                          <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn" href=""></a></div>
+                          <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn js-pw-bank__btn" href="#">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#bank-arrow"></use>
+                              </svg></a></div>
                         </div>
                         <div class="pw-bank">
                           <div class="pw-bank__col pw-bank__col--name">
@@ -507,7 +515,10 @@
                             <div class="pw-bank__info-top">Ставка</div>
                             <div class="pw-bank__info-bottom">5.7%</div>
                           </div>
-                          <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn" href=""></a></div>
+                          <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn js-pw-bank__btn" href="#">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#bank-arrow"></use>
+                              </svg></a></div>
                         </div>
                       </div>
                     </div>
@@ -533,34 +544,67 @@
               <div class="newssec-top__left">
                 <h2 class="section-title">Акции и новости</h2>
               </div>
-              <div class="newssec-top__right"></div>
-            </div>
-            <div class="newssec-grid newssec-grid--front">
-              <div class="news-card news-card--front">
-                <div class="news-card__pic"><img src="" alt=""></div>
-                <div class="news-card__text">
-                  <div class="news-card__title">Выбирай свой паркинг</div>
-                  <div class="news-card__desc">Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.</div>
-                </div>
-              </div>
-              <div class="news-card news-card--front">
-                <div class="news-card__pic"><img src="" alt=""></div>
-                <div class="news-card__text">
-                  <div class="news-card__title">Ипотека 1% до 30 сентября</div>
-                  <div class="news-card__desc">Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.</div>
-                </div>
-              </div>
-              <div class="news-card news-card--front">
-                <div class="news-card__pic"><img src="" alt=""></div>
-                <div class="news-card__text">
-                  <div class="news-card__title">Коммерческие помещения</div>
-                  <div class="news-card__desc">Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.</div>
+              <div class="newssec-top__right">
+                <div class="tabs-controls">
+                  <div class="tabs-controls__item tabs-controls__item--active">Акции</div>
+                  <div class="tabs-controls__item">Новости</div>
                 </div>
               </div>
             </div>
-            <div class="showmore-wrap"><a class="btn btn--dark" href=""><span>Все акции и новости</span></a></div>
+            <div class="newssec-main">
+              <div class="newssec-grid newssec-grid--front">
+                <div class="news-card news-card--front">
+                  <div class="news-card__pic"><img src="img/new-pic-1.jpg" alt="">
+                    <div class="news-card__text-over-pic">Выбирай свой<br> паркинг</div>
+                  </div>
+                  <div class="news-card__text">
+                    <div class="news-card__title">Выбирай свой паркинг</div>
+                    <div class="news-card__desc">Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.</div>
+                  </div>
+                </div>
+                <div class="news-card news-card--front">
+                  <div class="news-card__pic"><img src="img/new-pic-2.jpg" alt="">
+                    <div class="news-card__text-over-pic"> ипотека 1%</div>
+                  </div>
+                  <div class="news-card__text">
+                    <div class="news-card__title">Ипотека 1% до 30 сентября</div>
+                    <div class="news-card__desc">Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.</div>
+                  </div>
+                </div>
+                <div class="news-card news-card--front">
+                  <div class="news-card__pic"><img src="img/new-pic-3.jpg" alt="">
+                    <div class="news-card__text-over-pic">Коммерческие помещения</div>
+                  </div>
+                  <div class="news-card__text">
+                    <div class="news-card__title">Коммерческие помещения</div>
+                    <div class="news-card__desc">Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="showmore-wrap"><a class="btn btn--dark" href=""><span>Все акции и новости</span></a></div>
+            </div>
           </div>
         </section>
+        <section class="home-about">
+          <div class="container">
+            <div class="home-about-flex">
+              <div class="home-about-flex__left">
+                <div class="home-about-pic"><img src="img/home/about.jpg" alt=""></div>
+              </div>
+              <div class="home-about-flex__right">
+                <div class="home-about-card">
+                  <div class="home-about-card__text">
+                    <h2 class="home-about-card__title section-title">О застройщике</h2>
+                    <div class="home-about-card__desc">В команде «Континент Групп» — исключительные профессионалы, которые наработали многолетний опыт в рядах других застройщиков. Мы объединились, чтобы сделать видимый прорыв на южном рынке недвижимости! За 5 лет готовимся войти в ТОП-5 девелоперов ЮФО!</div>
+                    <div class="home-about-card__btn"><a class="btn" href=""><span>Узнать больше</span></a></div>
+                  </div>
+                  <div class="home-about-card__bg"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="prefooter-padding"></div>
       </div>
     </main>
     <footer class="site-footer">
@@ -571,7 +615,7 @@
             <li class="sf-menu-item"><a href="">Ипотека</a></li>
             <li class="sf-menu-item"><a href="">О компании</a></li>
           </ul>
-          <div class="sf-top__btns"><a class="btn" href=""> Заказать звонок</a></div>
+          <div class="sf-top__btns"><a class="btn js-call-me-modal" href="#"> Заказать звонок</a></div>
         </div>
         <div class="sf-bottom">
           <div class="sf-bottom__left">
@@ -603,6 +647,34 @@
         </div>
       </div>
     </footer>
+    <noindex>
+      <div style="display:none;">
+        <div class="simple-modal" id="call-me-modal">
+          <div class="simple-modal__inner">
+            <div class="simple-modal__content">
+              <div class="simple-modal__title">Заказать обратный звонок</div>
+              <div class="simple-modal__form">
+                <div class="simple-modal__inputs">
+                  <div class="simple-modal__input">
+                    <input class="simple-input" type="text" name="" placeholder="Ваше имя">
+                  </div>
+                  <div class="simple-modal__input">
+                    <input class="simple-input" type="text" name="" placeholder="Телефон">
+                  </div>
+                  <div class="simple-modal__input"><a class="btn btn--w100" href=""><span>Заказать звонок</span></a></div>
+                </div>
+                <div class="simple-modal__privacy">Нажимая на кнопку, вы принимаете <a href="#">политику конфиденциальности</a> и даете согласие на обработку персональных данных</div>
+              </div>
+            </div>
+            <div class="simple-modal__close" data-fancybox-close>
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#modal-close"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </noindex>
     <script src="js/main.js"></script>
   </body>
 </html>

@@ -1,9 +1,9 @@
-function num_word(value, words){
+function num_word(value, words) {
 	value = Math.abs(value) % 100;
 	var num = value % 10;
-	if(value > 10 && value < 20) return words[2];
-	if(num > 1 && num < 5) return words[1];
-	if(num == 1) return words[0];
+	if (value > 10 && value < 20) return words[2];
+	if (num > 1 && num < 5) return words[1];
+	if (num == 1) return words[0];
 	return words[2];
 }
 
@@ -100,7 +100,7 @@ $(function () {
 			if (suffix === 'year') {
 				suffix = '';
 				parameters.edit = function (value) {
-					return value + ' '+num_word(value, ['год', 'года', 'лет']);;
+					return value + ' ' + num_word(value, ['год', 'года', 'лет']);;
 				}
 			}
 			if (suffix !== '') {
@@ -117,7 +117,7 @@ $(function () {
 		if (is_single) {
 			slider_params.start = [start_l];
 
-			slider_params.connect= [true, false];
+			slider_params.connect = [true, false];
 		} else {
 			slider_params.start = [start_l, start_r];
 		}
@@ -182,12 +182,19 @@ $(function () {
 		if (typeof placeholder !== "undefined" && placeholder.length > 0) {
 			$(this).addClass("simple-select2--placeholder-selected");
 		}
+
+		var style = $(this).attr("data-style");
+		if (!(typeof style !== "undefined" && style.length > 0)) {
+			style = '';
+		}
+
+
 		var select = $(this);
 
 		$(this)
 			.select2({
 				language: "ru",
-				theme: "custom-theme",
+				theme: "custom-theme " + style,
 				minimumResultsForSearch: Infinity,
 				//width: '100%',
 				dropdownAutoWidth: true,
@@ -227,12 +234,17 @@ $(function () {
 		if (typeof placeholder !== "undefined" && placeholder.length > 0) {
 			$(this).addClass("simple-select2--placeholder-selected");
 		}
+
+		var style = $(this).attr("data-style");
+		if (!(typeof style !== "undefined" && style.length > 0)) {
+			style = '';
+		}
 		var select = $(this);
 
 		$(this)
 			.select2({
 				language: "ru",
-				theme: "custom-theme",
+				theme: "custom-theme " + style,
 				minimumResultsForSearch: Infinity,
 				width: '100%',
 				//dropdownAutoWidth: true,
@@ -283,4 +295,15 @@ $(function () {
 
 
 
+	Fancybox.bind("[data-fancybox]", {
+		// Your custom options
+	});
+
+
+
+	$('.js-call-me-modal').on('click',function(e){
+		e.preventDefault();
+		e.stopPropagation();
+		Fancybox.show([{ src: "#call-me-modal", type: "inline",closeButton:false }]);
+	})
 });

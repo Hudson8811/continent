@@ -7,4 +7,11 @@ $(function(){
         $('.mega-menu-wrap').removeClass('mega-menu-wrap--active');
     });
 
+    $('.js-mob-menu-trigger').on('click', function () {
+        $(this).toggleClass('sh-burger--active');
+    });
+
+
+
+
 });

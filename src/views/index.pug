@@ -221,7 +221,7 @@ block content
 						a.btn(href="")
 							span Все проекты
 				.our-projects-flex
-					.project-card
+					a.project-card(href="")
 						.project-card__pic
 							img(src="img/home/project-card-pic.jpg", alt="")
 							.card-labels.project-card__labels
@@ -283,7 +283,7 @@ block content
 											.pw-control__name Ипотечная программа
 											.pw-control__field
 												.simple-select2-wrap
-													select.js-simple-select2-outer-dropdown()
+													select.js-simple-select2-outer-dropdown(data-style="select2-container--style-2")
 														option(selected value="1") Субсидированная Lorem, ipsum dolor.
 														option(value="2") Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, dolor!
 										.pw-control.pw-control--w33
@@ -318,7 +318,9 @@ block content
 												.pw-bank__info-top Ставка
 												.pw-bank__info-bottom 5.7%
 											.pw-bank__col.pw-bank__col--btn
-												a.pw-bank__btn(href="")
+												a.pw-bank__btn.js-pw-bank__btn(href="#")
+													svg
+														use(xlink:href="img/sprites/sprite.svg#bank-arrow")
 
 										.pw-bank
 											.pw-bank__col.pw-bank__col--name
@@ -332,7 +334,9 @@ block content
 												.pw-bank__info-top Ставка
 												.pw-bank__info-bottom 5.7%
 											.pw-bank__col.pw-bank__col--btn
-												a.pw-bank__btn(href="")
+												a.pw-bank__btn.js-pw-bank__btn(href="#")
+													svg
+														use(xlink:href="img/sprites/sprite.svg#bank-arrow")
 
 										.pw-bank
 											.pw-bank__col.pw-bank__col--name
@@ -346,7 +350,9 @@ block content
 												.pw-bank__info-top Ставка
 												.pw-bank__info-bottom 5.7%
 											.pw-bank__col.pw-bank__col--btn
-												a.pw-bank__btn(href="")
+												a.pw-bank__btn.js-pw-bank__btn(href="#")
+													svg
+														use(xlink:href="img/sprites/sprite.svg#bank-arrow")
 
 										.pw-bank
 											.pw-bank__col.pw-bank__col--name
@@ -360,7 +366,9 @@ block content
 												.pw-bank__info-top Ставка
 												.pw-bank__info-bottom 5.7%
 											.pw-bank__col.pw-bank__col--btn
-												a.pw-bank__btn(href="")
+												a.pw-bank__btn.js-pw-bank__btn(href="#")
+													svg
+														use(xlink:href="img/sprites/sprite.svg#bank-arrow")
 
 					.purchase-ways-flex__side
 						.purchase-way-card
@@ -382,25 +390,51 @@ block content
 					.newssec-top__left
 						h2.section-title Акции и новости
 					.newssec-top__right
-				.newssec-grid.newssec-grid--front
-					.news-card.news-card--front
-						.news-card__pic
-							img(src="", alt="")
-						.news-card__text
-							.news-card__title Выбирай свой паркинг
-							.news-card__desc Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.
-					.news-card.news-card--front
-						.news-card__pic
-							img(src="", alt="")
-						.news-card__text
-							.news-card__title Ипотека 1% до 30 сентября
-							.news-card__desc Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.
-					.news-card.news-card--front
-						.news-card__pic
-							img(src="", alt="")
-						.news-card__text
-							.news-card__title Коммерческие помещения
-							.news-card__desc Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.
-				.showmore-wrap
-					a.btn.btn--dark(href="")
-						span Все акции и новости
+						.tabs-controls
+							.tabs-controls__item.tabs-controls__item--active Акции
+							.tabs-controls__item Новости
+				.newssec-main
+					.newssec-grid.newssec-grid--front
+						.news-card.news-card--front
+							.news-card__pic
+								img(src="img/new-pic-1.jpg", alt="")
+								.news-card__text-over-pic Выбирай свой<br> паркинг
+							.news-card__text
+								.news-card__title Выбирай свой паркинг
+								.news-card__desc Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.
+						.news-card.news-card--front
+							.news-card__pic
+								img(src="img/new-pic-2.jpg", alt="")
+								.news-card__text-over-pic  ипотека 1%
+							.news-card__text
+								.news-card__title Ипотека 1% до 30 сентября
+								.news-card__desc Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.
+						.news-card.news-card--front
+							.news-card__pic
+								img(src="img/new-pic-3.jpg", alt="")
+								.news-card__text-over-pic Коммерческие помещения
+							.news-card__text
+								.news-card__title Коммерческие помещения
+								.news-card__desc Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.
+					.showmore-wrap
+						a.btn.btn--dark(href="")
+							span Все акции и новости
+
+
+		section.home-about
+			.container
+				.home-about-flex
+					.home-about-flex__left
+						.home-about-pic
+							img(src="img/home/about.jpg", alt="")
+					.home-about-flex__right
+						.home-about-card
+							.home-about-card__text
+								h2.home-about-card__title.section-title О застройщике
+								.home-about-card__desc В команде «Континент Групп» — исключительные профессионалы, которые наработали многолетний опыт в рядах других застройщиков. Мы объединились, чтобы сделать видимый прорыв на южном рынке недвижимости! За 5 лет готовимся войти в ТОП-5 девелоперов ЮФО!
+								.home-about-card__btn
+									a.btn(href="")
+										span Узнать больше
+							.home-about-card__bg
+
+		.prefooter-padding

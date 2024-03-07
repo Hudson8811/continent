@@ -47,12 +47,13 @@
                   <use xlink:href="img/sprites/sprite.svg#sh-heart"></use>
                 </svg>
               </div>
-              <div class="sh-button__counter">1</div></a><a class="sh-button" href="">
+              <div class="sh-button__counter">1</div></a><a class="sh-button js-call-me-modal" href="#">
               <div class="sh-button__icon">
                 <svg>
                   <use xlink:href="img/sprites/sprite.svg#sh-phone"></use>
                 </svg>
               </div></a></div>
+          <div class="sh-burger sh-mob-menu-trigger js-mob-menu-trigger"><span></span><span></span><span></span></div>
         </div>
       </div>
       <div class="mega-menu-wrap">
@@ -105,7 +106,7 @@
             <li class="sf-menu-item"><a href="">Ипотека</a></li>
             <li class="sf-menu-item"><a href="">О компании</a></li>
           </ul>
-          <div class="sf-top__btns"><a class="btn" href=""> Заказать звонок</a></div>
+          <div class="sf-top__btns"><a class="btn js-call-me-modal" href="#"> Заказать звонок</a></div>
         </div>
         <div class="sf-bottom">
           <div class="sf-bottom__left">
@@ -137,6 +138,34 @@
         </div>
       </div>
     </footer>
+    <noindex>
+      <div style="display:none;">
+        <div class="simple-modal" id="call-me-modal">
+          <div class="simple-modal__inner">
+            <div class="simple-modal__content">
+              <div class="simple-modal__title">Заказать обратный звонок</div>
+              <div class="simple-modal__form">
+                <div class="simple-modal__inputs">
+                  <div class="simple-modal__input">
+                    <input class="simple-input" type="text" name="" placeholder="Ваше имя">
+                  </div>
+                  <div class="simple-modal__input">
+                    <input class="simple-input" type="text" name="" placeholder="Телефон">
+                  </div>
+                  <div class="simple-modal__input"><a class="btn btn--w100" href=""><span>Заказать звонок</span></a></div>
+                </div>
+                <div class="simple-modal__privacy">Нажимая на кнопку, вы принимаете <a href="#">политику конфиденциальности</a> и даете согласие на обработку персональных данных</div>
+              </div>
+            </div>
+            <div class="simple-modal__close" data-fancybox-close>
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#modal-close"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </noindex>
     <script src="js/main.js"></script>
   </body>
 </html>
