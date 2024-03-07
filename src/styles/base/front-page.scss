@@ -1,10 +1,27 @@
 .ftb-slider-slide {
-	padding: 20px 0 25px;
-	height: 696px;
+	///padding: 20px 0 25px;
+	padding: 124px 0 129px;
+	min-height: 696px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
+
+	@include max(lg) {
+		padding: 80px 0 85px;
+		min-height: 616px;
+
+	}
+
+	@include max(md) {
+		justify-content: flex-end;
+		padding: 20px 0 89px;
+
+	}
+
+	@include max(sm) {
+		min-height: 160.4vw;
+	}
 
 	&__container {
 		position: relative;
@@ -46,6 +63,11 @@
 	padding: 34px 33px 33px;
 	max-width: 100%;
 
+	@include max(md) {
+		padding: 16px;
+		width: 100%;
+	}
+
 	&__title {
 		font-family: $songer;
 		font-weight: 800;
@@ -53,6 +75,18 @@
 		line-height: 110%;
 		letter-spacing: -0.02em;
 		color: #fff;
+
+		@include max(lg) {
+			font-size: 35px;
+		}
+
+		@include max(sm) {
+			font-size: 28px;
+		}
+
+		@include max(xs) {
+			font-size: 26px;
+		}
 	}
 
 	&__desc {
@@ -62,11 +96,34 @@
 		line-height: 140%;
 		letter-spacing: -0.02em;
 		color: #fff;
+
+		@include max(lg) {
+			font-style: 18px;
+		}
+
+		@include max(md) {
+			margin-top: 12px;
+		}
+
+		@include max(sm) {
+			font-size: 15px;
+		}
 	}
 
 	&__btn-wrap {
 		display: flex;
 		margin-top: 23px;
+
+		@include max(md) {
+			margin-top: 12px;
+			width: 100%;
+
+			.btn {
+				width: 100%;
+			}
+		}
+
+
 	}
 
 }
@@ -82,6 +139,10 @@
 	left: 0;
 	bottom: 64px;
 	z-index: 4;
+
+	@include max(lg) {
+		bottom: 16px;
+	}
 
 }
 
@@ -166,6 +227,13 @@
 	padding-bottom: 55px;
 	padding-top: 65px;
 
+	@include max(lg) {
+		padding-top: 49px;
+		padding-bottom: 41px;
+
+	}
+
+
 	&::after {
 		content: '';
 		display: block;
@@ -176,6 +244,14 @@
 		right: -40px;
 		background: rgba(255, 255, 255, 0.25);
 
+		@include max(lg) {
+			right: -15px;
+		}
+
+		@include max(md) {
+			right: -9px;
+		}
+
 	}
 }
 
@@ -185,9 +261,29 @@
 	margin-right: -40px;
 	border-top: 1px solid rgba(255, 255, 255, 0.25);
 
+	@include max(lg) {
+		height: 22px;
+		margin-right: -15px;
+		position: relative;
+	}
+
+	@include max(md) {
+		margin-right: -9px;
+	}
+
 	img {
 		opacity: 0.25;
 		margin-top: 0px;
+
+		@include max(lg) {
+			height: 100%;
+			position: absolute;
+			right: 0;
+			top: 0;
+			height: 100%;
+			width: auto;
+
+		}
 	}
 }
 
@@ -198,6 +294,14 @@
 	letter-spacing: -0.02em;
 	color: #fff;
 	font-family: $songer;
+
+	@include max(lg) {
+		font-size: 26px;
+	}
+
+	@include max(xs) {
+		font-size: 24px;
+	}
 }
 
 .section-title--filters {}
@@ -211,16 +315,40 @@
 	position: relative;
 	overflow: hidden;
 
+	@include max(md) {
+		margin-left: -16px;
+		margin-bottom: -17px;
+		margin-top: 24px;
+	}
 }
 
 .filters-row--hidden {
 	height: 121px;
+
+	@include max(md) {
+		height: 525px;
+	}
 }
 
 .filters-row-item {
 	width: calc(20% - 32px);
 	margin-left: 32px;
 	margin-bottom: 35px;
+	flex-grow: 1;
+
+	@include max(1600) {
+		width: calc(33.33% - 32px);
+	}
+
+	@include max(md) {
+		margin-left: 16px;
+		margin-bottom: 17px;
+		width: calc(50% - 16px);
+	}
+
+	@include max(sm) {
+		width: calc(100% - 16px);
+	}
 
 	&__name {
 		font-weight: 400;
@@ -246,6 +374,10 @@
 	&__field {
 		margin-top: 11px;
 
+		@include max(md) {}
+
+		margin-top: 12px;
+
 
 	}
 }
@@ -255,6 +387,13 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-bottom: -24px;
+
+	@include max(md) {
+		margin-top: 22px;
+		margin-bottom: -13px;
+	}
 
 	&__left {
 		display: flex;
@@ -267,17 +406,37 @@
 
 	}
 
-	&__right {}
+	&__right {
+		@include max(md) {
+			width: 100%;
+		}
+	}
+
+	&__left,
+	&__right {
+		margin-bottom: 24px;
+
+		@include max(md) {
+			margin-bottom: 13px;
+		}
+	}
+
 }
 
 .twi-switch--filter-sec {
 	margin-left: 48px;
 	margin-bottom: 10px;
+
+	@include max(md) {
+		margin-bottom: 13px;
+
+	}
+
 }
 
 .twi-switch {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	opacity: 0.6;
 	transition-duration: .3s;
 	cursor: pointer;
@@ -292,6 +451,7 @@
 		min-width: 22px;
 		height: 22px;
 		margin-right: 13px;
+		margin-top: -2px;
 
 		svg {
 			width: 100%;
@@ -315,6 +475,10 @@
 			display: none;
 		}
 	}
+
+	.twi-switch__icon svg {
+		transform: rotate(180deg);
+	}
 }
 
 .twi-switch--more-filters--opened {
@@ -329,7 +493,7 @@
 	}
 
 	.twi-switch__icon svg {
-		transform: rotate(180deg);
+		transform: rotate(0deg);
 	}
 }
 
@@ -345,6 +509,14 @@
 
 .section-margin {
 	margin-top: 160px;
+
+	@include max(lg) {
+		margin-top: 100px;
+	}
+
+	@include max(md) {
+		margin-top: 64px;
+	}
 }
 
 .our-projects {
@@ -372,12 +544,24 @@
 	margin-bottom: -32px;
 	margin-top: 48px;
 }
-a.project-card{
+
+a.project-card {
 	@include hov();
 }
+
 .project-card {
+	display: block;
 	width: calc(50% - 32px);
 	margin-bottom: 32px;
+
+	@include max(lg) {
+		width: calc(50% - 16px);
+	}
+
+	@include max(md) {
+		width: 100%;
+	}
+
 
 	&__pic {
 		display: block;

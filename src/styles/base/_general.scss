@@ -121,18 +121,18 @@ body {
 	max-width: calc(100% - 64px * 2);
 	margin: 0 auto;
 
-	@media screen and (max-width: 550px) {
+	@include max(lg){
 		max-width: calc(100% - 30px * 2);
+
+	}
+	@include max(md){
+		max-width: calc(100% - 16px * 2);
 	}
 
 	&--flex {
 		display: flex;
 	}
 
-	@media screen and (max-width: 550px) {
-		max-width: calc(100% - 15px * 2);
-
-	}
 }
 
 
@@ -143,6 +143,13 @@ body {
 	max-width: calc(100% - 64px);
 	margin-left: auto;
 	margin-right: 0;
+
+	@include max(lg){
+		max-width: calc(100% - 30px);
+	}
+	@include max(md){
+		max-width: calc(100% - 16px);
+	}
 
 	&--invert {
 		margin-left: 0;

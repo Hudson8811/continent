@@ -8,12 +8,29 @@
 	height: auto;
 	color: #fff;
 	padding: 24px 0;
+	@include max(lg){
+		padding: 14px 0 13px;
+	}
 }
 
 .sh-placeholder {
 	min-height: 88px;
 	display: block;
 	width: 100%;
+	@include max(lg){
+			min-height: 57px;
+	}
+}
+.container.sh-container{
+	@include max(lg){
+		width: 100%;
+		max-width: 100%;
+		padding-left: 40px;
+		padding-right: 12px;
+		margin: 0;
+	}
+
+
 }
 
 .sh-left-icon {
@@ -172,6 +189,7 @@
 	}
 }
 .sh-mob-menu-trigger{
+    margin-left: 24px;
 	@include min(lg){
 		display: none;
 	}
@@ -185,6 +203,10 @@
 	letter-spacing: -0.02em;
 	color: #fff;
 	@include hov();
+	@include max(sm){
+		display: none;
+	}
+
 }
 
 .sh-buttons {
@@ -202,6 +224,10 @@
 	position: relative;
 	@include hov();
 
+	@include max(lg){
+		width: 30px;
+		height: 30px;
+	}
 
 	&__icon {
 		display: flex;
@@ -214,6 +240,21 @@
 			height: 20px;
 			fill: #fff;
 			stroke: #fff;
+			@include max(lg){
+				width: 15px;
+				height: 15px;
+			}
+		}
+		&-mob{
+			@include min(lg){
+				display: none;
+			}
+		}
+		&-desktop{
+
+			@include max(lg){
+				display: none;
+			}
 		}
 	}
 
@@ -235,10 +276,19 @@
 		letter-spacing: -0.04em;
 		color: #fff;
 		//font-family: $inter;
+			@include max(lg){
+				left: 18px;
+				height: 12px;
+				min-width: 12px;
+				padding: 0 3px 0 2px
+			}
 	}
 
 	&+.sh-button {
 		margin-left: 16px;
+		@include max(lg){
+			margin-left: 12px;
+		}
 	}
 }
 
@@ -254,6 +304,9 @@
 	&--active{
 		opacity: 1;
 		pointer-events: all;
+	}
+	@include max(lg){
+		display: none;
 	}
 }
 

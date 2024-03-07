@@ -22,12 +22,20 @@ header.site-header
 			.sh-buttons
 				a.sh-button(href="")
 					.sh-button__icon
-						svg
+
+						svg.sh-button__icon-mob
+							use(xlink:href="img/sprites/sprite.svg#sh-heart-mob")
+
+						svg.sh-button__icon-desktop
 							use(xlink:href="img/sprites/sprite.svg#sh-heart")
 					.sh-button__counter 1
 				a.sh-button.js-call-me-modal(href="#")
 					.sh-button__icon
-						svg
+
+						svg.sh-button__icon-mob
+							use(xlink:href="img/sprites/sprite.svg#sh-phone-mob")
+
+						svg.sh-button__icon-desktop
 							use(xlink:href="img/sprites/sprite.svg#sh-phone")
 			.sh-burger.sh-mob-menu-trigger.js-mob-menu-trigger
 				span
