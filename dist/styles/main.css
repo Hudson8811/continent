@@ -6014,6 +6014,12 @@ a.project-card:hover {
   width: calc(33.33% - 32px);
   margin-left: 32px;
   margin-bottom: 47px;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.news-card:hover {
+  opacity: 0.7;
 }
 
 .news-card--front {

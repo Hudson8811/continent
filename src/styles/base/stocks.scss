@@ -154,6 +154,7 @@
 	width: calc(33.33% - 32px);
 	margin-left: 32px;
 	margin-bottom: 47px;
+	@include hov();
 
 	@include max(lg) {
 		width: calc(50% - 32px);
