@@ -220,6 +220,14 @@
 		}
 	}
 }
+.select2-container--custom-theme.select2-container--smaller-lrp{
+	.select2-selection--single .select2-selection__rendered {
+			padding: 16px 10px 16px 15px;
+	}
+	.select2-selection__arrow{
+			margin-right: 14px;
+	}
+}
 
 .chb-group {
 	display: flex;
@@ -338,6 +346,10 @@
 
 	&__inp-single {
 		width: 100%;
+		&--smaller-lrp{
+			padding-left: 15px;
+
+		}
 	}
 
 

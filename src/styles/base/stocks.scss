@@ -132,6 +132,13 @@
 			margin-bottom: -24px;
 		}
 
+		&+.showmore-wrap {
+			margin-top: 64px;
+
+			@include max(md) {
+				margin-top: 24px;
+			}
+		}
 
 	}
 
@@ -141,13 +148,6 @@
 
 	}
 
-	&+.showmore-wrap {
-		margin-top: 64px;
-
-		@include max(md) {
-			margin-top: 24px;
-		}
-	}
 }
 
 .news-card {
