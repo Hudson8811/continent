@@ -342,8 +342,8 @@ table {
 	}
 	&--small-64{
 		padding-top: 64px;
-		@include max(lg) {
-			padding-top: 64px;
+		@include max(md) {
+			padding-top: 47px;
 		}
 	}
 }

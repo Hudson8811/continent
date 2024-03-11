@@ -5928,6 +5928,7 @@ a.project-card:hover {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+  gap: 5px 0;
 }
 
 .breadcrumbs__item {
@@ -5957,7 +5958,7 @@ a.project-card:hover {
   line-height: inherit;
 }
 
-.breadcrumbs__item:not(:first-child)::before {
+.breadcrumbs__item:not(:last-child)::after {
   content: "";
   display: inline-block;
   background-color: rgba(255, 255, 255, 0.5);
@@ -6288,10 +6289,6 @@ a.project-card:hover {
     padding-top: 100px;
   }
 
-  .prefooter-padding--small-64 {
-    padding-top: 64px;
-  }
-
   .site-header {
     padding: 14px 0 13px;
   }
@@ -6398,6 +6395,14 @@ a.project-card:hover {
     width: calc(50% - 16px);
   }
 
+  .page-top--only-breadcrumbs .container--page-top {
+    padding-bottom: 28px;
+  }
+
+  .page-top--only-breadcrumbs .filters-art {
+    height: 19px;
+  }
+
   .container--page-top {
     padding-top: 24px;
     padding-bottom: 38px;
@@ -6419,6 +6424,10 @@ a.project-card:hover {
   .news-card {
     width: calc(50% - 32px);
   }
+
+  .article {
+    padding-top: 24px;
+  }
 }
 
 @media only screen and (max-width: 960px) {
@@ -6432,6 +6441,10 @@ a.project-card:hover {
 
   .prefooter-padding {
     padding-top: 64px;
+  }
+
+  .prefooter-padding--small-64 {
+    padding-top: 47px;
   }
 
   .select2-container--custom-theme.select2-container--mobile-smaller-lrp .select2-selection--single .select2-selection__rendered {
@@ -6577,6 +6590,13 @@ a.project-card:hover {
     margin-top: 22px;
   }
 
+  .article-text-style h1 + *,
+  .article-text-style h2 + *,
+  .article-text-style h3 + *,
+  .article-text-style h4 + * {
+    margin-top: 16px;
+  }
+
   .article-text-style h1 {
     font-size: 24px;
   }
@@ -6594,17 +6614,24 @@ a.project-card:hover {
     padding-left: 18px;
   }
 
-  .article-text-style ol li::before {
-    left: 0;
-    top: 0;
-  }
-}
-
-@media only screen and (max-width: 767px) {
   .article-text-style ul li::before,
   .article-text-style ol li::before {
     left: 0;
     top: 8px;
+  }
+
+  .article-text-style ol li::before {
+    left: -11px;
+    top: 0;
+  }
+
+  .article-footer {
+    padding-top: 25px;
+    margin-top: 23px;
+  }
+
+  .article-finfo {
+    font-size: 14px;
   }
 }
 
