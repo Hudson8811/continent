@@ -5911,12 +5911,17 @@ a.project-card:hover {
   border-top: 1px solid rgba(255, 255, 255, 0.25);
 }
 
-.page-top--only-breadcrumbs .container--page-top {
-  padding-bottom: 42px;
+.page-top--only-breadcrumbs {
+  /*.filters-art{
+  	height: 16px;
+  	@include max(lg){
+  		height: 19px;
+  	}
+  }*/
 }
 
-.page-top--only-breadcrumbs .filters-art {
-  height: 16px;
+.page-top--only-breadcrumbs .container--page-top {
+  padding-bottom: 42px;
 }
 
 .container--page-top {
@@ -6397,10 +6402,6 @@ a.project-card:hover {
 
   .page-top--only-breadcrumbs .container--page-top {
     padding-bottom: 28px;
-  }
-
-  .page-top--only-breadcrumbs .filters-art {
-    height: 19px;
   }
 
   .container--page-top {
