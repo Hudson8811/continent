@@ -6794,6 +6794,10 @@ a.project-card:hover {
     display: none;
   }
 
+  .our-projects .showmore-wrap .btn {
+    width: 100%;
+  }
+
   .our-projects-flex {
     margin-top: 25px;
     margin-bottom: -25px;

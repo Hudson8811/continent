@@ -588,6 +588,13 @@
 			display: none;
 		}
 	}
+	.showmore-wrap{
+		.btn{
+			@include max(md){
+				width: 100%;
+			}
+		}
+	}
 }
 
 
