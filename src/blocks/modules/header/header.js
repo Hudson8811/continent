@@ -9,6 +9,8 @@ $(function(){
 
     $('.js-mob-menu-trigger').on('click', function () {
         $(this).toggleClass('sh-burger--active');
+        $('body').toggleClass('body-mob-menu-opened');
+
     });
 
 

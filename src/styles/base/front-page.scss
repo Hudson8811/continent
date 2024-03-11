@@ -575,7 +575,19 @@
 		margin-right: 15px;
 	}
 
-	&__top-right {}
+	&__top-right {
+		@include max(md) {
+			display: none;
+		}
+	}
+
+	&__mob-btn-all-wrap {
+		margin-top: 16px;
+
+		@include min(md) {
+			display: none;
+		}
+	}
 }
 
 
@@ -586,6 +598,12 @@
 	flex-wrap: wrap;
 	margin-bottom: -32px;
 	margin-top: 48px;
+
+	@include max(md) {
+
+		margin-top: 25px;
+		margin-bottom: -25px;
+	}
 }
 
 a.project-card {
@@ -603,6 +621,7 @@ a.project-card {
 
 	@include max(md) {
 		width: 100%;
+		margin-bottom: 25px;
 	}
 
 
@@ -646,6 +665,10 @@ a.project-card {
 		font-family: $songer;
 		padding: 10px;
 		text-align: center;
+
+		@include max(md) {
+			font-size: 24px;
+		}
 	}
 
 	&__labels {
@@ -655,6 +678,10 @@ a.project-card {
 		width: 100%;
 		padding: 24px;
 		z-index: 2;
+
+		@include max(md) {
+			padding: 8px;
+		}
 
 	}
 
@@ -677,27 +704,40 @@ a.project-card {
 	line-height: 140%;
 	letter-spacing: -0.02em;
 	color: #fff;
+
+	@include max(md) {
+		font-size: 12px;
+		line-height: 140%;
+		padding: 5px 8px;
+	}
 }
 
 .project-card-content {
 	color: #fff;
 	margin-top: 25px;
 
+	@include max(md) {
+		margin-top: 13px;
+	}
+
 	&__top {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+		gap: 15px;
 		font-weight: 500;
 		font-size: 24px;
 		line-height: 100%;
 		letter-spacing: -0.02em;
 		text-transform: uppercase;
 		font-family: $songer;
+
+		@include max(md) {
+			font-size: 16px;
+		}
 	}
 
-	&__title {
-		margin-right: 10px;
-	}
+	&__title {}
 
 	&__price {
 		color: #aac7cf;
@@ -711,6 +751,15 @@ a.project-card {
 	padding-top: 15px;
 	margin-bottom: -10px;
 	border-top: 1px solid rgba(255, 255, 255, 0.25);
+
+	@include max(md) {
+		margin-top: 11px;
+		padding-top: 12px;
+	}
+
+	@include max(sm) {
+		margin-bottom: 0;
+	}
 }
 
 .project-card-info {
@@ -722,6 +771,18 @@ a.project-card {
 	letter-spacing: -0.02em;
 	margin-bottom: 10px;
 
+	@include max(md) {
+		font-weight: 300;
+		font-size: 15px;
+		line-height: 120%;
+		letter-spacing: -0.02em;
+	}
+
+	@include max(sm) {
+		width: 100%;
+		margin-bottom: 0;
+	}
+
 	&__name {
 		font-weight: 700;
 	}
@@ -730,16 +791,63 @@ a.project-card {
 		font-weight: 300;
 		margin-top: 5px;
 		margin-top: 4px;
+
+		@include max(md) {
+
+			margin-top: 7px;
+		}
 	}
 
-	&:nth-child(2n) {
-		border-left: 1px solid rgba(255, 255, 255, 0.25);
-		padding-left: 32px;
+	@include min(sm) {
+		&:nth-child(2n) {
+			border-left: 1px solid rgba(255, 255, 255, 0.25);
+			padding-left: 32px;
+
+			@include max(lg) {
+				padding-left: 16px;
+			}
+		}
+
+		&:nth-child(2n-1) {
+			padding-right: 32px;
+
+			@include max(lg) {
+				padding-right: 16px;
+			}
+		}
 	}
 
-	&:nth-child(2n-1) {
-		padding-right: 32px;
+	&+.project-card-info {
+		@include max(sm) {
+
+			border-top: 1px solid rgba(255, 255, 255, 0.25);
+			padding-top: 14px;
+			margin-top: 10px;
+		}
 	}
+
+	&:last-child {
+		@include max(sm) {
+			padding-right: 44px;
+
+			position: relative;
+
+			&::after {
+				content: '';
+				display: block;
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				width: 34px;
+				height: 34px;
+				background: url(../img/svg/icon-arrow-in-circle-grey.svg) no-repeat center center;
+				background-size: contain;
+			}
+		}
+
+	}
+
+
 
 }
 
@@ -769,12 +877,23 @@ a.project-card {
 	justify-content: space-between;
 	margin-top: 48px;
 
+	@include max(1340) {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	@include max(md) {
+
+		margin-top: 24px;
+	}
+
 	&__main {
 		width: 100%;
 		max-width: calc(100% - 467px - 32px);
-		padding: 32px 32px 16px;
-		background: rgba(255, 255, 255, 0.05);
-		border-radius: 12px;
+
+		@include max(1340) {
+			max-width: 100%;
+		}
 	}
 
 	&__side {
@@ -782,6 +901,18 @@ a.project-card {
 		margin-left: 32px;
 		display: flex;
 		flex-direction: column;
+
+		@include max(1340) {
+			margin-left: 0;
+			width: 100%;
+			margin-top: 24px;
+
+			.purchase-way-card__pic {
+				width: 467px;
+				max-width: 100%;
+				align-self: center;
+			}
+		}
 
 		&>* {
 			flex-grow: 1;
@@ -791,17 +922,32 @@ a.project-card {
 }
 
 .purchase-ways-form {
-
+	padding: 32px 32px 16px;
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 12px;
 	color: #fff;
+
+	@include max(md) {
+		padding: 16px 16px 32px;
+	}
 
 	&__top {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+
+		@include max(sm) {
+			flex-direction: column;
+		}
 	}
 
 	&__top-left {
 		margin-right: 15px;
+
+		@include max(sm) {
+			width: 100%;
+			margin-right: 0;
+		}
 	}
 
 	&__title {
@@ -810,6 +956,14 @@ a.project-card {
 		line-height: 110%;
 		letter-spacing: -0.02em;
 		font-family: $songer;
+
+		@include max(sm) {
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 110%;
+			letter-spacing: -0.02em;
+			color: #fff;
+		}
 	}
 
 	&__desc {
@@ -819,9 +973,23 @@ a.project-card {
 		letter-spacing: -0.02em;
 		color: #fff;
 		margin-top: 8px;
+
+		@include max(sm) {
+			font-size: 15px;
+			margin-top: 11px;
+
+		}
 	}
 
-	&__top-right {}
+	&__top-right {
+		flex-shrink: 0;
+
+		@include max(sm) {
+			width: 100%;
+			margin-top: 24px;
+
+		}
+	}
 
 	&__main {
 		border-top: 1px solid rgba(255, 255, 255, 0.07);
@@ -840,12 +1008,21 @@ a.project-card {
 
 	margin-left: -16px;
 	margin-bottom: -16px;
+
+	@include max(sm) {
+		margin-bottom: -29px;
+	}
 }
 
 .pw-control {
 	width: calc(100% - 16px);
 	margin-left: 16px;
 	margin-bottom: 16px;
+	flex-grow: 1;
+
+	@include max(sm) {
+		margin-bottom: 29px;
+	}
 
 	&__name {
 		font-weight: 400;
@@ -858,16 +1035,100 @@ a.project-card {
 	&__field {
 		margin-top: 4px;
 	}
+
+	&--w33 {
+		width: calc(33.33% - 16px);
+
+		@include max(sm) {
+			width: calc(100% - 16px);
+
+		}
+	}
+
+	&--md100 {
+		@include max(md) {
+			width: calc(100% - 16px);
+
+		}
+	}
 }
 
-.pw-control--w33 {
-	width: calc(33.33% - 16px);
+@include max(md) {
+	.pw-banks-wrap {
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: #1b283a;
+		z-index: 99;
+		display: flex;
+		flex-direction: column;
+		padding-bottom: 50px;
+		pointer-events: none;
+		opacity: 0;
+		transition:  opacity .3s;
+
+		&--modal-opened{
+			pointer-events: all;
+			opacity: 1;
+		}
+
+		&__top,
+		&__main {
+			padding: 0 16px;
+		}
+
+		&__top {
+			border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+			width: 100%;
+			height: 57px;
+			flex-shrink: 0;
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+		}
+
+		&__close {
+			display: block;
+			width: 36px;
+			height: 37px;
+			cursor: pointer;
+
+			background: url(../img/svg/banks-x.svg) no-repeat center center;
+			background-size: contain;
+			position: relative;
+			margin-right: -9px;
+
+			&::before {
+				content: '';
+				display: block;
+				position: absolute;
+				left: -10px;
+				top: -10px;
+				right: 0px;
+				bottom: -10px;
+			}
+
+		}
+
+		&__main {
+			margin-top: 24px;
+			max-height: calc(100% - 108px);
+			overflow-y: auto;
+		}
+	}
+
 }
 
 .pw-banks {
 	&--in-form {
 
 		margin-top: 16px;
+
+		@include max(md) {
+			margin-top: 0;
+		}
 	}
 }
 
@@ -877,30 +1138,73 @@ a.project-card {
 	align-items: center;
 	padding: 31px 0;
 
+	@include max(md) {
+		flex-wrap: wrap;
+		padding: 16px;
+		background: rgba(255, 255, 255, 0.05);
+		border-radius: 12px;
+		position: relative;
+	}
+
 	&+.pw-bank {
 
 		border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+		@include max(md) {
+			border: none;
+			margin-top: 16px;
+		}
 	}
 
 	&__col {
 		padding-right: 15px;
 
-		&--name {
-			display: flex;
-			align-items: center;
-			width: 42.65%;
+		@include min(md) {
+
+			&--name {
+				display: flex;
+				align-items: center;
+				width: 42.65%;
+			}
+
+			&--payment {
+				width: 32.5%;
+			}
+
+			&--rate {
+				flex-grow: 1;
+			}
+
+			&--btn {
+				padding-right: 0;
+			}
 		}
 
-		&--payment {
-			width: 32.5%;
-		}
+		@include max(md) {
 
-		&--rate {
-			flex-grow: 1;
-		}
 
-		&--btn {
-			padding-right: 0;
+			&--name {
+				display: flex;
+				align-items: center;
+				width: 100%;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+				margin-bottom: 16px;
+				padding-bottom: 22px;
+				padding-right: 40px;
+				padding-top: 8px;
+			}
+
+			&--payment {
+				width: 68.5%;
+				padding-right: 10px;
+			}
+			&--rate {
+				padding-right: 0;
+			}
+			&--btn {
+				padding-right: 0;
+			}
+
 		}
 	}
 
@@ -908,6 +1212,11 @@ a.project-card {
 		width: 40px;
 		min-width: 40px;
 		margin-right: 32px;
+		@include max(md){
+			width: 25px;
+			min-width: 25px;
+			margin-right: 12px;
+		}
 
 		svg,
 		img {
@@ -922,6 +1231,9 @@ a.project-card {
 		font-size: 16px;
 		line-height: 140%;
 		letter-spacing: -0.02em;
+		@include max(md){
+			font-size: 14px;
+		}
 	}
 
 	&__info-top {
@@ -937,13 +1249,119 @@ a.project-card {
 		font-size: 18px;
 		line-height: 140%;
 		letter-spacing: -0.02em;
+		@include max(md){
+			font-size: 15px;
+			margin-top: 4px;
+		}
 	}
 
 
 	&__btn {
 		width: 40px;
 		min-width: 40px;
+
+		@include max(md) {
+
+			position: absolute;
+			right: 13px;
+			top: 16px;
+		}
 	}
+}
+
+
+.pw-summary {
+	margin-top: 24px;
+	padding: 16px;
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 12px;
+
+	@include min(md) {
+		display: none;
+	}
+}
+
+.pw-summary-item {
+	display: flex;
+	justify-content: space-between;
+
+	&__right {
+		margin-left: 15px;
+		flex-shrink: 0;
+	}
+
+	&__left {
+		flex-grow: 1;
+	}
+
+	&__title {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 140%;
+		letter-spacing: -0.02em;
+		color: rgba(255, 255, 255, 0.35);
+	}
+
+	&__text {
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 140%;
+		letter-spacing: -0.02em;
+		color: #fff;
+	}
+
+	&+.pw-summary-item {
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		margin-top: 24px;
+		padding-top: 24px;
+
+	}
+}
+
+.pws-circles {
+	display: flex;
+}
+
+.pws-icon {
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	background: #313d4e;
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	span {
+		font-weight: 500;
+		font-size: 13px;
+		line-height: 140%;
+		letter-spacing: -0.02em;
+		color: #fff;
+		text-align: center;
+	}
+
+	img {
+		width: 23px;
+		height: 23px;
+		object-fit: contain;
+		object-position: center center;
+	}
+
+	&:nth-child(1) {}
+
+	&:nth-child(2) {}
+
+	&:nth-child(3) {}
+
+	&+.pws-icon {
+		margin-left: -14.625px;
+
+	}
+}
+
+.pw-summary-btn {
+	margin-top: 24px;
 }
 
 .purchase-way-card {
@@ -957,6 +1375,11 @@ a.project-card {
 		flex-grow: 1;
 		padding: 32px;
 		padding-bottom: 0;
+
+		@include max(md) {
+			padding: 16px;
+			padding-bottom: 0;
+		}
 	}
 
 	&__name {
@@ -965,6 +1388,10 @@ a.project-card {
 		line-height: 110%;
 		letter-spacing: -0.02em;
 		text-transform: uppercase;
+
+		@include max(md) {
+			font-size: 20px;
+		}
 	}
 
 	&__desc {
@@ -973,15 +1400,35 @@ a.project-card {
 		line-height: 140%;
 		letter-spacing: -0.02em;
 		margin-top: 24px;
+
+		@include max(md) {
+			margin-top: 12px;
+			font-size: 15px;
+		}
 	}
 
 	&__btn-wrap {
 		margin-top: 24px;
 		display: flex;
+
+		@include max(md) {
+			margin-top: 16px;
+		}
+
+		@include max(sm) {
+			width: 100%;
+			.btn{
+				width: 100%;
+			}
+		}
 	}
 
 	&__pic {
 		margin-top: 15px;
+
+		@include max(md) {
+			margin-top: 20px;
+		}
 
 		img {
 			width: 100%;
@@ -1011,6 +1458,8 @@ a.project-card {
 
 .newssec-top {
 	display: flex;
+	flex-wrap: wrap;
+	gap: 24px;
 	justify-content: space-between;
 	align-items: center;
 
@@ -1024,27 +1473,52 @@ a.project-card {
 	padding-top: 48px;
 
 	border-top: 1px solid rgba(255, 255, 255, 0.25);
+
+	@include max(md) {
+
+		margin-top: 23px;
+		padding-top: 24px;
+	}
 }
 
 
 .home-about {
 	margin-top: 120px;
+
+	@include max(md) {
+		margin-top: 69px;
+	}
 }
 
 .home-about-flex {
 	display: flex;
 	justify-content: space-between;
 
+	@include max(md) {
+		display: block;
+	}
+
 	&__left {
 		width: calc(47.69022% - 16px);
 		display: flex;
 		flex-direction: column;
+
+		@include max(md) {
+			width: 100%;
+		}
+
 	}
 
 	&__right {
 		width: calc(52.30978% - 16px);
 		display: flex;
 		flex-direction: column;
+
+		@include max(md) {
+			width: 100%;
+			margin-top: 24px;
+		}
+
 	}
 }
 
@@ -1059,6 +1533,10 @@ a.project-card {
 		content: '';
 		display: block;
 		padding-top: 59.9125%;
+
+		@include max(md) {
+			padding-top: 80.8%;
+		}
 	}
 
 	img {
@@ -1077,6 +1555,7 @@ a.project-card {
 
 	position: relative;
 
+
 	&__text {
 		position: relative;
 		z-index: 2;
@@ -1085,6 +1564,11 @@ a.project-card {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
+		width: 100%;
+
+		@include max(md) {
+			padding: 16px;
+		}
 	}
 
 	&__title {
@@ -1094,6 +1578,14 @@ a.project-card {
 		letter-spacing: -0.02em;
 		color: #fff;
 		font-family: $songer;
+
+		@include max(md) {
+			font-size: 22px;
+		}
+
+		@include max(xs) {
+			font-size: 22px;
+		}
 	}
 
 	&__desc {
@@ -1106,10 +1598,19 @@ a.project-card {
 		margin-top: 24px;
 		width: 458px;
 		max-width: 100%;
+
+		@include max(md) {
+			margin-top: 12px;
+			font-size: 15px;
+		}
 	}
 
 	&__btn {
 		margin-top: 24px;
+
+		@include max(md) {
+			width: 100%;
+		}
 	}
 
 	&__bg {
@@ -1119,5 +1620,9 @@ a.project-card {
 		z-index: 1;
 		background: url(../img/svg/home-about-bg-art.svg) no-repeat center right;
 		background-size: auto 100%;
+
+		@include max(md) {
+			display: none;
+		}
 	}
 }

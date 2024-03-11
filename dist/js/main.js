@@ -38,6 +38,8 @@ $(function(){
 
     $('.js-mob-menu-trigger').on('click', function () {
         $(this).toggleClass('sh-burger--active');
+        $('body').toggleClass('body-mob-menu-opened');
+
     });
 
 
@@ -51,6 +53,15 @@ function num_word(value, words) {
 	if (num > 1 && num < 5) return words[1];
 	if (num == 1) return words[0];
 	return words[2];
+}
+
+function myLockBody(){
+	$('html').addClass('with-fancybox');
+	$('body').addClass('hide-scrollbar');
+}
+function myUnlockBody(){
+	$('html').removeClass('with-fancybox');
+	$('body').removeClass('hide-scrollbar');
 }
 
 $(function () {
@@ -351,5 +362,20 @@ $(function () {
 		e.preventDefault();
 		e.stopPropagation();
 		Fancybox.show([{ src: "#call-me-modal", type: "inline",closeButton:false }]);
-	})
+	});
+
+
+	$('.js-open-pw-banks-modal').on('click',function(e){
+		e.preventDefault();
+		e.stopPropagation();
+
+		$('#banks-modal').addClass('pw-banks-wrap--modal-opened');
+		myLockBody();
+	});
+	$('.js-pw-banks-modal-close').on('click',function(e){
+		e.preventDefault();
+		e.stopPropagation();
+		$('#banks-modal').removeClass('pw-banks-wrap--modal-opened');
+		myUnlockBody();
+	});
 });

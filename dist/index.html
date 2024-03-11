@@ -100,6 +100,26 @@
         </div>
       </div>
     </header>
+    <div class="mob-menu-block">
+      <div class="sh-placeholder"></div>
+      <div class="mob-menu-block__part">
+        <div class="mob-menu mob-menu--large"><a class="mob-menu__item" href="">Квартиры</a><a class="mob-menu__item" href="">Объекты</a><a class="mob-menu__item" href="">О компании</a><a class="mob-menu__item" href="">Ипотека</a></div>
+      </div>
+      <div class="mob-menu-block__part">
+        <div class="mob-menu mob-menu"><a class="mob-menu__item" href="">Способы покупки</a><a class="mob-menu__item" href="">Контакты</a><a class="mob-menu__item" href="">Новости и Акции</a><a class="mob-menu__item" href="">Коммерческая недвижимость</a><a class="mob-menu__item" href="">Разрешительная документация</a></div>
+      </div>
+      <div class="mob-menu-block__part"><a class="mob-menu-phone" href="">
+          <div class="mob-menu-phone__icon">
+            <div class="sh-button js-call-me-modal" href="#">
+              <div class="sh-button__icon">
+                <svg class="sh-button__icon-mob">
+                  <use xlink:href="img/sprites/sprite.svg#sh-phone-mob"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="mob-menu-phone__text">+7 900 00 01 02</div></a></div>
+    </div>
     <div class="sh-placeholder"></div>
     <main class="site-main">
       <section class="front-top-banner">
@@ -397,6 +417,7 @@
               </div>
             </div>
             <div class="showmore-wrap"><a class="btn btn--dark" href=""><span>Показать еще</span></a></div>
+            <div class="our-projects__mob-btn-all-wrap"><a class="btn" href=""><span>Все проекты</span></a></div>
           </div>
         </section>
         <section class="purchase-ways section-margin">
@@ -413,124 +434,153 @@
                     <div class="purchase-ways-form__top-right"><a class="btn btn--with-arrow btn--dark" href=""><span>Получить расчет</span></a></div>
                   </div>
                   <div class="purchase-ways-form__main">
-                    <div class="pw-contols">
-                      <div class="pw-controls">
-                        <div class="pw-control pw-control--w33">
-                          <div class="pw-control__name">Ипотечная программа</div>
-                          <div class="pw-control__field">
-                            <div class="simple-select2-wrap">
-                              <select class="js-simple-select2-outer-dropdown" data-style="select2-container--style-2 select2-container--bdrs-4 select2-container--smaller-lrp">
-                                <option selected value="1">Субсидированная ипотека</option>
-                                <option value="2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, dolor!</option>
-                              </select>
-                            </div>
+                    <div class="pw-controls">
+                      <div class="pw-control pw-control--w33 pw-control--md100">
+                        <div class="pw-control__name">Ипотечная программа</div>
+                        <div class="pw-control__field">
+                          <div class="simple-select2-wrap">
+                            <select class="js-simple-select2-outer-dropdown" data-style="select2-container--style-2 select2-container--bdrs-4 select2-container--smaller-lrp">
+                              <option selected value="1">Субсидированная ипотека</option>
+                              <option value="2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, dolor!</option>
+                            </select>
                           </div>
                         </div>
-                        <div class="pw-control pw-control--w33">
-                          <div class="pw-control__name">Стоимость недвижимости</div>
-                          <div class="pw-control__field">
-                            <div class="rs-block rs-block--single rs-block--start-at-0 rs-block--style-2 custom-style-rs js-range-slider" data-single="true" data-min="1000000" data-max="10000000" data-suffix=" ₽" data-format="int" data-step="100000">
-                              <!--data-start-left data-start-right-->
-                              <div class="rs-block__top">
-                                <input class="rs-block__inp rs-block__inp-single rs-block__inp-single--smaller-lrp js-range-slider__inp-single" type="text">
-                              </div>
-                              <div class="rs-block__bottom">
-                                <div class="rs-block__rs js-range-slider__range"></div>
-                              </div>
+                      </div>
+                      <div class="pw-control pw-control--w33">
+                        <div class="pw-control__name">Стоимость недвижимости</div>
+                        <div class="pw-control__field">
+                          <div class="rs-block rs-block--single rs-block--start-at-0 rs-block--style-2 custom-style-rs js-range-slider" data-single="true" data-min="1000000" data-max="10000000" data-suffix=" ₽" data-format="int" data-step="100000">
+                            <!--data-start-left data-start-right-->
+                            <div class="rs-block__top">
+                              <input class="rs-block__inp rs-block__inp-single rs-block__inp-single--smaller-lrp js-range-slider__inp-single" type="text">
                             </div>
-                          </div>
-                        </div>
-                        <div class="pw-control pw-control--w33">
-                          <div class="pw-control__name">Срок</div>
-                          <div class="pw-control__field">
-                            <div class="rs-block rs-block--single rs-block--start-at-0 rs-block--style-2 custom-style-rs js-range-slider" data-single="true" data-min="1" data-max="30" data-suffix="year" data-format="int" data-step="1">
-                              <!--data-start-left data-start-right-->
-                              <div class="rs-block__top">
-                                <input class="rs-block__inp rs-block__inp-single rs-block__inp-single--smaller-lrp js-range-slider__inp-single" type="text">
-                              </div>
-                              <div class="rs-block__bottom">
-                                <div class="rs-block__rs js-range-slider__range"></div>
-                              </div>
+                            <div class="rs-block__bottom">
+                              <div class="rs-block__rs js-range-slider__range"></div>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="pw-banks pw-banks--in-form">
-                        <div class="pw-bank">
-                          <div class="pw-bank__col pw-bank__col--name">
-                            <div class="pw-bank__icon"><img src="img/svg/bank-psb.svg" alt=""></div>
-                            <div class="pw-bank__name">ПромСвязьБанк</div>
+                      <div class="pw-control pw-control--w33">
+                        <div class="pw-control__name">Срок</div>
+                        <div class="pw-control__field">
+                          <div class="rs-block rs-block--single rs-block--start-at-0 rs-block--style-2 custom-style-rs js-range-slider" data-single="true" data-min="1" data-max="30" data-suffix="year" data-format="int" data-step="1">
+                            <!--data-start-left data-start-right-->
+                            <div class="rs-block__top">
+                              <input class="rs-block__inp rs-block__inp-single rs-block__inp-single--smaller-lrp js-range-slider__inp-single" type="text">
+                            </div>
+                            <div class="rs-block__bottom">
+                              <div class="rs-block__rs js-range-slider__range"></div>
+                            </div>
                           </div>
-                          <div class="pw-bank__col pw-bank__col--payment">
-                            <div class="pw-bank__info-top">Ежемесячный платеж</div>
-                            <div class="pw-bank__info-bottom">54 679 ₽/мес.</div>
-                          </div>
-                          <div class="pw-bank__col pw-bank__col--rate">
-                            <div class="pw-bank__info-top">Ставка</div>
-                            <div class="pw-bank__info-bottom">5.7%</div>
-                          </div>
-                          <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn js-pw-bank__btn" href="#">
-                              <svg>
-                                <use xlink:href="img/sprites/sprite.svg#bank-arrow"></use>
-                              </svg></a></div>
                         </div>
-                        <div class="pw-bank">
-                          <div class="pw-bank__col pw-bank__col--name">
-                            <div class="pw-bank__icon"><img src="img/svg/bank-sber.svg" alt=""></div>
-                            <div class="pw-bank__name">Сбербанк</div>
+                      </div>
+                    </div>
+                    <div class="pw-banks-wrap" id="banks-modal">
+                      <div class="pw-banks-wrap__top">
+                        <div class="pw-banks-wrap__close js-pw-banks-modal-close"></div>
+                      </div>
+                      <div class="pw-banks-wrap__main">
+                        <div class="pw-banks pw-banks--in-form">
+                          <div class="pw-bank">
+                            <div class="pw-bank__col pw-bank__col--name">
+                              <div class="pw-bank__icon"><img src="img/svg/bank-psb.svg" alt=""></div>
+                              <!--.pw-bank__name Азиатско-Тихоокеанский-->
+                              <!--.pw-bank__name Алтайкапиталбанк-->
+                              <div class="pw-bank__name">ПромСвязьБанк</div>
+                            </div>
+                            <div class="pw-bank__col pw-bank__col--payment">
+                              <div class="pw-bank__info-top">Ежемесячный платеж</div>
+                              <div class="pw-bank__info-bottom">54 679 ₽/мес.</div>
+                            </div>
+                            <div class="pw-bank__col pw-bank__col--rate">
+                              <div class="pw-bank__info-top">Ставка</div>
+                              <div class="pw-bank__info-bottom">5.7%</div>
+                            </div>
+                            <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn js-pw-bank__btn" href="#">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#bank-arrow"></use>
+                                </svg></a></div>
                           </div>
-                          <div class="pw-bank__col pw-bank__col--payment">
-                            <div class="pw-bank__info-top">Ежемесячный платеж</div>
-                            <div class="pw-bank__info-bottom">54 679 ₽/мес.</div>
+                          <div class="pw-bank">
+                            <div class="pw-bank__col pw-bank__col--name">
+                              <div class="pw-bank__icon"><img src="img/svg/bank-sber.svg" alt=""></div>
+                              <div class="pw-bank__name">Сбербанк</div>
+                            </div>
+                            <div class="pw-bank__col pw-bank__col--payment">
+                              <div class="pw-bank__info-top">Ежемесячный платеж</div>
+                              <div class="pw-bank__info-bottom">54 679 ₽/мес.</div>
+                            </div>
+                            <div class="pw-bank__col pw-bank__col--rate">
+                              <div class="pw-bank__info-top">Ставка</div>
+                              <div class="pw-bank__info-bottom">5.7%</div>
+                            </div>
+                            <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn js-pw-bank__btn" href="#">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#bank-arrow"></use>
+                                </svg></a></div>
                           </div>
-                          <div class="pw-bank__col pw-bank__col--rate">
-                            <div class="pw-bank__info-top">Ставка</div>
-                            <div class="pw-bank__info-bottom">5.7%</div>
+                          <div class="pw-bank">
+                            <div class="pw-bank__col pw-bank__col--name">
+                              <div class="pw-bank__icon"><img src="img/svg/bank-alfa.svg" alt=""></div>
+                              <div class="pw-bank__name">Альфа Банк</div>
+                            </div>
+                            <div class="pw-bank__col pw-bank__col--payment">
+                              <div class="pw-bank__info-top">Ежемесячный платеж</div>
+                              <div class="pw-bank__info-bottom">54 679 ₽/мес.</div>
+                            </div>
+                            <div class="pw-bank__col pw-bank__col--rate">
+                              <div class="pw-bank__info-top">Ставка</div>
+                              <div class="pw-bank__info-bottom">5.7%</div>
+                            </div>
+                            <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn js-pw-bank__btn" href="#">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#bank-arrow"></use>
+                                </svg></a></div>
                           </div>
-                          <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn js-pw-bank__btn" href="#">
-                              <svg>
-                                <use xlink:href="img/sprites/sprite.svg#bank-arrow"></use>
-                              </svg></a></div>
-                        </div>
-                        <div class="pw-bank">
-                          <div class="pw-bank__col pw-bank__col--name">
-                            <div class="pw-bank__icon"><img src="img/svg/bank-alfa.svg" alt=""></div>
-                            <div class="pw-bank__name">Альфа Банк</div>
+                          <div class="pw-bank">
+                            <div class="pw-bank__col pw-bank__col--name">
+                              <div class="pw-bank__icon"><img src="img/svg/bank-skb.svg" alt=""></div>
+                              <div class="pw-bank__name">СовКомБанк</div>
+                            </div>
+                            <div class="pw-bank__col pw-bank__col--payment">
+                              <div class="pw-bank__info-top">Ежемесячный платеж</div>
+                              <div class="pw-bank__info-bottom">54 679 ₽/мес.</div>
+                            </div>
+                            <div class="pw-bank__col pw-bank__col--rate">
+                              <div class="pw-bank__info-top">Ставка</div>
+                              <div class="pw-bank__info-bottom">5.7%</div>
+                            </div>
+                            <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn js-pw-bank__btn" href="#">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#bank-arrow"></use>
+                                </svg></a></div>
                           </div>
-                          <div class="pw-bank__col pw-bank__col--payment">
-                            <div class="pw-bank__info-top">Ежемесячный платеж</div>
-                            <div class="pw-bank__info-bottom">54 679 ₽/мес.</div>
-                          </div>
-                          <div class="pw-bank__col pw-bank__col--rate">
-                            <div class="pw-bank__info-top">Ставка</div>
-                            <div class="pw-bank__info-bottom">5.7%</div>
-                          </div>
-                          <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn js-pw-bank__btn" href="#">
-                              <svg>
-                                <use xlink:href="img/sprites/sprite.svg#bank-arrow"></use>
-                              </svg></a></div>
-                        </div>
-                        <div class="pw-bank">
-                          <div class="pw-bank__col pw-bank__col--name">
-                            <div class="pw-bank__icon"><img src="img/svg/bank-skb.svg" alt=""></div>
-                            <div class="pw-bank__name">СовКомБанк</div>
-                          </div>
-                          <div class="pw-bank__col pw-bank__col--payment">
-                            <div class="pw-bank__info-top">Ежемесячный платеж</div>
-                            <div class="pw-bank__info-bottom">54 679 ₽/мес.</div>
-                          </div>
-                          <div class="pw-bank__col pw-bank__col--rate">
-                            <div class="pw-bank__info-top">Ставка</div>
-                            <div class="pw-bank__info-bottom">5.7%</div>
-                          </div>
-                          <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn js-pw-bank__btn" href="#">
-                              <svg>
-                                <use xlink:href="img/sprites/sprite.svg#bank-arrow"></use>
-                              </svg></a></div>
                         </div>
                       </div>
                     </div>
                   </div>
+                </div>
+                <div class="pw-summary">
+                  <div class="pw-summary-item">
+                    <div class="pw-summary-item__left">
+                      <div class="pw-summary-item__title">Ежемесячный платеж</div>
+                      <div class="pw-summary-item__text">от 54 679 ₽/мес.</div>
+                    </div>
+                  </div>
+                  <div class="pw-summary-item">
+                    <div class="pw-summary-item__left">
+                      <div class="pw-summary-item__title">Ставка</div>
+                      <div class="pw-summary-item__text">от 5.7%</div>
+                    </div>
+                    <div class="pw-summary-item__right">
+                      <div class="pws-circles">
+                        <div class="pws-icon"><img src="img/svg/bank-psb.svg" alt=""></div>
+                        <div class="pws-icon"><img src="img/svg/bank-sber.svg" alt=""></div>
+                        <div class="pws-icon"><span>16</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pw-summary-btn"><a class="btn btn--with-arrow btn--dark js-open-pw-banks-modal" href=""><span>Все предложения</span></a></div>
                 </div>
               </div>
               <div class="purchase-ways-flex__side">
@@ -610,13 +660,19 @@
     </main>
     <footer class="site-footer">
       <div class="container container--footer">
-        <div class="sf-top"><a class="sf-top__logo" href="/"><img src="img/footer-logo.png" alt=""></a>
+        <div class="sf-top"><a class="sf-top__logo" href="/"><img src="img/footer-logo.png" alt="">
+            <!--picture
+            source(srcset="img/mob-footer-logo.png" media="(max-width: 640px)")
+            
+            
+            --></a>
           <ul class="sf-top__menu sf-menu">
             <li class="sf-menu-item"><a href="">Квартиры</a></li>
             <li class="sf-menu-item"><a href="">Ипотека</a></li>
             <li class="sf-menu-item"><a href="">О компании</a></li>
           </ul>
           <div class="sf-top__btns"><a class="btn js-call-me-modal" href="#"> Заказать звонок</a></div>
+          <div class="sf-contacts sf-contacts--mob"><a href="">+7 (861) 202-22-01</a></div>
         </div>
         <div class="sf-bottom">
           <div class="sf-bottom__left">
@@ -630,7 +686,7 @@
             </ul>
           </div>
           <div class="sf-bottom__right">
-            <div class="sf-contacts"><a href="">+7 (861) 202-22-01</a></div>
+            <div class="sf-contacts sf-contacts--desktop"><a href="">+7 (861) 202-22-01</a></div>
             <div class="socials sf-socials"><a class="socials__item" href="">
                 <svg>
                   <use xlink:href="img/sprites/sprite.svg#soc-vk"></use>

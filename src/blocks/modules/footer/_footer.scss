@@ -1,161 +1,270 @@
 .site-footer {
-    background: #263344;
-    padding: 65px 0 80px;
+	background: #263344;
+	padding: 65px 0 80px;
+
+	@include max(sm) {
+		padding-top: 0;
+		padding-bottom: 60px;
+	}
 }
 
 .container--footer {}
 
 .sf-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 
-    &__logo {
-        width: 219px;
+	@include max(md) {
+		flex-wrap: wrap;
+		gap: 20px;
 
-        img {
-            width: 100%;
-            height: auto;
-        }
+	}
 
-        @include hov();
-    }
+	@include max(sm) {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0;
+	}
 
-    &__menu {}
+	&__logo {
+		width: 219px;
 
-    &__btns {}
+		img {
+			width: 100%;
+			height: auto;
+		}
+
+		@include max(sm) {
+			margin-left: -16px;
+			width: 288px;
+		}
+
+		@include hov();
+	}
+
+	&__menu {
+		@include max(md) {
+			order: 99;
+		}
+	}
+
+	&__btns {
+		@include max(sm) {
+			width: 100%;
+			margin-top: 42px;
+		}
+	}
 }
 
 .sf-menu {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -48px;
-    margin-bottom: -15px;
-    padding: 0 20px;
-    list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -48px;
+	margin-bottom: -15px;
+	padding: 0 20px;
+	list-style: none;
+
+	@include max(md) {
+		justify-content: center;
+		width: calc(100% + 48px);
+		margin-top: 0px;
+	}
+
+	@include max(sm) {
+		flex-direction: column;
+		margin-left: 0;
+		align-items: flex-start;
+		width: 100%;
+		padding: 0;
+		margin-top: 28px;
+	}
 }
 
 .sf-menu-item {
-    margin-left: 48px;
-    margin-bottom: 15px;
+	margin-left: 48px;
+	margin-bottom: 15px;
 
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 140%;
-    letter-spacing: -0.02em;
-    color: #fff;
-    padding: 4px 16px;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 140%;
+	letter-spacing: -0.02em;
+	color: #fff;
+	padding: 4px 16px;
 
-    a {
+	@include max(sm) {
+		margin-left: 0;
+		padding: 0;
+	}
 
-        @include hov();
-    }
+	a {
+		@include max(sm) {
+			display: block;
+			padding: 8px 0;
+		}
+
+		@include hov();
+	}
 }
 
 .sf-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    padding-top: 48px;
-    margin-top: 33px;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	padding-top: 48px;
+	margin-top: 33px;
+	border-top: 1px solid rgba(255, 255, 255, 0.15);
 
-    &__left {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
+	@include max(md) {
+		flex-direction: column-reverse;
+	}
 
-    &__right {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
+	@include max(sm) {
+		border-top: none;
+		padding-top: 0;
+		margin-top: 9px;
+	}
+
+	&__left {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		@include max(md) {
+			margin-top: 32px;
+		}
+	}
+
+	&__right {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
 }
 
 .sf-copyright {
-    width: 373px;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 140%;
-    letter-spacing: -0.02em;
-    color: rgba(255, 255, 255, 0.5);
-    p{
-        &+p{
-            margin-top: 14px;
-        }
-    }
+	width: 373px;
+	max-width: 100%;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 140%;
+	letter-spacing: -0.02em;
+	color: rgba(255, 255, 255, 0.5);
+
+	@include max(sm) {
+		font-size: 13px;
+	}
+
+	p {
+		&+p {
+			margin-top: 14px;
+
+			@include max(sm) {
+
+				margin-top: 12px;
+			}
+		}
+	}
 }
 
 .sf-bottom-links {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 17px;
-    margin-left: -32px;
-    margin-bottom: -20px;
-    list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 17px;
+	margin-left: -32px;
+	margin-bottom: -20px;
+	list-style: none;
+	@include max(sm){
+		margin-top: 23px;
+	}
 }
 
 .sf-bottom-link {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 140%;
-    letter-spacing: -0.02em;
-    color: #fff;
-    margin-left: 32px;
-    margin-bottom: 20px;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 140%;
+	letter-spacing: -0.02em;
+	color: #fff;
+	margin-left: 32px;
+	margin-bottom: 20px;
 
-    a {
-        @include hov();
-    }
+	@include max(sm) {
+		font-size: 13px;
+		margin-bottom: 24px;
+	}
+
+	a {
+		@include hov();
+	}
 
 
 }
 
 .sf-contacts {
-    text-align: right;
+	text-align: right;
 
-    a {
-        display: block;
-        font-weight: 600;
-        font-size: 24px;
-        color: #fff;
-        @include hov();
+	a {
+		display: block;
+		font-weight: 600;
+		font-size: 24px;
+		color: #fff;
+		@include hov();
 
-        &+a {
-            margin-top: 10px;
-        }
-    }
+		&+a {
+			margin-top: 10px;
+		}
+	}
+
+	&--mob {
+		text-align: center;
+
+		@include min(md) {
+			display: none;
+		}
+
+		@include max(sm) {
+			text-align: left;
+			width: 100%;
+			margin-top: 16px;
+		}
+	}
+
+	&--desktop {
+		@include max(md) {
+			display: none;
+		}
+
+	}
 }
 
 .sf-socials {
-    margin-top: 20px;
+	margin-top: 20px;
 }
 
 .socials {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -16px;
-    margin-bottom: -10px;
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -16px;
+	margin-bottom: -10px;
 
-    &__item {
-        width: 48px;
-        min-width: 48px;
-        height: 48px;
-        margin-left: 16px;
-        margin-bottom: 10px;
-        border-radius: 83px;
-        background: rgba(255, 255, 255, 0.25);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        @include hov();
+	&__item {
+		width: 48px;
+		min-width: 48px;
+		height: 48px;
+		margin-left: 16px;
+		margin-bottom: 10px;
+		border-radius: 83px;
+		background: rgba(255, 255, 255, 0.25);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include hov();
 
-        svg,
-        img {
-            width: 24px;
-            height: 24px;
+		svg,
+		img {
+			width: 24px;
+			height: 24px;
 
-        }
-    }
+		}
+	}
 }

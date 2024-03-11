@@ -3,6 +3,10 @@ footer.site-footer
 		.sf-top
 			a.sf-top__logo(href="/")
 				img(src="img/footer-logo.png", alt="")
+				//picture
+					source(srcset="img/mob-footer-logo.png" media="(max-width: 640px)")
+
+
 			ul.sf-top__menu.sf-menu
 				li.sf-menu-item
 					a(href="") Квартиры
@@ -12,6 +16,8 @@ footer.site-footer
 					a(href="") О компании
 			.sf-top__btns
 				a.btn.js-call-me-modal(href="#")  Заказать звонок
+			.sf-contacts.sf-contacts--mob
+				a(href="") +7 (861) 202-22-01
 		.sf-bottom
 			.sf-bottom__left
 				.sf-copyright
@@ -23,7 +29,7 @@ footer.site-footer
 					li.sf-bottom-link
 						a(href="")  Пользовательское соглашение
 			.sf-bottom__right
-				.sf-contacts
+				.sf-contacts.sf-contacts--desktop
 					a(href="") +7 (861) 202-22-01
 
 				.socials.sf-socials

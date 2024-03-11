@@ -100,6 +100,26 @@
         </div>
       </div>
     </header>
+    <div class="mob-menu-block">
+      <div class="sh-placeholder"></div>
+      <div class="mob-menu-block__part">
+        <div class="mob-menu mob-menu--large"><a class="mob-menu__item" href="">Квартиры</a><a class="mob-menu__item" href="">Объекты</a><a class="mob-menu__item" href="">О компании</a><a class="mob-menu__item" href="">Ипотека</a></div>
+      </div>
+      <div class="mob-menu-block__part">
+        <div class="mob-menu mob-menu"><a class="mob-menu__item" href="">Способы покупки</a><a class="mob-menu__item" href="">Контакты</a><a class="mob-menu__item" href="">Новости и Акции</a><a class="mob-menu__item" href="">Коммерческая недвижимость</a><a class="mob-menu__item" href="">Разрешительная документация</a></div>
+      </div>
+      <div class="mob-menu-block__part"><a class="mob-menu-phone" href="">
+          <div class="mob-menu-phone__icon">
+            <div class="sh-button js-call-me-modal" href="#">
+              <div class="sh-button__icon">
+                <svg class="sh-button__icon-mob">
+                  <use xlink:href="img/sprites/sprite.svg#sh-phone-mob"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="mob-menu-phone__text">+7 900 00 01 02</div></a></div>
+    </div>
     <div class="sh-placeholder"></div>
     <main class="site-main">
       <div class="page-top page-top--only-breadcrumbs">
@@ -177,13 +197,19 @@
     </main>
     <footer class="site-footer">
       <div class="container container--footer">
-        <div class="sf-top"><a class="sf-top__logo" href="/"><img src="img/footer-logo.png" alt=""></a>
+        <div class="sf-top"><a class="sf-top__logo" href="/"><img src="img/footer-logo.png" alt="">
+            <!--picture
+            source(srcset="img/mob-footer-logo.png" media="(max-width: 640px)")
+            
+            
+            --></a>
           <ul class="sf-top__menu sf-menu">
             <li class="sf-menu-item"><a href="">Квартиры</a></li>
             <li class="sf-menu-item"><a href="">Ипотека</a></li>
             <li class="sf-menu-item"><a href="">О компании</a></li>
           </ul>
           <div class="sf-top__btns"><a class="btn js-call-me-modal" href="#"> Заказать звонок</a></div>
+          <div class="sf-contacts sf-contacts--mob"><a href="">+7 (861) 202-22-01</a></div>
         </div>
         <div class="sf-bottom">
           <div class="sf-bottom__left">
@@ -197,7 +223,7 @@
             </ul>
           </div>
           <div class="sf-bottom__right">
-            <div class="sf-contacts"><a href="">+7 (861) 202-22-01</a></div>
+            <div class="sf-contacts sf-contacts--desktop"><a href="">+7 (861) 202-22-01</a></div>
             <div class="socials sf-socials"><a class="socials__item" href="">
                 <svg>
                   <use xlink:href="img/sprites/sprite.svg#soc-vk"></use>
