@@ -1,0 +1,65 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+	- const title = "DevMap"
+
+block content
+
+	.page-top
+		.container.container--page-top.container--with-art-on-right
+			.breadcrumbs
+				.breadcrumbs__item
+					a(href="") Главная
+				.breadcrumbs__item
+					span Акции и новости
+			.page-top-flex
+				.page-top-flex__left
+					h1.section-title Акции и новости
+				.page-top-flex__right
+					.page-top-switch
+						.tabs-controls
+							.tabs-controls__item.tabs-controls__item--active Акции
+							.tabs-controls__item Новости
+
+		.half-container.half-container--invert
+			.filters-art
+				//img(src="img/svg/filters-bottom-art.svg", alt="")
+
+	section.news-archive
+		.container
+			.news-archive-filter
+				.simple-select2-wrap
+					select.js-simple-select2-outer-dropdown(data-style="select2-container--style-2 select2-container--mobile-smaller-lrp")
+						option(selected value="1") Все акции
+						option(value="2") ЖК ЭСТЕТ
+						option(value="3") ЖК НОВЫЙ
+
+			.newssec-grid.newssec-grid--archive
+				each val in [1, 2]
+					.news-card
+						.news-card__pic
+							img(src="img/new-pic-1.jpg", alt="")
+							.news-card__text-over-pic Выбирай свой<br> паркинг
+						.news-card__text
+							.news-card__title Выбирай свой паркинг
+							.news-card__desc Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.
+					.news-card
+						.news-card__pic
+							img(src="img/new-pic-2.jpg", alt="")
+							.news-card__text-over-pic  ипотека 1%
+						.news-card__text
+							.news-card__title Ипотека 1% до 30 сентября
+							.news-card__desc Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.
+					.news-card
+						.news-card__pic
+							img(src="img/new-pic-3.jpg", alt="")
+							.news-card__text-over-pic Коммерческие помещения
+						.news-card__text
+							.news-card__title Коммерческие помещения
+							.news-card__desc Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.
+
+			.showmore-wrap
+				a.btn.btn--dark(href="")
+					span Показать еще 6
+		.prefooter-padding

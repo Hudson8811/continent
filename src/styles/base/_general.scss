@@ -121,16 +121,20 @@ body {
 	max-width: calc(100% - 64px * 2);
 	margin: 0 auto;
 
-	@include max(lg){
+	@include max(lg) {
 		max-width: calc(100% - 30px * 2);
 
 	}
-	@include max(md){
+
+	@include max(md) {
 		max-width: calc(100% - 16px * 2);
 	}
 
 	&--flex {
 		display: flex;
+	}
+	&--article{
+		width: 900px;
 	}
 
 }
@@ -144,10 +148,11 @@ body {
 	margin-left: auto;
 	margin-right: 0;
 
-	@include max(lg){
+	@include max(lg) {
 		max-width: calc(100% - 30px);
 	}
-	@include max(md){
+
+	@include max(md) {
 		max-width: calc(100% - 16px);
 	}
 
@@ -265,7 +270,8 @@ table {
 			}
 		}
 	}
-	&--w100{
+
+	&--w100 {
 		width: 100%;
 	}
 }
@@ -323,6 +329,21 @@ table {
 		}
 	}
 }
-.prefooter-padding{
+
+.prefooter-padding {
 	padding-top: 160px;
+
+	@include max(lg) {
+		padding-top: 100px;
+	}
+
+	@include max(md) {
+		padding-top: 64px;
+	}
+	&--small-64{
+		padding-top: 64px;
+		@include max(lg) {
+			padding-top: 64px;
+		}
+	}
 }

@@ -222,17 +222,10 @@
 }
 
 
-.container--sec-filters {
+
+
+.container--with-art-on-right {
 	position: relative;
-	padding-bottom: 55px;
-	padding-top: 65px;
-
-	@include max(lg) {
-		padding-top: 49px;
-		padding-bottom: 41px;
-
-	}
-
 
 	&::after {
 		content: '';
@@ -253,6 +246,21 @@
 		}
 
 	}
+
+}
+
+
+.container--sec-filters {
+	padding-bottom: 55px;
+	padding-top: 65px;
+
+	@include max(lg) {
+		padding-top: 49px;
+		padding-bottom: 41px;
+
+	}
+
+
 }
 
 .filters-art {
@@ -260,6 +268,8 @@
 	justify-content: flex-end;
 	margin-right: -40px;
 	border-top: 1px solid rgba(255, 255, 255, 0.25);
+	position: relative;
+	height: 38px;
 
 	@include max(lg) {
 		height: 22px;
@@ -271,7 +281,7 @@
 		margin-right: -9px;
 	}
 
-	img {
+	/*img {
 		opacity: 0.25;
 		margin-top: 0px;
 
@@ -284,7 +294,40 @@
 			width: auto;
 
 		}
+	}*/
+
+
+	&::before,
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 0;
+		//background: rgba(255, 255, 255, 0.25);
+		background: rgba(255, 255, 255, 0.4);
+		height: 100%;
+		width: 1px;
+		//transform: skew(-42deg);
+		transform: skew(-45deg);
+		transform-origin: 0% 0%;
 	}
+
+	&::before {
+		right: 549px;
+
+
+		@include max(lg) {
+			right: 302px;
+		}
+
+		@include max(xs) {
+			right: auto;
+			left: 28px;
+		}
+	}
+
+	&::after {}
 }
 
 .section-title {
@@ -706,6 +749,16 @@ a.project-card {
 	align-items: center;
 	margin-top: 47px;
 
+	@include max(md) {
+		margin-top: 24px;
+	}
+
+	.btn {
+		@include max(sm) {
+			width: 100%;
+		}
+	}
+
 }
 
 
@@ -971,79 +1024,6 @@ a.project-card {
 	padding-top: 48px;
 
 	border-top: 1px solid rgba(255, 255, 255, 0.25);
-}
-
-.newssec-grid {
-	display: flex;
-	flex-wrap: wrap;
-
-
-	&--front {
-
-		margin-left: -32px;
-		margin-bottom: -32px;
-	}
-}
-
-.news-card {
-	&--front {
-		width: calc(33.33% - 32px);
-		margin-left: 32px;
-		margin-bottom: 32px;
-	}
-
-	&__pic {
-		border-radius: 12px;
-		overflow: hidden;
-		position: relative;
-
-		&::before {
-			content: '';
-			display: block;
-			padding-top: 80.8510%;
-		}
-
-		img {
-			@include relative_img();
-		}
-	}
-
-	&__text-over-pic {
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		font-weight: 700;
-		font-size: 24px;
-		line-height: 110%;
-		letter-spacing: -0.02em;
-		color: #fff;
-		padding: 32px;
-		font-family: $songer;
-	}
-
-	&__text {
-		margin-top: 32px;
-	}
-
-	&__title {
-		font-weight: 500;
-		font-size: 20px;
-		line-height: 110%;
-		letter-spacing: -0.02em;
-		color: #fff;
-		font-family: $songer;
-	}
-
-	&__desc {
-		font-weight: 400;
-		font-size: 16px;
-		line-height: 140%;
-		letter-spacing: -0.02em;
-		color: rgba(255, 255, 255, 0.8);
-		margin-top: 16px;
-	}
 }
 
 

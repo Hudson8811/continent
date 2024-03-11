@@ -15,8 +15,9 @@
 //input,select,...
 @import "base/inputs";
 
+// БЭМ-блоки
+@import "../blocks/modules/modules";
 //главная
 @import "base/front-page";
 
-// БЭМ-блоки
-@import "../blocks/modules/modules";
+@import "base/stocks.scss";
