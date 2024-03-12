@@ -316,6 +316,13 @@ $(function () {
 		Fancybox.show([{ src: "#call-me-modal", type: "inline",closeButton:false }]);
 	});
 
+	$('.js-answer-modal').on('click',function(e){
+		e.preventDefault();
+		e.stopPropagation();
+		Fancybox.show([{ src: "#answer-modal", type: "inline",closeButton:false }]);
+	});
+
+	autosize($('.js-textarea-autosize'));
 
 	$('.js-open-pw-banks-modal').on('click',function(e){
 		e.preventDefault();

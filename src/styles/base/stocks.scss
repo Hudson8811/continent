@@ -89,10 +89,30 @@
 	&__left {}
 
 	&__right {}
+	&--sm-block{
+		.page-top-flex__right{
+			@include max(sm){
+				width: 100%;
+			}
+		}
+	}
 }
 
 .page-top-switch {}
 
+.page-top-buttons{
+	display: flex;
+	gap: 32px;
+	flex-wrap: wrap;
+	@include max(md){
+		gap: 12px;
+	}
+	@include max(sm){
+		.btn{
+			width: 100%;
+		}
+	}
+}
 
 .news-archive {
 	background: #1B283A;

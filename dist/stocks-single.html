@@ -24,6 +24,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
     <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
     <link rel="stylesheet" href="styles/main.css">
+    <script src="https://api-maps.yandex.ru/v3/?apikey=a56bdf2e-6f25-46f4-b535-ca3077437c25&amp;lang=ru_RU"></script>
   </head>
   <body>
     <header class="site-header">
@@ -256,6 +257,33 @@
                     <input class="simple-input" type="text" name="" placeholder="Телефон">
                   </div>
                   <div class="simple-modal__input"><a class="btn btn--w100" href=""><span>Заказать звонок</span></a></div>
+                </div>
+                <div class="simple-modal__privacy">Нажимая на кнопку, вы принимаете <a href="#">политику конфиденциальности</a> и даете согласие на обработку персональных данных</div>
+              </div>
+            </div>
+            <div class="simple-modal__close" data-fancybox-close>
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#modal-close"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="simple-modal" id="answer-modal">
+          <div class="simple-modal__inner">
+            <div class="simple-modal__content">
+              <div class="simple-modal__title">Задать вопрос</div>
+              <div class="simple-modal__form">
+                <div class="simple-modal__inputs">
+                  <div class="simple-modal__input">
+                    <input class="simple-input" type="text" name="" placeholder="Ваше имя">
+                  </div>
+                  <div class="simple-modal__input">
+                    <input class="simple-input" type="text" name="" placeholder="Телефон">
+                  </div>
+                  <div class="simple-modal__input">
+                    <textarea class="simple-input js-textarea-autosize" type="text" name="" textarea rows="2" placeholder="Ваш вопрос"></textarea>
+                  </div>
+                  <div class="simple-modal__input"><a class="btn btn--w100" href=""><span>Задать вопрос</span></a></div>
                 </div>
                 <div class="simple-modal__privacy">Нажимая на кнопку, вы принимаете <a href="#">политику конфиденциальности</a> и даете согласие на обработку персональных данных</div>
               </div>

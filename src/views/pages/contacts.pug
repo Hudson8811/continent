@@ -1,0 +1,165 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+	- const title = "DevMap"
+
+block content
+
+	.page-top
+		.container.container--page-top.container--with-art-on-right
+			.breadcrumbs
+				.breadcrumbs__item
+					a(href="") Главная
+				.breadcrumbs__item
+					span Контакты
+			.page-top-flex.page-top-flex--sm-block
+				.page-top-flex__left
+					h1.section-title Контакты
+				.page-top-flex__right
+					.page-top-buttons
+						a.btn.js-call-me-modal(href="")
+							span Заказать звонок
+						a.btn.js-answer-modal(href="")
+							span Задать вопрос
+
+
+		.half-container.half-container--invert
+			.filters-art
+				//img(src="img/svg/filters-bottom-art.svg", alt="")
+
+	section.contacts
+		.container
+			.contacts-grid
+				.contacts-item
+					.contacts-item__name Главный офис
+					.contacts-item__description пн-пт: 9:00 - 18:00
+					.contacts-item__links
+						a.contacts-item-link.contacts-item-link--light(href="")
+							.contacts-item-link__icon
+								svg
+									use(xlink:href="img/sprites/sprite.svg#contacts-icon-phone")
+							.contacts-item-link__text +7 900 00 02 03
+						a.contacts-item-link.js-coordinates(href="#" data-coordinates="37.588144, 55.733842" data-icon="img/svg/map-icon.svg")
+							.contacts-item-link__icon
+								svg
+									use(xlink:href="img/sprites/sprite.svg#contacts-icon-geo")
+							.contacts-item-link__text г. Краснодар, добавить адрес 1
+						a.contacts-item-link(href="")
+							.contacts-item-link__icon
+								svg
+									use(xlink:href="img/sprites/sprite.svg#contacts-icon-mail")
+							.contacts-item-link__text info@info.ru
+
+				.contacts-item
+					.contacts-item__name Отдел продаж
+					.contacts-item__description пн-пт: 9:00 - 18:00
+					.contacts-item__links
+						a.contacts-item-link.contacts-item-link--light(href="")
+							.contacts-item-link__icon
+								svg
+									use(xlink:href="img/sprites/sprite.svg#contacts-icon-phone")
+							.contacts-item-link__text +7 900 00 02 03
+						a.contacts-item-link.js-coordinates(href="#" data-coordinates="38.588144, 55.733842" data-icon="img/svg/map-icon.svg")
+							.contacts-item-link__icon
+								svg
+									use(xlink:href="img/sprites/sprite.svg#contacts-icon-geo")
+							.contacts-item-link__text г. Краснодар, добавить адрес 1
+						a.contacts-item-link(href="")
+							.contacts-item-link__icon
+								svg
+									use(xlink:href="img/sprites/sprite.svg#contacts-icon-mail")
+							.contacts-item-link__text info@info.ru
+
+				.contacts-item
+					.contacts-item__name Рыбный текст
+					.contacts-item__description пн-пт: 9:00 - 18:00
+					.contacts-item__links
+						a.contacts-item-link.contacts-item-link--light(href="")
+							.contacts-item-link__icon
+								svg
+									use(xlink:href="img/sprites/sprite.svg#contacts-icon-phone")
+							.contacts-item-link__text +7 900 00 02 03
+						a.contacts-item-link.js-coordinates(href="#" data-coordinates="37.588144, 54.733842" data-icon="img/svg/map-icon.svg")
+							.contacts-item-link__icon
+								svg
+									use(xlink:href="img/sprites/sprite.svg#contacts-icon-geo")
+							.contacts-item-link__text г. Краснодар, добавить адрес 1
+						a.contacts-item-link(href="")
+							.contacts-item-link__icon
+								svg
+									use(xlink:href="img/sprites/sprite.svg#contacts-icon-mail")
+							.contacts-item-link__text info@info.ru
+
+			//	.contacts-item
+					.contacts-item__name Главный офис
+					.contacts-item__description пн-пт: 9:00 - 18:00
+					.contacts-item__links
+						a.contacts-item-link.contacts-item-link--light(href="")
+							.contacts-item-link__icon
+								svg
+									use(xlink:href="img/sprites/sprite.svg#contacts-icon-phone")
+							.contacts-item-link__text +7 900 00 02 03
+						a.contacts-item-link(href="")
+							.contacts-item-link__icon
+								svg
+									use(xlink:href="img/sprites/sprite.svg#contacts-icon-geo")
+							.contacts-item-link__text г. Краснодар, добавить адрес 1
+						a.contacts-item-link(href="")
+							.contacts-item-link__icon
+								svg
+									use(xlink:href="img/sprites/sprite.svg#contacts-icon-mail")
+							.contacts-item-link__text info@info.ru
+
+				.contacts-item
+					.contacts-item__name Отдел продаж
+					.contacts-item__description пн-пт: 9:00 - 18:00
+					.contacts-item__links
+						a.contacts-item-link.contacts-item-link--light(href="")
+							.contacts-item-link__icon
+								svg
+									use(xlink:href="img/sprites/sprite.svg#contacts-icon-phone")
+							.contacts-item-link__text +7 900 00 02 03
+						a.contacts-item-link(href="")
+							.contacts-item-link__icon
+								svg
+									use(xlink:href="img/sprites/sprite.svg#contacts-icon-geo")
+							.contacts-item-link__text г. Краснодар, добавить адрес 1
+						a.contacts-item-link(href="")
+							.contacts-item-link__icon
+								svg
+									use(xlink:href="img/sprites/sprite.svg#contacts-icon-mail")
+							.contacts-item-link__text info@info.ru
+						a.contacts-item-link(href="")
+							.contacts-item-link__icon
+								svg
+									use(xlink:href="img/sprites/sprite.svg#contacts-icon-geo")
+							.contacts-item-link__text г. Краснодар, добавить адрес 1
+						a.contacts-item-link(href="")
+							.contacts-item-link__icon
+								svg
+									use(xlink:href="img/sprites/sprite.svg#contacts-icon-mail")
+							.contacts-item-link__text info@info.ru
+
+				.contacts-item
+					.contacts-item__name Отдел продаж
+					.contacts-item__description пн-пт: 9:00 - 18:00
+					.contacts-item__links
+						a.contacts-item-link.contacts-item-link--light(href="")
+							.contacts-item-link__icon
+								svg
+									use(xlink:href="img/sprites/sprite.svg#contacts-icon-phone")
+							.contacts-item-link__text +7 900 00 02 03
+
+
+
+			.contacts-map-wrap
+				.contacts-map#contacts-map.js-init-contacts-map(data-coordinates="37.588144, 55.733842")
+
+
+		.prefooter-padding
+
+
+
+
+

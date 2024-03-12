@@ -5,9 +5,12 @@
 @@include("./libs/wNumb.min.js")
 @@include("./libs/select2.full.min.js")
 @@include("./libs/fancybox.umd.min.js")
+@@include("./libs/autosize.min.js")
 
 
 
 //my files
 @@include("./import/components.js")
 @@include("./import/main.js")
+@@include("./import/maps-styles.js")
+@@include("./import/maps.js")

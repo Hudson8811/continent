@@ -6148,6 +6148,12 @@ a.project-card:hover {
   margin-top: 32px;
 }
 
+.page-top-buttons {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
 .news-archive {
   background: #1B283A;
   padding-top: 32px;
@@ -6437,6 +6443,126 @@ a.project-card:hover {
   margin-right: 8px;
 }
 
+.contacts {
+  background: #1B283A;
+  padding-top: 64px;
+}
+
+.contacts-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 64px 0;
+}
+
+.contacts-item {
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+  padding-left: 64px;
+  padding-right: 64px;
+  width: 100%;
+  max-width: calc(33.333% - 21.3333333333px);
+}
+
+.contacts-item__name {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+  color: #fff;
+  font-family: "SONGER SemiExpanded", sans-serif;
+}
+
+.contacts-item__description {
+  margin-top: 12px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+  color: #fff;
+  opacity: 0.5;
+}
+
+.contacts-item__links {
+  margin-top: 48px;
+}
+
+.contacts-item-link {
+  display: flex;
+  align-items: center;
+  opacity: 0.5;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.contacts-item-link:hover {
+  opacity: 1;
+}
+
+.contacts-item-link__icon {
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+}
+
+.contacts-item-link__icon img,
+.contacts-item-link__icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.contacts-item-link__text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.contacts-item-link + .contacts-item-link {
+  margin-top: 24px;
+}
+
+.contacts-item-link--light {
+  opacity: 1;
+}
+
+.contacts-item-link--light:hover {
+  opacity: 0.7;
+}
+
+.contacts-map-wrap {
+  margin-top: 114px;
+  height: 523px;
+  max-height: 75vh;
+  position: relative;
+}
+
+.contacts-map {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.contacts-map-marker {
+  width: 90px;
+  height: auto;
+  display: block;
+  transform: translate(-50%, -50%);
+}
+
+.contacts-map-marker img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 @media only screen and (min-width: 641px) {
   .project-card-info:nth-child(2n) {
     border-left: 1px solid rgba(255, 255, 255, 0.25);
@@ -6477,6 +6603,19 @@ a.project-card:hover {
 
   .pw-summary {
     display: none;
+  }
+
+  .contacts-item:nth-child(3n-1) {
+    max-width: calc(33.333% + 42.6666666667px);
+  }
+
+  .contacts-item:nth-child(3n-2) {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .contacts-item:nth-child(3n) {
+    padding-right: 0;
   }
 }
 
@@ -6666,6 +6805,16 @@ a.project-card:hover {
 
   .article {
     padding-top: 24px;
+  }
+
+  .contacts-grid {
+    gap: 32px 0;
+  }
+
+  .contacts-item {
+    padding-left: 32px;
+    padding-right: 32px;
+    max-width: calc(33.333% - 10.6666666667px);
   }
 }
 
@@ -7056,6 +7205,10 @@ a.project-card:hover {
     display: none;
   }
 
+  .page-top-buttons {
+    gap: 12px;
+  }
+
   .news-archive-filter {
     width: 100%;
   }
@@ -7156,6 +7309,43 @@ a.project-card:hover {
 
   .article-finfo {
     font-size: 14px;
+  }
+
+  .contacts {
+    padding-top: 32px;
+  }
+
+  .contacts-item {
+    max-width: 50%;
+  }
+
+  .contacts-item:nth-child(2n-1) {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .contacts-item:nth-child(2n) {
+    padding-right: 0;
+  }
+
+  .contacts-item__name {
+    font-size: 18px;
+  }
+
+  .contacts-item__description {
+    margin-top: 6px;
+  }
+
+  .contacts-item__links {
+    margin-top: 24px;
+  }
+
+  .contacts-item-link + .contacts-item-link {
+    margin-top: 12px;
+  }
+
+  .contacts-map-wrap {
+    margin-top: 63px;
   }
 }
 
@@ -7374,6 +7564,41 @@ a.project-card:hover {
   .purchase-way-card__btn-wrap .btn {
     width: 100%;
   }
+
+  .page-top-flex--sm-block .page-top-flex__right {
+    width: 100%;
+  }
+
+  .page-top-buttons .btn {
+    width: 100%;
+  }
+
+  .contacts .prefooter-padding {
+    display: none;
+  }
+
+  .contacts-grid {
+    gap: 0;
+  }
+
+  .contacts-item {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    border-left: none;
+  }
+
+  .contacts-item + .contacts-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    padding-top: 24px;
+    margin-top: 22px;
+  }
+
+  .contacts-map {
+    left: -16px;
+    width: calc(100% + 32px);
+    border-radius: 0;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -7402,6 +7627,12 @@ a.project-card:hover {
 
   .project-card-info:nth-child(2n-1) {
     padding-right: 16px;
+  }
+}
+
+@media only screen and (min-width: 961px) and (max-width: 1200px) {
+  .contacts-item:nth-child(3n-1) {
+    max-width: calc(33.333% + 21.3333333333px);
   }
 }
 

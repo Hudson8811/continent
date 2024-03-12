@@ -123,18 +123,168 @@
     </div>
     <div class="sh-placeholder"></div>
     <main class="site-main">
-      <section class="article">
-        <div class="container container--article">
-          <div class="article-text article-text-style">
-            <ul>
-              <li><a href="index.html">Главная</a></li>
-              <li><a href="stocks.html">Акции и новости - архив</a></li>
-              <li><a href="stocks-single.html">Акции и новости - сингл</a></li>
-              <li><a href="contacts.html">Контакты</a></li>
-            </ul>
+      <div class="page-top">
+        <div class="container container--page-top container--with-art-on-right">
+          <div class="breadcrumbs">
+            <div class="breadcrumbs__item"><a href="">Главная</a></div>
+            <div class="breadcrumbs__item"><span>Контакты</span></div>
+          </div>
+          <div class="page-top-flex page-top-flex--sm-block">
+            <div class="page-top-flex__left">
+              <h1 class="section-title">Контакты</h1>
+            </div>
+            <div class="page-top-flex__right">
+              <div class="page-top-buttons"><a class="btn js-call-me-modal" href=""><span>Заказать звонок</span></a><a class="btn js-answer-modal" href=""><span>Задать вопрос</span></a></div>
+            </div>
           </div>
         </div>
-        <div class="prefooter-padding prefooter-padding--small-64"></div>
+        <div class="half-container half-container--invert">
+          <div class="filters-art">
+            <!--img(src="img/svg/filters-bottom-art.svg", alt="")-->
+          </div>
+        </div>
+      </div>
+      <section class="contacts">
+        <div class="container">
+          <div class="contacts-grid">
+            <div class="contacts-item">
+              <div class="contacts-item__name">Главный офис</div>
+              <div class="contacts-item__description">пн-пт: 9:00 - 18:00</div>
+              <div class="contacts-item__links"><a class="contacts-item-link contacts-item-link--light" href="">
+                  <div class="contacts-item-link__icon">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#contacts-icon-phone"></use>
+                    </svg>
+                  </div>
+                  <div class="contacts-item-link__text">+7 900 00 02 03</div></a><a class="contacts-item-link js-coordinates" href="#" data-coordinates="37.588144, 55.733842" data-icon="img/svg/map-icon.svg">
+                  <div class="contacts-item-link__icon">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#contacts-icon-geo"></use>
+                    </svg>
+                  </div>
+                  <div class="contacts-item-link__text">г. Краснодар, добавить адрес 1</div></a><a class="contacts-item-link" href="">
+                  <div class="contacts-item-link__icon">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#contacts-icon-mail"></use>
+                    </svg>
+                  </div>
+                  <div class="contacts-item-link__text">info@info.ru</div></a></div>
+            </div>
+            <div class="contacts-item">
+              <div class="contacts-item__name">Отдел продаж</div>
+              <div class="contacts-item__description">пн-пт: 9:00 - 18:00</div>
+              <div class="contacts-item__links"><a class="contacts-item-link contacts-item-link--light" href="">
+                  <div class="contacts-item-link__icon">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#contacts-icon-phone"></use>
+                    </svg>
+                  </div>
+                  <div class="contacts-item-link__text">+7 900 00 02 03</div></a><a class="contacts-item-link js-coordinates" href="#" data-coordinates="38.588144, 55.733842" data-icon="img/svg/map-icon.svg">
+                  <div class="contacts-item-link__icon">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#contacts-icon-geo"></use>
+                    </svg>
+                  </div>
+                  <div class="contacts-item-link__text">г. Краснодар, добавить адрес 1</div></a><a class="contacts-item-link" href="">
+                  <div class="contacts-item-link__icon">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#contacts-icon-mail"></use>
+                    </svg>
+                  </div>
+                  <div class="contacts-item-link__text">info@info.ru</div></a></div>
+            </div>
+            <div class="contacts-item">
+              <div class="contacts-item__name">Рыбный текст</div>
+              <div class="contacts-item__description">пн-пт: 9:00 - 18:00</div>
+              <div class="contacts-item__links"><a class="contacts-item-link contacts-item-link--light" href="">
+                  <div class="contacts-item-link__icon">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#contacts-icon-phone"></use>
+                    </svg>
+                  </div>
+                  <div class="contacts-item-link__text">+7 900 00 02 03</div></a><a class="contacts-item-link js-coordinates" href="#" data-coordinates="37.588144, 54.733842" data-icon="img/svg/map-icon.svg">
+                  <div class="contacts-item-link__icon">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#contacts-icon-geo"></use>
+                    </svg>
+                  </div>
+                  <div class="contacts-item-link__text">г. Краснодар, добавить адрес 1</div></a><a class="contacts-item-link" href="">
+                  <div class="contacts-item-link__icon">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#contacts-icon-mail"></use>
+                    </svg>
+                  </div>
+                  <div class="contacts-item-link__text">info@info.ru</div></a></div>
+            </div>
+          </div>
+          <!--	.contacts-item
+          	.contacts-item__name Главный офис
+          	.contacts-item__description пн-пт: 9:00 - 18:00
+          	.contacts-item__links
+          		a.contacts-item-link.contacts-item-link--light(href="")
+          			.contacts-item-link__icon
+          				svg
+          					use(xlink:href="img/sprites/sprite.svg#contacts-icon-phone")
+          			.contacts-item-link__text +7 900 00 02 03
+          		a.contacts-item-link(href="")
+          			.contacts-item-link__icon
+          				svg
+          					use(xlink:href="img/sprites/sprite.svg#contacts-icon-geo")
+          			.contacts-item-link__text г. Краснодар, добавить адрес 1
+          		a.contacts-item-link(href="")
+          			.contacts-item-link__icon
+          				svg
+          					use(xlink:href="img/sprites/sprite.svg#contacts-icon-mail")
+          			.contacts-item-link__text info@info.ru
+          
+          .contacts-item
+          	.contacts-item__name Отдел продаж
+          	.contacts-item__description пн-пт: 9:00 - 18:00
+          	.contacts-item__links
+          		a.contacts-item-link.contacts-item-link--light(href="")
+          			.contacts-item-link__icon
+          				svg
+          					use(xlink:href="img/sprites/sprite.svg#contacts-icon-phone")
+          			.contacts-item-link__text +7 900 00 02 03
+          		a.contacts-item-link(href="")
+          			.contacts-item-link__icon
+          				svg
+          					use(xlink:href="img/sprites/sprite.svg#contacts-icon-geo")
+          			.contacts-item-link__text г. Краснодар, добавить адрес 1
+          		a.contacts-item-link(href="")
+          			.contacts-item-link__icon
+          				svg
+          					use(xlink:href="img/sprites/sprite.svg#contacts-icon-mail")
+          			.contacts-item-link__text info@info.ru
+          		a.contacts-item-link(href="")
+          			.contacts-item-link__icon
+          				svg
+          					use(xlink:href="img/sprites/sprite.svg#contacts-icon-geo")
+          			.contacts-item-link__text г. Краснодар, добавить адрес 1
+          		a.contacts-item-link(href="")
+          			.contacts-item-link__icon
+          				svg
+          					use(xlink:href="img/sprites/sprite.svg#contacts-icon-mail")
+          			.contacts-item-link__text info@info.ru
+          
+          .contacts-item
+          	.contacts-item__name Отдел продаж
+          	.contacts-item__description пн-пт: 9:00 - 18:00
+          	.contacts-item__links
+          		a.contacts-item-link.contacts-item-link--light(href="")
+          			.contacts-item-link__icon
+          				svg
+          					use(xlink:href="img/sprites/sprite.svg#contacts-icon-phone")
+          			.contacts-item-link__text +7 900 00 02 03
+          
+          
+          
+          -->
+          <div class="contacts-map-wrap">
+            <div class="contacts-map js-init-contacts-map" id="contacts-map" data-coordinates="37.588144, 55.733842"></div>
+          </div>
+        </div>
+        <div class="prefooter-padding"></div>
       </section>
     </main>
     <footer class="site-footer">
