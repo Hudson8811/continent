@@ -884,7 +884,7 @@ a.project-card {
 	justify-content: space-between;
 	margin-top: 48px;
 
-	@include max(1340) {
+	@include max(1279) {
 		flex-direction: column;
 		align-items: center;
 	}
@@ -898,7 +898,7 @@ a.project-card {
 		width: 100%;
 		max-width: calc(100% - 467px - 32px);
 
-		@include max(1340) {
+		@include max(1279) {
 			max-width: 100%;
 		}
 	}
@@ -909,7 +909,7 @@ a.project-card {
 		display: flex;
 		flex-direction: column;
 
-		@include max(1340) {
+		@include max(1279) {
 			margin-left: 0;
 			width: 100%;
 			margin-top: 24px;

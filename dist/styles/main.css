@@ -6635,7 +6635,7 @@ a.project-card:hover {
   }
 }
 
-@media only screen and (max-width: 1340px) {
+@media only screen and (max-width: 1279px) {
   .purchase-ways-flex {
     flex-direction: column;
     align-items: center;
