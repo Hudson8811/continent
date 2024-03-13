@@ -1,0 +1,104 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+	- const title = "Главная"
+
+block content
+	section.ktop-section
+		.container.ktop-section__container
+			.breadcrumbs.ktop-section__breadcrumbs
+				.breadcrumbs__item
+					a(href="") Главная
+				.breadcrumbs__item
+					span О компании
+			.ktop-section-info
+				.ktop-section-info__title Стремимся к совершенству
+				.ktop-section-info__desc Строим дома и амбициозные планы на будущее: за 5 лет готовимся войти в ТОП-5 девелоперов ЮФО! Почему у нас получится? С самого начала мы нацелились реализовывать проекты, превосходящие конкурентов. И наш флагман — ЖК «Эстет» — подтверждает выбранную стратегию.
+				.ktop-section-info__btn-wrap
+					a.btn(href="")
+						span Смотреть проекты
+
+		.ktop-section-pic
+			img(src="img/about-pic-1.jpg", alt="")
+
+
+	.blue-sections-bg
+
+		section.home-about.section-margin
+			.container
+				.home-about-flex
+					.home-about-flex__left.home-about-flex__left--w-about-page
+						.home-about-card.home-about-card--no-bg
+							.home-about-card__text
+								h2.home-about-card__title.section-title Эстетика как атрибут качества
+								.home-about-card__desc.home-about-card__desc--w-about-page Красота линий, пропорций, текстур — всё выверено и подобрано. Мы щепетильно относимся к каждому дюйму нашего творения. И помним, что подлинная красота означает высокое качество исполнения и никак иначе. Делаем всё так, чтобы будущие жильцы гордились своим домом.
+								//.home-about-card__btn
+									a.btn(href="")
+										span Узнать больше
+							.home-about-card__bg
+					.home-about-flex__right.home-about-flex__right--w-about-page
+						.home-about-pic.home-about-pic--about-page
+							img(src="img/about-pic-2.jpg", alt="")
+		section.fwbanner.section-margin
+			.fwbanner-bg
+				img(src="img/about-pic-3.jpg", alt="")
+			.fwbanner-container.container
+				.fwbanner-info
+					.fwbanner-info__title Строим как себе
+					.fwbanner-info__desc Если в построенном объекте мы хотим жить сами, это хороший объект. Именно так мы и строим. Проектируем ЖК и представляем, а как бы хотелось нам и нашим семьям: какие площадки, какие архитектурные формы, какие деревья, какие планировки? Создаём дом с душой и удовольствием!
+
+		section.home-about.section-margin
+			.container
+				.home-about-flex
+					.home-about-flex__left.home-about-flex__left--w-about-page
+						.home-about-card.home-about-card--no-bg
+							.home-about-card__text
+								h2.home-about-card__title.section-title Знаем дело на 100%
+								.home-about-card__desc.home-about-card__desc--w-about-page За первые полгода мы возвели жилой комплекс на треть! В нашей команде — исключительные профессионалы, которые наработали многолетний опыт в рядах других застройщиков. Мы объединились, чтобы сделать видимый прорыв на южном рынке недвижимости!
+								//.home-about-card__btn
+									a.btn(href="")
+										span Узнать больше
+							.home-about-card__bg
+					.home-about-flex__right.home-about-flex__right--w-about-page
+						.home-about-pic.home-about-pic--about-page
+							img(src="img/about-pic-4.jpg", alt="")
+
+
+		section.section-docs.section-margin
+			.container
+				h2.section-title Разрешительная документация
+				.secdocs-grid
+					a.secdocs-file(href="")
+						.secdocs-file__text
+							.secdocs-file__title Разрешение на строительство
+							.secdocs-file__desc от 01.01.2023 в формате .pdf (777.44 Кб)
+						.secdocs-file__icon
+					a.secdocs-file(href="")
+						.secdocs-file__text
+							.secdocs-file__title Разрешение на строительство
+							.secdocs-file__desc от 01.01.2023 в формате .pdf (777.44 Кб)
+						.secdocs-file__icon
+					a.secdocs-file(href="")
+						.secdocs-file__text
+							.secdocs-file__title Разрешение на строительство
+							.secdocs-file__desc от 01.01.2023 в формате .pdf (777.44 Кб)
+						.secdocs-file__icon
+					a.secdocs-file(href="")
+						.secdocs-file__text
+							.secdocs-file__title Разрешение на строительство
+							.secdocs-file__desc от 01.01.2023 в формате .pdf (777.44 Кб)
+						.secdocs-file__icon
+					a.secdocs-file(href="")
+						.secdocs-file__text
+							.secdocs-file__title Разрешение на строительство
+							.secdocs-file__desc от 01.01.2023 в формате .pdf (777.44 Кб)
+						.secdocs-file__icon
+					a.secdocs-file(href="")
+						.secdocs-file__text
+							.secdocs-file__title Разрешение на строительство
+							.secdocs-file__desc от 01.01.2023 в формате .pdf (777.44 Кб)
+						.secdocs-file__icon
+
+
+		.prefooter-padding
