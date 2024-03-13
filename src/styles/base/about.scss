@@ -8,12 +8,17 @@
 		z-index: 2;
 		padding-top: 48px;
 		padding-bottom: 79px;
+
+		@include max(md) {
+			padding-top: 25px;
+			padding-bottom: 32px;
+		}
 	}
 
 	&__breadcrumbs {
 		width: 581px;
 		max-width: 50%;
-		padding-right: 20px;
+		padding-right: 40px;
 
 		@include max(md) {
 			width: 100%;
@@ -32,12 +37,15 @@
 	min-height: 454px;
 	width: 581px;
 	max-width: 50%;
-	padding-right: 20px;
+	padding-right: 40px;
 
 	@include max(md) {
 		width: 100%;
 		max-width: 100%;
 		padding-right: 0;
+		min-height: 0;
+		margin-top: 24px;
+
 	}
 
 	&__title {
@@ -57,7 +65,7 @@
 		}
 
 		@include max(xs) {
-			font-size: 26px;
+			font-size: 24px;
 		}
 	}
 
@@ -69,17 +77,14 @@
 		letter-spacing: -0.02em;
 		color: #fff;
 
-		@include max(lg) {
-			font-style: 18px;
-		}
+		@include max(lg) {}
 
 		@include max(md) {
-			margin-top: 12px;
-		}
-
-		@include max(sm) {
+			margin-top: 14px;
 			font-size: 15px;
 		}
+
+		@include max(sm) {}
 	}
 
 	&__btn-wrap {
@@ -87,7 +92,7 @@
 		margin-top: 32px;
 
 		@include max(md) {
-			margin-top: 12px;
+			margin-top: 24px;
 			width: 100%;
 
 			.btn {
@@ -107,6 +112,12 @@
 	height: 100%;
 	z-index: 1;
 
+	@include max(md) {
+		position: relative;
+		width: 100%;
+		height: 75.9375vw;
+	}
+
 	&::before {
 		content: '';
 		display: block;
@@ -116,6 +127,12 @@
 		width: 100%;
 		height: 100%;
 		z-index: 2;
+
+		@include max(md) {
+			background: url(../img/svg/k-letter-mob.svg) no-repeat center left;
+			background-size: auto 100%;
+
+		}
 	}
 
 	img {
@@ -143,24 +160,47 @@
 
 .home-about-card__desc--w-about-page {
 	width: 550px;
+
+	@include max(md) {
+		margin-top: 18px;
+	}
 }
 
 .home-about-pic--about-page::before {
 	content: "";
 	display: block;
 	padding-top: 56.85%;
+
+	@include max(md) {
+		padding-top: 0;
+		height: 328px;
+
+	}
+
+	@include max(sm) {
+		height: auto;
+
+		padding-top: 132%;
+	}
 }
 
 
 .fwbanner {
 	position: relative;
-	height: 760px;
+	min-height: 760px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+
+	@include max(md) {
+		min-height: 640px;
+	}
+
+	@include max(sm) {
+		display: block;
+	}
 }
 
-.section-margin {}
 
 .fwbanner-bg {
 
@@ -188,6 +228,10 @@
 	position: relative;
 	z-index: 2;
 	padding: 40px 0;
+
+	@include max(md) {
+		padding: 16px 0;
+	}
 }
 
 .fwbanner-info {
@@ -198,6 +242,15 @@
 	width: 625px;
 	max-width: 100%;
 
+	@include max(md) {
+		width: 500px;
+	}
+
+	@include max(sm) {
+		padding: 16px;
+		width: 100%;
+	}
+
 	&__title {
 		font-weight: 500;
 		font-size: 32px;
@@ -205,6 +258,10 @@
 		letter-spacing: -0.02em;
 		color: #fff;
 		font-family: $songer;
+
+		@include max(md) {
+			font-size: 24px;
+		}
 	}
 
 	&__desc {
@@ -214,6 +271,11 @@
 		line-height: 140%;
 		letter-spacing: -0.02em;
 		color: #fff;
+
+		@include max(md) {
+			margin-top: 16px;
+			font-size: 15px;
+		}
 	}
 }
 
@@ -231,6 +293,11 @@
 	gap: 24px;
 	flex-wrap: wrap;
 	margin-top: 48px;
+
+	@include max(md) {
+		gap: 16px;
+		margin-top: 24px;
+	}
 }
 
 .secdocs-file {
@@ -242,9 +309,21 @@
 	justify-content: space-between;
 	@include hov;
 
+	@include max(md) {
+		width: calc(50% - 8px);
+		align-items: center;
+		padding: 16px;
+	}
+	@include max(sm){
+		width: 100%;
+
+	}
 
 	&__text {
 		margin-right: 15px;
+		@include max(md){
+			margin-right: 10px;
+		}
 	}
 
 	&__title {
@@ -253,6 +332,10 @@
 		line-height: 100%;
 		letter-spacing: -0.02em;
 		color: #fff;
+
+		@include max(md) {
+			font-size: 15px;
+		}
 	}
 
 	&__desc {
@@ -263,6 +346,11 @@
 		color: #fff;
 		margin-top: 16px;
 		opacity: 0.8;
+
+		@include max(md) {
+			margin-top: 10px;
+			font-size: 11px;
+		}
 	}
 
 	&__icon {
@@ -273,5 +361,12 @@
 		background: url(../img/svg/download-icon.svg) no-repeat center center;
 		background-size: contain;
 		margin-top: 5px;
+
+		@include max(md) {
+			width: 20px;
+			height: 20px;
+			min-width: 20px;
+			margin-top: 0;
+		}
 	}
 }
