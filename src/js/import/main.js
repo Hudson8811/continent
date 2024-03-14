@@ -1,3 +1,5 @@
+
+
 function num_word(value, words) {
 	value = Math.abs(value) % 100;
 	var num = value % 10;
@@ -54,12 +56,16 @@ $(function () {
 		var start_r = parseFloat(rs.attr('data-start-right'));
 		var min = parseFloat(rs.attr('data-min'));
 		var max = parseFloat(rs.attr('data-max'));
+
+
 		var prefix = rs.attr('data-prefix');
 		var suffix = rs.attr('data-suffix');
 		var format = rs.attr('data-format');
 		var step = rs.attr('data-step');
 		var is_single = rs.attr('data-single') === 'true';
 
+
+		var selectorRSThatNeedChangeMax = rs.attr('data-change-other-max-by-val');
 
 		if (typeof (prefix) === 'undefined') {
 			prefix = '';
@@ -149,7 +155,50 @@ $(function () {
 					rs_inp_r[0].value = value;
 				}
 			}
+
+
+			if (typeof (selectorRSThatNeedChangeMax) !== 'undefined') {
+				var targetSlider = $(selectorRSThatNeedChangeMax);
+				if (is_single && targetSlider.length > 0) {
+					if (typeof (targetSlider[0].noUiSlider) !== 'undefined') {
+						/*console.log({range: {
+							'min':targetSlider[0].noUiSlider.options.range.min,
+							'max': value
+						}});*/
+
+						targetSlider[0].noUiSlider.updateOptions({
+							range: {
+								'min':targetSlider[0].noUiSlider.options.range.min,
+								'max': clearStrAndParseInt(value)
+							}
+						});
+					}
+					else {
+						console.log('no init');
+
+					}
+
+				}
+			}
+
+
 		});
+
+
+		slider.on('change', function () {
+			if (is_single) {
+				rs_inp_single.trigger('rsChange');
+
+			} else {
+				rs_inp_l.trigger('rsChange');
+				rs_inp_r.trigger('rsChange');
+			}
+		});
+
+
+
+
+
 		if (is_single) {
 			rs_inp_single[0].addEventListener('change', function () {
 				slider.set([this.value]);
@@ -356,13 +405,17 @@ $(function () {
 			firstPaymentInp = section.find('.js-pw-input-firstPayment'),
 			termInp = section.find('.js-pw-input-term'),
 			programs = window.pwPrograms;
-			var bankRateFormat = wNumb({
-				suffix: '%',
-				//decimals: 3,
-			});
-			var bankPaymentFormat = wNumb({
-				thousand: ' ',
-			});
+
+
+
+		var bankRateFormat = wNumb({
+			suffix: '%',
+			//decimals: 3,
+		});
+		var bankPaymentFormat = wNumb({
+			thousand: ' ',
+			decimals: 0,
+		});
 
 		section.on('needRecalc', function () {
 			var programId = parseInt(programSelect.val());
@@ -379,8 +432,7 @@ $(function () {
 						id = parseInt(bank.attr('data-id'));
 					if (banksIdsForThisProgram.includes(id)) {
 						var bankRate = parseFloat(program.banks[id]);
-						var bankPayment=eval(program.formula);
-						console.log('bankPayment = '+bankPayment);
+						var bankPayment = eval(program.formula);
 						bank.find('.js-bank-payment span').html(bankPaymentFormat.to(bankPayment));
 						bank.find('.js-bank-rate').html(bankRateFormat.to(bankRate));
 						bank.removeClass('pw-bank--hidden');
@@ -399,13 +451,19 @@ $(function () {
 
 		}).trigger('needRecalc');
 
-
-		programSelect.add(costInp).add(firstPaymentInp).add(termInp).on('change',function () {
+		function triggerRecalc(){
 			section.trigger('needRecalc');
+
+		}
+		debouncedTriggerRecalc=debounce(triggerRecalc,200);
+
+		programSelect.add(costInp).add(firstPaymentInp).add(termInp).on('change rsChange', function () {
+			debouncedTriggerRecalc();
 		});
 	});
 
 
+	$('.myElements').each((el) => new SimpleBar(el));
 
 
 

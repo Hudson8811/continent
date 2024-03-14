@@ -45,8 +45,8 @@ block content
 					2:{
 						name:'Не субсидированная ипотека',
 						banks:{
-							10:5.7,
-							11:5.8,
+							10:15.7,
+							11:15.8,
 						},
 						formula: "(cost - firstPayment) * (1 + bankRate / 100) / (12 * term) * 10"
 					},
@@ -55,11 +55,11 @@ block content
 				h2.section-title Сделайте предварительный расчет
 				.purchase-ways-flex
 					.purchase-ways-flex__side
-						.purchase-ways-form
+						.purchase-ways-form.purchase-ways-form--mortgage
 							.purchase-ways-form__top
 								.purchase-ways-form__top-left
 									.purchase-ways-form__title  Ипотека
-									.purchase-ways-form__desc Более 10 банков-партнеров с выгодными условиями
+									.purchase-ways-form__desc.purchase-ways-form__desc--mortgage Более 10 банков-партнеров с выгодными условиями
 
 							.pw-controls-mortgage-wrap
 								.pw-controls.pw-controls--mortgage
@@ -73,7 +73,7 @@ block content
 									.pw-control
 										.pw-control__name Стоимость недвижимости
 										.pw-control__field
-											.rs-block.rs-block--single.rs-block--start-at-0.rs-block--style-2.custom-style-rs.js-range-slider(data-single="true" data-min="1000000" data-max="10000000" data-suffix=" ₽" data-format="int" data-step="100000" )
+											.rs-block.rs-block--single.rs-block--start-at-0.rs-block--style-2.custom-style-rs.js-range-slider(data-single="true" data-min="3000000" data-max="10000000"  data-change-other-max-by-val="#rsfirstpayment"  data-suffix=" ₽" data-format="int" data-step="100000" )
 												//data-start-left data-start-right
 												.rs-block__top
 													input.rs-block__inp.rs-block__inp-single.rs-block__inp-single--smaller-lrp.js-range-slider__inp-single.js-pw-input-cost(type="text")
@@ -82,12 +82,12 @@ block content
 									.pw-control
 										.pw-control__name Первоначальный взнос
 										.pw-control__field
-											.rs-block.rs-block--single.rs-block--start-at-0.rs-block--style-2.custom-style-rs.js-range-slider(data-single="true" data-min="100000" data-max="10000000" data-suffix=" ₽" data-format="int" data-step="100000" )
+											.rs-block.rs-block--single.rs-block--start-at-0.rs-block--style-2.custom-style-rs.js-range-slider(data-single="true" data-min="0" data-max="3000000" data-suffix=" ₽" data-format="int" data-step="10000" )
 												//data-start-left data-start-right
 												.rs-block__top
 													input.rs-block__inp.rs-block__inp-single.rs-block__inp-single--smaller-lrp.js-range-slider__inp-single.js-pw-input-firstPayment(type="text")
 												.rs-block__bottom
-													.rs-block__rs.js-range-slider__range
+													.rs-block__rs.js-range-slider__range#rsfirstpayment
 									.pw-control
 										.pw-control__name Срок
 										.pw-control__field
@@ -97,185 +97,192 @@ block content
 													input.rs-block__inp.rs-block__inp-single.rs-block__inp-single--smaller-lrp.js-range-slider__inp-single.js-pw-input-term(type="text")
 												.rs-block__bottom
 													.rs-block__rs.js-range-slider__range
+							.mortgage-pw-bottom
+								.mortgage-pw-bottom__btn
+									a.btn(href="")
+										span Оставить заявку
+
+								.mortgage-pw-bottom__text 4 варианта<br> от 54 679 ₽/мес.
 
 					.purchase-ways-flex__main
-						.purchase-ways-form
-							.mortage-banks-desktop-wrap
-								.pw-banks-wrap#banks-modal
-									.pw-banks-wrap__top
-										.pw-banks-wrap__close.js-pw-banks-modal-close
-									.pw-banks-wrap__main
-										.pw-banks.pw-banks--in-form
+						.pw-summary.pw-summary--mortgage
+							.pw-summary-item
+								.pw-summary-item__left
+									.pw-summary-item__title Ежемесячный платеж
+									.pw-summary-item__text от 54 679 ₽/мес.
+							.pw-summary-item
+								.pw-summary-item__left
+									.pw-summary-item__title Ставка
+									.pw-summary-item__text от 5.7%
+								.pw-summary-item__right
+									.pws-circles
+										.pws-icon
+											img(src="img/svg/bank-psb.svg", alt="")
+										.pws-icon
+											img(src="img/svg/bank-sber.svg", alt="")
+										.pws-icon
+											span 16
+							.pw-summary-btn
+								a.btn.btn--with-arrow.btn--dark.js-open-pw-banks-modal(href="")
+									span Все предложения
 
-												.pw-bank.js-bank(data-id="10")
-													.pw-bank__col.pw-bank__col--name
-														.pw-bank__icon
-															img(src="img/svg/bank-psb.svg", alt="")
-														.pw-bank__name ПромСвязьБанк
+						.purchase-ways-form.purchase-ways-form--mortgage
+							.mortage-banks-wrap
+								.mortage-banks-wrap__inner.js-banks-scrollbar
+									.pw-banks-wrap#banks-modal
+										.pw-banks-wrap__top
+											.pw-banks-wrap__close.js-pw-banks-modal-close
+										.pw-banks-wrap__main
+											.pw-banks.pw-banks--in-form.pw-banks--mortgage
 
-													.pw-bank__col.pw-bank__col--payment
-														.pw-bank__info-top Ежемесячный платеж
-														.pw-bank__info-bottom.js-bank-payment
-															span -- ---
-															|  ₽/мес.
-													.pw-bank__col.pw-bank__col--rate
-														.pw-bank__info-top Ставка
-														.pw-bank__info-bottom.js-bank-rate
-													.pw-bank__col.pw-bank__col--btn
-														a.pw-bank__btn.js-pw-bank__btn(href="#")
-															svg
-																use(xlink:href="img/sprites/sprite.svg#bank-arrow-grey")
+													.pw-bank.js-bank(data-id="10")
+														.pw-bank__col.pw-bank__col--name
+															.pw-bank__icon
+																img(src="img/svg/bank-psb.svg", alt="")
+															.pw-bank__name ПромСвязьБанк
 
-												.pw-bank.js-bank(data-id="11")
-													.pw-bank__col.pw-bank__col--name
-														.pw-bank__icon
-															img(src="img/svg/bank-sber.svg", alt="")
-														.pw-bank__name Сбербанк
-													.pw-bank__col.pw-bank__col--payment
-														.pw-bank__info-top Ежемесячный платеж
-														.pw-bank__info-bottom.js-bank-payment
-															span -- ---
-															|  ₽/мес.
-													.pw-bank__col.pw-bank__col--rate
-														.pw-bank__info-top Ставка
-														.pw-bank__info-bottom.js-bank-rate
-													.pw-bank__col.pw-bank__col--btn
-														a.pw-bank__btn.js-pw-bank__btn(href="#")
-															svg
-																use(xlink:href="img/sprites/sprite.svg#bank-arrow-grey")
+														.pw-bank__col.pw-bank__col--payment
+															.pw-bank__info-top Ежемесячный платеж
+															.pw-bank__info-bottom.js-bank-payment
+																span -- ---
+																|  ₽/мес.
+														.pw-bank__col.pw-bank__col--rate
+															.pw-bank__info-top Ставка
+															.pw-bank__info-bottom.js-bank-rate
+														.pw-bank__col.pw-bank__col--btn
+															a.pw-bank__btn.js-pw-bank__btn(href="#")
+																svg
+																	use(xlink:href="img/sprites/sprite.svg#bank-arrow-grey")
 
-												.pw-bank.js-bank(data-id="12")
-													.pw-bank__col.pw-bank__col--name
-														.pw-bank__icon
-															img(src="img/svg/bank-alfa.svg", alt="")
-														.pw-bank__name Альфа Банк
-													.pw-bank__col.pw-bank__col--payment
-														.pw-bank__info-top Ежемесячный платеж
-														.pw-bank__info-bottom.js-bank-payment
-															span -- ---
-															|  ₽/мес.
-													.pw-bank__col.pw-bank__col--rate
-														.pw-bank__info-top Ставка
-														.pw-bank__info-bottom.js-bank-rate
-													.pw-bank__col.pw-bank__col--btn
-														a.pw-bank__btn.js-pw-bank__btn(href="#")
-															svg
-																use(xlink:href="img/sprites/sprite.svg#bank-arrow-grey")
+													.pw-bank.js-bank(data-id="11")
+														.pw-bank__col.pw-bank__col--name
+															.pw-bank__icon
+																img(src="img/svg/bank-sber.svg", alt="")
+															.pw-bank__name Сбербанк
+														.pw-bank__col.pw-bank__col--payment
+															.pw-bank__info-top Ежемесячный платеж
+															.pw-bank__info-bottom.js-bank-payment
+																span -- ---
+																|  ₽/мес.
+														.pw-bank__col.pw-bank__col--rate
+															.pw-bank__info-top Ставка
+															.pw-bank__info-bottom.js-bank-rate
+														.pw-bank__col.pw-bank__col--btn
+															a.pw-bank__btn.js-pw-bank__btn(href="#")
+																svg
+																	use(xlink:href="img/sprites/sprite.svg#bank-arrow-grey")
 
-												.pw-bank.js-bank(data-id="13")
-													.pw-bank__col.pw-bank__col--name
-														.pw-bank__icon
-															img(src="img/svg/bank-skb.svg", alt="")
-														.pw-bank__name СовКомБанк
-													.pw-bank__col.pw-bank__col--payment
-														.pw-bank__info-top Ежемесячный платеж
-														.pw-bank__info-bottom.js-bank-payment
-															span -- ---
-															|  ₽/мес.
-													.pw-bank__col.pw-bank__col--rate
-														.pw-bank__info-top Ставка
-														.pw-bank__info-bottom.js-bank-rate
-													.pw-bank__col.pw-bank__col--btn
-														a.pw-bank__btn.js-pw-bank__btn(href="#")
-															svg
-																use(xlink:href="img/sprites/sprite.svg#bank-arrow-grey")
+													.pw-bank.js-bank(data-id="12")
+														.pw-bank__col.pw-bank__col--name
+															.pw-bank__icon
+																img(src="img/svg/bank-alfa.svg", alt="")
+															.pw-bank__name Альфа Банк
+														.pw-bank__col.pw-bank__col--payment
+															.pw-bank__info-top Ежемесячный платеж
+															.pw-bank__info-bottom.js-bank-payment
+																span -- ---
+																|  ₽/мес.
+														.pw-bank__col.pw-bank__col--rate
+															.pw-bank__info-top Ставка
+															.pw-bank__info-bottom.js-bank-rate
+														.pw-bank__col.pw-bank__col--btn
+															a.pw-bank__btn.js-pw-bank__btn(href="#")
+																svg
+																	use(xlink:href="img/sprites/sprite.svg#bank-arrow-grey")
+
+													.pw-bank.js-bank(data-id="13")
+														.pw-bank__col.pw-bank__col--name
+															.pw-bank__icon
+																img(src="img/svg/bank-skb.svg", alt="")
+															.pw-bank__name СовКомБанк
+														.pw-bank__col.pw-bank__col--payment
+															.pw-bank__info-top Ежемесячный платеж
+															.pw-bank__info-bottom.js-bank-payment
+																span -- ---
+																|  ₽/мес.
+														.pw-bank__col.pw-bank__col--rate
+															.pw-bank__info-top Ставка
+															.pw-bank__info-bottom.js-bank-rate
+														.pw-bank__col.pw-bank__col--btn
+															a.pw-bank__btn.js-pw-bank__btn(href="#")
+																svg
+																	use(xlink:href="img/sprites/sprite.svg#bank-arrow-grey")
 
 
 
 
-												.pw-bank.js-bank(data-id="14")
-													.pw-bank__col.pw-bank__col--name
-														.pw-bank__icon
-															img(src="img/svg/bank-psb.svg", alt="")
-														.pw-bank__name Не ПромСвязьБанк
+													.pw-bank.js-bank(data-id="14")
+														.pw-bank__col.pw-bank__col--name
+															.pw-bank__icon
+																img(src="img/svg/bank-psb.svg", alt="")
+															.pw-bank__name Не ПромСвязьБанк
 
-													.pw-bank__col.pw-bank__col--payment
-														.pw-bank__info-top Ежемесячный платеж
-														.pw-bank__info-bottom.js-bank-payment
-															span -- ---
-															|  ₽/мес.
-													.pw-bank__col.pw-bank__col--rate
-														.pw-bank__info-top Ставка
-														.pw-bank__info-bottom.js-bank-rate
-													.pw-bank__col.pw-bank__col--btn
-														a.pw-bank__btn.js-pw-bank__btn(href="#")
-															svg
-																use(xlink:href="img/sprites/sprite.svg#bank-arrow-grey")
+														.pw-bank__col.pw-bank__col--payment
+															.pw-bank__info-top Ежемесячный платеж
+															.pw-bank__info-bottom.js-bank-payment
+																span -- ---
+																|  ₽/мес.
+														.pw-bank__col.pw-bank__col--rate
+															.pw-bank__info-top Ставка
+															.pw-bank__info-bottom.js-bank-rate
+														.pw-bank__col.pw-bank__col--btn
+															a.pw-bank__btn.js-pw-bank__btn(href="#")
+																svg
+																	use(xlink:href="img/sprites/sprite.svg#bank-arrow-grey")
 
-												.pw-bank.js-bank(data-id="15")
-													.pw-bank__col.pw-bank__col--name
-														.pw-bank__icon
-															img(src="img/svg/bank-sber.svg", alt="")
-														.pw-bank__name Не Сбербанк
-													.pw-bank__col.pw-bank__col--payment
-														.pw-bank__info-top Ежемесячный платеж
-														.pw-bank__info-bottom.js-bank-payment
-															span -- ---
-															|  ₽/мес.
-													.pw-bank__col.pw-bank__col--rate
-														.pw-bank__info-top Ставка
-														.pw-bank__info-bottom.js-bank-rate
-													.pw-bank__col.pw-bank__col--btn
-														a.pw-bank__btn.js-pw-bank__btn(href="#")
-															svg
-																use(xlink:href="img/sprites/sprite.svg#bank-arrow-grey")
+													.pw-bank.js-bank(data-id="15")
+														.pw-bank__col.pw-bank__col--name
+															.pw-bank__icon
+																img(src="img/svg/bank-sber.svg", alt="")
+															.pw-bank__name Не Сбербанк
+														.pw-bank__col.pw-bank__col--payment
+															.pw-bank__info-top Ежемесячный платеж
+															.pw-bank__info-bottom.js-bank-payment
+																span -- ---
+																|  ₽/мес.
+														.pw-bank__col.pw-bank__col--rate
+															.pw-bank__info-top Ставка
+															.pw-bank__info-bottom.js-bank-rate
+														.pw-bank__col.pw-bank__col--btn
+															a.pw-bank__btn.js-pw-bank__btn(href="#")
+																svg
+																	use(xlink:href="img/sprites/sprite.svg#bank-arrow-grey")
 
-												.pw-bank.js-bank(data-id="16")
-													.pw-bank__col.pw-bank__col--name
-														.pw-bank__icon
-															img(src="img/svg/bank-alfa.svg", alt="")
-														.pw-bank__name Не Альфа Банк
-													.pw-bank__col.pw-bank__col--payment
-														.pw-bank__info-top Ежемесячный платеж
-														.pw-bank__info-bottom.js-bank-payment
-															span -- ---
-															|  ₽/мес.
-													.pw-bank__col.pw-bank__col--rate
-														.pw-bank__info-top Ставка
-														.pw-bank__info-bottom.js-bank-rate
-													.pw-bank__col.pw-bank__col--btn
-														a.pw-bank__btn.js-pw-bank__btn(href="#")
-															svg
-																use(xlink:href="img/sprites/sprite.svg#bank-arrow-grey")
+													.pw-bank.js-bank(data-id="16")
+														.pw-bank__col.pw-bank__col--name
+															.pw-bank__icon
+																img(src="img/svg/bank-alfa.svg", alt="")
+															.pw-bank__name Не Альфа Банк
+														.pw-bank__col.pw-bank__col--payment
+															.pw-bank__info-top Ежемесячный платеж
+															.pw-bank__info-bottom.js-bank-payment
+																span -- ---
+																|  ₽/мес.
+														.pw-bank__col.pw-bank__col--rate
+															.pw-bank__info-top Ставка
+															.pw-bank__info-bottom.js-bank-rate
+														.pw-bank__col.pw-bank__col--btn
+															a.pw-bank__btn.js-pw-bank__btn(href="#")
+																svg
+																	use(xlink:href="img/sprites/sprite.svg#bank-arrow-grey")
 
-												.pw-bank.js-bank(data-id="17")
-													.pw-bank__col.pw-bank__col--name
-														.pw-bank__icon
-															img(src="img/svg/bank-skb.svg", alt="")
-														.pw-bank__name Не СовКомБанк
-													.pw-bank__col.pw-bank__col--payment
-														.pw-bank__info-top Ежемесячный платеж
-														.pw-bank__info-bottom.js-bank-payment
-															span -- ---
-															|  ₽/мес.
-													.pw-bank__col.pw-bank__col--rate
-														.pw-bank__info-top Ставка
-														.pw-bank__info-bottom.js-bank-rate
-													.pw-bank__col.pw-bank__col--btn
-														a.pw-bank__btn.js-pw-bank__btn(href="#")
-															svg
-																use(xlink:href="img/sprites/sprite.svg#bank-arrow-grey")
-
-							.pw-summary
-								.pw-summary-item
-									.pw-summary-item__left
-										.pw-summary-item__title Ежемесячный платеж
-										.pw-summary-item__text от 54 679 ₽/мес.
-								.pw-summary-item
-									.pw-summary-item__left
-										.pw-summary-item__title Ставка
-										.pw-summary-item__text от 5.7%
-									.pw-summary-item__right
-										.pws-circles
-											.pws-icon
-												img(src="img/svg/bank-psb.svg", alt="")
-											.pws-icon
-												img(src="img/svg/bank-sber.svg", alt="")
-											.pws-icon
-												span 16
-								.pw-summary-btn
-									a.btn.btn--with-arrow.btn--dark.js-open-pw-banks-modal(href="")
-										span Все предложения
+													.pw-bank.js-bank(data-id="17")
+														.pw-bank__col.pw-bank__col--name
+															.pw-bank__icon
+																img(src="img/svg/bank-skb.svg", alt="")
+															.pw-bank__name Не СовКомБанк
+														.pw-bank__col.pw-bank__col--payment
+															.pw-bank__info-top Ежемесячный платеж
+															.pw-bank__info-bottom.js-bank-payment
+																span -- ---
+																|  ₽/мес.
+														.pw-bank__col.pw-bank__col--rate
+															.pw-bank__info-top Ставка
+															.pw-bank__info-bottom.js-bank-rate
+														.pw-bank__col.pw-bank__col--btn
+															a.pw-bank__btn.js-pw-bank__btn(href="#")
+																svg
+																	use(xlink:href="img/sprites/sprite.svg#bank-arrow-grey")
 
 
 
