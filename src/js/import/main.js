@@ -7,11 +7,11 @@ function num_word(value, words) {
 	return words[2];
 }
 
-function myLockBody(){
+function myLockBody() {
 	$('html').addClass('with-fancybox');
 	$('body').addClass('hide-scrollbar');
 }
-function myUnlockBody(){
+function myUnlockBody() {
 	$('html').removeClass('with-fancybox');
 	$('body').removeClass('hide-scrollbar');
 }
@@ -310,39 +310,104 @@ $(function () {
 
 
 
-	$('.js-call-me-modal').on('click',function(e){
+	$('.js-call-me-modal').on('click', function (e) {
 		e.preventDefault();
 		e.stopPropagation();
-		Fancybox.show([{ src: "#call-me-modal", type: "inline",closeButton:false }]);
+		Fancybox.show([{ src: "#call-me-modal", type: "inline", closeButton: false }]);
 	});
 
-	$('.js-answer-modal').on('click',function(e){
+	$('.js-answer-modal').on('click', function (e) {
 		e.preventDefault();
 		e.stopPropagation();
-		Fancybox.show([{ src: "#answer-modal", type: "inline",closeButton:false }]);
+		Fancybox.show([{ src: "#answer-modal", type: "inline", closeButton: false }]);
 	});
 
 	autosize($('.js-textarea-autosize'));
 
-	$('.js-open-pw-banks-modal').on('click',function(e){
+	$('.js-open-pw-banks-modal').on('click', function (e) {
 		e.preventDefault();
 		e.stopPropagation();
 
 		$('#banks-modal').addClass('pw-banks-wrap--modal-opened');
 		myLockBody();
 	});
-	$('.js-pw-banks-modal-close').on('click',function(e){
+	$('.js-pw-banks-modal-close').on('click', function (e) {
 		e.preventDefault();
 		e.stopPropagation();
 		$('#banks-modal').removeClass('pw-banks-wrap--modal-opened');
 		myUnlockBody();
 	});
 
-	$('.js-phonemask').each(function(){
+	$('.js-phonemask').each(function () {
 		var phoneIm = new Inputmask("+7 (999) 999-99-99");
 		phoneIm.mask($(this)[0]);
 
 	});
+
+	function clearStrAndParseInt(str) {
+		return parseInt(str.replaceAll(/[^\d]/g, ''));
+	}
+
+	$('.js-pw-section').each(function () {
+		var section = $(this),
+			banks = section.find('.js-bank'),
+			programSelect = section.find('.js-pw-select-program'),
+			costInp = section.find('.js-pw-input-cost'),
+			firstPaymentInp = section.find('.js-pw-input-firstPayment'),
+			termInp = section.find('.js-pw-input-term'),
+			programs = window.pwPrograms;
+			var bankRateFormat = wNumb({
+				suffix: '%',
+				//decimals: 3,
+			});
+			var bankPaymentFormat = wNumb({
+				thousand: ' ',
+			});
+
+		section.on('needRecalc', function () {
+			var programId = parseInt(programSelect.val());
+			if (typeof (programs[programId]) !== 'undefined') {
+				var program = programs[programId];
+				var banksIdsForThisProgram = Object.keys(program.banks).map(k => parseInt(k));
+				var cost = clearStrAndParseInt(costInp.val()),
+					firstPayment = clearStrAndParseInt(firstPaymentInp.val()),
+					term = clearStrAndParseInt(termInp.val());
+
+
+				banks.each(function () {
+					var bank = $(this),
+						id = parseInt(bank.attr('data-id'));
+					if (banksIdsForThisProgram.includes(id)) {
+						var bankRate = parseFloat(program.banks[id]);
+						var bankPayment=eval(program.formula);
+						console.log('bankPayment = '+bankPayment);
+						bank.find('.js-bank-payment span').html(bankPaymentFormat.to(bankPayment));
+						bank.find('.js-bank-rate').html(bankRateFormat.to(bankRate));
+						bank.removeClass('pw-bank--hidden');
+					}
+					else {
+						bank.find('.js-bank-payment span').html('');
+						bank.find('.js-bank-rate').html('');
+						bank.addClass('pw-bank--hidden');
+					}
+				});
+			}
+			else {
+				alert('error  информация о программе отсутствует');
+			}
+
+
+		}).trigger('needRecalc');
+
+
+		programSelect.add(costInp).add(firstPaymentInp).add(termInp).on('change',function () {
+			section.trigger('needRecalc');
+		});
+	});
+
+
+
+
 
 
 

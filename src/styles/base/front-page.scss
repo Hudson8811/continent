@@ -1177,6 +1177,9 @@ a.project-card {
 		border-radius: 12px;
 		position: relative;
 	}
+	&--hidden{
+		display: none;
+	}
 
 	&+.pw-bank {
 

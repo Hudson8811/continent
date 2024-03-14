@@ -5815,6 +5815,10 @@ a.project-card:hover {
   padding: 31px 0;
 }
 
+.pw-bank--hidden {
+  display: none;
+}
+
 .pw-bank + .pw-bank {
   border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
