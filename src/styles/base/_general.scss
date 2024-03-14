@@ -422,8 +422,33 @@ table {
 				padding: 14px 56px;
 			}
 		}
-		@include max(xs){
+
+		@include max(xs) {
 			width: 100%;
 		}
 	}
+}
+
+.simplebar-track.simplebar-vertical {
+	width: 5px;
+
+}
+.simplebar-scrollbar{
+
+	&::before {
+
+		border-radius: 2px;
+
+		background: rgba(255, 255, 255, 0.2);
+		left: 0;
+		right: 0;
+		opacity: 1;
+	}
+
+}
+.simplebar-scrollbar.simplebar-visible:before{
+	opacity: 1;
+}
+.simplebar-dragging .simplebar-scrollbar.simplebar-visible:before{
+	opacity: 0.7;
 }

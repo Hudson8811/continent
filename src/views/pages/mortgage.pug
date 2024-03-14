@@ -20,7 +20,9 @@ block content
 						span Оставить заявку
 
 		.ktop-section-pic
-			img(src="img/mortgage_pic-1.jpg", alt="")
+			picture
+				source(srcset="img/mortgage_pic-1-mob.jpg" media="(max-width: 960px)")
+				img(src="img/mortgage_pic-1.jpg", alt="")
 
 
 	.blue-sections-bg
@@ -55,7 +57,7 @@ block content
 				h2.section-title Сделайте предварительный расчет
 				.purchase-ways-flex
 					.purchase-ways-flex__side
-						.purchase-ways-form.purchase-ways-form--mortgage
+						.purchase-ways-form.purchase-ways-form--mortgage.purchase-ways-form--mortgage--left
 							.purchase-ways-form__top
 								.purchase-ways-form__top-left
 									.purchase-ways-form__title  Ипотека
@@ -126,9 +128,9 @@ block content
 								a.btn.btn--with-arrow.btn--dark.js-open-pw-banks-modal(href="")
 									span Все предложения
 
-						.purchase-ways-form.purchase-ways-form--mortgage
+						.purchase-ways-form.purchase-ways-form--mortgage.purchase-ways-form--mortgage--right
 							.mortage-banks-wrap
-								.mortage-banks-wrap__inner.js-banks-scrollbar
+								.mortage-banks-wrap__inner.js-banks-simplebar
 									.pw-banks-wrap#banks-modal
 										.pw-banks-wrap__top
 											.pw-banks-wrap__close.js-pw-banks-modal-close

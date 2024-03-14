@@ -8,8 +8,7 @@
 @@include("./libs/autosize.min.js")
 @@include("./libs/inputmask.min.js")
 @@include("./libs/debounce.js")
-
-
+@@include("./libs/simplebar.min.js")
 
 //my files
 @@include("./import/components.js")

@@ -135,7 +135,11 @@
             <div class="ktop-section-info__btn-wrap"><a class="btn" href=""><span>Оставить заявку</span></a></div>
           </div>
         </div>
-        <div class="ktop-section-pic"><img src="img/mortgage_pic-1.jpg" alt=""></div>
+        <div class="ktop-section-pic">
+          <picture>
+            <source srcset="img/mortgage_pic-1-mob.jpg" media="(max-width: 960px)"><img src="img/mortgage_pic-1.jpg" alt="">
+          </picture>
+        </div>
       </section>
       <div class="blue-sections-bg">
         <section class="purchase-ways section-margin js-pw-section">
@@ -169,7 +173,7 @@
             <h2 class="section-title">Сделайте предварительный расчет</h2>
             <div class="purchase-ways-flex">
               <div class="purchase-ways-flex__side">
-                <div class="purchase-ways-form purchase-ways-form--mortgage">
+                <div class="purchase-ways-form purchase-ways-form--mortgage purchase-ways-form--mortgage--left">
                   <div class="purchase-ways-form__top">
                     <div class="purchase-ways-form__top-left">
                       <div class="purchase-ways-form__title"> Ипотека</div>
@@ -262,9 +266,9 @@
                   </div>
                   <div class="pw-summary-btn"><a class="btn btn--with-arrow btn--dark js-open-pw-banks-modal" href=""><span>Все предложения</span></a></div>
                 </div>
-                <div class="purchase-ways-form purchase-ways-form--mortgage">
+                <div class="purchase-ways-form purchase-ways-form--mortgage purchase-ways-form--mortgage--right">
                   <div class="mortage-banks-wrap">
-                    <div class="mortage-banks-wrap__inner js-banks-scrollbar">
+                    <div class="mortage-banks-wrap__inner js-banks-simplebar">
                       <div class="pw-banks-wrap" id="banks-modal">
                         <div class="pw-banks-wrap__top">
                           <div class="pw-banks-wrap__close js-pw-banks-modal-close"></div>

@@ -934,6 +934,10 @@ a.project-card {
 		position: relative;
 
 	}
+	@include max(1279){
+		@include min(md){
+		}
+	}
 	&__inner{
 		@include min(1279){
 			position: absolute;
@@ -942,11 +946,30 @@ a.project-card {
 			width: 100%;
 			height: 100%;
 			width: calc(100% + 32px);
-			height: calc(100% + 20px);
-			overflow: auto;
+			height: calc(100% + 31px);
+			padding-right: 32px;
+		}
+		@include max(1279){
+			@include min(md){
+				max-height: 624px;
+				width: calc(100% + 32px);
+				padding-right: 32px;
+				margin-bottom: -31px;
+
+			}
+		}
+
+		@include min(md){
+			&:not([data-simplebar]){
+				overflow: auto;
+			}
+
 		}
 	}
 }
+
+
+
 .purchase-ways-form {
 	padding: 32px 32px 16px;
 	background: rgba(255, 255, 255, 0.05);
@@ -963,9 +986,25 @@ a.project-card {
 			height: 100%;
 
 		}
+		@include max(lg){
+			@include min(md){
+				height: auto;
+			}
+		}
+		&--right{
+			@include max(md){
+				padding: 0 !important;
+				background:none;
+			}
+		}
+
 		@include max(md){
-			padding: 0 !important;
-			background:none;
+			.simplebar-content-wrapper,.simplebar-offset,.simplebar-mask{
+				position: static;
+			}
+		}
+		.simplebar-scrollbar:before{
+			bottom: 12px;
 		}
 
 	}
@@ -1245,6 +1284,9 @@ a.project-card {
 			@include min(md){
 				padding-top: 0;
 			}
+		}
+		@include min(md){
+			padding-top: 16px;
 		}
 	}
 }

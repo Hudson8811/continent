@@ -1,4 +1,4 @@
-//https://github.com/sindresorhus/debounce
+// https://github.com/sindresorhus/debounce
 
 function debounce(function_, wait = 100, options = {}) {
 	if (typeof function_ !== 'function') {

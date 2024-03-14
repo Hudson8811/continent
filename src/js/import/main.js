@@ -168,13 +168,13 @@ $(function () {
 
 						targetSlider[0].noUiSlider.updateOptions({
 							range: {
-								'min':targetSlider[0].noUiSlider.options.range.min,
+								'min': targetSlider[0].noUiSlider.options.range.min,
 								'max': clearStrAndParseInt(value)
 							}
 						});
 					}
 					else {
-						console.log('no init');
+						//console.log('no init');
 
 					}
 
@@ -451,11 +451,11 @@ $(function () {
 
 		}).trigger('needRecalc');
 
-		function triggerRecalc(){
+		function triggerRecalc() {
 			section.trigger('needRecalc');
 
 		}
-		debouncedTriggerRecalc=debounce(triggerRecalc,200);
+		debouncedTriggerRecalc = debounce(triggerRecalc, 200);
 
 		programSelect.add(costInp).add(firstPaymentInp).add(termInp).on('change rsChange', function () {
 			debouncedTriggerRecalc();
@@ -463,10 +463,28 @@ $(function () {
 	});
 
 
-	$('.myElements').each((el) => new SimpleBar(el));
+
+	if (window.matchMedia('(min-width:960px)').matches) {
+		$('.js-banks-simplebar').each(function () {
+			var simpleBar = new SimpleBar($(this)[0], {
+				autoHide: false
+			});
+
+		});
+	}
 
 
 
+
+	$(window).on("resize", function () {
+		if (window.matchMedia('(min-width:961px)').matches) {
+			$('.js-banks-simplebar:not([data-simplebar="init"]').each(function () {
+				var simpleBar = new SimpleBar($(this)[0], {
+					autoHide: false
+				});
+			});
+		}
+	});
 
 
 
