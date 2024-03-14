@@ -1068,7 +1068,7 @@ a.project-card {
 	width: calc(100% - 16px);
 	margin-left: 16px;
 	margin-bottom: 16px;
-	flex-grow: 1;
+	//flex-grow: 1;
 
 	@include max(sm) {
 		margin-bottom: 29px;

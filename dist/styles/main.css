@@ -5788,7 +5788,6 @@ a.project-card:hover {
   width: calc(100% - 16px);
   margin-left: 16px;
   margin-bottom: 16px;
-  flex-grow: 1;
 }
 
 .pw-control__name {
