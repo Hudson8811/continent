@@ -7238,6 +7238,12 @@ a.project-card:hover {
   }
 }
 
+@media only screen and (min-width: 1921px) {
+  .ftb-slider-slide {
+    min-height: 43.247787vw;
+  }
+}
+
 @media only screen and (max-width: 1600px) {
   .filters-row-item {
     width: calc(33.33% - 32px);

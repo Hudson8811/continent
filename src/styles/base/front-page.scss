@@ -7,6 +7,10 @@
 	align-items: flex-start;
 	justify-content: center;
 
+	@include min(1921) {
+		min-height: 43.247787vw;
+	}
+
 	@include max(lg) {
 		padding: 80px 0 85px;
 		min-height: 616px;
