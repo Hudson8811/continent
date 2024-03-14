@@ -6,6 +6,7 @@
 @@include("./libs/select2.full.min.js")
 @@include("./libs/fancybox.umd.min.js")
 @@include("./libs/autosize.min.js")
+@@include("./libs/inputmask.min.js")
 
 
 

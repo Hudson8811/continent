@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Project title</title>
+    <title>Главная</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -123,7 +123,15 @@
     </div>
     <div class="sh-placeholder"></div>
     <main class="site-main">
-      <p>Lorem ipsum</p>
+      <section class="not-found">
+        <div class="container">
+          <div class="not-found-info">
+            <div class="not-found-info__text1">Вы попали на пустынный континент…</div>
+            <div class="not-found-info__text2">Нужной страницы&nbsp;тут нет</div>
+            <div class="not-found-info__btn"><a class="btn" href=""><span>Вернуться на главную</span></a></div>
+          </div>
+        </div>
+      </section>
     </main>
     <footer class="site-footer">
       <div class="container container--footer">
@@ -183,7 +191,7 @@
                     <input class="simple-input" type="text" name="" placeholder="Ваше имя">
                   </div>
                   <div class="simple-modal__input">
-                    <input class="simple-input" type="text" name="" placeholder="Телефон">
+                    <input class="simple-input js-phonemask" type="text" name="" placeholder="Телефон">
                   </div>
                   <div class="simple-modal__input"><a class="btn btn--w100" href=""><span>Заказать звонок</span></a></div>
                 </div>
@@ -207,7 +215,7 @@
                     <input class="simple-input" type="text" name="" placeholder="Ваше имя">
                   </div>
                   <div class="simple-modal__input">
-                    <input class="simple-input" type="text" name="" placeholder="Телефон">
+                    <input class="simple-input js-phonemask" type="text" name="" placeholder="Телефон">
                   </div>
                   <div class="simple-modal__input">
                     <textarea class="simple-input js-textarea-autosize" type="text" name="" textarea rows="2" placeholder="Ваш вопрос"></textarea>

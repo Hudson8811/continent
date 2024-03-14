@@ -882,11 +882,13 @@ a.project-card {
 .purchase-ways-flex {
 	display: flex;
 	justify-content: space-between;
+	gap: 32px;
 	margin-top: 48px;
 
 	@include max(1279) {
 		flex-direction: column;
 		align-items: center;
+		gap: 24px;
 	}
 
 	@include max(md) {
@@ -905,14 +907,11 @@ a.project-card {
 
 	&__side {
 		width: 467px;
-		margin-left: 32px;
 		display: flex;
 		flex-direction: column;
 
 		@include max(1279) {
-			margin-left: 0;
 			width: 100%;
-			margin-top: 24px;
 
 			.purchase-way-card__pic {
 				width: 467px;
@@ -1052,10 +1051,36 @@ a.project-card {
 		}
 	}
 
+	&--w25 {
+		width: calc(25% - 16px);
+
+		@include max(sm) {
+			width: calc(100% - 16px);
+
+		}
+	}
+
 	&--md100 {
 		@include max(md) {
 			width: calc(100% - 16px);
 
+		}
+	}
+	&--customxlg-w50 {
+		@include max(1470) {
+			width: calc(50% - 16px);
+		}
+	}
+
+	&--1279-w33{
+		@include max(1279){
+			width: calc(33.33% - 16px);
+
+		}
+	}
+	&--md-w50{
+		@include max(md){
+			width: calc(50% - 16px);
 		}
 	}
 }

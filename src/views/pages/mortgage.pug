@@ -1,0 +1,176 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+	- const title = "Ипотека"
+
+block content
+	section.ktop-section
+		.container.ktop-section__container
+			.breadcrumbs.ktop-section__breadcrumbs
+				.breadcrumbs__item
+					a(href="") Главная
+				.breadcrumbs__item
+					span Ипотека
+			.ktop-section-info
+				.ktop-section-info__title Ипотека
+				.ktop-section-info__desc Расскажем об актуальных условиях, <br> оформим заявку, отправим в банк
+				.ktop-section-info__btn-wrap
+					a.btn(href="")
+						span Оставить заявку
+
+		.ktop-section-pic
+			img(src="img/mortgage_pic-1.jpg", alt="")
+
+
+	.blue-sections-bg
+
+		section.purchase-ways.section-margin
+			.container
+				h2.section-title Сделайте предварительный расчет
+				.purchase-ways-flex
+					.purchase-ways-flex__side
+						.purchase-ways-form
+							.purchase-ways-form__top
+								.purchase-ways-form__top-left
+									.purchase-ways-form__title  Ипотека
+									.purchase-ways-form__desc Более 10 банков-партнеров с выгодными условиями
+
+							.pw-controls-mortgage-wrap
+								.pw-controls.pw-controls--mortgage
+									.pw-control
+										.pw-control__name Ипотечная программа
+										.pw-control__field
+											.simple-select2-wrap
+												select.js-simple-select2-outer-dropdown(data-style="select2-container--style-2 select2-container--bdrs-4 select2-container--smaller-lrp")
+													option(selected value="1") Субсидированная ипотека
+													option(value="2") Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, dolor!
+									.pw-control
+										.pw-control__name Стоимость недвижимости
+										.pw-control__field
+											.rs-block.rs-block--single.rs-block--start-at-0.rs-block--style-2.custom-style-rs.js-range-slider(data-single="true" data-min="1000000" data-max="10000000" data-suffix=" ₽" data-format="int" data-step="100000" )
+												//data-start-left data-start-right
+												.rs-block__top
+													input.rs-block__inp.rs-block__inp-single.rs-block__inp-single--smaller-lrp.js-range-slider__inp-single(type="text")
+												.rs-block__bottom
+													.rs-block__rs.js-range-slider__range
+									.pw-control
+										.pw-control__name Первоначальный взнос
+										.pw-control__field
+											.rs-block.rs-block--single.rs-block--start-at-0.rs-block--style-2.custom-style-rs.js-range-slider(data-single="true" data-min="100000" data-max="10000000" data-suffix=" ₽" data-format="int" data-step="100000" )
+												//data-start-left data-start-right
+												.rs-block__top
+													input.rs-block__inp.rs-block__inp-single.rs-block__inp-single--smaller-lrp.js-range-slider__inp-single(type="text")
+												.rs-block__bottom
+													.rs-block__rs.js-range-slider__range
+									.pw-control
+										.pw-control__name Срок
+										.pw-control__field
+											.rs-block.rs-block--single.rs-block--start-at-0.rs-block--style-2.custom-style-rs.js-range-slider(data-single="true" data-min="1" data-max="30" data-suffix="year" data-format="int" data-step="1" )
+												//data-start-left data-start-right
+												.rs-block__top
+													input.rs-block__inp.rs-block__inp-single.rs-block__inp-single--smaller-lrp.js-range-slider__inp-single(type="text")
+												.rs-block__bottom
+													.rs-block__rs.js-range-slider__range
+
+					.purchase-ways-flex__main
+						.purchase-ways-form
+							.mortage-banks-desktop-wrap
+								.pw-banks-wrap#banks-modal
+									.pw-banks-wrap__top
+										.pw-banks-wrap__close.js-pw-banks-modal-close
+									.pw-banks-wrap__main
+										.pw-banks.pw-banks--in-form
+
+											each val in [1, 2,3,4,5]
+												.pw-bank
+													.pw-bank__col.pw-bank__col--name
+														.pw-bank__icon
+															img(src="img/svg/bank-psb.svg", alt="")
+														//.pw-bank__name Азиатско-Тихоокеанский
+														//.pw-bank__name Алтайкапиталбанк
+														.pw-bank__name ПромСвязьБанк
+
+													.pw-bank__col.pw-bank__col--payment
+														.pw-bank__info-top Ежемесячный платеж
+														.pw-bank__info-bottom 54 679 ₽/мес.
+													.pw-bank__col.pw-bank__col--rate
+														.pw-bank__info-top Ставка
+														.pw-bank__info-bottom 5.7%
+													.pw-bank__col.pw-bank__col--btn
+														a.pw-bank__btn.js-pw-bank__btn(href="#")
+															svg
+																use(xlink:href="img/sprites/sprite.svg#bank-arrow-grey")
+
+												.pw-bank
+													.pw-bank__col.pw-bank__col--name
+														.pw-bank__icon
+															img(src="img/svg/bank-sber.svg", alt="")
+														.pw-bank__name Сбербанк
+													.pw-bank__col.pw-bank__col--payment
+														.pw-bank__info-top Ежемесячный платеж
+														.pw-bank__info-bottom 54 679 ₽/мес.
+													.pw-bank__col.pw-bank__col--rate
+														.pw-bank__info-top Ставка
+														.pw-bank__info-bottom 5.7%
+													.pw-bank__col.pw-bank__col--btn
+														a.pw-bank__btn.js-pw-bank__btn(href="#")
+															svg
+																use(xlink:href="img/sprites/sprite.svg#bank-arrow-grey")
+
+												.pw-bank
+													.pw-bank__col.pw-bank__col--name
+														.pw-bank__icon
+															img(src="img/svg/bank-alfa.svg", alt="")
+														.pw-bank__name Альфа Банк
+													.pw-bank__col.pw-bank__col--payment
+														.pw-bank__info-top Ежемесячный платеж
+														.pw-bank__info-bottom 54 679 ₽/мес.
+													.pw-bank__col.pw-bank__col--rate
+														.pw-bank__info-top Ставка
+														.pw-bank__info-bottom 5.7%
+													.pw-bank__col.pw-bank__col--btn
+														a.pw-bank__btn.js-pw-bank__btn(href="#")
+															svg
+																use(xlink:href="img/sprites/sprite.svg#bank-arrow-grey")
+
+												.pw-bank
+													.pw-bank__col.pw-bank__col--name
+														.pw-bank__icon
+															img(src="img/svg/bank-skb.svg", alt="")
+														.pw-bank__name СовКомБанк
+													.pw-bank__col.pw-bank__col--payment
+														.pw-bank__info-top Ежемесячный платеж
+														.pw-bank__info-bottom 54 679 ₽/мес.
+													.pw-bank__col.pw-bank__col--rate
+														.pw-bank__info-top Ставка
+														.pw-bank__info-bottom 5.7%
+													.pw-bank__col.pw-bank__col--btn
+														a.pw-bank__btn.js-pw-bank__btn(href="#")
+															svg
+																use(xlink:href="img/sprites/sprite.svg#bank-arrow-grey")
+
+							.pw-summary
+								.pw-summary-item
+									.pw-summary-item__left
+										.pw-summary-item__title Ежемесячный платеж
+										.pw-summary-item__text от 54 679 ₽/мес.
+								.pw-summary-item
+									.pw-summary-item__left
+										.pw-summary-item__title Ставка
+										.pw-summary-item__text от 5.7%
+									.pw-summary-item__right
+										.pws-circles
+											.pws-icon
+												img(src="img/svg/bank-psb.svg", alt="")
+											.pws-icon
+												img(src="img/svg/bank-sber.svg", alt="")
+											.pws-icon
+												span 16
+								.pw-summary-btn
+									a.btn.btn--with-arrow.btn--dark.js-open-pw-banks-modal(href="")
+										span Все предложения
+
+
+
+		.prefooter-padding

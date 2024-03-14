@@ -4153,6 +4153,51 @@ table {
   background: rgba(0, 0, 0, 0.1);
 }
 
+.not-found {
+  background: #263344;
+  background: url(../img/404.jpg) no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 619px;
+  padding: 40px 0;
+}
+
+.not-found-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.not-found-info__text1 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 110%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.16), 0 0 5px 0 rgba(0, 0, 0, 0.05);
+}
+
+.not-found-info__text2 {
+  margin-top: 16px;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 110%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.16), 0 0 5px 0 rgba(0, 0, 0, 0.1);
+}
+
+.not-found-info__btn {
+  margin-top: 32px;
+}
+
 .simple-modal {
   width: 588px;
   background: none;
@@ -5660,6 +5705,7 @@ a.project-card:hover {
 .purchase-ways-flex {
   display: flex;
   justify-content: space-between;
+  gap: 32px;
   margin-top: 48px;
 }
 
@@ -5670,7 +5716,6 @@ a.project-card:hover {
 
 .purchase-ways-flex__side {
   width: 467px;
-  margin-left: 32px;
   display: flex;
   flex-direction: column;
 }
@@ -5753,6 +5798,10 @@ a.project-card:hover {
 
 .pw-control--w33 {
   width: calc(33.33% - 16px);
+}
+
+.pw-control--w25 {
+  width: calc(25% - 16px);
 }
 
 .pw-banks--in-form {
@@ -6851,6 +6900,10 @@ a.project-card:hover {
 }
 
 @media only screen and (min-width: 1201px) {
+  .not-found-info__btn .btn {
+    padding: 14px 56px;
+  }
+
   .sh-mob-menu-trigger {
     display: none;
   }
@@ -6866,10 +6919,17 @@ a.project-card:hover {
   }
 }
 
+@media only screen and (max-width: 1470px) {
+  .pw-control--customxlg-w50 {
+    width: calc(50% - 16px);
+  }
+}
+
 @media only screen and (max-width: 1279px) {
   .purchase-ways-flex {
     flex-direction: column;
     align-items: center;
+    gap: 24px;
   }
 
   .purchase-ways-flex__main {
@@ -6877,15 +6937,17 @@ a.project-card:hover {
   }
 
   .purchase-ways-flex__side {
-    margin-left: 0;
     width: 100%;
-    margin-top: 24px;
   }
 
   .purchase-ways-flex__side .purchase-way-card__pic {
     width: 467px;
     max-width: 100%;
     align-self: center;
+  }
+
+  .pw-control--1279-w33 {
+    width: calc(33.33% - 16px);
   }
 }
 
@@ -6900,6 +6962,10 @@ a.project-card:hover {
 
   .prefooter-padding {
     padding-top: 100px;
+  }
+
+  .not-found {
+    min-height: 550px;
   }
 
   .site-header {
@@ -7068,6 +7134,16 @@ a.project-card:hover {
 
   .prefooter-padding--small-64 {
     padding-top: 47px;
+  }
+
+  .not-found-info__text1 {
+    font-size: 15px;
+  }
+
+  .not-found-info__text2 {
+    margin-top: 32px;
+    font-size: 28px;
+    line-height: 100%;
   }
 
   .select2-container--custom-theme.select2-container--mobile-smaller-lrp .select2-selection--single .select2-selection__rendered {
@@ -7244,6 +7320,10 @@ a.project-card:hover {
 
   .pw-control--md100 {
     width: calc(100% - 16px);
+  }
+
+  .pw-control--md-w50 {
+    width: calc(50% - 16px);
   }
 
   .pw-banks-wrap {
@@ -7897,6 +7977,10 @@ a.project-card:hover {
     width: calc(100% - 16px);
   }
 
+  .pw-control--w25 {
+    width: calc(100% - 16px);
+  }
+
   .purchase-way-card__btn-wrap {
     width: 100%;
   }
@@ -7964,6 +8048,10 @@ a.project-card:hover {
 }
 
 @media only screen and (max-width: 480px) {
+  .not-found-info__btn {
+    width: 100%;
+  }
+
   .ftb-slde-info__title {
     font-size: 26px;
   }

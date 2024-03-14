@@ -337,4 +337,16 @@ $(function () {
 		$('#banks-modal').removeClass('pw-banks-wrap--modal-opened');
 		myUnlockBody();
 	});
+
+	$('.js-phonemask').each(function(){
+		var phoneIm = new Inputmask("+7 (999) 999-99-99");
+		phoneIm.mask($(this)[0]);
+
+	});
+
+
+
+
+
+
 });

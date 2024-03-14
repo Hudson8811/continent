@@ -2,8 +2,14 @@ extends ../layouts/default
 include ../helpers/mixins
 
 block variables
-	- const title = "Project title"
+	- const title = "Главная"
 
 block content
-	p Lorem ipsum
-
+	section.not-found
+		.container
+			.not-found-info
+				.not-found-info__text1 Вы попали на пустынный континент…
+				.not-found-info__text2 Нужной страницы&nbsp;тут нет
+				.not-found-info__btn
+					a.btn(href="")
+						span Вернуться на главную
