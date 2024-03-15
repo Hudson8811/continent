@@ -1,0 +1,71 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+	- const title = "Коммерция"
+
+block content
+
+
+
+	section.filters.filters--with-breadcrumbs
+		.container.container--sec-filters.container--with-art-on-right
+			.breadcrumbs.ktop-section__breadcrumbs
+				.breadcrumbs__item
+					a(href="") Главная
+				.breadcrumbs__item
+					span Коммерция
+			h1.section-title.section-title--filters Коммерция
+
+
+		.half-container.half-container--invert.half-container--filters-art
+			.filters-art
+				//img(src="img/svg/filters-bottom-art.svg", alt="abstract art")
+
+	.blue-sections-bg
+		section.our-projects.section-margin.section-margin--64
+			.container
+				.our-projects-flex
+					a.project-card.js-call-me-modal(href="#")
+						.project-card__pic
+							img(src="img/home/project-card-pic.jpg", alt="")
+							.card-labels.project-card__labels
+								.card-label(style="background: #41b1d9;") В продаже
+								.card-label Комфорт +
+
+						.project-card-content
+							.project-card-content__top
+								.project-card-content__title ЖК Эстет
+								.project-card-content__price от 4.3 млн ₽
+							.project-card-info-wrap
+								.project-card-info
+									.project-card-info__name Адрес
+									.project-card-info__description г. Краснодар, Адмиралтейский бульвар, 1
+
+								.project-card-info
+									.project-card-info__name Сдача
+									.project-card-info__description 1 кв. 2025 г.
+					.project-card
+						.project-card__pic
+							img(src="img/home/project-card-placeholder.jpg", alt="")
+							.project-card__pic-text СКОРО
+
+						.project-card-content
+							.project-card-content__top
+								.project-card-content__title ЖК новый
+								.project-card-content__price
+							.project-card-info-wrap
+								.project-card-info
+									.project-card-info__name Адрес
+									.project-card-info__description г. Краснодар, ул. Новая, 1
+
+								.project-card-info
+									.project-card-info__name Сдача
+									.project-card-info__description 1 кв. 2027 г.
+
+
+				.showmore-wrap
+					a.btn.btn--dark(href="")
+						span Показать еще
+
+		.prefooter-padding

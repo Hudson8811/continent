@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>DevMap</title>
+    <title>Наши проекты</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -123,24 +123,240 @@
     </div>
     <div class="sh-placeholder"></div>
     <main class="site-main">
-      <section class="article">
-        <div class="container container--article">
-          <div class="article-text article-text-style">
-            <ul>
-              <li><a href="index.html">Главная</a></li>
-              <li><a href="stocks.html">Акции и новости - архив</a></li>
-              <li><a href="stocks-single.html">Акции и новости - сингл</a></li>
-              <li><a href="contacts.html">Контакты</a></li>
-              <li><a href="about.html">О компании</a></li>
-              <li><a href="404.html">404</a></li>
-              <li><a href="mortgage.html">Ипотека</a></li>
-              <li><a href="projects.html">Наши проекты</a></li>
-              <li><a href="commerce.html">Коммерция</a></li>
-            </ul>
+      <section class="filters filters--with-breadcrumbs">
+        <div class="container container--sec-filters container--with-art-on-right">
+          <div class="breadcrumbs ktop-section__breadcrumbs">
+            <div class="breadcrumbs__item"><a href="">Главная</a></div>
+            <div class="breadcrumbs__item"><span>Наши проекты</span></div>
+          </div>
+          <h1 class="section-title section-title--filters">Наши проекты</h1>
+          <div class="js-filters-row filters-row filters-row--hidden">
+            <div class="filters-row-item">
+              <div class="filters-row-item__name">Проект</div>
+              <div class="filters-row-item__field">
+                <div class="simple-select2-wrap">
+                  <select class="js-simple-select2-outer-dropdown">
+                    <option selected value="all">Любой</option>
+                    <option value="msk">Москва</option>
+                    <option value="spb">Санкт-Петербург</option>
+                    <option value="spb1">Lorem ipsum dolor sit amet consectetur.</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name">Кол-во комнат</div>
+              <div class="filters-row-item__field">
+                <div class="chb-group chb-group--fg">
+                  <label class="chb-item">
+                    <input type="radio" name="rooms_count" value="c">
+                    <div class="chb-item__pseudo">С</div>
+                  </label>
+                  <label class="chb-item">
+                    <input type="radio" name="rooms_count" value="1">
+                    <div class="chb-item__pseudo">1</div>
+                  </label>
+                  <label class="chb-item">
+                    <input type="radio" name="rooms_count" value="2">
+                    <div class="chb-item__pseudo">2</div>
+                  </label>
+                  <label class="chb-item">
+                    <input type="radio" name="rooms_count" value="3">
+                    <div class="chb-item__pseudo">3</div>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name filters-row-item__name--range"><span>Стоимость от</span><span>Стоимость до</span></div>
+              <div class="filters-row-item__field">
+                <div class="rs-block custom-style-rs js-range-slider" data-min="3000000" data-max="9700000" data-suffix=" ₽" data-format="int" data-step="100000">
+                  <!--data-start-left data-start-right-->
+                  <div class="rs-block__top">
+                    <input class="rs-block__inp rs-block__inp-left js-range-slider__inp-left" type="text">
+                    <input class="rs-block__inp rs-block__inp-right js-range-slider__inp-right" type="text">
+                  </div>
+                  <div class="rs-block__bottom">
+                    <div class="rs-block__rs js-range-slider__range"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name filters-row-item__name--range"><span>Площадь от</span><span>Площадь до</span></div>
+              <div class="filters-row-item__field">
+                <div class="rs-block custom-style-rs js-range-slider" data-min="24" data-max="124" data-suffix=" м²" data-format="int" data-step="1">
+                  <!--data-start-left data-start-right-->
+                  <div class="rs-block__top">
+                    <input class="rs-block__inp rs-block__inp-left js-range-slider__inp-left" type="text">
+                    <input class="rs-block__inp rs-block__inp-right js-range-slider__inp-right" type="text">
+                  </div>
+                  <div class="rs-block__bottom">
+                    <div class="rs-block__rs js-range-slider__range"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name">Срок сдачи</div>
+              <div class="filters-row-item__field">
+                <div class="simple-select2-wrap">
+                  <select class="js-simple-select2-outer-dropdown">
+                    <option selected value="all">Любой</option>
+                    <option value="msk">Москва</option>
+                    <option value="spb">Санкт-Петербург</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name">Класс жилья</div>
+              <div class="filters-row-item__field">
+                <div class="simple-select2-wrap">
+                  <select class="js-simple-select2-outer-dropdown">
+                    <option selected value="all">Любой</option>
+                    <option value="msk">Москва</option>
+                    <option value="spb">Санкт-Петербург</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name">Отделка</div>
+              <div class="filters-row-item__field">
+                <div class="simple-select2-wrap">
+                  <select class="js-simple-select2-outer-dropdown">
+                    <option selected value="all">Любой</option>
+                    <option value="msk">Москва</option>
+                    <option value="spb">Санкт-Петербург</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name filters-row-item__name--range"><span>Этаж от</span><span>Этаж до</span></div>
+              <div class="filters-row-item__field">
+                <div class="rs-block custom-style-rs js-range-slider" data-min="1" data-max="10" data-suffix=" этаж" data-format="int" data-step="1">
+                  <!--data-start-left data-start-right-->
+                  <div class="rs-block__top">
+                    <input class="rs-block__inp rs-block__inp-left js-range-slider__inp-left" type="text">
+                    <input class="rs-block__inp rs-block__inp-right js-range-slider__inp-right" type="text">
+                  </div>
+                  <div class="rs-block__bottom">
+                    <div class="rs-block__rs js-range-slider__range"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name filters-row-item__name--range"><span>Кухня от</span><span>Кухня до</span></div>
+              <div class="filters-row-item__field">
+                <div class="rs-block custom-style-rs js-range-slider" data-min="5" data-max="24" data-suffix=" м²" data-format="int" data-step="1">
+                  <!--data-start-left data-start-right-->
+                  <div class="rs-block__top">
+                    <input class="rs-block__inp rs-block__inp-left js-range-slider__inp-left" type="text">
+                    <input class="rs-block__inp rs-block__inp-right js-range-slider__inp-right" type="text">
+                  </div>
+                  <div class="rs-block__bottom">
+                    <div class="rs-block__rs js-range-slider__range"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name">Технология</div>
+              <div class="filters-row-item__field">
+                <div class="simple-select2-wrap">
+                  <select class="js-simple-select2-outer-dropdown">
+                    <option selected value="all">Любой</option>
+                    <option value="msk">Москва</option>
+                    <option value="spb">Санкт-Петербург</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="filters-bottom">
+            <div class="filters-bottom__left">
+              <div class="twi-switch twi-switch--filter-sec twi-switch--more-filters js-twi-switch--more-filters">
+                <div class="twi-switch__icon">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#filters-hide"></use>
+                  </svg>
+                </div>
+                <div class="twi-switch__name"><span>Дополнительные фильтры</span><span>Скрыть дополнительные фильтры</span></div>
+              </div>
+              <div class="twi-switch twi-switch--filter-sec">
+                <div class="twi-switch__icon">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#filters-clear"></use>
+                  </svg>
+                </div>
+                <div class="twi-switch__name">Сбросить фильтр</div>
+              </div>
+            </div>
+            <div class="filters-bottom__right"><a class="btn" href=""><span> Показать<span class="js-filter-result-items-count"> 146</span> квартир</span></a></div>
           </div>
         </div>
-        <div class="prefooter-padding prefooter-padding--small-64"></div>
+        <div class="half-container half-container--invert half-container--filters-art">
+          <div class="filters-art">
+            <!--img(src="img/svg/filters-bottom-art.svg", alt="abstract art")-->
+          </div>
+        </div>
       </section>
+      <div class="blue-sections-bg">
+        <section class="our-projects section-margin section-margin--64">
+          <div class="container">
+            <div class="our-projects-flex"><a class="project-card" href="">
+                <div class="project-card__pic"><img src="img/home/project-card-pic.jpg" alt="">
+                  <div class="card-labels project-card__labels">
+                    <div class="card-label" style="background: #41b1d9;">В продаже</div>
+                    <div class="card-label">Комфорт +</div>
+                  </div>
+                </div>
+                <div class="project-card-content">
+                  <div class="project-card-content__top">
+                    <div class="project-card-content__title">ЖК Эстет</div>
+                    <div class="project-card-content__price">от 4.3 млн ₽</div>
+                  </div>
+                  <div class="project-card-info-wrap">
+                    <div class="project-card-info">
+                      <div class="project-card-info__name">Адрес</div>
+                      <div class="project-card-info__description">г. Краснодар, Адмиралтейский бульвар, 1</div>
+                    </div>
+                    <div class="project-card-info">
+                      <div class="project-card-info__name">Сдача</div>
+                      <div class="project-card-info__description">1 кв. 2025 г.</div>
+                    </div>
+                  </div>
+                </div></a>
+              <div class="project-card">
+                <div class="project-card__pic"><img src="img/home/project-card-placeholder.jpg" alt="">
+                  <div class="project-card__pic-text">СКОРО</div>
+                </div>
+                <div class="project-card-content">
+                  <div class="project-card-content__top">
+                    <div class="project-card-content__title">ЖК новый</div>
+                    <div class="project-card-content__price"></div>
+                  </div>
+                  <div class="project-card-info-wrap">
+                    <div class="project-card-info">
+                      <div class="project-card-info__name">Адрес</div>
+                      <div class="project-card-info__description">г. Краснодар, ул. Новая, 1</div>
+                    </div>
+                    <div class="project-card-info">
+                      <div class="project-card-info__name">Сдача</div>
+                      <div class="project-card-info__description">1 кв. 2027 г.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="showmore-wrap"><a class="btn btn--dark" href=""><span>Показать еще</span></a></div>
+          </div>
+        </section>
+        <div class="prefooter-padding"></div>
+      </div>
     </main>
     <footer class="site-footer">
       <div class="container container--footer">

@@ -223,6 +223,24 @@
 	background: #273344;
 	color: #fff;
 
+	&--with-breadcrumbs{
+		border-top: 1px solid rgba(255, 255, 255, 0.25);
+
+		.container--sec-filters {
+			padding-top: 48px;
+			@include max(md){
+
+				padding-top: 24px;
+			}
+		}
+		.section-title {
+			margin-top: 32px;
+			@include max(md){
+				margin-top: 24px;
+			}
+		}
+	}
+
 }
 
 
@@ -563,6 +581,16 @@ section.section-margin {
 
 	@include max(md) {
 		margin-top: 64px;
+	}
+	&--64{
+		margin-top: 64px;
+		@include max(lg) {
+			margin-top: 32px;
+		}
+
+		@include max(md) {
+			margin-top: 32px;
+		}
 	}
 }
 
