@@ -223,19 +223,22 @@
 	background: #273344;
 	color: #fff;
 
-	&--with-breadcrumbs{
+	&--with-breadcrumbs {
 		border-top: 1px solid rgba(255, 255, 255, 0.25);
 
 		.container--sec-filters {
 			padding-top: 48px;
-			@include max(md){
+
+			@include max(md) {
 
 				padding-top: 24px;
 			}
 		}
+
 		.section-title {
 			margin-top: 32px;
-			@include max(md){
+
+			@include max(md) {
 				margin-top: 24px;
 			}
 		}
@@ -582,8 +585,10 @@ section.section-margin {
 	@include max(md) {
 		margin-top: 64px;
 	}
-	&--64{
+
+	&--64 {
 		margin-top: 64px;
+
 		@include max(lg) {
 			margin-top: 32px;
 		}
@@ -959,19 +964,21 @@ a.project-card {
 		}
 	}
 }
-.mortage-banks-wrap{
-	@include min(1279){
+
+.mortage-banks-wrap {
+	@include min(1279) {
 		height: 100%;
 		width: 100%;
 		position: relative;
 
 	}
-	@include max(1279){
-		@include min(md){
-		}
+
+	@include max(1279) {
+		@include min(md) {}
 	}
-	&__inner{
-		@include min(1279){
+
+	&__inner {
+		@include min(1279) {
 			position: absolute;
 			left: 0;
 			top: 0;
@@ -981,8 +988,9 @@ a.project-card {
 			height: calc(100% + 31px);
 			padding-right: 32px;
 		}
-		@include max(1279){
-			@include min(md){
+
+		@include max(1279) {
+			@include min(md) {
 				max-height: 624px;
 				width: calc(100% + 32px);
 				padding-right: 32px;
@@ -991,8 +999,8 @@ a.project-card {
 			}
 		}
 
-		@include min(md){
-			&:not([data-simplebar]){
+		@include min(md) {
+			&:not([data-simplebar]) {
 				overflow: auto;
 			}
 
@@ -1012,30 +1020,37 @@ a.project-card {
 		padding: 16px 16px 32px;
 	}
 
-	&--mortgage{
+	&--mortgage {
 		padding-bottom: 32px;
-		@include min(1279){
+
+		@include min(1279) {
 			height: 100%;
 
 		}
-		@include max(lg){
-			@include min(md){
+
+		@include max(lg) {
+			@include min(md) {
 				height: auto;
 			}
 		}
-		&--right{
-			@include max(md){
+
+		&--right {
+			@include max(md) {
 				padding: 0 !important;
-				background:none;
+				background: none;
 			}
 		}
 
-		@include max(md){
-			.simplebar-content-wrapper,.simplebar-offset,.simplebar-mask{
+		@include max(md) {
+
+			.simplebar-content-wrapper,
+			.simplebar-offset,
+			.simplebar-mask {
 				position: static;
 			}
 		}
-		.simplebar-scrollbar:before{
+
+		.simplebar-scrollbar:before {
 			bottom: 12px;
 		}
 
@@ -1089,9 +1104,8 @@ a.project-card {
 			margin-top: 11px;
 
 		}
-		&--mortgage{
 
-		}
+		&--mortgage {}
 	}
 
 	&__top-right {
@@ -1211,11 +1225,13 @@ a.project-card {
 
 	&__btn {
 		margin-right: 32px;
-		@include max(1279){
+
+		@include max(1279) {
 			margin-right: 0;
 		}
-		@include max(md){
-		width: 100%;
+
+		@include max(md) {
+			width: 100%;
 		}
 	}
 
@@ -1226,7 +1242,7 @@ a.project-card {
 		letter-spacing: -0.02em;
 		color: #fff;
 
-		@include max(1279){
+		@include max(1279) {
 			display: none;
 		}
 	}
@@ -1310,14 +1326,17 @@ a.project-card {
 			margin-top: 0;
 		}
 	}
-	&--mortgage{
+
+	&--mortgage {
 		margin-top: 0;
-		.pw-bank:first-child{
-			@include min(md){
+
+		.pw-bank:first-child {
+			@include min(md) {
 				padding-top: 0;
 			}
 		}
-		@include min(md){
+
+		@include min(md) {
 			padding-top: 16px;
 		}
 	}
@@ -1479,7 +1498,8 @@ a.project-card {
 	@include min(md) {
 		display: none;
 	}
-	&--mortgage{
+
+	&--mortgage {
 		margin-top: 0;
 	}
 }
@@ -1567,12 +1587,42 @@ a.project-card {
 	margin-top: 24px;
 }
 
+.purchase-ways-archive {}
+
+.purchase-ways-cards {
+	margin-top: 48px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 32px;
+	@include max(md) {
+		gap: 24px;
+		margin-top: 22px;
+	}
+
+	.purchase-way-card {
+		width: calc(33.33% - 22px);
+
+		@include max(lg) {
+			width: calc(50% - 32px);
+		}
+
+		@include max(md) {
+			width: calc(100%);
+		}
+
+	}
+}
+
 .purchase-way-card {
 	display: flex;
 	flex-direction: column;
-	background: #53667f;
+	background: #273344;
 	border-radius: 12px;
 	color: #fff;
+
+	&--grey {
+		background: #53667f;
+	}
 
 	&__top {
 		flex-grow: 1;

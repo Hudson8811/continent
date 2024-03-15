@@ -6251,12 +6251,27 @@ a.project-card:hover {
   margin-top: 24px;
 }
 
+.purchase-ways-cards {
+  margin-top: 48px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.purchase-ways-cards .purchase-way-card {
+  width: calc(33.33% - 22px);
+}
+
 .purchase-way-card {
   display: flex;
   flex-direction: column;
-  background: #53667f;
+  background: #273344;
   border-radius: 12px;
   color: #fff;
+}
+
+.purchase-way-card--grey {
+  background: #53667f;
 }
 
 .purchase-way-card__top {
@@ -6947,7 +6962,7 @@ a.project-card:hover {
   justify-content: center;
   margin-top: 21px;
   min-height: 454px;
-  width: 581px;
+  width: 660px;
   max-width: 50%;
   padding-right: 40px;
 }
@@ -7433,6 +7448,10 @@ a.project-card:hover {
     width: calc(50% - 16px);
   }
 
+  .purchase-ways-cards .purchase-way-card {
+    width: calc(50% - 32px);
+  }
+
   .page-top--only-breadcrumbs .container--page-top {
     padding-bottom: 28px;
   }
@@ -7841,6 +7860,15 @@ a.project-card:hover {
     top: 16px;
   }
 
+  .purchase-ways-cards {
+    gap: 24px;
+    margin-top: 22px;
+  }
+
+  .purchase-ways-cards .purchase-way-card {
+    width: 100%;
+  }
+
   .purchase-way-card__top {
     padding: 16px;
     padding-bottom: 0;
@@ -8160,6 +8188,10 @@ a.project-card:hover {
 }
 
 @media only screen and (max-width: 640px) {
+  .btn--with-arrow {
+    padding: 14px 14px;
+  }
+
   .simple-modal {
     width: 288px;
   }

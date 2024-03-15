@@ -1,0 +1,92 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+	- const title = "Ипотека"
+
+block content
+	section.ktop-section
+		.container.ktop-section__container
+			.breadcrumbs.ktop-section__breadcrumbs
+				.breadcrumbs__item
+					a(href="") Главная
+				.breadcrumbs__item
+					span Способыпокупки
+			.ktop-section-info
+				.ktop-section-info__title Способы покупки
+				.ktop-section-info__desc Рыбный текст, замените меня, рыбный текст, замените меня,<br> рыбный текст, замените меня
+				.ktop-section-info__btn-wrap
+					a.btn(href="")
+						span Оставить заявку
+
+		.ktop-section-pic
+			picture
+				//source(srcset="img/mortgage_pic-1-mob.jpg" media="(max-width: 960px)")
+				img(src="img/purchase-ways-top.jpg", alt="")
+
+
+	.blue-sections-bg
+
+
+		section.purchase-ways-archive.section-margin
+			.container
+				h2.section-title 6 вариантов покупки
+
+
+				.purchase-ways-cards
+					.purchase-way-card
+						.purchase-way-card__top
+							.purchase-way-card__name 100% оплата
+							.purchase-way-card__desc Самая быстрая и простая сделка
+							.purchase-way-card__btn-wrap
+								a.btn.btn--with-arrow.btn--dark(href="")
+									span Получить консультацию
+						.purchase-way-card__pic
+							img(src="img/pw-card-pic-1.png", alt="")
+					.purchase-way-card
+						.purchase-way-card__top
+							.purchase-way-card__name Рассрочка
+							.purchase-way-card__desc Согласуем индивидуальные условия рассрочки
+							.purchase-way-card__btn-wrap
+								a.btn.btn--with-arrow.btn--dark(href="")
+									span Согласовать условия
+						.purchase-way-card__pic
+							img(src="img/pw-card-pic-2.png", alt="")
+					.purchase-way-card
+						.purchase-way-card__top
+							.purchase-way-card__name Субсидированная ипотека
+							.purchase-way-card__desc Расскажем про актуальные минимальные ставки
+							.purchase-way-card__btn-wrap
+								a.btn.btn--with-arrow.btn--dark(href="")
+									span Получить расчет
+						.purchase-way-card__pic
+							img(src="img/pw-card-pic-3.png", alt="")
+					.purchase-way-card
+						.purchase-way-card__top
+							.purchase-way-card__name Ипотека без первоначального взноса
+							.purchase-way-card__desc Покупайте квартиру без накоплений
+							.purchase-way-card__btn-wrap
+								a.btn.btn--with-arrow.btn--dark(href="")
+									span Получить расчет
+						.purchase-way-card__pic
+							img(src="img/pw-card-pic-4.png", alt="")
+					.purchase-way-card
+						.purchase-way-card__top
+							.purchase-way-card__name Военная ипотека
+							.purchase-way-card__desc Осуществляет государство, пока военнослужащие проходят военную службу
+							.purchase-way-card__btn-wrap
+								a.btn.btn--with-arrow.btn--dark(href="")
+									span Получить расчет
+						.purchase-way-card__pic
+							img(src="img/pw-card-pic-5.png", alt="")
+					.purchase-way-card
+						.purchase-way-card__top
+							.purchase-way-card__name Ипотека
+							.purchase-way-card__desc Более 10 банков-партнеров, которые могут предложить выгодные условия
+							.purchase-way-card__btn-wrap
+								a.btn.btn--with-arrow.btn--dark(href="")
+									span Получить расчет
+						.purchase-way-card__pic
+							img(src="img/pw-card-pic-6.png", alt="")
+
+		.prefooter-padding

@@ -243,6 +243,9 @@ table {
 			background: url(../img/svg/btn-arrow-dark.svg) no-repeat center center;
 			background-size: contain;
 		}
+		@include max(sm){
+			padding: 14px 14px;
+		}
 	}
 
 	&--dark {
