@@ -204,6 +204,30 @@ $(function () {
 
 
 
+	$('.js-images-slider').each(function () {
+
+		var swiper = new Swiper($(this)[0], {
+			pagination: {
+				el: $(this).find('.js-swiper-pagination')[0],
+				type: "fraction",
+				renderFraction: function (currentClass, totalClass) {
+					return '<span class="slider-controls-pagination__digit slider-controls-pagination__digit--current ' + currentClass + '"></span>' +
+						'<span class="slider-controls-pagination__delimiter"></span> ' +
+						'<span class="slider-controls-pagination__digit slider-controls-pagination__digit--total ' + totalClass + '"></span>';
+				}
+			},
+			navigation: {
+				nextEl: $(this).find('.js-swiper-button-next')[0],
+				prevEl: $(this).find('.js-swiper-button-prev')[0],
+			},
+
+			autoplay: {
+				delay: 5000,
+			},
+		});
+	});
+
+
 	$('.js-range-slider').each(function () {
 		var rs = $(this);
 		var rs_inp_l = rs.find('.js-range-slider__inp-left');
@@ -648,12 +672,12 @@ $(function () {
 
 
 	if($('.js-favourite-toggle').length>0){
-		var favouriteAppartments=Cookies.get('favouriteAppartments');
-		if(typeof(favouriteAppartments)!=='undefined'){
-			favouriteAppartments=JSON.parse(favouriteAppartments);
+		var favouriteApartments=Cookies.get('favouriteApartments');
+		if(typeof(favouriteApartments)!=='undefined'){
+			favouriteApartments=JSON.parse(favouriteApartments);
 			$('.js-favourite-toggle').each(function(){
-				var thisAppartmentId=$(this).attr('data-appartment-id');
-				if(favouriteAppartments.includes(thisAppartmentId)){
+				var thisapartmentId=$(this).attr('data-apartment-id');
+				if(favouriteApartments.includes(thisapartmentId)){
 					$(this).addClass('favourite-toggle--active')
 				}
 			})
@@ -665,40 +689,38 @@ $(function () {
 	$('.js-favourite-toggle').on('click', function (e) {
 		e.preventDefault();
 		e.stopPropagation();
-		var thisAppartmentId=$(this).attr('data-appartment-id');
-		var current=Cookies.get('favouriteAppartments');
+		var thisapartmentId=$(this).attr('data-apartment-id');
+		var current=Cookies.get('favouriteApartments');
 
 
 
-		if(current!==""){
+		if(typeof(current)!=='undefined' && current!==""){
 			current=JSON.parse(current);
 
-			indexInArray = current.indexOf(thisAppartmentId);
+			indexInArray = current.indexOf(thisapartmentId);
 			if (indexInArray > -1) {
 				current.splice(indexInArray, 1);
 				$(this).removeClass('favourite-toggle--active');
 				if($(this).closest('#favourites').length>0){
-					$(this).closest('.appartment-card').remove();
+					$(this).closest('.apartment-card').remove();
 				}
 			}
 			else{
-				current.push(thisAppartmentId);
+				current.push(thisapartmentId);
 				$(this).addClass('favourite-toggle--active');
 				/*current.filter(function(value, index, array) {
 					return array.indexOf(value) === index;
 				});*/
 			}
-			Cookies.set('favouriteAppartments', JSON.stringify(current), { expires: 365 });
+			Cookies.set('favouriteApartments', JSON.stringify(current), { expires: 365 });
 
 		}
 		else{
-			Cookies.set('favouriteAppartments', JSON.stringify([thisAppartmentId]), { expires: 365 });
+			Cookies.set('favouriteApartments', JSON.stringify([thisapartmentId]), { expires: 365 });
 			$(this).addClass('favourite-toggle--active');
 
 		}
 
-		var result=Cookies.get('favouriteAppartments');
-			result=JSON.parse(current);
 
 	});
 });

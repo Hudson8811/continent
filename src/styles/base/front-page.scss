@@ -370,6 +370,9 @@
 	@include max(xs) {
 		font-size: 24px;
 	}
+	&--black{
+		color: #252831;
+	}
 }
 
 .section-title--filters {}

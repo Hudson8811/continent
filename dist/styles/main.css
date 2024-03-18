@@ -5744,6 +5744,10 @@ table {
   font-family: "SONGER SemiExpanded", sans-serif;
 }
 
+.section-title--black {
+  color: #252831;
+}
+
 .filters-row {
   margin-top: 32px;
   display: flex;
@@ -7247,20 +7251,20 @@ a.project-card:hover {
   margin-top: 5px;
 }
 
-.appartments-sorting {
+.apartments-sorting {
   margin-top: 32px;
   width: 294px;
   max-width: 100%;
 }
 
-.appartments-grid {
+.apartments-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
   margin-top: 32px;
 }
 
-.appartment-card {
+.apartment-card {
   width: calc(33.3333% - 22px);
   border-radius: 12px;
   padding: 32px 32px 24px;
@@ -7272,11 +7276,15 @@ a.project-card:hover {
   cursor: pointer;
 }
 
-.appartment-card:hover {
+.apartment-card--w100 {
+  width: 100% !important;
+}
+
+.apartment-card:hover {
   opacity: 0.7;
 }
 
-.appartment-card__complex {
+.apartment-card__complex {
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
@@ -7285,7 +7293,7 @@ a.project-card:hover {
   padding-right: 28px;
 }
 
-.appartment-card__price {
+.apartment-card__price {
   margin-top: 12px;
   display: flex;
   align-items: center;
@@ -7294,7 +7302,7 @@ a.project-card:hover {
   font-family: "SONGER SemiExpanded", sans-serif;
 }
 
-.appartment-card__new-price {
+.apartment-card__new-price {
   font-weight: 500;
   font-size: 20px;
   line-height: 110%;
@@ -7302,7 +7310,7 @@ a.project-card:hover {
   color: #53667f;
 }
 
-.appartment-card__old-price {
+.apartment-card__old-price {
   font-weight: 400;
   font-size: 13px;
   line-height: 110%;
@@ -7311,7 +7319,7 @@ a.project-card:hover {
   color: #ff4d4d;
 }
 
-.appartment-card__price-per-m {
+.apartment-card__price-per-m {
   margin-top: 8px;
   font-weight: 400;
   font-size: 14px;
@@ -7321,17 +7329,17 @@ a.project-card:hover {
   opacity: 0.5;
 }
 
-.appartment-card__props {
+.apartment-card__props {
   margin-top: 12px;
 }
 
-.appartment-card__favourite-toggle {
+.apartment-card__favourite-toggle {
   position: absolute;
   right: 32px;
   top: 32px;
 }
 
-.appartment-card__picture {
+.apartment-card__picture {
   margin-top: 38px;
   height: auto;
   width: calc(100% - 58px);
@@ -7339,23 +7347,23 @@ a.project-card:hover {
   margin-right: auto;
 }
 
-.appartment-card__labels {
+.apartment-card__labels {
   margin-top: 39px;
   flex-grow: 1;
   display: flex;
   flex-direction: column-reverse;
 }
 
-.appartment-card:has(.appartment-card__favourite-toggle:hover) {
+.apartment-card:has(.apartment-card__favourite-toggle:hover) {
   opacity: 1;
 }
 
-.appartment-inline-props {
+.apartment-inline-props {
   display: flex;
   align-items: center;
 }
 
-.appartment-inline-prop {
+.apartment-inline-prop {
   font-weight: 700;
   font-size: 14px;
   line-height: 140%;
@@ -7365,7 +7373,7 @@ a.project-card:hover {
   align-items: center;
 }
 
-.appartment-inline-prop:not(:last-child)::after {
+.apartment-inline-prop:not(:last-child)::after {
   content: "";
   display: inline-block;
   background-color: #252831;
@@ -7376,13 +7384,13 @@ a.project-card:hover {
   height: 1px;
 }
 
-.appartment-labels {
+.apartment-labels {
   display: flex;
   flex-wrap: wrap;
   margin-left: -8px;
 }
 
-.appartment-label {
+.apartment-label {
   margin-left: 8px;
   margin-bottom: 8px;
   background: #b3dff1;
@@ -7727,7 +7735,7 @@ a.project-card:hover {
     font-size: 35px;
   }
 
-  .appartment-card {
+  .apartment-card {
     width: calc(50% - 22px);
   }
 }
@@ -8433,44 +8441,44 @@ a.project-card:hover {
     margin-top: 0;
   }
 
-  .appartments-sorting {
+  .apartments-sorting {
     margin-top: 24px;
   }
 
-  .appartments-grid {
+  .apartments-grid {
     gap: 24px;
     margin-top: 24px;
   }
 
-  .appartment-card {
+  .apartment-card {
     width: calc(50% - 12px);
     padding: 16px 16px 23px;
   }
 
-  .appartment-card__price {
+  .apartment-card__price {
     gap: 8px;
     margin-top: 8px;
   }
 
-  .appartment-card__new-price {
+  .apartment-card__new-price {
     font-size: 18px;
   }
 
-  .appartment-card__props {
+  .apartment-card__props {
     margin-top: 8px;
   }
 
-  .appartment-card__favourite-toggle {
+  .apartment-card__favourite-toggle {
     right: 16px;
     top: 16px;
   }
 
-  .appartment-card__picture {
+  .apartment-card__picture {
     width: calc(100% - 40px);
     margin-top: 24px;
   }
 
-  .appartment-card__labels {
+  .apartment-card__labels {
     margin-top: 24px;
     margin-bottom: -15px;
   }
@@ -8757,11 +8765,11 @@ a.project-card:hover {
     width: 100%;
   }
 
-  .appartments-sorting {
+  .apartments-sorting {
     width: 100%;
   }
 
-  .appartment-card {
+  .apartment-card {
     width: 100%;
   }
 }
