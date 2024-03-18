@@ -228,6 +228,10 @@ table {
 	letter-spacing: -0.02em;
 	color: #fff;
 	transition-duration: .3s;
+	@include max(md){
+		padding: 14px 20px;
+
+	}
 
 	&:hover {
 		background: rgba(83, 102, 127, 0.7);
@@ -261,6 +265,7 @@ table {
 	&--light {
 		border: 1px solid rgba(37, 40, 49, 0.2);
 		background: none;
+		color: #252831;
 
 		&:hover {
 			background: none;
@@ -454,4 +459,45 @@ table {
 }
 .simplebar-dragging .simplebar-scrollbar.simplebar-visible:before{
 	opacity: 0.7;
+}
+
+
+.favourite-toggle {
+    width: 20px;
+    height: 17px;
+    cursor: pointer;
+    position: relative;
+
+    &::before {
+        content: '';
+        display: block;
+        left: -10px;
+        top: -10px;
+        width: calc(100% + 20px);
+        height: calc(100% + 20px);
+        position: absolute;
+    }
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    svg,
+    svg * {
+        stroke: #252831;
+        fill: none;
+        transition-duration: .3s;
+    }
+
+    &--active {
+
+        svg,
+        svg * {
+            stroke: #53667f;
+            fill: #53667f;
+
+        }
+
+    }
 }

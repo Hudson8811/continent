@@ -488,6 +488,58 @@ $(function () {
 
 
 
+	if($('.js-favourite-toggle').length>0){
+		var favouriteAppartments=Cookies.get('favouriteAppartments');
+		if(typeof(favouriteAppartments)!=='undefined'){
+			favouriteAppartments=JSON.parse(favouriteAppartments);
+			$('.js-favourite-toggle').each(function(){
+				var thisAppartmentId=$(this).attr('data-appartment-id');
+				if(favouriteAppartments.includes(thisAppartmentId)){
+					$(this).addClass('favourite-toggle--active')
+				}
+			})
+		}
 
 
+	}
+
+	$('.js-favourite-toggle').on('click', function (e) {
+		e.preventDefault();
+		e.stopPropagation();
+		var thisAppartmentId=$(this).attr('data-appartment-id');
+		var current=Cookies.get('favouriteAppartments');
+
+
+
+		if(current!==""){
+			current=JSON.parse(current);
+
+			indexInArray = current.indexOf(thisAppartmentId);
+			if (indexInArray > -1) {
+				current.splice(indexInArray, 1);
+				$(this).removeClass('favourite-toggle--active');
+				if($(this).closest('#favourites').length>0){
+					$(this).closest('.appartment-card').remove();
+				}
+			}
+			else{
+				current.push(thisAppartmentId);
+				$(this).addClass('favourite-toggle--active');
+				/*current.filter(function(value, index, array) {
+					return array.indexOf(value) === index;
+				});*/
+			}
+			Cookies.set('favouriteAppartments', JSON.stringify(current), { expires: 365 });
+
+		}
+		else{
+			Cookies.set('favouriteAppartments', JSON.stringify([thisAppartmentId]), { expires: 365 });
+			$(this).addClass('favourite-toggle--active');
+
+		}
+
+		var result=Cookies.get('favouriteAppartments');
+			result=JSON.parse(current);
+
+	});
 });

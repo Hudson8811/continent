@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Подберите квартиру</title>
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://api-maps.yandex.ru/v3/?apikey=a56bdf2e-6f25-46f4-b535-ca3077437c25&amp;lang=ru_RU"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="sh-left-icon"><img src="img/header-left-icon.png" alt=""></div>
+      <div class="sh-container container">
+        <div class="sh-container__left"><a class="sh-logo" href=""><img src="img/header-logo.svg" alt="logo"></a>
+          <nav class="sh-menu">
+            <ul class="sh-menu-list">
+              <li class="sh-menu-item"><a class="sh-menu-item__link" href="">Квартиры</a></li>
+              <li class="sh-menu-item"><a class="sh-menu-item__link" href="">Объекты</a></li>
+              <li class="sh-menu-item"><a class="sh-menu-item__link" href="">Ипотека</a></li>
+              <li class="sh-menu-item"><a class="sh-menu-item__link" href="">О компании</a></li>
+            </ul>
+          </nav>
+          <div class="sh-mega-menu-trigger js-mega-menu-trigger"><img src="img/svg/sh-mega-trigger.svg"></div>
+        </div>
+        <div class="sh-container__right"><a class="sh-phone" href="">+7 900 00 01 02</a>
+          <div class="sh-buttons"><a class="sh-button" href="">
+              <div class="sh-button__icon">
+                <svg class="sh-button__icon-mob">
+                  <use xlink:href="img/sprites/sprite.svg#sh-heart-mob"></use>
+                </svg>
+                <svg class="sh-button__icon-desktop">
+                  <use xlink:href="img/sprites/sprite.svg#sh-heart"></use>
+                </svg>
+              </div>
+              <div class="sh-button__counter">1</div></a><a class="sh-button js-call-me-modal" href="#">
+              <div class="sh-button__icon">
+                <svg class="sh-button__icon-mob">
+                  <use xlink:href="img/sprites/sprite.svg#sh-phone-mob"></use>
+                </svg>
+                <svg class="sh-button__icon-desktop">
+                  <use xlink:href="img/sprites/sprite.svg#sh-phone"></use>
+                </svg>
+              </div></a></div>
+          <div class="sh-burger sh-mob-menu-trigger js-mob-menu-trigger"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+      <div class="mega-menu-wrap">
+        <div class="container">
+          <div class="mega-menu">
+            <div class="mega-menu__col">
+              <div class="mega-menu__col-title">Все объекты</div>
+              <ul class="mega-menu-list">
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href="">ЖК «Эстет»</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu__col">
+              <div class="mega-menu__col-title">Квартиры</div>
+              <ul class="mega-menu-list">
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href=""> Студии</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href=""> 1-комнатные квартиры</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href=""> 2-комнатные квартиры</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href=""> 3-комнатные квартиры</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu__col">
+              <div class="mega-menu__col-title">Покупка</div>
+              <ul class="mega-menu-list">
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href=""> Способы покупки</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href=""> Ипотека</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu__col">
+              <div class="mega-menu__col-title">Еще</div>
+              <ul class="mega-menu-list">
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href="">Контакты</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href="">Новости и Акции</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href="">Коммерческая недвижимость</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href="">Разрешительная документация</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="mob-menu-block">
+      <div class="sh-placeholder"></div>
+      <div class="mob-menu-block__part">
+        <div class="mob-menu mob-menu--large"><a class="mob-menu__item" href="">Квартиры</a><a class="mob-menu__item" href="">Объекты</a><a class="mob-menu__item" href="">О компании</a><a class="mob-menu__item" href="">Ипотека</a></div>
+      </div>
+      <div class="mob-menu-block__part">
+        <div class="mob-menu mob-menu"><a class="mob-menu__item" href="">Способы покупки</a><a class="mob-menu__item" href="">Контакты</a><a class="mob-menu__item" href="">Новости и Акции</a><a class="mob-menu__item" href="">Коммерческая недвижимость</a><a class="mob-menu__item" href="">Разрешительная документация</a></div>
+      </div>
+      <div class="mob-menu-block__part"><a class="mob-menu-phone" href="">
+          <div class="mob-menu-phone__icon">
+            <div class="sh-button js-call-me-modal" href="#">
+              <div class="sh-button__icon">
+                <svg class="sh-button__icon-mob">
+                  <use xlink:href="img/sprites/sprite.svg#sh-phone-mob"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="mob-menu-phone__text">+7 900 00 01 02</div></a></div>
+    </div>
+    <div class="sh-placeholder"></div>
+    <main class="site-main">
+      <section class="filters filters--with-breadcrumbs">
+        <div class="container container--sec-filters container--with-art-on-right">
+          <div class="breadcrumbs ktop-section__breadcrumbs">
+            <div class="breadcrumbs__item"><a href="">Главная</a></div>
+            <div class="breadcrumbs__item"><span>Квартиры</span></div>
+          </div>
+          <h1 class="section-title section-title--filters">Подберите квартиру</h1>
+          <div class="js-filters-row filters-row filters-row--hidden">
+            <div class="filters-row-item">
+              <div class="filters-row-item__name">Проект</div>
+              <div class="filters-row-item__field">
+                <div class="simple-select2-wrap">
+                  <select class="js-simple-select2-outer-dropdown">
+                    <option selected value="all">Любой</option>
+                    <option value="msk">Москва</option>
+                    <option value="spb">Санкт-Петербург</option>
+                    <option value="spb1">Lorem ipsum dolor sit amet consectetur.</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name">Кол-во комнат</div>
+              <div class="filters-row-item__field">
+                <div class="chb-group chb-group--fg">
+                  <label class="chb-item">
+                    <input type="radio" name="rooms_count" value="c">
+                    <div class="chb-item__pseudo">С</div>
+                  </label>
+                  <label class="chb-item">
+                    <input type="radio" name="rooms_count" value="1">
+                    <div class="chb-item__pseudo">1</div>
+                  </label>
+                  <label class="chb-item">
+                    <input type="radio" name="rooms_count" value="2">
+                    <div class="chb-item__pseudo">2</div>
+                  </label>
+                  <label class="chb-item">
+                    <input type="radio" name="rooms_count" value="3">
+                    <div class="chb-item__pseudo">3</div>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name filters-row-item__name--range"><span>Стоимость от</span><span>Стоимость до</span></div>
+              <div class="filters-row-item__field">
+                <div class="rs-block custom-style-rs js-range-slider" data-min="3000000" data-max="9700000" data-suffix=" ₽" data-format="int" data-step="100000">
+                  <!--data-start-left data-start-right-->
+                  <div class="rs-block__top">
+                    <input class="rs-block__inp rs-block__inp-left js-range-slider__inp-left" type="text">
+                    <input class="rs-block__inp rs-block__inp-right js-range-slider__inp-right" type="text">
+                  </div>
+                  <div class="rs-block__bottom">
+                    <div class="rs-block__rs js-range-slider__range"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name filters-row-item__name--range"><span>Площадь от</span><span>Площадь до</span></div>
+              <div class="filters-row-item__field">
+                <div class="rs-block custom-style-rs js-range-slider" data-min="24" data-max="124" data-suffix=" м²" data-format="int" data-step="1">
+                  <!--data-start-left data-start-right-->
+                  <div class="rs-block__top">
+                    <input class="rs-block__inp rs-block__inp-left js-range-slider__inp-left" type="text">
+                    <input class="rs-block__inp rs-block__inp-right js-range-slider__inp-right" type="text">
+                  </div>
+                  <div class="rs-block__bottom">
+                    <div class="rs-block__rs js-range-slider__range"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name">Срок сдачи</div>
+              <div class="filters-row-item__field">
+                <div class="simple-select2-wrap">
+                  <select class="js-simple-select2-outer-dropdown">
+                    <option selected value="all">Любой</option>
+                    <option value="msk">Москва</option>
+                    <option value="spb">Санкт-Петербург</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name">Класс жилья</div>
+              <div class="filters-row-item__field">
+                <div class="simple-select2-wrap">
+                  <select class="js-simple-select2-outer-dropdown">
+                    <option selected value="all">Любой</option>
+                    <option value="msk">Москва</option>
+                    <option value="spb">Санкт-Петербург</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name">Отделка</div>
+              <div class="filters-row-item__field">
+                <div class="simple-select2-wrap">
+                  <select class="js-simple-select2-outer-dropdown">
+                    <option selected value="all">Любой</option>
+                    <option value="msk">Москва</option>
+                    <option value="spb">Санкт-Петербург</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name filters-row-item__name--range"><span>Этаж от</span><span>Этаж до</span></div>
+              <div class="filters-row-item__field">
+                <div class="rs-block custom-style-rs js-range-slider" data-min="1" data-max="10" data-suffix=" этаж" data-format="int" data-step="1">
+                  <!--data-start-left data-start-right-->
+                  <div class="rs-block__top">
+                    <input class="rs-block__inp rs-block__inp-left js-range-slider__inp-left" type="text">
+                    <input class="rs-block__inp rs-block__inp-right js-range-slider__inp-right" type="text">
+                  </div>
+                  <div class="rs-block__bottom">
+                    <div class="rs-block__rs js-range-slider__range"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name filters-row-item__name--range"><span>Кухня от</span><span>Кухня до</span></div>
+              <div class="filters-row-item__field">
+                <div class="rs-block custom-style-rs js-range-slider" data-min="5" data-max="24" data-suffix=" м²" data-format="int" data-step="1">
+                  <!--data-start-left data-start-right-->
+                  <div class="rs-block__top">
+                    <input class="rs-block__inp rs-block__inp-left js-range-slider__inp-left" type="text">
+                    <input class="rs-block__inp rs-block__inp-right js-range-slider__inp-right" type="text">
+                  </div>
+                  <div class="rs-block__bottom">
+                    <div class="rs-block__rs js-range-slider__range"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="filters-row-item">
+              <div class="filters-row-item__name">Технология</div>
+              <div class="filters-row-item__field">
+                <div class="simple-select2-wrap">
+                  <select class="js-simple-select2-outer-dropdown">
+                    <option selected value="all">Любой</option>
+                    <option value="msk">Москва</option>
+                    <option value="spb">Санкт-Петербург</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="filters-bottom">
+            <div class="filters-bottom__left">
+              <div class="twi-switch twi-switch--filter-sec twi-switch--more-filters js-twi-switch--more-filters">
+                <div class="twi-switch__icon">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#filters-hide"></use>
+                  </svg>
+                </div>
+                <div class="twi-switch__name"><span>Дополнительные фильтры</span><span>Скрыть дополнительные фильтры</span></div>
+              </div>
+              <div class="twi-switch twi-switch--filter-sec">
+                <div class="twi-switch__icon">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#filters-clear"></use>
+                  </svg>
+                </div>
+                <div class="twi-switch__name">Сбросить фильтр</div>
+              </div>
+            </div>
+            <div class="filters-bottom__right"><a class="btn" href=""><span> Показать<span class="js-filter-result-items-count"> 146</span> квартир</span></a></div>
+          </div>
+        </div>
+        <div class="half-container half-container--invert half-container--filters-art">
+          <div class="filters-art">
+            <!--img(src="img/svg/filters-bottom-art.svg", alt="abstract art")-->
+          </div>
+        </div>
+      </section>
+      <section class="appartments">
+        <div class="container">
+          <div class="appartments-sorting">
+            <div class="simple-select2-wrap">
+              <select class="js-simple-select2-outer-dropdown" data-style="select2-container--mobile-smaller-lrp select2-container--white select2-container--sorting">
+                <option selected value="1">Сначала дешевле</option>
+                <option value="2">Сначала дороже</option>
+              </select>
+            </div>
+          </div>
+          <div class="appartments-grid"><a class="appartment-card" href="">
+              <div class="appartment-card__text">
+                <div class="appartment-card__complex">ЖК «Эстет»</div>
+                <div class="appartment-card__price">
+                  <div class="appartment-card__new-price">7 937 853 руб.</div>
+                </div>
+                <div class="appartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
+                <div class="appartment-card__props appartment-inline-props">
+                  <div class="appartment-inline-prop">3-комн.</div>
+                  <div class="appartment-inline-prop">73.5 м<sup>2</sup></div>
+                  <div class="appartment-inline-prop">20 этаж</div>
+                </div>
+              </div>
+              <div class="appartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-appartment-id="1">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#heart"></use>
+                </svg>
+              </div>
+              <div class="appartment-card__picture"><img src="img/appartment-card.png" alt=""></div></a><a class="appartment-card" href="">
+              <div class="appartment-card__text">
+                <div class="appartment-card__complex">ЖК «Эстет»</div>
+                <div class="appartment-card__price">
+                  <div class="appartment-card__new-price">7 937 853 руб.</div>
+                </div>
+                <div class="appartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
+                <div class="appartment-card__props appartment-inline-props">
+                  <div class="appartment-inline-prop">3-комн.</div>
+                  <div class="appartment-inline-prop">73.5 м<sup>2</sup></div>
+                  <div class="appartment-inline-prop">20 этаж</div>
+                </div>
+              </div>
+              <div class="appartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-appartment-id="2">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#heart"></use>
+                </svg>
+              </div>
+              <div class="appartment-card__picture"><img src="img/appartment-card.png" alt=""></div></a><a class="appartment-card" href="">
+              <div class="appartment-card__text">
+                <div class="appartment-card__complex">ЖК «Эстет»</div>
+                <div class="appartment-card__price">
+                  <div class="appartment-card__new-price">7 937 853 руб.</div>
+                  <div class="appartment-card__old-price">8 937 853 руб.</div>
+                </div>
+                <div class="appartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
+                <div class="appartment-card__props appartment-inline-props">
+                  <div class="appartment-inline-prop">3-комн.</div>
+                  <div class="appartment-inline-prop">73.5 м<sup>2</sup></div>
+                  <div class="appartment-inline-prop">20 этаж</div>
+                </div>
+              </div>
+              <div class="appartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-appartment-id="3">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#heart"></use>
+                </svg>
+              </div>
+              <div class="appartment-card__picture"><img src="img/appartment-card.png" alt=""></div>
+              <div class="appartment-card__labels">
+                <div class="appartment-labels">
+                  <div class="appartment-label"> Акция</div>
+                </div>
+              </div></a><a class="appartment-card" href="">
+              <div class="appartment-card__text">
+                <div class="appartment-card__complex">ЖК «Эстет»</div>
+                <div class="appartment-card__price">
+                  <div class="appartment-card__new-price">7 937 853 руб.</div>
+                </div>
+                <div class="appartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
+                <div class="appartment-card__props appartment-inline-props">
+                  <div class="appartment-inline-prop">3-комн.</div>
+                  <div class="appartment-inline-prop">73.5 м<sup>2</sup></div>
+                  <div class="appartment-inline-prop">20 этаж</div>
+                </div>
+              </div>
+              <div class="appartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-appartment-id="4">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#heart"></use>
+                </svg>
+              </div>
+              <div class="appartment-card__picture"><img src="img/appartment-card.png" alt=""></div></a><a class="appartment-card" href="">
+              <div class="appartment-card__text">
+                <div class="appartment-card__complex">ЖК «Эстет»</div>
+                <div class="appartment-card__price">
+                  <div class="appartment-card__new-price">7 937 853 руб.</div>
+                </div>
+                <div class="appartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
+                <div class="appartment-card__props appartment-inline-props">
+                  <div class="appartment-inline-prop">3-комн.</div>
+                  <div class="appartment-inline-prop">73.5 м<sup>2</sup></div>
+                  <div class="appartment-inline-prop">20 этаж</div>
+                </div>
+              </div>
+              <div class="appartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-appartment-id="5">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#heart"></use>
+                </svg>
+              </div>
+              <div class="appartment-card__picture"><img src="img/appartment-card.png" alt=""></div></a><a class="appartment-card" href="">
+              <div class="appartment-card__text">
+                <div class="appartment-card__complex">ЖК «Эстет»</div>
+                <div class="appartment-card__price">
+                  <div class="appartment-card__new-price">7 937 853 руб.</div>
+                </div>
+                <div class="appartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
+                <div class="appartment-card__props appartment-inline-props">
+                  <div class="appartment-inline-prop">3-комн.</div>
+                  <div class="appartment-inline-prop">73.5 м<sup>2</sup></div>
+                  <div class="appartment-inline-prop">20 этаж</div>
+                </div>
+              </div>
+              <div class="appartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-appartment-id="6">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#heart"></use>
+                </svg>
+              </div>
+              <div class="appartment-card__picture"><img src="img/appartment-card.png" alt=""></div></a><a class="appartment-card" href="">
+              <div class="appartment-card__text">
+                <div class="appartment-card__complex">ЖК «Эстет»</div>
+                <div class="appartment-card__price">
+                  <div class="appartment-card__new-price">7 937 853 руб.</div>
+                </div>
+                <div class="appartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
+                <div class="appartment-card__props appartment-inline-props">
+                  <div class="appartment-inline-prop">3-комн.</div>
+                  <div class="appartment-inline-prop">73.5 м<sup>2</sup></div>
+                  <div class="appartment-inline-prop">20 этаж</div>
+                </div>
+              </div>
+              <div class="appartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-appartment-id="7">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#heart"></use>
+                </svg>
+              </div>
+              <div class="appartment-card__picture"><img src="img/appartment-card.png" alt=""></div></a><a class="appartment-card" href="">
+              <div class="appartment-card__text">
+                <div class="appartment-card__complex">ЖК «Эстет»</div>
+                <div class="appartment-card__price">
+                  <div class="appartment-card__new-price">7 937 853 руб.</div>
+                </div>
+                <div class="appartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
+                <div class="appartment-card__props appartment-inline-props">
+                  <div class="appartment-inline-prop">3-комн.</div>
+                  <div class="appartment-inline-prop">73.5 м<sup>2</sup></div>
+                  <div class="appartment-inline-prop">20 этаж</div>
+                </div>
+              </div>
+              <div class="appartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-appartment-id="8">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#heart"></use>
+                </svg>
+              </div>
+              <div class="appartment-card__picture"><img src="img/appartment-card.png" alt=""></div></a><a class="appartment-card" href="">
+              <div class="appartment-card__text">
+                <div class="appartment-card__complex">ЖК «Эстет»</div>
+                <div class="appartment-card__price">
+                  <div class="appartment-card__new-price">7 937 853 руб.</div>
+                </div>
+                <div class="appartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
+                <div class="appartment-card__props appartment-inline-props">
+                  <div class="appartment-inline-prop">3-комн.</div>
+                  <div class="appartment-inline-prop">73.5 м<sup>2</sup></div>
+                  <div class="appartment-inline-prop">20 этаж</div>
+                </div>
+              </div>
+              <div class="appartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-appartment-id="9">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#heart"></use>
+                </svg>
+              </div>
+              <div class="appartment-card__picture"><img src="img/appartment-card.png" alt=""></div></a>
+          </div>
+          <div class="showmore-wrap"><a class="btn btn--light" href=""><span>Показать еще 12 из 146 квартир</span></a></div>
+        </div>
+      </section>
+      <div class="prefooter-padding"></div>
+    </main>
+    <footer class="site-footer">
+      <div class="container container--footer">
+        <div class="sf-top"><a class="sf-top__logo" href="/"><img src="img/footer-logo.png" alt="">
+            <!--picture
+            source(srcset="img/mob-footer-logo.png" media="(max-width: 640px)")
+            
+            
+            --></a>
+          <ul class="sf-top__menu sf-menu">
+            <li class="sf-menu-item"><a href="">Квартиры</a></li>
+            <li class="sf-menu-item"><a href="">Ипотека</a></li>
+            <li class="sf-menu-item"><a href="">О компании</a></li>
+          </ul>
+          <div class="sf-top__btns"><a class="btn js-call-me-modal" href="#"> Заказать звонок</a></div>
+          <div class="sf-contacts sf-contacts--mob"><a href="">+7 (861) 202-22-01</a></div>
+        </div>
+        <div class="sf-bottom">
+          <div class="sf-bottom__left">
+            <div class="sf-copyright">
+              <p>© 2023. Все права защищены.</p>
+              <p>Сайт носит информационный характер и не является публичной офертой согласно положениям Статьи 437 Гражданского кодекса Российской Федерации.</p>
+            </div>
+            <ul class="sf-bottom-links">
+              <li class="sf-bottom-link"><a href="">Положение о защите персональных данных</a></li>
+              <li class="sf-bottom-link"><a href=""> Пользовательское соглашение</a></li>
+            </ul>
+          </div>
+          <div class="sf-bottom__right">
+            <div class="sf-contacts sf-contacts--desktop"><a href="">+7 (861) 202-22-01</a></div>
+            <div class="socials sf-socials"><a class="socials__item" href="">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#soc-vk"></use>
+                </svg></a><a class="socials__item" href="">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#soc-ok"></use>
+                </svg></a><a class="socials__item" href="">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#soc-tg"></use>
+                </svg></a><a class="socials__item" href="">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#soc-yt"></use>
+                </svg></a></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <noindex>
+      <div style="display:none;">
+        <div class="simple-modal" id="call-me-modal">
+          <div class="simple-modal__inner">
+            <div class="simple-modal__content">
+              <div class="simple-modal__title">Заказать обратный звонок</div>
+              <div class="simple-modal__form">
+                <div class="simple-modal__inputs">
+                  <div class="simple-modal__input">
+                    <input class="simple-input" type="text" name="" placeholder="Ваше имя">
+                  </div>
+                  <div class="simple-modal__input">
+                    <input class="simple-input js-phonemask" type="text" name="" placeholder="Телефон">
+                  </div>
+                  <div class="simple-modal__input"><a class="btn btn--w100" href=""><span>Заказать звонок</span></a></div>
+                </div>
+                <div class="simple-modal__privacy">Нажимая на кнопку, вы принимаете <a href="#">политику конфиденциальности</a> и даете согласие на обработку персональных данных</div>
+              </div>
+            </div>
+            <div class="simple-modal__close" data-fancybox-close>
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#modal-close"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="simple-modal" id="answer-modal">
+          <div class="simple-modal__inner">
+            <div class="simple-modal__content">
+              <div class="simple-modal__title">Задать вопрос</div>
+              <div class="simple-modal__form">
+                <div class="simple-modal__inputs">
+                  <div class="simple-modal__input">
+                    <input class="simple-input" type="text" name="" placeholder="Ваше имя">
+                  </div>
+                  <div class="simple-modal__input">
+                    <input class="simple-input js-phonemask" type="text" name="" placeholder="Телефон">
+                  </div>
+                  <div class="simple-modal__input">
+                    <textarea class="simple-input js-textarea-autosize" type="text" name="" textarea rows="2" placeholder="Ваш вопрос"></textarea>
+                  </div>
+                  <div class="simple-modal__input"><a class="btn btn--w100" href=""><span>Задать вопрос</span></a></div>
+                </div>
+                <div class="simple-modal__privacy">Нажимая на кнопку, вы принимаете <a href="#">политику конфиденциальности</a> и даете согласие на обработку персональных данных</div>
+              </div>
+            </div>
+            <div class="simple-modal__close" data-fancybox-close>
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#modal-close"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </noindex>
+    <script src="js/main.js"></script>
+  </body>
+</html>
