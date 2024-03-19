@@ -737,7 +737,10 @@
 	}
 
 	.pw-banks-wrap {
+		@include max(md){
+
 		background: #fff;
+		}
 	}
 
 	.pw-banks-wrap__top {

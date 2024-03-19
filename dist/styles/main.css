@@ -7847,10 +7847,6 @@ a.project-card:hover {
   color: #252831;
 }
 
-.purchase-ways--light .pw-banks-wrap {
-  background: #fff;
-}
-
 .cards-slider {
   position: relative;
 }
@@ -9110,6 +9106,10 @@ a.project-card:hover {
     right: auto;
     left: 16px;
     bottom: 16px;
+  }
+
+  .purchase-ways--light .pw-banks-wrap {
+    background: #fff;
   }
 
   .purchase-ways--light .pw-banks-wrap__top {
