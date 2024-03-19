@@ -138,13 +138,15 @@
           <div class="apartment-page-flex">
             <div class="apartment-page-flex__main">
               <div class="apartment-page-pic">
-                <div class="togglable-pictures">
-                  <div class="togglable-pictures__pic"><img src="img/single-apartment-1.png" alt=""><img src="img/single-apartment-2.png" alt=""><img src="img/single-apartment-3.jpg" alt=""></div>
+                <div class="togglable-pictures js-togglable-pictures">
+                  <div class="togglable-pictures__pics-wrap">
+                    <div class="togglable-pictures__img togglable-pictures__img--active js-togglable-pictures-img" href="img/single-apartment-1.png" data-fancybox="app-top"><img src="img/single-apartment-1.png" alt=""></div><a class="togglable-pictures__img js-togglable-pictures-img" href="img/single-apartment-2.png" data-fancybox="app-top"><img src="img/single-apartment-2.png" alt=""></a><a class="togglable-pictures__img js-togglable-pictures-img" href="img/single-apartment-3.jpg" data-fancybox="app-top"><img src="img/single-apartment-3.jpg" alt=""></a>
+                  </div>
                   <div class="togglable-pictures__toggles">
                     <div class="tabs-controls tabs-controls--light">
-                      <div class="tabs-controls__item tabs-controls__item--active">Планировка</div>
-                      <div class="tabs-controls__item">Этаж</div>
-                      <div class="tabs-controls__item">Вид из окна</div>
+                      <div class="tabs-controls__item tabs-controls__item--active js-togglable-pictures-toggle">Планировка</div>
+                      <div class="tabs-controls__item js-togglable-pictures-toggle">Этаж</div>
+                      <div class="tabs-controls__item js-togglable-pictures-toggle">Вид из окна</div>
                     </div>
                   </div>
                 </div>
@@ -172,48 +174,156 @@
                     <div class="apartment-info-props__item-value">Предчистовая</div>
                   </div>
                 </div>
-                <div class="apartment-info__btns"></div><a class="btn" href="">Забронировать</a>
-                <div class="apartment-favourite-toggle favourite-toggle js-favourite-toggle" data-apartment-id="2">
-                  <svg>
-                    <use xlink:href="img/sprites/sprite.svg#heart"></use>
-                  </svg>
-                </div><a class="btn btn--with-arrow btn--light" href="">Рассчитать ипотеку</a>
+                <div class="apartment-info__btns"><a class="btn" href="">Забронировать</a>
+                  <div class="apartment-favourite-toggle favourite-toggle favourite-toggle--btn-style js-favourite-toggle" data-apartment-id="2">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#heart"></use>
+                    </svg>
+                  </div><a class="btn btn--with-arrow btn--light" href="">Рассчитать ипотеку</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section class="apartments-galleries">
+      <section class="apartments-galleries section-margin js-tabs-content-item">
         <div class="container">
           <div class="apartments-galleries-top">
             <div class="apartments-galleries-top__left">
-              <h2 class="section-title section-title--black">Наши проекты</h2>
+              <h2 class="section-title section-title--black">Галерея</h2>
             </div>
             <div class="apartments-galleries-top__right">
               <div class="tabs-controls tabs-controls--light">
-                <div class="tabs-controls__item tabs-controls__item--active">Благоустройство</div>
-                <div class="tabs-controls__item">Архитектура</div>
-                <div class="tabs-controls__item">Входные группы</div>
-                <div class="tabs-controls__item">Интерьер</div>
-                <div class="tabs-controls__item">Паркинг</div>
+                <div class="tabs-controls__item tabs-controls__item--active js-tabs-control">Благоустройство</div>
+                <div class="tabs-controls__item js-tabs-control">Архитектура</div>
+                <div class="tabs-controls__item js-tabs-control">Входные группы</div>
+                <div class="tabs-controls__item js-tabs-control">Интерьер</div>
+                <div class="tabs-controls__item js-tabs-control">Паркинг</div>
               </div>
             </div>
           </div>
           <div class="apartments-galleries-main">
-            <div class="swiper images-slider js-images-slider">
-              <div class="swiper-wrapper images-slider__swiper-wrapper"><a class="swiper-slide images-slider-slide" href=""><img src="img/single-apartment-3.jpg" alt=""></a><a class="swiper-slide images-slider-slide" href=""><img src="img/single-apartment-3.jpg" alt=""></a><a class="swiper-slide images-slider-slide" href=""><img src="img/single-apartment-3.jpg" alt=""></a><a class="swiper-slide images-slider-slide" href=""><img src="img/single-apartment-3.jpg" alt=""></a></div>
-              <div class="images-slider__controls-wrap">
-                <div class="slider-controls">
-                  <div class="js-swiper-button-prev slider-controls__arrow slider-controls__arrow--prev">
-                    <svg>
-                      <use xlink:href="img/sprites/sprite.svg#slider-arrow-next"></use>
-                    </svg>
+            <div class="apartments-galleries-slider js-tabs-content-item">
+              <div class="swiper images-slider js-images-slider">
+                <div class="swiper-wrapper images-slider__swiper-wrapper">
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                </div>
+                <div class="images-slider__controls-wrap">
+                  <div class="slider-controls">
+                    <div class="js-swiper-button-prev slider-controls__arrow slider-controls__arrow--prev">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#slider-arrow-next"></use>
+                      </svg>
+                    </div>
+                    <div class="js-swiper-pagination slider-controls-pagination"></div>
+                    <div class="js-swiper-button-next slider-controls__arrow slider-controls__arrow--next">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#slider-arrow-next"></use>
+                      </svg>
+                    </div>
                   </div>
-                  <div class="js-swiper-pagination slider-controls-pagination"></div>
-                  <div class="js-swiper-button-next slider-controls__arrow slider-controls__arrow--next">
-                    <svg>
-                      <use xlink:href="img/sprites/sprite.svg#slider-arrow-next"></use>
-                    </svg>
+                </div>
+              </div>
+            </div>
+            <div class="apartments-galleries-slider js-tabs-content-item">
+              <div class="swiper images-slider js-images-slider">
+                <div class="swiper-wrapper images-slider__swiper-wrapper">
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                </div>
+                <div class="images-slider__controls-wrap">
+                  <div class="slider-controls">
+                    <div class="js-swiper-button-prev slider-controls__arrow slider-controls__arrow--prev">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#slider-arrow-next"></use>
+                      </svg>
+                    </div>
+                    <div class="js-swiper-pagination slider-controls-pagination"></div>
+                    <div class="js-swiper-button-next slider-controls__arrow slider-controls__arrow--next">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#slider-arrow-next"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="apartments-galleries-slider js-tabs-content-item">
+              <div class="swiper images-slider js-images-slider">
+                <div class="swiper-wrapper images-slider__swiper-wrapper">
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                </div>
+                <div class="images-slider__controls-wrap">
+                  <div class="slider-controls">
+                    <div class="js-swiper-button-prev slider-controls__arrow slider-controls__arrow--prev">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#slider-arrow-next"></use>
+                      </svg>
+                    </div>
+                    <div class="js-swiper-pagination slider-controls-pagination"></div>
+                    <div class="js-swiper-button-next slider-controls__arrow slider-controls__arrow--next">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#slider-arrow-next"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="apartments-galleries-slider js-tabs-content-item">
+              <div class="swiper images-slider js-images-slider">
+                <div class="swiper-wrapper images-slider__swiper-wrapper">
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                </div>
+                <div class="images-slider__controls-wrap">
+                  <div class="slider-controls">
+                    <div class="js-swiper-button-prev slider-controls__arrow slider-controls__arrow--prev">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#slider-arrow-next"></use>
+                      </svg>
+                    </div>
+                    <div class="js-swiper-pagination slider-controls-pagination"></div>
+                    <div class="js-swiper-button-next slider-controls__arrow slider-controls__arrow--next">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#slider-arrow-next"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="apartments-galleries-slider js-tabs-content-item">
+              <div class="swiper images-slider js-images-slider">
+                <div class="swiper-wrapper images-slider__swiper-wrapper">
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                </div>
+                <div class="images-slider__controls-wrap">
+                  <div class="slider-controls">
+                    <div class="js-swiper-button-prev slider-controls__arrow slider-controls__arrow--prev">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#slider-arrow-next"></use>
+                      </svg>
+                    </div>
+                    <div class="js-swiper-pagination slider-controls-pagination"></div>
+                    <div class="js-swiper-button-next slider-controls__arrow slider-controls__arrow--next">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#slider-arrow-next"></use>
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -411,176 +521,209 @@
           </div>
         </section>
       </section>
-      <section class="apartments-cards-slider">
-        <div class="container"><a class="apartment-card apartment-card--w100" href="">
-            <div class="apartment-card__text">
-              <div class="apartment-card__complex">ЖК «Эстет»</div>
-              <div class="apartment-card__price">
-                <div class="apartment-card__new-price">7 937 853 руб.</div>
+      <section class="cards-slider-section">
+        <div class="container">
+          <div class="swiper cards-slider js-cards-slider">
+            <div class="cards-slider__top">
+              <div class="cards-slider__title">
+                <h2 class="section-title section-title--black">Похожие квартиры</h2>
               </div>
-              <div class="apartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
-              <div class="apartment-card__props apartment-inline-props">
-                <div class="apartment-inline-prop">3-комн.</div>
-                <div class="apartment-inline-prop">73.5 м<sup>2</sup></div>
-                <div class="apartment-inline-prop">20 этаж</div>
-              </div>
-            </div>
-            <div class="apartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-apartment-id="1">
-              <svg>
-                <use xlink:href="img/sprites/sprite.svg#heart"></use>
-              </svg>
-            </div>
-            <div class="apartment-card__picture"><img src="img/apartment-card.png" alt=""></div></a><a class="apartment-card apartment-card--w100" href="">
-            <div class="apartment-card__text">
-              <div class="apartment-card__complex">ЖК «Эстет»</div>
-              <div class="apartment-card__price">
-                <div class="apartment-card__new-price">7 937 853 руб.</div>
-              </div>
-              <div class="apartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
-              <div class="apartment-card__props apartment-inline-props">
-                <div class="apartment-inline-prop">3-комн.</div>
-                <div class="apartment-inline-prop">73.5 м<sup>2</sup></div>
-                <div class="apartment-inline-prop">20 этаж</div>
+              <div class="cards-slider__controls-wrap">
+                <div class="cards-slider-controls">
+                  <div class="js-swiper-button-prev cards-slider__arrow slider-controls__arrow--prev">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#slider-arrow-next"></use>
+                    </svg>
+                  </div>
+                  <div class="js-swiper-pagination cards-slider-pagination"></div>
+                  <div class="js-swiper-button-next cards-slider__arrow cards-slider__arrow--next">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#slider-arrow-next"></use>
+                    </svg>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="apartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-apartment-id="2">
-              <svg>
-                <use xlink:href="img/sprites/sprite.svg#heart"></use>
-              </svg>
+            <div class="swiper-wrapper cards-slider__swiper-wrapper">
+              <div class="swiper-slide cards-slider-slide" href=""><a class="apartment-card apartment-card--w100" href="">
+                  <div class="apartment-card__text">
+                    <div class="apartment-card__complex">ЖК «Эстет»</div>
+                    <div class="apartment-card__price">
+                      <div class="apartment-card__new-price">7 937 853 руб.</div>
+                    </div>
+                    <div class="apartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
+                    <div class="apartment-card__props apartment-inline-props">
+                      <div class="apartment-inline-prop">3-комн.</div>
+                      <div class="apartment-inline-prop">73.5 м<sup>2</sup></div>
+                      <div class="apartment-inline-prop">20 этаж</div>
+                    </div>
+                  </div>
+                  <div class="apartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-apartment-id="1">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#heart"></use>
+                    </svg>
+                  </div>
+                  <div class="apartment-card__picture"><img src="img/apartment-card.png" alt=""></div></a></div>
+              <div class="swiper-slide cards-slider-slide" href=""><a class="apartment-card apartment-card--w100" href="">
+                  <div class="apartment-card__text">
+                    <div class="apartment-card__complex">ЖК «Эстет»</div>
+                    <div class="apartment-card__price">
+                      <div class="apartment-card__new-price">7 937 853 руб.</div>
+                    </div>
+                    <div class="apartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
+                    <div class="apartment-card__props apartment-inline-props">
+                      <div class="apartment-inline-prop">3-комн.</div>
+                      <div class="apartment-inline-prop">73.5 м<sup>2</sup></div>
+                      <div class="apartment-inline-prop">20 этаж</div>
+                    </div>
+                  </div>
+                  <div class="apartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-apartment-id="2">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#heart"></use>
+                    </svg>
+                  </div>
+                  <div class="apartment-card__picture"><img src="img/apartment-card.png" alt=""></div></a></div>
+              <div class="swiper-slide cards-slider-slide" href=""><a class="apartment-card apartment-card--w100" href="">
+                  <div class="apartment-card__text">
+                    <div class="apartment-card__complex">ЖК «Эстет»</div>
+                    <div class="apartment-card__price">
+                      <div class="apartment-card__new-price">7 937 853 руб.</div>
+                      <div class="apartment-card__old-price">8 937 853 руб.</div>
+                    </div>
+                    <div class="apartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
+                    <div class="apartment-card__props apartment-inline-props">
+                      <div class="apartment-inline-prop">3-комн.</div>
+                      <div class="apartment-inline-prop">73.5 м<sup>2</sup></div>
+                      <div class="apartment-inline-prop">20 этаж</div>
+                    </div>
+                  </div>
+                  <div class="apartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-apartment-id="3">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#heart"></use>
+                    </svg>
+                  </div>
+                  <div class="apartment-card__picture"><img src="img/apartment-card.png" alt=""></div>
+                  <div class="apartment-card__labels">
+                    <div class="apartment-labels">
+                      <div class="apartment-label"> Акция</div>
+                    </div>
+                  </div></a></div>
+              <div class="swiper-slide cards-slider-slide" href=""><a class="apartment-card apartment-card--w100" href="">
+                  <div class="apartment-card__text">
+                    <div class="apartment-card__complex">ЖК «Эстет»</div>
+                    <div class="apartment-card__price">
+                      <div class="apartment-card__new-price">7 937 853 руб.</div>
+                    </div>
+                    <div class="apartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
+                    <div class="apartment-card__props apartment-inline-props">
+                      <div class="apartment-inline-prop">3-комн.</div>
+                      <div class="apartment-inline-prop">73.5 м<sup>2</sup></div>
+                      <div class="apartment-inline-prop">20 этаж</div>
+                    </div>
+                  </div>
+                  <div class="apartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-apartment-id="4">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#heart"></use>
+                    </svg>
+                  </div>
+                  <div class="apartment-card__picture"><img src="img/apartment-card.png" alt=""></div></a></div>
+              <div class="swiper-slide cards-slider-slide" href=""><a class="apartment-card apartment-card--w100" href="">
+                  <div class="apartment-card__text">
+                    <div class="apartment-card__complex">ЖК «Эстет»</div>
+                    <div class="apartment-card__price">
+                      <div class="apartment-card__new-price">7 937 853 руб.</div>
+                    </div>
+                    <div class="apartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
+                    <div class="apartment-card__props apartment-inline-props">
+                      <div class="apartment-inline-prop">3-комн.</div>
+                      <div class="apartment-inline-prop">73.5 м<sup>2</sup></div>
+                      <div class="apartment-inline-prop">20 этаж</div>
+                    </div>
+                  </div>
+                  <div class="apartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-apartment-id="5">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#heart"></use>
+                    </svg>
+                  </div>
+                  <div class="apartment-card__picture"><img src="img/apartment-card.png" alt=""></div></a></div>
+              <div class="swiper-slide cards-slider-slide" href=""><a class="apartment-card apartment-card--w100" href="">
+                  <div class="apartment-card__text">
+                    <div class="apartment-card__complex">ЖК «Эстет»</div>
+                    <div class="apartment-card__price">
+                      <div class="apartment-card__new-price">7 937 853 руб.</div>
+                    </div>
+                    <div class="apartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
+                    <div class="apartment-card__props apartment-inline-props">
+                      <div class="apartment-inline-prop">3-комн.</div>
+                      <div class="apartment-inline-prop">73.5 м<sup>2</sup></div>
+                      <div class="apartment-inline-prop">20 этаж</div>
+                    </div>
+                  </div>
+                  <div class="apartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-apartment-id="6">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#heart"></use>
+                    </svg>
+                  </div>
+                  <div class="apartment-card__picture"><img src="img/apartment-card.png" alt=""></div></a></div>
+              <div class="swiper-slide cards-slider-slide" href=""><a class="apartment-card apartment-card--w100" href="">
+                  <div class="apartment-card__text">
+                    <div class="apartment-card__complex">ЖК «Эстет»</div>
+                    <div class="apartment-card__price">
+                      <div class="apartment-card__new-price">7 937 853 руб.</div>
+                    </div>
+                    <div class="apartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
+                    <div class="apartment-card__props apartment-inline-props">
+                      <div class="apartment-inline-prop">3-комн.</div>
+                      <div class="apartment-inline-prop">73.5 м<sup>2</sup></div>
+                      <div class="apartment-inline-prop">20 этаж</div>
+                    </div>
+                  </div>
+                  <div class="apartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-apartment-id="7">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#heart"></use>
+                    </svg>
+                  </div>
+                  <div class="apartment-card__picture"><img src="img/apartment-card.png" alt=""></div></a></div>
+              <div class="swiper-slide cards-slider-slide" href=""><a class="apartment-card apartment-card--w100" href="">
+                  <div class="apartment-card__text">
+                    <div class="apartment-card__complex">ЖК «Эстет»</div>
+                    <div class="apartment-card__price">
+                      <div class="apartment-card__new-price">7 937 853 руб.</div>
+                    </div>
+                    <div class="apartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
+                    <div class="apartment-card__props apartment-inline-props">
+                      <div class="apartment-inline-prop">3-комн.</div>
+                      <div class="apartment-inline-prop">73.5 м<sup>2</sup></div>
+                      <div class="apartment-inline-prop">20 этаж</div>
+                    </div>
+                  </div>
+                  <div class="apartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-apartment-id="8">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#heart"></use>
+                    </svg>
+                  </div>
+                  <div class="apartment-card__picture"><img src="img/apartment-card.png" alt=""></div></a></div>
+              <div class="swiper-slide cards-slider-slide" href=""><a class="apartment-card apartment-card--w100" href="">
+                  <div class="apartment-card__text">
+                    <div class="apartment-card__complex">ЖК «Эстет»</div>
+                    <div class="apartment-card__price">
+                      <div class="apartment-card__new-price">7 937 853 руб.</div>
+                    </div>
+                    <div class="apartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
+                    <div class="apartment-card__props apartment-inline-props">
+                      <div class="apartment-inline-prop">3-комн.</div>
+                      <div class="apartment-inline-prop">73.5 м<sup>2</sup></div>
+                      <div class="apartment-inline-prop">20 этаж</div>
+                    </div>
+                  </div>
+                  <div class="apartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-apartment-id="9">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#heart"></use>
+                    </svg>
+                  </div>
+                  <div class="apartment-card__picture"><img src="img/apartment-card.png" alt=""></div></a></div>
             </div>
-            <div class="apartment-card__picture"><img src="img/apartment-card.png" alt=""></div></a><a class="apartment-card apartment-card--w100" href="">
-            <div class="apartment-card__text">
-              <div class="apartment-card__complex">ЖК «Эстет»</div>
-              <div class="apartment-card__price">
-                <div class="apartment-card__new-price">7 937 853 руб.</div>
-                <div class="apartment-card__old-price">8 937 853 руб.</div>
-              </div>
-              <div class="apartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
-              <div class="apartment-card__props apartment-inline-props">
-                <div class="apartment-inline-prop">3-комн.</div>
-                <div class="apartment-inline-prop">73.5 м<sup>2</sup></div>
-                <div class="apartment-inline-prop">20 этаж</div>
-              </div>
-            </div>
-            <div class="apartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-apartment-id="3">
-              <svg>
-                <use xlink:href="img/sprites/sprite.svg#heart"></use>
-              </svg>
-            </div>
-            <div class="apartment-card__picture"><img src="img/apartment-card.png" alt=""></div>
-            <div class="apartment-card__labels">
-              <div class="apartment-labels">
-                <div class="apartment-label"> Акция</div>
-              </div>
-            </div></a><a class="apartment-card apartment-card--w100" href="">
-            <div class="apartment-card__text">
-              <div class="apartment-card__complex">ЖК «Эстет»</div>
-              <div class="apartment-card__price">
-                <div class="apartment-card__new-price">7 937 853 руб.</div>
-              </div>
-              <div class="apartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
-              <div class="apartment-card__props apartment-inline-props">
-                <div class="apartment-inline-prop">3-комн.</div>
-                <div class="apartment-inline-prop">73.5 м<sup>2</sup></div>
-                <div class="apartment-inline-prop">20 этаж</div>
-              </div>
-            </div>
-            <div class="apartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-apartment-id="4">
-              <svg>
-                <use xlink:href="img/sprites/sprite.svg#heart"></use>
-              </svg>
-            </div>
-            <div class="apartment-card__picture"><img src="img/apartment-card.png" alt=""></div></a><a class="apartment-card apartment-card--w100" href="">
-            <div class="apartment-card__text">
-              <div class="apartment-card__complex">ЖК «Эстет»</div>
-              <div class="apartment-card__price">
-                <div class="apartment-card__new-price">7 937 853 руб.</div>
-              </div>
-              <div class="apartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
-              <div class="apartment-card__props apartment-inline-props">
-                <div class="apartment-inline-prop">3-комн.</div>
-                <div class="apartment-inline-prop">73.5 м<sup>2</sup></div>
-                <div class="apartment-inline-prop">20 этаж</div>
-              </div>
-            </div>
-            <div class="apartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-apartment-id="5">
-              <svg>
-                <use xlink:href="img/sprites/sprite.svg#heart"></use>
-              </svg>
-            </div>
-            <div class="apartment-card__picture"><img src="img/apartment-card.png" alt=""></div></a><a class="apartment-card apartment-card--w100" href="">
-            <div class="apartment-card__text">
-              <div class="apartment-card__complex">ЖК «Эстет»</div>
-              <div class="apartment-card__price">
-                <div class="apartment-card__new-price">7 937 853 руб.</div>
-              </div>
-              <div class="apartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
-              <div class="apartment-card__props apartment-inline-props">
-                <div class="apartment-inline-prop">3-комн.</div>
-                <div class="apartment-inline-prop">73.5 м<sup>2</sup></div>
-                <div class="apartment-inline-prop">20 этаж</div>
-              </div>
-            </div>
-            <div class="apartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-apartment-id="6">
-              <svg>
-                <use xlink:href="img/sprites/sprite.svg#heart"></use>
-              </svg>
-            </div>
-            <div class="apartment-card__picture"><img src="img/apartment-card.png" alt=""></div></a><a class="apartment-card apartment-card--w100" href="">
-            <div class="apartment-card__text">
-              <div class="apartment-card__complex">ЖК «Эстет»</div>
-              <div class="apartment-card__price">
-                <div class="apartment-card__new-price">7 937 853 руб.</div>
-              </div>
-              <div class="apartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
-              <div class="apartment-card__props apartment-inline-props">
-                <div class="apartment-inline-prop">3-комн.</div>
-                <div class="apartment-inline-prop">73.5 м<sup>2</sup></div>
-                <div class="apartment-inline-prop">20 этаж</div>
-              </div>
-            </div>
-            <div class="apartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-apartment-id="7">
-              <svg>
-                <use xlink:href="img/sprites/sprite.svg#heart"></use>
-              </svg>
-            </div>
-            <div class="apartment-card__picture"><img src="img/apartment-card.png" alt=""></div></a><a class="apartment-card apartment-card--w100" href="">
-            <div class="apartment-card__text">
-              <div class="apartment-card__complex">ЖК «Эстет»</div>
-              <div class="apartment-card__price">
-                <div class="apartment-card__new-price">7 937 853 руб.</div>
-              </div>
-              <div class="apartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
-              <div class="apartment-card__props apartment-inline-props">
-                <div class="apartment-inline-prop">3-комн.</div>
-                <div class="apartment-inline-prop">73.5 м<sup>2</sup></div>
-                <div class="apartment-inline-prop">20 этаж</div>
-              </div>
-            </div>
-            <div class="apartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-apartment-id="8">
-              <svg>
-                <use xlink:href="img/sprites/sprite.svg#heart"></use>
-              </svg>
-            </div>
-            <div class="apartment-card__picture"><img src="img/apartment-card.png" alt=""></div></a><a class="apartment-card apartment-card--w100" href="">
-            <div class="apartment-card__text">
-              <div class="apartment-card__complex">ЖК «Эстет»</div>
-              <div class="apartment-card__price">
-                <div class="apartment-card__new-price">7 937 853 руб.</div>
-              </div>
-              <div class="apartment-card__price-per-m">124 018 руб. м<sup>2</sup></div>
-              <div class="apartment-card__props apartment-inline-props">
-                <div class="apartment-inline-prop">3-комн.</div>
-                <div class="apartment-inline-prop">73.5 м<sup>2</sup></div>
-                <div class="apartment-inline-prop">20 этаж</div>
-              </div>
-            </div>
-            <div class="apartment-card__favourite-toggle favourite-toggle js-favourite-toggle" data-apartment-id="9">
-              <svg>
-                <use xlink:href="img/sprites/sprite.svg#heart"></use>
-              </svg>
-            </div>
-            <div class="apartment-card__picture"><img src="img/apartment-card.png" alt=""></div></a>
+          </div>
         </div>
       </section>
       <div class="prefooter-padding"></div>

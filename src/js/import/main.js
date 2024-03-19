@@ -69,6 +69,47 @@ $(function () {
 	});
 
 
+	$('.js-cards-slider').each(function () {
+
+		var swiper = new Swiper($(this)[0], {
+			slidesPerView: 1,
+			spaceBetween: 10,
+			breakpoints: {
+				// when window width is >= 320px
+				640: {
+					slidesPerView: 2,
+					spaceBetween: 22
+				},
+
+				960: {
+					slidesPerView: 2,
+					spaceBetween: 32
+				},
+
+				1200: {
+					slidesPerView: 3,
+					spaceBetween: 32
+				}
+			},
+			pagination: {
+				el: $(this).find('.js-swiper-pagination')[0],
+				type: "fraction",
+				renderFraction: function (currentClass, totalClass) {
+					return '<span class="slider-controls-pagination__digit slider-controls-pagination__digit--current ' + currentClass + '"></span>' +
+						'<span class="slider-controls-pagination__delimiter"></span> ' +
+						'<span class="slider-controls-pagination__digit slider-controls-pagination__digit--total ' + totalClass + '"></span>';
+				}
+			},
+			navigation: {
+				nextEl: $(this).find('.js-swiper-button-next')[0],
+				prevEl: $(this).find('.js-swiper-button-prev')[0],
+			},
+
+			/*autoplay: {
+				delay: 5000,
+			},*/
+		});
+	});
 	$('.js-range-slider').each(function () {
 		var rs = $(this);
 		var rs_inp_l = rs.find('.js-range-slider__inp-left');
@@ -512,13 +553,13 @@ $(function () {
 
 
 
-	if($('.js-favourite-toggle').length>0){
-		var favouriteApartments=Cookies.get('favouriteApartments');
-		if(typeof(favouriteApartments)!=='undefined'){
-			favouriteApartments=JSON.parse(favouriteApartments);
-			$('.js-favourite-toggle').each(function(){
-				var thisapartmentId=$(this).attr('data-apartment-id');
-				if(favouriteApartments.includes(thisapartmentId)){
+	if ($('.js-favourite-toggle').length > 0) {
+		var favouriteApartments = Cookies.get('favouriteApartments');
+		if (typeof (favouriteApartments) !== 'undefined') {
+			favouriteApartments = JSON.parse(favouriteApartments);
+			$('.js-favourite-toggle').each(function () {
+				var thisapartmentId = $(this).attr('data-apartment-id');
+				if (favouriteApartments.includes(thisapartmentId)) {
 					$(this).addClass('favourite-toggle--active')
 				}
 			})
@@ -530,23 +571,21 @@ $(function () {
 	$('.js-favourite-toggle').on('click', function (e) {
 		e.preventDefault();
 		e.stopPropagation();
-		var thisapartmentId=$(this).attr('data-apartment-id');
-		var current=Cookies.get('favouriteApartments');
+		var thisapartmentId = $(this).attr('data-apartment-id');
+		var current = Cookies.get('favouriteApartments');
 
-
-
-		if(typeof(current)!=='undefined' && current!==""){
-			current=JSON.parse(current);
+		if (typeof (current) !== 'undefined' && current !== "") {
+			current = JSON.parse(current);
 
 			indexInArray = current.indexOf(thisapartmentId);
 			if (indexInArray > -1) {
 				current.splice(indexInArray, 1);
 				$(this).removeClass('favourite-toggle--active');
-				if($(this).closest('#favourites').length>0){
+				if ($(this).closest('#favourites').length > 0) {
 					$(this).closest('.apartment-card').remove();
 				}
 			}
-			else{
+			else {
 				current.push(thisapartmentId);
 				$(this).addClass('favourite-toggle--active');
 				/*current.filter(function(value, index, array) {
@@ -554,14 +593,37 @@ $(function () {
 				});*/
 			}
 			Cookies.set('favouriteApartments', JSON.stringify(current), { expires: 365 });
-
 		}
-		else{
+		else {
 			Cookies.set('favouriteApartments', JSON.stringify([thisapartmentId]), { expires: 365 });
 			$(this).addClass('favourite-toggle--active');
-
 		}
 
 
 	});
+
+
+
+
+
+	$('.js-togglable-pictures').each(function () {
+		var picGroup = $(this);
+		picGroup.on('click', '.js-togglable-pictures-toggle:not(.tabs-controls__item--active)', function (e) {
+			e.preventDefault();
+			e.stopPropagation();
+			var toggle = $(this);
+
+			picGroup.find('.js-togglable-pictures-img').eq(toggle.index()).addClass('togglable-pictures__img--active')
+			.siblings('.togglable-pictures__img--active').removeClass('togglable-pictures__img--active');
+
+			toggle.addClass('tabs-controls__item--active')
+			.siblings('.tabs-controls__item--active').removeClass('tabs-controls__item--active');
+
+
+
+		});
+	});
+
+
+
 });

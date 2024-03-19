@@ -1,13 +1,16 @@
 .page-top {
 	background: #263344;
 	border-top: 1px solid rgba(255, 255, 255, 0.25);
-	&--only-breadcrumbs{
-		.container--page-top{
+
+	&--only-breadcrumbs {
+		.container--page-top {
 			padding-bottom: 42px;
-			@include max(lg){
+
+			@include max(lg) {
 				padding-bottom: 28px;
 			}
 		}
+
 		/*.filters-art{
 			height: 16px;
 			@include max(lg){
@@ -34,7 +37,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-start;
-    gap: 5px 0;
+	gap: 5px 0;
 }
 
 .breadcrumbs__item {
@@ -89,9 +92,10 @@
 	&__left {}
 
 	&__right {}
-	&--sm-block{
-		.page-top-flex__right{
-			@include max(sm){
+
+	&--sm-block {
+		.page-top-flex__right {
+			@include max(sm) {
 				width: 100%;
 			}
 		}
@@ -100,15 +104,17 @@
 
 .page-top-switch {}
 
-.page-top-buttons{
+.page-top-buttons {
 	display: flex;
 	gap: 32px;
 	flex-wrap: wrap;
-	@include max(md){
+
+	@include max(md) {
 		gap: 12px;
 	}
-	@include max(sm){
-		.btn{
+
+	@include max(sm) {
+		.btn {
 			width: 100%;
 		}
 	}
@@ -271,7 +277,8 @@
 
 .article {
 	padding-top: 48px;
-	@include max(lg){
+
+	@include max(lg) {
 		padding-top: 24px;
 	}
 
@@ -288,7 +295,8 @@
 	display: flex;
 	align-items: center;
 	@include hov();
-	&::before{
+
+	&::before {
 		content: '';
 		display: block;
 		width: 7px;
@@ -303,6 +311,28 @@
 	&:active {}
 
 	&:focus {}
+
+	&--border {
+
+		&::before {
+			width: 37px;
+			height: 41px;
+			background-size: 7px auto;
+
+			border: 1px solid rgba(37, 40, 49, 0.2);
+			border-radius: 8px;
+			transition-duration: .3s;
+			margin-right: 16px;
+		}
+
+		&:hover {
+			opacity: 1;
+
+			&::before {
+				border: 1px solid rgba(37, 40, 49, 0.5);
+			}
+		}
+	}
 }
 
 .article-text {
@@ -315,7 +345,8 @@
 	line-height: 140%;
 	letter-spacing: -0.02em;
 	color: rgba(37, 40, 49, 0.8);
-	@include max(md){
+
+	@include max(md) {
 		font-size: 14px;
 	}
 
@@ -361,8 +392,8 @@
 
 		p {}
 
-		ul,ol {
-		}
+		ul,
+		ol {}
 
 		img {
 
@@ -379,40 +410,43 @@
 		letter-spacing: -0.02em;
 		color: #252831;
 		font-family: $songer;
+
 		&+* {
 			margin-top: 24px;
-			@include max(md){
+
+			@include max(md) {
 				margin-top: 16px;
 			}
 		}
 	}
 
-	h1{
+	h1 {
 		font-size: 32px;
-		@include max(md){
+
+		@include max(md) {
 			font-size: 24px;
 		}
 	}
 
 	h2 {
 		font-size: 28px;
-		@include max(md){
+
+		@include max(md) {
 			font-size: 20px;
 		}
 	}
 
 	h3 {
 		font-size: 26px;
-		@include max(md){
+
+		@include max(md) {
 			font-size: 18px;
 		}
 	}
 
 	h4 {
 
-		@include max(md){
-
-		}
+		@include max(md) {}
 	}
 
 	img {
@@ -424,7 +458,7 @@
 
 
 	p {
-		&+p{
+		&+p {
 			margin-top: 15px;
 		}
 	}
@@ -439,7 +473,7 @@
 			text-transform: none;
 			padding-left: 30px;
 
-			@include max(md){
+			@include max(md) {
 				padding-left: 18px;
 			}
 
@@ -454,7 +488,7 @@
 				left: 12px;
 				top: 9px;
 
-				@include max(md){
+				@include max(md) {
 					left: 0;
 					top: 8px;
 
@@ -483,7 +517,7 @@
 				width: 26px;
 				text-align: center;
 
-				@include max(md){
+				@include max(md) {
 					left: -11px;
 					top: 0;
 				}
@@ -505,7 +539,7 @@
 	margin-top: 32px;
 	border-top: 1px solid rgba(37, 40, 49, 0.2);
 
-	@include max(md){
+	@include max(md) {
 		padding-top: 25px;
 		margin-top: 23px;
 	}
@@ -522,9 +556,10 @@
 	letter-spacing: -0.02em;
 	color: #252831;
 	opacity: 0.8;
-	@include max(md){
 
-font-size: 14px;
+	@include max(md) {
+
+		font-size: 14px;
 	}
 
 	&--views {
