@@ -9042,6 +9042,7 @@ a.project-card:hover {
 
   .togglable-pictures__toggles {
     margin-top: 32px;
+    width: 100%;
   }
 
   .apartment-info__title {
