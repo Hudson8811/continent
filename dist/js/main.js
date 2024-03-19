@@ -233,19 +233,23 @@ $(function () {
 		var swiper = new Swiper($(this)[0], {
 			slidesPerView: 1,
 			spaceBetween: 10,
+			autoHeight:true,
 			breakpoints: {
 				// when window width is >= 320px
-				640: {
+				641: {
+					autoHeight:false,
 					slidesPerView: 2,
 					spaceBetween: 22
 				},
 
-				960: {
+				961: {
+					autoHeight:false,
 					slidesPerView: 2,
 					spaceBetween: 32
 				},
 
-				1200: {
+				1201: {
+					autoHeight:false,
 					slidesPerView: 3,
 					spaceBetween: 32
 				}
@@ -727,7 +731,7 @@ $(function () {
 
 	}
 
-	$('.js-favourite-toggle').on('click', function (e) {
+	$('body').on('click','.js-favourite-toggle', function (e) {
 		e.preventDefault();
 		e.stopPropagation();
 		var thisapartmentId = $(this).attr('data-apartment-id');
@@ -777,11 +781,26 @@ $(function () {
 
 			toggle.addClass('tabs-controls__item--active')
 			.siblings('.tabs-controls__item--active').removeClass('tabs-controls__item--active');
-
-
-
 		});
 	});
+
+	$('.js-simple-tabs').each(function () {
+		var picGroup = $(this);
+		picGroup.on('click', '.js-simple-tabs-controller:not(.tabs-controls__item--active)', function (e) {
+			e.preventDefault();
+			e.stopPropagation();
+			var toggle = $(this);
+
+			picGroup.find('.js-simple-tabs-content-item').eq(toggle.index()).addClass('simple-tabs-content-item--active')
+			.siblings('.simple-tabs-content-item--active').removeClass('simple-tabs-content-item--active');
+
+			toggle.addClass('tabs-controls__item--active')
+			.siblings('.tabs-controls__item--active').removeClass('tabs-controls__item--active');
+		});
+	});
+
+
+
 
 
 

@@ -143,7 +143,7 @@
                     <div class="togglable-pictures__img togglable-pictures__img--active js-togglable-pictures-img" href="img/single-apartment-1.png" data-fancybox="app-top"><img src="img/single-apartment-1.png" alt=""></div><a class="togglable-pictures__img js-togglable-pictures-img" href="img/single-apartment-2.png" data-fancybox="app-top"><img src="img/single-apartment-2.png" alt=""></a><a class="togglable-pictures__img js-togglable-pictures-img" href="img/single-apartment-3.jpg" data-fancybox="app-top"><img src="img/single-apartment-3.jpg" alt=""></a>
                   </div>
                   <div class="togglable-pictures__toggles">
-                    <div class="tabs-controls tabs-controls--light">
+                    <div class="tabs-controls tabs-controls--sm-w100 tabs-controls--jcc tabs-controls--light tabs-controls--smalller-adaptive">
                       <div class="tabs-controls__item tabs-controls__item--active js-togglable-pictures-toggle">Планировка</div>
                       <div class="tabs-controls__item js-togglable-pictures-toggle">Этаж</div>
                       <div class="tabs-controls__item js-togglable-pictures-toggle">Вид из окна</div>
@@ -154,11 +154,11 @@
             </div>
             <div class="apartment-page-flex__side">
               <div class="apartment-info">
-                <h1 class="apartment-info__title">2-комнатная квартира, 63,7 м2</h1>
+                <h1 class="apartment-info__title">2-комнатная квартира, 63,7 м<sup>2</sup></h1>
                 <div class="apartment-info__completion"><span>Сдача:</span>  1 кв. 2025 г.</div>
                 <div class="apartment-info__prices">
                   <div class="apartment-info__price">7.9 млн. руб.</div>
-                  <div class="apartment-info__per-meter">124 018 руб. м2</div>
+                  <div class="apartment-info__per-meter">124 018 руб. м<sup>2</sup></div>
                 </div>
                 <div class="apartment-info__props apartment-info-props">
                   <div class="apartment-info-props__item">
@@ -186,7 +186,7 @@
           </div>
         </div>
       </section>
-      <section class="apartments-galleries section-margin js-tabs-content-item">
+      <section class="apartments-galleries section-margin js-simple-tabs">
         <div class="container">
           <div class="apartments-galleries-top">
             <div class="apartments-galleries-top__left">
@@ -194,16 +194,16 @@
             </div>
             <div class="apartments-galleries-top__right">
               <div class="tabs-controls tabs-controls--light">
-                <div class="tabs-controls__item tabs-controls__item--active js-tabs-control">Благоустройство</div>
-                <div class="tabs-controls__item js-tabs-control">Архитектура</div>
-                <div class="tabs-controls__item js-tabs-control">Входные группы</div>
-                <div class="tabs-controls__item js-tabs-control">Интерьер</div>
-                <div class="tabs-controls__item js-tabs-control">Паркинг</div>
+                <div class="tabs-controls__item tabs-controls__item--active js-simple-tabs-controller">Благоустройство</div>
+                <div class="tabs-controls__item js-simple-tabs-controller">Архитектура</div>
+                <div class="tabs-controls__item js-simple-tabs-controller">Входные группы</div>
+                <div class="tabs-controls__item js-simple-tabs-controller">Интерьер</div>
+                <div class="tabs-controls__item js-simple-tabs-controller">Паркинг</div>
               </div>
             </div>
           </div>
           <div class="apartments-galleries-main">
-            <div class="apartments-galleries-slider js-tabs-content-item">
+            <div class="apartments-galleries-slider simple-tabs-content-item js-simple-tabs-content-item simple-tabs-content-item--active">
               <div class="swiper images-slider js-images-slider">
                 <div class="swiper-wrapper images-slider__swiper-wrapper">
                   <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
@@ -228,7 +228,37 @@
                 </div>
               </div>
             </div>
-            <div class="apartments-galleries-slider js-tabs-content-item">
+            <div class="apartments-galleries-slider simple-tabs-content-item js-simple-tabs-content-item">
+              <div class="swiper images-slider js-images-slider">
+                <div class="swiper-wrapper images-slider__swiper-wrapper">
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                </div>
+                <div class="images-slider__controls-wrap">
+                  <div class="slider-controls">
+                    <div class="js-swiper-button-prev slider-controls__arrow slider-controls__arrow--prev">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#slider-arrow-next"></use>
+                      </svg>
+                    </div>
+                    <div class="js-swiper-pagination slider-controls-pagination"></div>
+                    <div class="js-swiper-button-next slider-controls__arrow slider-controls__arrow--next">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#slider-arrow-next"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="apartments-galleries-slider simple-tabs-content-item js-simple-tabs-content-item">
               <div class="swiper images-slider js-images-slider">
                 <div class="swiper-wrapper images-slider__swiper-wrapper">
                   <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
@@ -253,9 +283,14 @@
                 </div>
               </div>
             </div>
-            <div class="apartments-galleries-slider js-tabs-content-item">
+            <div class="apartments-galleries-slider simple-tabs-content-item js-simple-tabs-content-item">
               <div class="swiper images-slider js-images-slider">
                 <div class="swiper-wrapper images-slider__swiper-wrapper">
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
+                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
                   <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
                   <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
                   <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
@@ -278,32 +313,7 @@
                 </div>
               </div>
             </div>
-            <div class="apartments-galleries-slider js-tabs-content-item">
-              <div class="swiper images-slider js-images-slider">
-                <div class="swiper-wrapper images-slider__swiper-wrapper">
-                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
-                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
-                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
-                  <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
-                </div>
-                <div class="images-slider__controls-wrap">
-                  <div class="slider-controls">
-                    <div class="js-swiper-button-prev slider-controls__arrow slider-controls__arrow--prev">
-                      <svg>
-                        <use xlink:href="img/sprites/sprite.svg#slider-arrow-next"></use>
-                      </svg>
-                    </div>
-                    <div class="js-swiper-pagination slider-controls-pagination"></div>
-                    <div class="js-swiper-button-next slider-controls__arrow slider-controls__arrow--next">
-                      <svg>
-                        <use xlink:href="img/sprites/sprite.svg#slider-arrow-next"></use>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="apartments-galleries-slider js-tabs-content-item">
+            <div class="apartments-galleries-slider simple-tabs-content-item js-simple-tabs-content-item">
               <div class="swiper images-slider js-images-slider">
                 <div class="swiper-wrapper images-slider__swiper-wrapper">
                   <div class="swiper-slide images-slider-slide"><img src="img/single-apartment-3.jpg" alt=""></div>
@@ -330,219 +340,205 @@
             </div>
           </div>
         </div>
-        <section class="purchase-ways section-margin">
-          <div class="container">
-            <h2 class="section-title">Способы покупки</h2>
-            <div class="purchase-ways-flex">
-              <div class="purchase-ways-flex__main">
-                <div class="purchase-ways-form">
-                  <div class="purchase-ways-form__top">
-                    <div class="purchase-ways-form__top-left">
-                      <div class="purchase-ways-form__title"> Ипотека</div>
-                      <div class="purchase-ways-form__desc">Более 10 банков-партнеров с выгодными условиями</div>
-                    </div>
-                    <div class="purchase-ways-form__top-right"><a class="btn btn--with-arrow btn--dark" href=""><span>Получить расчет</span></a></div>
+      </section>
+      <section class="purchase-ways purchase-ways--light section-margin">
+        <div class="container">
+          <h2 class="section-title">Способы покупки</h2>
+          <div class="purchase-ways-flex">
+            <div class="purchase-ways-flex__main">
+              <div class="purchase-ways-form">
+                <div class="purchase-ways-form__top">
+                  <div class="purchase-ways-form__top-left">
+                    <div class="purchase-ways-form__title"> Ипотека</div>
+                    <div class="purchase-ways-form__desc">Более 10 банков-партнеров с выгодными условиями</div>
                   </div>
-                  <div class="purchase-ways-form__main">
-                    <div class="pw-controls">
-                      <div class="pw-control pw-control--w25 pw-control--customxlg-w50 pw-control--1279-w33 pw-control--md-w50">
-                        <div class="pw-control__name">Ипотечная программа</div>
-                        <div class="pw-control__field">
-                          <div class="simple-select2-wrap">
-                            <select class="js-simple-select2-outer-dropdown" data-style="select2-container--style-2 select2-container--bdrs-4 select2-container--smaller-lrp">
-                              <option selected value="1">Субсидированная ипотека</option>
-                              <option value="2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, dolor!</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="pw-control pw-control--w25 pw-control--customxlg-w50 pw-control--1279-w33 pw-control--md-w50">
-                        <div class="pw-control__name">Стоимость недвижимости</div>
-                        <div class="pw-control__field">
-                          <div class="rs-block rs-block--single rs-block--start-at-0 rs-block--style-2 custom-style-rs js-range-slider" data-single="true" data-min="1000000" data-max="10000000" data-suffix=" ₽" data-format="int" data-step="100000">
-                            <!--data-start-left data-start-right-->
-                            <div class="rs-block__top">
-                              <input class="rs-block__inp rs-block__inp-single rs-block__inp-single--smaller-lrp js-range-slider__inp-single" type="text">
-                            </div>
-                            <div class="rs-block__bottom">
-                              <div class="rs-block__rs js-range-slider__range"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="pw-control pw-control--w25 pw-control--customxlg-w50 pw-control--1279-w33 pw-control--md-w50">
-                        <div class="pw-control__name">Первоначальный взнос</div>
-                        <div class="pw-control__field">
-                          <div class="rs-block rs-block--single rs-block--start-at-0 rs-block--style-2 custom-style-rs js-range-slider" data-single="true" data-min="100000" data-max="10000000" data-suffix=" ₽" data-format="int" data-step="100000">
-                            <!--data-start-left data-start-right-->
-                            <div class="rs-block__top">
-                              <input class="rs-block__inp rs-block__inp-single rs-block__inp-single--smaller-lrp js-range-slider__inp-single" type="text">
-                            </div>
-                            <div class="rs-block__bottom">
-                              <div class="rs-block__rs js-range-slider__range"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="pw-control pw-control--w25 pw-control--customxlg-w50 pw-control--1279-w33 pw-control--md-w50">
-                        <div class="pw-control__name">Срок</div>
-                        <div class="pw-control__field">
-                          <div class="rs-block rs-block--single rs-block--start-at-0 rs-block--style-2 custom-style-rs js-range-slider" data-single="true" data-min="1" data-max="30" data-suffix="year" data-format="int" data-step="1">
-                            <!--data-start-left data-start-right-->
-                            <div class="rs-block__top">
-                              <input class="rs-block__inp rs-block__inp-single rs-block__inp-single--smaller-lrp js-range-slider__inp-single" type="text">
-                            </div>
-                            <div class="rs-block__bottom">
-                              <div class="rs-block__rs js-range-slider__range"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="pw-banks-wrap" id="banks-modal">
-                      <div class="pw-banks-wrap__top">
-                        <div class="pw-banks-wrap__close js-pw-banks-modal-close"></div>
-                      </div>
-                      <div class="pw-banks-wrap__main">
-                        <div class="pw-banks pw-banks--in-form">
-                          <div class="pw-bank">
-                            <div class="pw-bank__col pw-bank__col--name">
-                              <div class="pw-bank__icon"><img src="img/svg/bank-psb.svg" alt=""></div>
-                              <!--.pw-bank__name Азиатско-Тихоокеанский-->
-                              <!--.pw-bank__name Алтайкапиталбанк-->
-                              <div class="pw-bank__name">ПромСвязьБанк</div>
-                            </div>
-                            <div class="pw-bank__col pw-bank__col--payment">
-                              <div class="pw-bank__info-top">Ежемесячный платеж</div>
-                              <div class="pw-bank__info-bottom">54 679 ₽/мес.</div>
-                            </div>
-                            <div class="pw-bank__col pw-bank__col--rate">
-                              <div class="pw-bank__info-top">Ставка</div>
-                              <div class="pw-bank__info-bottom">5.7%</div>
-                            </div>
-                            <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn js-pw-bank__btn" href="#">
-                                <svg>
-                                  <use xlink:href="img/sprites/sprite.svg#bank-arrow"></use>
-                                </svg></a></div>
-                          </div>
-                          <div class="pw-bank">
-                            <div class="pw-bank__col pw-bank__col--name">
-                              <div class="pw-bank__icon"><img src="img/svg/bank-sber.svg" alt=""></div>
-                              <div class="pw-bank__name">Сбербанк</div>
-                            </div>
-                            <div class="pw-bank__col pw-bank__col--payment">
-                              <div class="pw-bank__info-top">Ежемесячный платеж</div>
-                              <div class="pw-bank__info-bottom">54 679 ₽/мес.</div>
-                            </div>
-                            <div class="pw-bank__col pw-bank__col--rate">
-                              <div class="pw-bank__info-top">Ставка</div>
-                              <div class="pw-bank__info-bottom">5.7%</div>
-                            </div>
-                            <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn js-pw-bank__btn" href="#">
-                                <svg>
-                                  <use xlink:href="img/sprites/sprite.svg#bank-arrow"></use>
-                                </svg></a></div>
-                          </div>
-                          <div class="pw-bank">
-                            <div class="pw-bank__col pw-bank__col--name">
-                              <div class="pw-bank__icon"><img src="img/svg/bank-alfa.svg" alt=""></div>
-                              <div class="pw-bank__name">Альфа Банк</div>
-                            </div>
-                            <div class="pw-bank__col pw-bank__col--payment">
-                              <div class="pw-bank__info-top">Ежемесячный платеж</div>
-                              <div class="pw-bank__info-bottom">54 679 ₽/мес.</div>
-                            </div>
-                            <div class="pw-bank__col pw-bank__col--rate">
-                              <div class="pw-bank__info-top">Ставка</div>
-                              <div class="pw-bank__info-bottom">5.7%</div>
-                            </div>
-                            <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn js-pw-bank__btn" href="#">
-                                <svg>
-                                  <use xlink:href="img/sprites/sprite.svg#bank-arrow"></use>
-                                </svg></a></div>
-                          </div>
-                          <div class="pw-bank">
-                            <div class="pw-bank__col pw-bank__col--name">
-                              <div class="pw-bank__icon"><img src="img/svg/bank-skb.svg" alt=""></div>
-                              <div class="pw-bank__name">СовКомБанк</div>
-                            </div>
-                            <div class="pw-bank__col pw-bank__col--payment">
-                              <div class="pw-bank__info-top">Ежемесячный платеж</div>
-                              <div class="pw-bank__info-bottom">54 679 ₽/мес.</div>
-                            </div>
-                            <div class="pw-bank__col pw-bank__col--rate">
-                              <div class="pw-bank__info-top">Ставка</div>
-                              <div class="pw-bank__info-bottom">5.7%</div>
-                            </div>
-                            <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn js-pw-bank__btn" href="#">
-                                <svg>
-                                  <use xlink:href="img/sprites/sprite.svg#bank-arrow"></use>
-                                </svg></a></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <div class="purchase-ways-form__top-right"><a class="btn btn--with-arrow btn--light" href=""><span>Получить расчет</span></a></div>
                 </div>
-                <div class="pw-summary">
-                  <div class="pw-summary-item">
-                    <div class="pw-summary-item__left">
-                      <div class="pw-summary-item__title">Ежемесячный платеж</div>
-                      <div class="pw-summary-item__text">от 54 679 ₽/мес.</div>
+                <div class="purchase-ways-form__main">
+                  <div class="pw-controls">
+                    <div class="pw-control pw-control--w25 pw-control--customxlg-w50 pw-control--1279-w33 pw-control--md-w50">
+                      <div class="pw-control__name">Ипотечная программа</div>
+                      <div class="pw-control__field">
+                        <div class="simple-select2-wrap">
+                          <select class="js-simple-select2-outer-dropdown" data-style="select2-container--style-2 select2-container--bdrs-4 select2-container--smaller-lrp select2-container--white select2-container--white--grey">
+                            <option selected value="1">Субсидированная ипотека</option>
+                            <option value="2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, dolor!</option>
+                          </select>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="pw-summary-item">
-                    <div class="pw-summary-item__left">
-                      <div class="pw-summary-item__title">Ставка</div>
-                      <div class="pw-summary-item__text">от 5.7%</div>
+                    <div class="pw-control pw-control--w25 pw-control--customxlg-w50 pw-control--1279-w33 pw-control--md-w50">
+                      <div class="pw-control__name">Стоимость недвижимости</div>
+                      <div class="pw-control__field">
+                        <div class="rs-block rs-block--single rs-block--start-at-0 rs-block--style-2 rs-block--style-2--light custom-style-rs js-range-slider" data-single="true" data-min="1000000" data-max="10000000" data-suffix=" ₽" data-format="int" data-step="100000">
+                          <!--data-start-left data-start-right-->
+                          <div class="rs-block__top">
+                            <input class="rs-block__inp rs-block__inp-single rs-block__inp-single--smaller-lrp js-range-slider__inp-single" type="text">
+                          </div>
+                          <div class="rs-block__bottom">
+                            <div class="rs-block__rs js-range-slider__range"></div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="pw-summary-item__right">
-                      <div class="pws-circles">
-                        <div class="pws-icon"><img src="img/svg/bank-psb.svg" alt=""></div>
-                        <div class="pws-icon"><img src="img/svg/bank-sber.svg" alt=""></div>
-                        <div class="pws-icon"><span>16</span></div>
+                    <div class="pw-control pw-control--w25 pw-control--customxlg-w50 pw-control--1279-w33 pw-control--md-w50">
+                      <div class="pw-control__name">Первоначальный взнос</div>
+                      <div class="pw-control__field">
+                        <div class="rs-block rs-block--single rs-block--start-at-0 rs-block--style-2 rs-block--style-2--light custom-style-rs js-range-slider" data-single="true" data-min="100000" data-max="10000000" data-suffix=" ₽" data-format="int" data-step="100000">
+                          <!--data-start-left data-start-right-->
+                          <div class="rs-block__top">
+                            <input class="rs-block__inp rs-block__inp-single rs-block__inp-single--smaller-lrp js-range-slider__inp-single" type="text">
+                          </div>
+                          <div class="rs-block__bottom">
+                            <div class="rs-block__rs js-range-slider__range"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="pw-control pw-control--w25 pw-control--customxlg-w50 pw-control--1279-w33 pw-control--md-w50">
+                      <div class="pw-control__name">Срок</div>
+                      <div class="pw-control__field">
+                        <div class="rs-block rs-block--single rs-block--start-at-0 rs-block--style-2 rs-block--style-2--light custom-style-rs js-range-slider" data-single="true" data-min="1" data-max="30" data-suffix="year" data-format="int" data-step="1">
+                          <!--data-start-left data-start-right-->
+                          <div class="rs-block__top">
+                            <input class="rs-block__inp rs-block__inp-single rs-block__inp-single--smaller-lrp js-range-slider__inp-single" type="text">
+                          </div>
+                          <div class="rs-block__bottom">
+                            <div class="rs-block__rs js-range-slider__range"></div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div class="pw-summary-btn"><a class="btn btn--with-arrow btn--dark js-open-pw-banks-modal" href=""><span>Все предложения</span></a></div>
+                  <div class="pw-banks-wrap" id="banks-modal">
+                    <div class="pw-banks-wrap__top">
+                      <div class="pw-banks-wrap__close js-pw-banks-modal-close"></div>
+                    </div>
+                    <div class="pw-banks-wrap__main">
+                      <div class="pw-banks pw-banks--in-form">
+                        <div class="pw-bank">
+                          <div class="pw-bank__col pw-bank__col--name">
+                            <div class="pw-bank__icon"><img src="img/svg/bank-psb-on-white.svg" alt=""></div>
+                            <!--.pw-bank__name Азиатско-Тихоокеанский-->
+                            <!--.pw-bank__name Алтайкапиталбанк-->
+                            <div class="pw-bank__name">ПромСвязьБанк</div>
+                          </div>
+                          <div class="pw-bank__col pw-bank__col--payment">
+                            <div class="pw-bank__info-top">Ежемесячный платеж</div>
+                            <div class="pw-bank__info-bottom">54 679 ₽/мес.</div>
+                          </div>
+                          <div class="pw-bank__col pw-bank__col--rate">
+                            <div class="pw-bank__info-top">Ставка</div>
+                            <div class="pw-bank__info-bottom">5.7%</div>
+                          </div>
+                          <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn js-pw-bank__btn" href="#">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#bank-arrow-grey"></use>
+                              </svg></a></div>
+                        </div>
+                        <div class="pw-bank">
+                          <div class="pw-bank__col pw-bank__col--name">
+                            <div class="pw-bank__icon"><img src="img/svg/bank-sber-on-white.svg" alt=""></div>
+                            <div class="pw-bank__name">Сбербанк</div>
+                          </div>
+                          <div class="pw-bank__col pw-bank__col--payment">
+                            <div class="pw-bank__info-top">Ежемесячный платеж</div>
+                            <div class="pw-bank__info-bottom">54 679 ₽/мес.</div>
+                          </div>
+                          <div class="pw-bank__col pw-bank__col--rate">
+                            <div class="pw-bank__info-top">Ставка</div>
+                            <div class="pw-bank__info-bottom">5.7%</div>
+                          </div>
+                          <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn js-pw-bank__btn" href="#">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#bank-arrow-grey"></use>
+                              </svg></a></div>
+                        </div>
+                        <div class="pw-bank">
+                          <div class="pw-bank__col pw-bank__col--name">
+                            <div class="pw-bank__icon"><img src="img/svg/bank-alfa-on-white.svg" alt=""></div>
+                            <div class="pw-bank__name">Альфа Банк</div>
+                          </div>
+                          <div class="pw-bank__col pw-bank__col--payment">
+                            <div class="pw-bank__info-top">Ежемесячный платеж</div>
+                            <div class="pw-bank__info-bottom">54 679 ₽/мес.</div>
+                          </div>
+                          <div class="pw-bank__col pw-bank__col--rate">
+                            <div class="pw-bank__info-top">Ставка</div>
+                            <div class="pw-bank__info-bottom">5.7%</div>
+                          </div>
+                          <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn js-pw-bank__btn" href="#">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#bank-arrow-grey"></use>
+                              </svg></a></div>
+                        </div>
+                        <div class="pw-bank">
+                          <div class="pw-bank__col pw-bank__col--name">
+                            <div class="pw-bank__icon"><img src="img/svg/bank-skb-on-white.svg" alt=""></div>
+                            <div class="pw-bank__name">СовКомБанк</div>
+                          </div>
+                          <div class="pw-bank__col pw-bank__col--payment">
+                            <div class="pw-bank__info-top">Ежемесячный платеж</div>
+                            <div class="pw-bank__info-bottom">54 679 ₽/мес.</div>
+                          </div>
+                          <div class="pw-bank__col pw-bank__col--rate">
+                            <div class="pw-bank__info-top">Ставка</div>
+                            <div class="pw-bank__info-bottom">5.7%</div>
+                          </div>
+                          <div class="pw-bank__col pw-bank__col--btn"><a class="pw-bank__btn js-pw-bank__btn" href="#">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#bank-arrow-grey"></use>
+                              </svg></a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="purchase-ways-flex__side">
-                <div class="purchase-way-card purchase-way-card--grey">
-                  <div class="purchase-way-card__top">
-                    <div class="purchase-way-card__name">Рассрочка</div>
-                    <div class="purchase-way-card__desc">Согласуем индивидуальные условия рассрочки</div>
-                    <div class="purchase-way-card__btn-wrap"><a class="btn btn--with-arrow btn--dark" href=""><span>Согласовать условия</span></a></div>
+              <div class="pw-summary">
+                <div class="pw-summary-item">
+                  <div class="pw-summary-item__left">
+                    <div class="pw-summary-item__title">Ежемесячный платеж</div>
+                    <div class="pw-summary-item__text">от 54 679 ₽/мес.</div>
                   </div>
-                  <div class="purchase-way-card__pic"><img src="img/home/purchase-way-card-pic.png" alt=""></div>
                 </div>
+                <div class="pw-summary-item">
+                  <div class="pw-summary-item__left">
+                    <div class="pw-summary-item__title">Ставка</div>
+                    <div class="pw-summary-item__text">от 5.7%</div>
+                  </div>
+                  <div class="pw-summary-item__right">
+                    <div class="pws-circles">
+                      <div class="pws-icon"><img src="img/svg/bank-psb-on-white.svg" alt=""></div>
+                      <div class="pws-icon"><img src="img/svg/bank-sber-on-white.svg" alt=""></div>
+                      <div class="pws-icon"><span>16</span></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pw-summary-btn"><a class="btn btn--with-arrow btn--light js-open-pw-banks-modal" href=""><span>Все предложения</span></a></div>
+              </div>
+            </div>
+            <div class="purchase-ways-flex__side">
+              <div class="purchase-way-card purchase-way-card--grey">
+                <div class="purchase-way-card__top">
+                  <div class="purchase-way-card__name">Рассрочка</div>
+                  <div class="purchase-way-card__desc">Согласуем индивидуальные условия рассрочки</div>
+                  <div class="purchase-way-card__btn-wrap"><a class="btn btn--with-arrow btn--dark" href=""><span>Согласовать условия</span></a></div>
+                </div>
+                <div class="purchase-way-card__pic"><img src="img/home/purchase-way-card-pic.png" alt=""></div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </section>
-      <section class="cards-slider-section">
+      <section class="cards-slider-section section-margin">
         <div class="container">
           <div class="swiper cards-slider js-cards-slider">
             <div class="cards-slider__top">
               <div class="cards-slider__title">
                 <h2 class="section-title section-title--black">Похожие квартиры</h2>
               </div>
-              <div class="cards-slider__controls-wrap">
-                <div class="cards-slider-controls">
-                  <div class="js-swiper-button-prev cards-slider__arrow slider-controls__arrow--prev">
-                    <svg>
-                      <use xlink:href="img/sprites/sprite.svg#slider-arrow-next"></use>
-                    </svg>
-                  </div>
-                  <div class="js-swiper-pagination cards-slider-pagination"></div>
-                  <div class="js-swiper-button-next cards-slider__arrow cards-slider__arrow--next">
-                    <svg>
-                      <use xlink:href="img/sprites/sprite.svg#slider-arrow-next"></use>
-                    </svg>
-                  </div>
-                </div>
-              </div>
+              <div class="cards-slider__controls-placeholder-desktop"></div>
             </div>
             <div class="swiper-wrapper cards-slider__swiper-wrapper">
               <div class="swiper-slide cards-slider-slide" href=""><a class="apartment-card apartment-card--w100" href="">
@@ -722,6 +718,33 @@
                     </svg>
                   </div>
                   <div class="apartment-card__picture"><img src="img/apartment-card.png" alt=""></div></a></div>
+            </div>
+            <div class="cards-slider__controls-wrap">
+              <div class="slider-controls slider-controls--on-white">
+                <div class="js-swiper-button-prev slider-controls__arrow slider-controls__arrow--prev">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#slider-arrow-next-no-stroke"></use>
+                  </svg>
+                </div>
+                <div class="js-swiper-pagination slider-controls-pagination"></div>
+                <div class="js-swiper-button-next slider-controls__arrow slider-controls__arrow--next">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#slider-arrow-next-no-stroke"></use>
+                  </svg>
+                </div>
+              </div>
+              <!--	.js-swiper-button-prev.cards-slider__arrow.slider-controls__arrow--prev
+              	svg
+              		use(xlink:href="img/sprites/sprite.svg#slider-arrow-next")
+              .js-swiper-pagination.cards-slider-pagination
+              .js-swiper-button-next.cards-slider__arrow.cards-slider__arrow--next
+              	svg
+              		use(xlink:href="img/sprites/sprite.svg#slider-arrow-next")
+              
+              
+              
+              
+              -->
             </div>
           </div>
         </div>

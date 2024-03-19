@@ -4330,7 +4330,7 @@ table {
   display: flex;
   flex-wrap: wrap;
   margin-left: -16px;
-  margin-bottom: -10px;
+  margin-bottom: -8px;
 }
 
 .tabs-controls__item {
@@ -4344,9 +4344,10 @@ table {
   letter-spacing: -0.02em;
   color: #fff;
   margin-left: 16px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   transition-duration: 0.3s;
   cursor: pointer;
+  text-align: center;
 }
 
 .tabs-controls__item--active {
@@ -4357,6 +4358,10 @@ table {
 .tabs-controls__item:hover {
   background: #53667f;
   border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.tabs-controls--jcc {
+  justify-content: center;
 }
 
 .tabs-controls--light .tabs-controls__item {
@@ -4514,6 +4519,14 @@ table {
 
 [data-fancybox] {
   cursor: pointer;
+}
+
+.simple-tabs-content-item {
+  display: none;
+}
+
+.simple-tabs-content-item--active {
+  display: block;
 }
 
 .simple-modal {
@@ -4780,6 +4793,16 @@ table {
   color: #252831;
 }
 
+.select2-container--custom-theme.select2-container--white--grey .select2-selection--single {
+  background: rgba(37, 40, 49, 0.03);
+  border: 1px solid rgba(37, 40, 49, 0.15);
+}
+
+.select2-container--custom-theme.select2-container--white--grey .select2-dropdown {
+  background: #EEEEEF;
+  border: 1px solid #D0D1D3 !important;
+}
+
 .select2-container--custom-theme.select2-container--bdrs-4 .select2-selection--single {
   border-radius: 4px;
 }
@@ -4898,6 +4921,23 @@ table {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 4px;
+}
+
+.rs-block--style-2--light .rs-block__top {
+  background: rgba(37, 40, 49, 0.03);
+  border: 1px solid rgba(37, 40, 49, 0.15);
+}
+
+.rs-block--style-2--light .rs-block__top input {
+  color: #252831;
+}
+
+.rs-block--style-2--light .rs-block__rs .noUi-connect {
+  background: #53667f;
+}
+
+.rs-block--style-2--light .rs-block__rs.noUi-horizontal .noUi-handle {
+  border: 2px solid #53667f;
 }
 
 .rs-block__inp {
@@ -5668,6 +5708,11 @@ table {
 
 .slider-controls__arrow--next {
   border-radius: 0 12px 12px 0;
+}
+
+.slider-controls__arrow.swiper-button-disabled {
+  opacity: 0.2;
+  pointer-events: none;
 }
 
 .slider-controls-pagination {
@@ -7459,7 +7504,9 @@ a.project-card:hover {
 
 .apartment-page-top {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  gap: 24px;
 }
 
 .apartment-page-top__back {
@@ -7705,8 +7752,10 @@ a.project-card:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding-bottom: 23px;
   border-bottom: 1px solid rgba(37, 40, 49, 0.2);
+  gap: 24px;
 }
 
 .apartments-galleries-main {
@@ -7747,6 +7796,108 @@ a.project-card:hover {
   background: rgba(255, 255, 255, 0.15);
 }
 
+.purchase-ways--light .purchase-ways-form {
+  background: #F5F5F5;
+  color: #252831;
+}
+
+.purchase-ways--light .pw-summary {
+  background: #F5F5F5;
+  color: #252831;
+}
+
+.purchase-ways--light .purchase-ways-form__title {
+  color: #252831;
+}
+
+.purchase-ways--light .purchase-ways-form__desc {
+  color: #252831;
+}
+
+.purchase-ways--light .pw-summary-item__title {
+  color: rgba(37, 40, 49, 0.5);
+}
+
+.purchase-ways--light .pw-summary-item__text {
+  color: #252831;
+}
+
+.purchase-ways--light .purchase-ways-form__main {
+  border-top: 1px solid rgba(37, 40, 49, 0.07);
+}
+
+.purchase-ways--light .pw-summary-item + .pw-summary-item {
+  border-top: 1px solid rgba(37, 40, 49, 0.07);
+}
+
+.purchase-ways--light .pw-control__name {
+  color: rgba(37, 40, 49, 0.7);
+}
+
+.purchase-ways--light .pw-bank {
+  color: #252831;
+}
+
+.purchase-ways--light .pws-icon {
+  background: #efefef;
+  border-color: rgba(37, 40, 49, 0.15);
+}
+
+.purchase-ways--light .pws-icon span {
+  color: #252831;
+}
+
+.purchase-ways--light .pw-banks-wrap {
+  background: #fff;
+}
+
+.cards-slider {
+  position: relative;
+}
+
+.cards-slider__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.cards-slider__controls-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.cards-slider__controls-placeholder-desktop {
+  display: none;
+}
+
+.slider-controls--on-white {
+  background: none;
+}
+
+.slider-controls--on-white .slider-controls-pagination {
+  color: #252831;
+}
+
+.slider-controls--on-white .slider-controls-pagination__delimiter {
+  background: #252831;
+  opacity: 0.5;
+}
+
+.slider-controls--on-white .slider-controls__arrow svg,
+.slider-controls--on-white .slider-controls__arrow svg * {
+  stroke: #252831;
+}
+
+.slider-controls--on-white .slider-controls__arrow:hover {
+  background: #F5F5F5;
+}
+
+.cards-slider__swiper-wrapper {
+  margin-top: 48px;
+}
+
 @media only screen and (min-width: 641px) {
   .project-card-info:nth-child(2n) {
     border-left: 1px solid rgba(255, 255, 255, 0.25);
@@ -7755,6 +7906,21 @@ a.project-card:hover {
 
   .project-card-info:nth-child(2n-1) {
     padding-right: 32px;
+  }
+
+  .cards-slider__swiper-wrapper {
+    align-items: stretch;
+  }
+
+  .cards-slider-slide {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .cards-slider-slide > * {
+    flex-grow: 1;
   }
 }
 
@@ -7812,6 +7978,16 @@ a.project-card:hover {
 
   .contacts-item:nth-child(3n) {
     padding-right: 0;
+  }
+
+  .purchase-ways--light .pw-bank + .pw-bank {
+    border-top: 1px solid rgba(37, 40, 49, 0.07);
+  }
+
+  .cards-slider__controls-placeholder-desktop {
+    width: 130px;
+    height: 57px;
+    display: block;
   }
 }
 
@@ -8826,11 +9002,163 @@ a.project-card:hover {
     margin-top: 24px;
     margin-bottom: -15px;
   }
+
+  .apartment-page {
+    margin-top: 24px;
+  }
+
+  .apartment-page-top__bc {
+    width: 100%;
+  }
+
+  .apartment-breadcrumbs__item {
+    font-size: 16px;
+  }
+
+  .apartment-breadcrumbs__item:not(:last-child)::after {
+    margin-left: 8px;
+    margin-right: 8px;
+    width: 5px;
+    height: 7px;
+  }
+
+  .apartment-page-flex {
+    display: block;
+    margin-top: 24px;
+  }
+
+  .apartment-page-flex__main {
+    width: 100%;
+  }
+
+  .apartment-page-flex__side {
+    max-width: 100%;
+    margin-top: 24px;
+  }
+
+  .togglable-pictures {
+    padding: 16px;
+  }
+
+  .togglable-pictures__toggles {
+    margin-top: 32px;
+  }
+
+  .apartment-info__title {
+    font-size: 24px;
+  }
+
+  .apartment-info__completion {
+    margin-top: 16px;
+  }
+
+  .apartment-info__prices {
+    margin-top: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .apartment-info__price {
+    font-size: 18px;
+  }
+
+  .apartment-info__per-meter {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+
+  .apartment-info__props {
+    margin-top: 16px;
+  }
+
+  .apartment-info__btns {
+    margin-top: 16px;
+    padding-top: 16px;
+    gap: 16px 8px;
+  }
+
+  .apartment-info-props__item {
+    font-size: 15px;
+  }
+
+  .apartment-favourite-toggle + * {
+    width: 100%;
+  }
+
+  .apartments-galleries-top__right {
+    width: 100%;
+    overflow: auto;
+  }
+
+  .apartments-galleries-top__right .tabs-controls {
+    flex-wrap: nowrap;
+    margin-bottom: 0;
+  }
+
+  .apartments-galleries-top__right .tabs-controls__item {
+    margin-bottom: 0;
+    white-space: nowrap;
+  }
+
+  .apartments-galleries-main {
+    margin-top: 24px;
+  }
+
+  .images-slider__controls-wrap {
+    top: auto;
+    right: auto;
+    left: 16px;
+    bottom: 16px;
+  }
+
+  .purchase-ways--light .pw-banks-wrap__top {
+    border-bottom: 1px solid rgba(37, 40, 49, 0.07);
+  }
+
+  .purchase-ways--light .pw-bank {
+    background: #F5F5F5;
+  }
+
+  .purchase-ways--light .pw-bank__col--name {
+    border-bottom: 1px solid rgba(37, 40, 49, 0.15);
+  }
+
+  .purchase-ways--light .pw-bank__info-top {
+    opacity: 0.5;
+  }
+
+  .purchase-ways--light .pw-banks-wrap__close {
+    background: url(../img/svg/banks-x-on-white.svg) no-repeat center center;
+    background-size: contain;
+  }
+
+  .cards-slider__controls-wrap {
+    position: static;
+    display: flex;
+    right: auto;
+    top: auto;
+    margin-top: 12px;
+  }
+
+  .cards-slider__swiper-wrapper {
+    margin-top: 24px;
+  }
 }
 
 @media only screen and (max-width: 640px) {
   .btn--with-arrow {
     padding: 14px 14px;
+  }
+
+  .tabs-controls--sm-w100 .tabs-controls__item {
+    width: 100%;
+  }
+
+  .tabs-controls--smalller-adaptive .tabs-controls__item {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    padding: 7.21px 8px;
   }
 
   .simple-modal {
@@ -9115,6 +9443,15 @@ a.project-card:hover {
 
   .apartment-card {
     width: 100%;
+  }
+
+  .togglable-pictures__pics-wrap::before {
+    min-height: unset;
+    padding-top: 81.92307%;
+  }
+
+  .images-slider-slide::before {
+    padding-top: 131.9444%;
   }
 }
 

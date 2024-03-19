@@ -188,6 +188,10 @@
 		&--next {
 			border-radius: 0 12px 12px 0;
 		}
+		&.swiper-button-disabled{
+			opacity: .2;
+			pointer-events: none;
+		}
 	}
 }
 
