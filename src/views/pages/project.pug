@@ -10,18 +10,24 @@ block content
 	section.front-top-banner
 		.swiper.ftb-slider.js-ftb-slider
 			.swiper-wrapper.ftb-slider__swiper-wrapper
-				.swiper-slide.ftb-slider-slide
-					.ftb-slider-slide__bg
-						img(src="img/home/top-slider-picture.jpg", alt="")
-					.container.ftb-slider-slide__container
-						.ftb-slde-info
-							.ftb-slde-info__title Красивые<br> квартиры<br> в&nbsp;Краснодаре
-							.ftb-slde-info__desc Квартиры от 5 млн руб.
-							.ftb-slde-info__btn-wrap
-								a.btn(href="")
-									span Узнать цены
+				each val in [4,5,6,7]
+					.swiper-slide.ftb-slider-slide
+						.ftb-slider-slide__bg
+							img(src="img/object_page_top_pic.jpg", alt="")
+						.container.ftb-slider-slide__container
+							.ftb-slde-info
+								.ftb-slde-info__address Краснодар, Адмиралтейский бульвар, 1
+								.ftb-slde-info__title ЖК «Эстет»
+								.ftb-slde-info__desc Квартиры от 5 млн руб.
+								.ftb-slde-info__labels
+									.ftb-labels
+										.ftb-labels__item 214-ФЗ
+										.ftb-labels__item Эскроу-счета
+								.ftb-slde-info__btn-wrap
+									a.btn(href="")
+										span Узнать цены
 
-				.swiper-slide.ftb-slider-slide
+			//	.swiper-slide.ftb-slider-slide
 					.ftb-slider-slide__bg
 						img(src="img/home/top-slider-picture.jpg", alt="")
 					.container.ftb-slider-slide__container
@@ -90,96 +96,60 @@ block content
 
 
 	section.cards-slider-section.section-margin
-		.container
-			.swiper.cards-slider.js-cards-slider
-				.cards-slider__top
-					.cards-slider__title
-						h2.section-title.section-title--black Преимущества
-					.cards-slider__controls-placeholder-desktop
+
+		.half-container
+			.swiper.cards-slider.js-benefits-cards-slider
+				.half-container__sub-container.half-container__sub-container--invert
+					.cards-slider__top
+						.cards-slider__title
+							h2.section-title.section-title--black Преимущества
+						.cards-slider__controls-placeholder-desktop
 				.swiper-wrapper.cards-slider__swiper-wrapper
-					.swiper-slide.cards-slider-slide(href="")
-						a.apartment-card.apartment-card--w100(href="")
-							.apartment-card__text
-								.apartment-card__complex ЖК «Эстет»
-								.apartment-card__price
-									.apartment-card__new-price 7 937 853 руб.
-								.apartment-card__price-per-m 124 018 руб. м<sup>2</sup>
-								.apartment-card__props.apartment-inline-props
-									.apartment-inline-prop 3-комн.
-									.apartment-inline-prop 73.5 м<sup>2</sup>
-									.apartment-inline-prop 20 этаж
-							.apartment-card__favourite-toggle.favourite-toggle.js-favourite-toggle(data-apartment-id="1")
+					each val in [1,2]
+						.swiper-slide.cards-slider-slide.cards-slider-slide--project-page(href="")
+							.benefit-card
+								.benefit-card__pic
+									img(src="img/benefits-1.jpg", alt="")
+								.benefit-card__text
+									.benefit-card__title Многофункциональная спортплощадка
+									.benefit-card__desc Два теннисных корта, воркаут-комплекс, баскетбольная площадка, зоны для йоги — каждый найдет занятие по душе!
+
+						.swiper-slide.cards-slider-slide.cards-slider-slide--project-page(href="")
+							.benefit-card
+								.benefit-card__pic
+									img(src="img/benefits-2.jpg", alt="")
+								.benefit-card__text
+									.benefit-card__title Витражное остекление
+									.benefit-card__desc Все лоджии пропускают больше солнца: комната кажется просторнее и светлее! А платежи за электричество будут ниже.
+
+						.swiper-slide.cards-slider-slide.cards-slider-slide--project-page(href="")
+							.benefit-card
+								.benefit-card__pic
+									img(src="img/benefits-3.jpg", alt="")
+								.benefit-card__text
+									.benefit-card__title Подземный паркинг с лифтом
+									.benefit-card__desc Спускайтесь прямо к машине и поднимайтесь прямо в квартиру! А для гостей — открытая наземная стоянка.
+
+						.swiper-slide.cards-slider-slide.cards-slider-slide--project-page(href="")
+							.benefit-card
+								.benefit-card__pic
+									img(src="img/benefits-4.jpg", alt="")
+								.benefit-card__text
+									.benefit-card__title Безопасность 24/7
+									.benefit-card__desc Доступ на территорию по пропускам, консьерж-сервис и видеонаблюдение по всей территории двора, в подъездах и лифтах.
+
+					//each val in [4,5,6,7,8,9]
+
+				.cards-slider__controls-wrap.cards-slider__controls-wrap--with-half-container
+					.half-container__sub-container.half-container__sub-container--invert
+						.slider-controls.slider-controls--on-white
+							.js-swiper-button-prev.slider-controls__arrow.slider-controls__arrow--prev
 								svg
-									use(xlink:href="img/sprites/sprite.svg#heart")
-							.apartment-card__picture
-								img(src="img/apartment-card.png", alt="")
-
-					.swiper-slide.cards-slider-slide(href="")
-						a.apartment-card.apartment-card--w100(href="")
-							.apartment-card__text
-								.apartment-card__complex ЖК «Эстет»
-								.apartment-card__price
-									.apartment-card__new-price 7 937 853 руб.
-								.apartment-card__price-per-m 124 018 руб. м<sup>2</sup>
-								.apartment-card__props.apartment-inline-props
-									.apartment-inline-prop 3-комн.
-									.apartment-inline-prop 73.5 м<sup>2</sup>
-									.apartment-inline-prop 20 этаж
-							.apartment-card__favourite-toggle.favourite-toggle.js-favourite-toggle(data-apartment-id="2")
+									use(xlink:href="img/sprites/sprite.svg#slider-arrow-next-no-stroke")
+							.js-swiper-pagination.slider-controls-pagination
+							.js-swiper-button-next.slider-controls__arrow.slider-controls__arrow--next
 								svg
-									use(xlink:href="img/sprites/sprite.svg#heart")
-							.apartment-card__picture
-								img(src="img/apartment-card.png", alt="")
-
-					.swiper-slide.cards-slider-slide(href="")
-						a.apartment-card.apartment-card--w100(href="")
-							.apartment-card__text
-								.apartment-card__complex ЖК «Эстет»
-								.apartment-card__price
-									.apartment-card__new-price 7 937 853 руб.
-									.apartment-card__old-price 8 937 853 руб.
-								.apartment-card__price-per-m 124 018 руб. м<sup>2</sup>
-								.apartment-card__props.apartment-inline-props
-									.apartment-inline-prop 3-комн.
-									.apartment-inline-prop 73.5 м<sup>2</sup>
-									.apartment-inline-prop 20 этаж
-							.apartment-card__favourite-toggle.favourite-toggle.js-favourite-toggle(data-apartment-id="3")
-								svg
-									use(xlink:href="img/sprites/sprite.svg#heart")
-							.apartment-card__picture
-								img(src="img/apartment-card.png", alt="")
-							.apartment-card__labels
-								.apartment-labels
-									.apartment-label  Акция
-
-					each val in [4,5,6,7,8,9]
-						.swiper-slide.cards-slider-slide(href="")
-							a.apartment-card.apartment-card--w100(href="")
-								.apartment-card__text
-									.apartment-card__complex ЖК «Эстет»
-									.apartment-card__price
-										.apartment-card__new-price 7 937 853 руб.
-									.apartment-card__price-per-m 124 018 руб. м<sup>2</sup>
-									.apartment-card__props.apartment-inline-props
-										.apartment-inline-prop 3-комн.
-										.apartment-inline-prop 73.5 м<sup>2</sup>
-										.apartment-inline-prop 20 этаж
-								.apartment-card__favourite-toggle.favourite-toggle.js-favourite-toggle(data-apartment-id=val)
-									svg
-										use(xlink:href="img/sprites/sprite.svg#heart")
-								.apartment-card__picture
-									img(src="img/apartment-card.png", alt="")
-
-
-				.cards-slider__controls-wrap
-					.slider-controls.slider-controls--on-white
-						.js-swiper-button-prev.slider-controls__arrow.slider-controls__arrow--prev
-							svg
-								use(xlink:href="img/sprites/sprite.svg#slider-arrow-next-no-stroke")
-						.js-swiper-pagination.slider-controls-pagination
-						.js-swiper-button-next.slider-controls__arrow.slider-controls__arrow--next
-							svg
-								use(xlink:href="img/sprites/sprite.svg#slider-arrow-next-no-stroke")
+									use(xlink:href="img/sprites/sprite.svg#slider-arrow-next-no-stroke")
 
 					//	.js-swiper-button-prev.cards-slider__arrow.slider-controls__arrow--prev
 							svg
@@ -190,62 +160,74 @@ block content
 								use(xlink:href="img/sprites/sprite.svg#slider-arrow-next")
 
 
-
-
-	section.apartment-page
+	section.subscribe-section.section-margin
 		.container
-			.apartment-page-top
-				.apartment-page-top__back
-					a.back-btn.back-btn--border(href="") Назад
-				.apartment-page-top__bc
-					.apartment-breadcrumbs
-						.apartment-breadcrumbs__item
-							a(href="") ЖК «Эстет»
-						.apartment-breadcrumbs__item
-							a(href="") 11 этаж
-						.apartment-breadcrumbs__item
-							span №256
-			.apartment-page-flex
-				.apartment-page-flex__main
-					.apartment-page-pic
-						.togglable-pictures.js-togglable-pictures
-							.togglable-pictures__pics-wrap
-								.togglable-pictures__img.togglable-pictures__img--active.js-togglable-pictures-img(href="img/single-apartment-1.png" data-fancybox="app-top")
-									img(src="img/single-apartment-1.png", alt="")
-								a.togglable-pictures__img.js-togglable-pictures-img(href="img/single-apartment-2.png" data-fancybox="app-top")
-									img(src="img/single-apartment-2.png", alt="")
-								a.togglable-pictures__img.js-togglable-pictures-img(href="img/single-apartment-3.jpg" data-fancybox="app-top")
-									img(src="img/single-apartment-3.jpg", alt="")
-							.togglable-pictures__toggles
-								.tabs-controls.tabs-controls--sm-w100.tabs-controls--jcc.tabs-controls--light.tabs-controls--smalller-adaptive
-									.tabs-controls__item.tabs-controls__item--active.js-togglable-pictures-toggle Планировка
-									.tabs-controls__item.js-togglable-pictures-toggle Этаж
-									.tabs-controls__item.js-togglable-pictures-toggle Вид из окна
-				.apartment-page-flex__side
-					.apartment-info
-						h1.apartment-info__title 2-комнатная квартира, 63,7 м<sup>2</sup>
-						.apartment-info__completion
-							span Сдача:
-							|   1 кв. 2025 г.
-						.apartment-info__prices
-							.apartment-info__price 7.9 млн. руб.
-							.apartment-info__per-meter 124 018 руб. м<sup>2</sup>
-						.apartment-info__props.apartment-info-props
-							.apartment-info-props__item
-								.apartment-info-props__item-name Жилая часть
-								.apartment-info-props__item-value 50,7 м<sup>2</sup>
-							.apartment-info-props__item
-								.apartment-info-props__item-name Кухня
-								.apartment-info-props__item-value 9,7 м<sup>2</sup>
-							.apartment-info-props__item
-								.apartment-info-props__item-name Отделка
-								.apartment-info-props__item-value Предчистовая
-						.apartment-info__btns
-							a.btn(href="") Забронировать
-							.apartment-favourite-toggle.favourite-toggle.favourite-toggle--btn-style.js-favourite-toggle(data-apartment-id="2")
-								svg
-									use(xlink:href="img/sprites/sprite.svg#heart")
-							a.btn.btn--with-arrow.btn--light(href="") Рассчитать ипотеку
+			.subscribe-block
+				.subscribe-block__left
+					.subscribe-block__title Узнайте о прочих преимуществах, ценах и спецпредложениях
+				.subscribe-block__right
+					.subscribe-form
+						.subscribe-form__inputs
+							.subscribe-form__input
+								input.simple-input.simple-input--on-dark(type="text", name="" placeholder="Телефон")
+							.subscribe-form__input
+								button.btn(type="submit") Получить консультацию
+						.subscribe-form__privacy-text Нажимая на кнопку, вы принимаете <a href="#">политику конфиденциальности</a> и даете согласие на обработку персональных данных
+
+
+
+	section.genplan-section.section-margin
+		.container
+			.genplan-sec-top
+				.genplan-sec-top__left
+					h2.section-title.section-title--black Генплан проекта*
+				.genplan-sec-top__right
+					.genplan-desctipton
+						.genplan-desctipton__icon
+						.genplan-desctipton__text *Нажмите на иконку для открытия дополнительной информации
+		.genplan-wrap
+			.genplan-block
+				.genplan-block__pic
+					img(src="img/genplan.jpg", alt="")
+				.genplan-block__icons
+					.genplan-icon(data-id="1" style="top: 20.169%; left: 39.188%;")
+						.genplan-icon__pic
+							img(src="img/svg/gp-icon-1.svg", alt="")
+					.genplan-icon(data-id="2" style="top: 57.339%; left: 64.813%;")
+						.genplan-icon__pic
+							img(src="img/svg/gp-icon-2.svg", alt="")
+					.genplan-icon(data-id="3" style="top: 56.494%; left: 81.25%;")
+						.genplan-icon__pic
+							img(src="img/svg/gp-icon-3.svg", alt="")
+					.genplan-icon(data-id="4" style="top: 80.781%; left: 32.5%;")
+						.genplan-icon__pic
+							img(src="img/svg/gp-icon-4.svg", alt="")
+					.genplan-icon(data-id="5" style="top: 85.533%; left: 47.563%;")
+						.genplan-icon__pic
+							img(src="img/svg/gp-icon-5.svg", alt="")
+					.genplan-icon(data-id="6" style="top: 75.713%; left: 78.75%;")
+						.genplan-icon__pic
+							img(src="img/svg/gp-icon-6.svg", alt="")
+				.genplan-block__infos
+					.genplan-info(style="top: 20.169%; left: 39.188%;")
+
+					.genplan-info(style="top: 57.339%; left: 64.813%;")
+
+					.genplan-info(style="top: 56.494%; left: 81.25%;")
+						.genplan-icon__pic
+							img(src="img/svg/gp-icon-3.svg", alt="")
+					.genplan-info(style="top: 80.781%; left: 32.5%;")
+						.genplan-icon__pic
+							img(src="img/svg/gp-icon-4.svg", alt="")
+					.genplan-info(style="top: 85.533%; left: 47.563%;")
+						.genplan-icon__pic
+							img(src="img/svg/gp-icon-5.svg", alt="")
+					.genplan-info(style="top: 75.713%; left: 78.75%;")
+						.genplan-icon__pic
+							img(src="img/svg/gp-icon-6.svg", alt="")
+
+
+
 
 	section.apartments-galleries.section-margin.js-simple-tabs
 		.container
@@ -288,6 +270,8 @@ block content
 										.js-swiper-button-next.slider-controls__arrow.slider-controls__arrow--next
 											svg
 												use(xlink:href="img/sprites/sprite.svg#slider-arrow-next")
+
+
 
 
 	section.purchase-ways.purchase-ways--light.section-margin

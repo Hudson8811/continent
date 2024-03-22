@@ -278,6 +278,12 @@
 		}
 
 		&:not(:last-child) {
+
+			a,
+			span {
+				opacity: .5;
+			}
+
 			&::after {
 				content: '';
 				display: inline-block;
@@ -737,9 +743,9 @@
 	}
 
 	.pw-banks-wrap {
-		@include max(md){
+		@include max(md) {
 
-		background: #fff;
+			background: #fff;
 		}
 	}
 
@@ -806,6 +812,19 @@
 			top: auto;
 			margin-top: 12px;
 		}
+
+		&--with-half-container {
+			width: 100%;
+
+			.half-container__sub-container {
+				display: flex;
+				justify-content: flex-end;
+
+				@include max(md) {
+					justify-content: flex-start;
+				}
+			}
+		}
 	}
 
 	&__controls-placeholder-desktop {
@@ -858,9 +877,10 @@
 
 .cards-slider__swiper-wrapper {
 	margin-top: 48px;
-	@include min(sm){
 
-	align-items: stretch;
+	@include min(sm) {
+
+		align-items: stretch;
 	}
 
 	@include max(md) {
@@ -869,15 +889,49 @@
 }
 
 .cards-slider-slide {
-	@include min(sm){
+	@include min(sm) {
 
-	align-self: stretch;
-	display: flex;
-	flex-direction: column;
-	height: auto;
+		align-self: stretch;
+		display: flex;
+		flex-direction: column;
+		height: auto;
 
-	&>* {
-		flex-grow: 1;
+		&>* {
+			flex-grow: 1;
+		}
 	}
+
+	&--project-page {
+		@include min(1600){
+			width: calc((1472px - 32px * 2) / 3);
+		}
+		@include max(1600){
+			width: calc((100 * var(--js-real-vw) - 64px * 2 - 32px * 2) / 3);
+
+		}
+		@include max(lg) {
+			width: calc((100 * var(--js-real-vw) - 30px * 2 - 32px * 2) / 3);
+			//max-width: calc(100% - 30px * 2);
+		}
+
+		@include max(md) {
+			//width: calc((100 * var(--js-real-vw) - 16px * 2 - 32px * 2) / 3);
+			//max-width: calc(100% - 16px * 2);
+		}
+		/*box-sizing: border-box;
+			width: 1472px;
+			max-width: 95%;
+			max-width: calc(100% - 64px * 2);
+			margin: 0 auto;
+
+			@include max(lg) {
+				max-width: calc(100% - 30px * 2);
+
+			}
+
+			@include max(md) {
+				max-width: calc(100% - 16px * 2);
+			}
+		*/
 	}
 }

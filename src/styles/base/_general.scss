@@ -160,7 +160,32 @@ body {
 	&--invert {
 		margin-left: 0;
 		margin-right: auto;
+	}
+}
 
+
+.half-container__sub-container {
+	box-sizing: border-box;
+	width: 1472px;
+	max-width: 100%;
+	max-width: calc(100% - 64px);
+	margin-left: auto;
+	margin-right: 0;
+
+	@include max(lg) {
+		max-width: calc(100% - 30px);
+	}
+
+	@include max(md) {
+		max-width: calc(100% - 16px);
+	}
+
+	&--flex {
+		display: flex;
+	}
+	&--invert {
+		margin-left: 0;
+		margin-right: auto;
 	}
 }
 
@@ -573,4 +598,9 @@ table {
 	&--active {
 		display: block;
 	}
+}
+
+html{
+	--js-scrollbar-width: 0px;
+	--js-real-vw: 1vw;
 }

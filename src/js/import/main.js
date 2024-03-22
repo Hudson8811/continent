@@ -19,6 +19,40 @@ function myUnlockBody() {
 }
 
 $(function () {
+	const getScrollbarWidth = function(){
+		var cssSBWidthVariableName= '--js-scrollbar-width';
+		var css1vwInPxWidthVariableName= '--js-real-vw';
+
+		const prevWidth = window
+			.getComputedStyle(document.documentElement)
+			.getPropertyValue(cssSBWidthVariableName);
+		const newWidth = `${window.innerWidth - document.body.clientWidth}px`;
+
+		if (newWidth !== prevWidth) {
+			document.documentElement.style.setProperty(cssSBWidthVariableName, newWidth);
+		}
+
+		const prevVwWidth = window
+			.getComputedStyle(document.documentElement)
+			.getPropertyValue(css1vwInPxWidthVariableName);
+		const newVwWidth = `${document.body.clientWidth/100}px`;
+
+		if (newVwWidth !== prevVwWidth) {
+			document.documentElement.style.setProperty(css1vwInPxWidthVariableName, newVwWidth);
+		}
+
+
+
+
+	};
+
+	const setScrollbarWidth = () => {
+		window.addEventListener('load', getScrollbarWidth);
+		window.addEventListener('resize', getScrollbarWidth);
+		getScrollbarWidth();
+	};
+	setScrollbarWidth();
+
 
 	$('.js-ftb-slider').each(function () {
 
@@ -74,23 +108,23 @@ $(function () {
 		var swiper = new Swiper($(this)[0], {
 			slidesPerView: 1,
 			spaceBetween: 10,
-			autoHeight:true,
+			autoHeight: true,
 			breakpoints: {
 				// when window width is >= 320px
 				641: {
-					autoHeight:false,
+					autoHeight: false,
 					slidesPerView: 2,
 					spaceBetween: 22
 				},
 
 				961: {
-					autoHeight:false,
+					autoHeight: false,
 					slidesPerView: 2,
 					spaceBetween: 32
 				},
 
 				1201: {
-					autoHeight:false,
+					autoHeight: false,
 					slidesPerView: 3,
 					spaceBetween: 32
 				}
@@ -114,6 +148,56 @@ $(function () {
 			},*/
 		});
 	});
+
+	$('.js-benefits-cards-slider').each(function () {
+
+		var swiper = new Swiper($(this)[0], {
+			slidesPerView: 1,
+			spaceBetween: 10,
+			autoHeight: false,
+			breakpoints: {
+				// when window width is >= 320px
+				641: {
+					autoHeight: false,
+					slidesPerView: 2,
+					spaceBetween: 22
+				},
+
+				961: {
+					autoHeight: false,
+					slidesPerView: 2,
+					spaceBetween: 32
+				},
+
+				1201: {
+					autoHeight: false,
+					//slidesPerView: 3.117,
+					slidesPerView: 'auto',
+					spaceBetween: 32
+				}
+			},
+			pagination: {
+				el: $(this).find('.js-swiper-pagination')[0],
+				type: "fraction",
+				renderFraction: function (currentClass, totalClass) {
+					return '<span class="slider-controls-pagination__digit slider-controls-pagination__digit--current ' + currentClass + '"></span>' +
+						'<span class="slider-controls-pagination__delimiter"></span> ' +
+						'<span class="slider-controls-pagination__digit slider-controls-pagination__digit--total ' + totalClass + '"></span>';
+				}
+			},
+			navigation: {
+				nextEl: $(this).find('.js-swiper-button-next')[0],
+				prevEl: $(this).find('.js-swiper-button-prev')[0],
+			},
+
+			/*autoplay: {
+				delay: 5000,
+			},*/
+		});
+	});
+
+
+
 	$('.js-range-slider').each(function () {
 		var rs = $(this);
 		var rs_inp_l = rs.find('.js-range-slider__inp-left');
@@ -572,7 +656,7 @@ $(function () {
 
 	}
 
-	$('body').on('click','.js-favourite-toggle', function (e) {
+	$('body').on('click', '.js-favourite-toggle', function (e) {
 		e.preventDefault();
 		e.stopPropagation();
 		var thisapartmentId = $(this).attr('data-apartment-id');
@@ -618,10 +702,10 @@ $(function () {
 			var toggle = $(this);
 
 			picGroup.find('.js-togglable-pictures-img').eq(toggle.index()).addClass('togglable-pictures__img--active')
-			.siblings('.togglable-pictures__img--active').removeClass('togglable-pictures__img--active');
+				.siblings('.togglable-pictures__img--active').removeClass('togglable-pictures__img--active');
 
 			toggle.addClass('tabs-controls__item--active')
-			.siblings('.tabs-controls__item--active').removeClass('tabs-controls__item--active');
+				.siblings('.tabs-controls__item--active').removeClass('tabs-controls__item--active');
 		});
 	});
 
@@ -633,12 +717,13 @@ $(function () {
 			var toggle = $(this);
 
 			picGroup.find('.js-simple-tabs-content-item').eq(toggle.index()).addClass('simple-tabs-content-item--active')
-			.siblings('.simple-tabs-content-item--active').removeClass('simple-tabs-content-item--active');
+				.siblings('.simple-tabs-content-item--active').removeClass('simple-tabs-content-item--active');
 
 			toggle.addClass('tabs-controls__item--active')
-			.siblings('.tabs-controls__item--active').removeClass('tabs-controls__item--active');
+				.siblings('.tabs-controls__item--active').removeClass('tabs-controls__item--active');
 		});
 	});
+
 
 
 
