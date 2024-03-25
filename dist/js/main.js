@@ -885,7 +885,16 @@ $(function () {
 
 
 
+	$('.js-genplan-icon').each(function () {
+		$(this).on('mouseover mouseenter',function(){
+			$(this).addClass('genplan-icon--active').siblings('.genplan-icon--active').removeClass('genplan-icon--active');
+		});
+	});
 
+	$('.js-genplan-block__pic').on('mouseover mouseenter',function(){
+		$(this).closest('.genplan-wrap').find($('.js-genplan-icon')).removeClass('genplan-icon--active');
+
+	});
 
 
 

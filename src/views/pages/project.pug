@@ -186,43 +186,118 @@ block content
 						.genplan-desctipton__icon
 						.genplan-desctipton__text *Нажмите на иконку для открытия дополнительной информации
 		.genplan-wrap
-			.genplan-block
-				.genplan-block__pic
-					img(src="img/genplan.jpg", alt="")
-				.genplan-block__icons
-					.genplan-icon(data-id="1" style="top: 20.169%; left: 39.188%;")
+			.genplan-wrap-inner
+				.genplan-block
+					.genplan-block__pic.js-genplan-block__pic(style="min-width:761px;")
+						img(src="img/genplan.jpg", alt="")
+
+					.genplan-block__icons.genplan-block__icons--desktop
+						.genplan-icon.js-genplan-icon(data-id="1" style="top: 20.169%; left: 39.188%;")
+							.genplan-icon__pic
+								img(src="img/svg/gp-icon-1.svg", alt="")
+
+						.genplan-info(data-id="1" style="top: 20.169%; left: 39.188%;")
+							.genplan-info__text
+								.genplan-info__title ЖК «Эстет»
+								.genplan-info__desc Сдача: 1 кв. 2025 г.
+								.genplan-info__props.genplan-info-props
+									.genplan-info-prop
+										.genplan-info-prop__name Стоимость
+										.genplan-info-prop__val от 5 млн. руб.
+									.genplan-info-prop
+										.genplan-info-prop__name Площадь
+										.genplan-info-prop__val 35 - 100 м2
+									.genplan-info-prop
+										.genplan-info-prop__name Квартир
+										.genplan-info-prop__val 680
+									.genplan-info-prop
+										.genplan-info-prop__name Этажность
+										.genplan-info-prop__val 21 этаж
+									.genplan-info-prop
+										.genplan-info-prop__name Класс
+										.genplan-info-prop__val Комфорт +
+								.genplan-info__btn-wrap
+									a.btn.genplan-info__btn(href="")
+										span 520 квартир в продаже
+
+
+
+
+
+						.genplan-icon.js-genplan-icon(data-id="2" style="top: 57.339%; left: 64.813%;")
+							.genplan-icon__pic
+								img(src="img/svg/gp-icon-2.svg", alt="")
+						.genplan-info.genplan-info--on-top(data-id="2" style="top: 57.339%; left: 64.813%;")
+							.genplan-info__picture
+								img(src="img/genplan-simple-img-1.jpg", alt="")
+							.genplan-info__text.genplan-info__text--simple
+								.genplan-info__title скейт-парк
+								.genplan-info__desc.genplan-info__desc--simple Идеальный парк для любителей ярких экстримальных эмоций
+
+
+						.genplan-icon.js-genplan-icon(data-id="3" style="top: 56.494%; left: 81.25%;")
+							.genplan-icon__pic
+								img(src="img/svg/gp-icon-3.svg", alt="")
+						.genplan-info.genplan-info--on-top(data-id="3" style="top: 56.494%; left: 81.25%;")
+							.genplan-info__picture
+								img(src="img/genplan-simple-img-2.jpg", alt="")
+							.genplan-info__text.genplan-info__text--simple
+								.genplan-info__title Баскетбольная площадка
+								.genplan-info__desc.genplan-info__desc--simple Рыбный текст рыбный текст рыбный текст рыбный текст
+
+
+						.genplan-icon.js-genplan-icon(data-id="4" style="top: 80.781%; left: 32.5%;")
+							.genplan-icon__pic
+								img(src="img/svg/gp-icon-4.svg", alt="")
+						.genplan-info.genplan-info--on-top(data-id="4" style="top: 80.781%; left: 32.5%;")
+							.genplan-info__picture
+								img(src="img/genplan-simple-img-5.jpg", alt="")
+							.genplan-info__text.genplan-info__text--simple
+								.genplan-info__title 2 теннисных корта
+								.genplan-info__desc.genplan-info__desc--simple Рыбный текст рыбный текст рыбный текст рыбный текст
+
+
+						.genplan-icon.js-genplan-icon(data-id="5" style="top: 85.533%; left: 47.563%;")
+							.genplan-icon__pic
+								img(src="img/svg/gp-icon-5.svg", alt="")
+						.genplan-info.genplan-info--on-top(data-id="5" style="top: 85.533%; left: 47.563%;")
+							.genplan-info__picture
+								img(src="img/genplan-simple-img-4.jpg", alt="")
+							.genplan-info__text.genplan-info__text--simple
+								.genplan-info__title Уличные тренажеры
+								.genplan-info__desc.genplan-info__desc--simple Рыбный текст рыбный текст рыбный текст рыбный текст
+
+
+
+						.genplan-icon.js-genplan-icon(data-id="6" style="top: 75.713%; left: 78.75%;")
+							.genplan-icon__pic
+								img(src="img/svg/gp-icon-6.svg", alt="")
+						.genplan-info.genplan-info--on-top(data-id="6" style="top: 75.713%; left: 78.75%;")
+							.genplan-info__picture
+								img(src="img/genplan-simple-img-3.jpg", alt="")
+							.genplan-info__text.genplan-info__text--simple
+								.genplan-info__title зоны для йоги и растяжки
+								.genplan-info__desc.genplan-info__desc--simple Рыбный текст рыбный текст рыбный текст рыбный текст
+
+
+
+				.genplan-block__icons.genplan-block__icons--mobile
+					.genplan-icon.js-genplan-icon(data-id="1" style="top: 20.169%; left: 39.188%;")
 						.genplan-icon__pic
 							img(src="img/svg/gp-icon-1.svg", alt="")
-					.genplan-icon(data-id="2" style="top: 57.339%; left: 64.813%;")
+					.genplan-icon.js-genplan-icon(data-id="2" style="top: 57.339%; left: 64.813%;")
 						.genplan-icon__pic
 							img(src="img/svg/gp-icon-2.svg", alt="")
-					.genplan-icon(data-id="3" style="top: 56.494%; left: 81.25%;")
+					.genplan-icon.js-genplan-icon(data-id="3" style="top: 56.494%; left: 81.25%;")
 						.genplan-icon__pic
 							img(src="img/svg/gp-icon-3.svg", alt="")
-					.genplan-icon(data-id="4" style="top: 80.781%; left: 32.5%;")
+					.genplan-icon.js-genplan-icon(data-id="4" style="top: 80.781%; left: 32.5%;")
 						.genplan-icon__pic
 							img(src="img/svg/gp-icon-4.svg", alt="")
-					.genplan-icon(data-id="5" style="top: 85.533%; left: 47.563%;")
+					.genplan-icon.js-genplan-icon(data-id="5" style="top: 85.533%; left: 47.563%;")
 						.genplan-icon__pic
 							img(src="img/svg/gp-icon-5.svg", alt="")
-					.genplan-icon(data-id="6" style="top: 75.713%; left: 78.75%;")
-						.genplan-icon__pic
-							img(src="img/svg/gp-icon-6.svg", alt="")
-				.genplan-block__infos
-					.genplan-info(style="top: 20.169%; left: 39.188%;")
-
-					.genplan-info(style="top: 57.339%; left: 64.813%;")
-
-					.genplan-info(style="top: 56.494%; left: 81.25%;")
-						.genplan-icon__pic
-							img(src="img/svg/gp-icon-3.svg", alt="")
-					.genplan-info(style="top: 80.781%; left: 32.5%;")
-						.genplan-icon__pic
-							img(src="img/svg/gp-icon-4.svg", alt="")
-					.genplan-info(style="top: 85.533%; left: 47.563%;")
-						.genplan-icon__pic
-							img(src="img/svg/gp-icon-5.svg", alt="")
-					.genplan-info(style="top: 75.713%; left: 78.75%;")
+					.genplan-icon.js-genplan-icon(data-id="6" style="top: 75.713%; left: 78.75%;")
 						.genplan-icon__pic
 							img(src="img/svg/gp-icon-6.svg", alt="")
 

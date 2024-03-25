@@ -8190,6 +8190,13 @@ a.project-card:hover {
   display: flex;
   justify-content: center;
   margin-top: 48px;
+  position: relative;
+}
+
+.genplan-wrap-inner {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .genplan-block {
@@ -8198,6 +8205,22 @@ a.project-card:hover {
 
 .genplan-block__icons {
   pointer-events: none;
+}
+
+.genplan-block__infos {
+  pointer-events: none;
+}
+
+@supports selector(:has(+ *)) {
+  .genplan-block:hover:has(.genplan-icon--active, .genplan-info:hover) .genplan-icon:not(.genplan-icon--active) {
+    z-index: 2;
+  }
+}
+
+@supports not selector(:has(+ *)) {
+  .genplan-block:hover .genplan-icon:not(.genplan-icon--active) {
+    z-index: 2;
+  }
 }
 
 .genplan-icon {
@@ -8213,6 +8236,7 @@ a.project-card:hover {
   transform: translate(-50%, -50%);
   cursor: pointer;
   pointer-events: all;
+  z-index: 4;
 }
 
 .genplan-icon__pic {
@@ -8228,6 +8252,94 @@ a.project-card:hover {
 .genplan-icon__pic img {
   width: 40px;
   height: auto;
+}
+
+.genplan-info {
+  pointer-events: all;
+  z-index: 3;
+  position: absolute;
+  content: "";
+  display: block;
+  transform: translate(-50%, 0);
+  width: 374px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.16), 0 0 4px 0 rgba(0, 0, 0, 0.04);
+  border-radius: 12px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition-duration: 0.3s;
+}
+
+.genplan-info:hover {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.genplan-info--on-top {
+  transform: translate(-50%, -100%);
+}
+
+.genplan-info__text {
+  padding: 48px 32px 32px 32px;
+  background: #fff;
+}
+
+.genplan-info__text--simple {
+  padding: 32px 32px 48px 32px;
+}
+
+.genplan-info__title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 110%;
+  letter-spacing: -0.02em;
+  color: #252831;
+  font-family: "SONGER SemiExpanded", sans-serif;
+  text-transform: uppercase;
+}
+
+.genplan-info__desc {
+  margin-top: 12px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+  color: rgba(37, 40, 49, 0.5);
+}
+
+.genplan-info__desc--simple {
+  color: #252831;
+  opacity: 0.8;
+}
+
+.genplan-info__props {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(37, 40, 49, 0.1);
+}
+
+.genplan-info__btn-wrap {
+  margin-top: 24px;
+  width: 100%;
+}
+
+.genplan-info-prop {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+  color: #252831;
+}
+
+.genplan-info-prop__name {
+  color: rgba(37, 40, 49, 0.5);
+}
+
+.genplan-info-prop + .genplan-info-prop {
+  margin-top: 12px;
 }
 
 @media only screen and (min-width: 641px) {
@@ -8320,6 +8432,15 @@ a.project-card:hover {
     width: 130px;
     height: 57px;
     display: block;
+  }
+
+  .genplan-block__infos--mobile {
+    display: none;
+  }
+
+  .genplan-icon--active + .genplan-info {
+    opacity: 1;
+    pointer-events: all;
   }
 }
 
@@ -9505,6 +9626,28 @@ a.project-card:hover {
 
   .cards-slider__swiper-wrapper {
     margin-top: 24px;
+  }
+
+  .genplan-wrap-inner {
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  .genplan-block__infos--desktop .genplan-icon {
+    display: none !important;
+  }
+
+  .genplan-info {
+    position: absolute;
+    left: 50% !important;
+    top: 50% !important;
+    z-index: 5 !important;
+    transform: translate(-50%, -50%);
+  }
+
+  .genplan-info--active {
+    opacity: 1;
+    pointer-events: all;
   }
 }
 
