@@ -1,81 +1,227 @@
 .floors-block {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 50px;
+	gap: 24px;
+
+	&__title {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 140%;
+		letter-spacing: -0.02em;
+		color: #000;
+	}
 }
 
-.floors-pagination {}
+.floors-pagination {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 
-.floors-main {}
+	&__title {}
+
+	&__arrow {
+		display: block;
+		position: relative;
+		background-size: contain;
+		width: 41px;
+		height: 37px;
+		background-size: 7px auto;
+		border: 1px solid rgba(37, 40, 49, 0.2);
+		border-radius: 8px;
+		transition-duration: 0.3s;
+		cursor: pointer;
+
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+
+			background: url(../img/svg/btn-back-arrow.svg) no-repeat center center;
+			transform: rotate(90deg);
+			transform-origin: center center;
+		}
+
+		&:hover {
+			border: 1px solid rgba(37, 40, 49, 0.5);
+		}
+	}
+
+	&__arrow--prev {
+		margin-top: 24px;
+	}
+
+	&__main {
+
+		margin-top: 16px;
+	}
+
+	&__arrow--next {
+
+		margin-top: 16px;
+
+		&::before {
+			transform: rotate(-90deg);
+		}
+	}
+}
+
+
+
+.fpagi-controls {
+	display: flex;
+	gap: 6px;
+
+	&__item {
+		padding: 9px 7px;
+		min-width: 41px;
+		min-height: 41px;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 8px;
+		background: rgba(42, 44, 55, 0.1);
+
+
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 140%;
+		letter-spacing: -0.02em;
+		color: #2a2c37;
+		transition-duration: .3s;
+		cursor: pointer;
+
+		&--active,
+		&:hover {
+
+			background: #53667f;
+			color: #fff;
+		}
+
+		&--active {
+			pointer-events: none;
+		}
+	}
+
+	&--left {
+		flex-direction: column;
+	}
+
+}
+
+.fpagi-controls--floors-left {
+	display: flex;
+	flex-direction: column;
+
+	.fpagi-controls__item {}
+
+	.fpagi-controls__item--active {}
+}
+
+
+.floors-main {
+
+	&__entrance-switch {
+		margin-top: 16px;
+
+	}
+
+}
 
 .single-floor {
-    width: 800px;
-    max-width: 100%;
-    position: relative;
+	width: 892px;
+	max-width: 100%;
+	position: relative;
 
-    img {}
+	img {}
 
-    svg {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
+	svg {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
 
-        path,rect{
-            fill: rgba(83, 102, 127, 0.0);
-            transition-duration: .3s;
-            cursor: pointer;
-        }
+		path,
+		rect {
+			fill: rgba(83, 102, 127, 0.0);
+			transition-duration: .3s;
+			cursor: pointer;
+		}
 
-        path,rect{
-            &:hover {
-            opacity: .7;
-            fill: rgba(83, 102, 127, 0.15);
-        }
-        }
+		path,
+		rect {
+			&:hover {
+				opacity: .7;
+				fill: rgba(83, 102, 127, 0.15);
+			}
+		}
 
-        .floor-svg-locked {
-            fill: rgba(42, 44, 55, 0.1);
-            pointer-events: none;
-        }
-    }
+		.floor-svg-locked {
+			fill: rgba(42, 44, 55, 0.1);
+			pointer-events: none;
+		}
+	}
 }
 
 .single-locked-icon {
-    position: absolute;
-    display: block;
-    border-radius: 6px;
-    background: #fff;
-    width: 40px;
-    height: 40px;
-    transform: translate(-50%, -50%);
+	position: absolute;
+	display: block;
+	border-radius: 6px;
+	background: #fff;
+	width: 40px;
+	height: 40px;
+	transform: translate(-50%, -50%);
 
-    @include max(md) {
+	@include max(md) {
 
-        width: 22px;
-        height: 22px;
-    }
+		width: 22px;
+		height: 22px;
+	}
 
-    &::after {
-        content: '';
-        display: block;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        background: url(../img/svg/locked.svg) no-repeat center center;
-        background-size: contain;
-        width: 15px;
-        height: 15px;
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		background: url(../img/svg/locked.svg) no-repeat center center;
+		background-size: contain;
+		width: 15px;
+		height: 15px;
 
-        @include max(md) {
+		@include max(md) {
 
-            width: 9px;
-            height: 9px;
-        }
-    }
+			width: 9px;
+			height: 9px;
+		}
+	}
 
 }
 
 .floors-right {}
+
+
+.floors-icons {
+	display: flex;
+	flex-direction: column;
+	width: 96px;
+	gap: 16px;
+}
+
+.floors-icon {
+	width: 100%;
+	background: rgba(42, 44, 55, 0.03);
+	border-radius: 6px;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+}

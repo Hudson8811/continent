@@ -123,6 +123,17 @@
     </div>
     <div class="sh-placeholder"></div>
     <main class="site-main">
+      <script>
+        window.lockedApartmentsFix={
+        	//[id жк]_[id литера]_[подъезд]_[этаж]_[квартира]
+        	//смещение в процентах относительно размера path
+        	/*"1_1_2_9_3":{
+        		left:-50,
+        		top:+50
+        	}*/
+        
+        };
+      </script>
       <section class="apartment-page apartment-page--floors">
         <div class="container">
           <div class="apartment-page-top">
@@ -130,33 +141,40 @@
             <div class="apartment-page-top__bc">
               <div class="apartment-breadcrumbs">
                 <div class="apartment-breadcrumbs__item"><a href="">ЖК «Эстет»</a></div>
-                <div class="apartment-breadcrumbs__item"><a href="">Литер 1</a></div>
-                <div class="apartment-breadcrumbs__item"><a href="">11 этаж</a></div>
-                <div class="apartment-breadcrumbs__item"><span>№256</span></div>
+                <div class="apartment-breadcrumbs__item"><span>Литер 1</span></div>
+                <div class="apartment-breadcrumbs__item"><span>Выберите квартиру</span></div>
               </div>
             </div>
           </div>
           <div class="floors-block">
-            <div class="floors-pagination"></div>
-            <div class="floors-main">
-              <div class="single-floor js-single-floor"><img src="img/floors/1_1_ 2_2-10.png" alt=""><svg width="783" height="366" viewBox="0 0 783 366" fill="none" xmlns="http://www.w3.org/2000/svg">
-
-<path id="1" d="M199 41H269.364V28H328V41.4574V186H199V41Z" fill="white"/>
-<path id="2" d="M68 54H132.5V41H199V186H88.0726V171H68V54Z" fill="white"/>
-<path id="3" d="M2.87126 67.5H66L66.1288 170.698H88.5V232H125.5V354H65H58V365H1.5V338.658H3.00002L2.87126 67.5Z" fill="white"/>
-<path id="4" d="M126 232.5H175.5V217H212.25V232.5H249V354.464H182V365H130V354H126V232.5Z" fill="white"/>
-<path id="5" d="M380 237.5H330V217H289.5V232.5H249V354.464H320.358V365H375.74H380V354V237.5Z" fill="white"/>
-<path id="6" d="M381 232H434V216H470V232H511V354.5H439.5V364.5L381 365V351V232Z" fill="white"/>
-<path id="7" d="M511 232H578V217.5H670.5V232H715V354.105H573.5V364.82H515.5V354.105H511V232Z" fill="white"/>
-<path id="8" d="M716 67.5H782V365H720V346.692H716V230H696.5V170H716V67.5Z" fill="white"/>
-<path id="9" d="M715 54.265H650V42H584V186H694.69V170H715V54.265Z" fill="white"/>
-<path id="10" d="M583.5 40.5H517V28H454V186H563H583V168.444L583.5 40.5Z" fill="white"/>
-
-</svg>
-
-                <!--.single-locked-icon-->
+            <div class="floors-pagination">
+              <div class="floors-block__title floors-pagination__title">Этаж</div>
+              <div class="floors-pagination__arrow floors-pagination__arrow--prev"></div>
+              <div class="floors-pagination__main">
+                <div class="fpagi-controls fpagi-controls--left">
+                  <div class="fpagi-controls__item">12</div>
+                  <div class="fpagi-controls__item">11</div>
+                  <div class="fpagi-controls__item">10</div>
+                  <div class="fpagi-controls__item fpagi-controls__item--active">9</div>
+                  <div class="fpagi-controls__item">8</div>
+                  <div class="fpagi-controls__item">7</div>
+                  <div class="fpagi-controls__item">6</div>
+                  <div class="fpagi-controls__item">5</div>
+                </div>
               </div>
-              <div class="single-floor js-single-floor js-single-floor-test-lock"><img src="img/floors/1_1_ 2_2-10.png" alt=""><svg width="783" height="366" viewBox="0 0 783 366" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <div class="floors-pagination__arrow floors-pagination__arrow--next"></div>
+            </div>
+            <div class="floors-main">
+              <div class="floors-block__title floors-main__title">Подъезд</div>
+              <div class="floors-main__entrance-switch">
+                <div class="fpagi-controls fpagi-controls--right">
+                  <div class="fpagi-controls__item fpagi-controls__item--active">1</div>
+                  <div class="fpagi-controls__item">2</div>
+                  <div class="fpagi-controls__item">3</div>
+                </div>
+              </div>
+              <div class="floors-maps">
+                <div class="floors-maps__item single-floor js-single-floor" data-complex-id="1" data-building-id="1" data-entrance="2" data-floor="9"><img src="img/floors/1_1_ 2_2-10.png" alt=""><svg width="783" height="366" viewBox="0 0 783 366" fill="none" xmlns="http://www.w3.org/2000/svg">
 
 <path id="1" d="M199 41H269.364V28H328V41.4574V186H199V41Z" fill="white"/>
 <path id="2" d="M68 54H132.5V41H199V186H88.0726V171H68V54Z" fill="white"/>
@@ -171,10 +189,33 @@
 
 </svg>
 
-                <!--.single-locked-icon-->
+                  <!--.single-locked-icon-->
+                </div>
+                <div class="single-floor js-single-floor js-single-floor-test-lock" data-complex-id="1" data-building-id="1" data-entrance="2" data-floor="9"><img src="img/floors/1_1_ 2_2-10.png" alt=""><svg width="783" height="366" viewBox="0 0 783 366" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<path id="1" d="M199 41H269.364V28H328V41.4574V186H199V41Z" fill="white"/>
+<path id="2" d="M68 54H132.5V41H199V186H88.0726V171H68V54Z" fill="white"/>
+<path id="3" d="M2.87126 67.5H66L66.1288 170.698H88.5V232H125.5V354H65H58V365H1.5V338.658H3.00002L2.87126 67.5Z" fill="white"/>
+<path id="4" d="M126 232.5H175.5V217H212.25V232.5H249V354.464H182V365H130V354H126V232.5Z" fill="white"/>
+<path id="5" d="M380 237.5H330V217H289.5V232.5H249V354.464H320.358V365H375.74H380V354V237.5Z" fill="white"/>
+<path id="6" d="M381 232H434V216H470V232H511V354.5H439.5V364.5L381 365V351V232Z" fill="white"/>
+<path id="7" d="M511 232H578V217.5H670.5V232H715V354.105H573.5V364.82H515.5V354.105H511V232Z" fill="white"/>
+<path id="8" d="M716 67.5H782V365H720V346.692H716V230H696.5V170H716V67.5Z" fill="white"/>
+<path id="9" d="M715 54.265H650V42H584V186H694.69V170H715V54.265Z" fill="white"/>
+<path id="10" d="M583.5 40.5H517V28H454V186H563H583V168.444L583.5 40.5Z" fill="white"/>
+
+</svg>
+
+                  <!--.single-locked-icon-->
+                </div>
               </div>
             </div>
-            <div class="floors-right"></div>
+            <div class="floors-right">
+              <div class="floors-icons">
+                <div class="floors-icon"><img src="img/floors-r-1.svg" alt=""></div>
+                <div class="floors-icon"><img src="img/floors-r-2.svg" alt=""></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

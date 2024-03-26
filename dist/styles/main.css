@@ -8346,10 +8346,118 @@ a.project-card:hover {
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
+  gap: 24px;
+}
+
+.floors-block__title {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+  color: #000;
+}
+
+.floors-pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.floors-pagination__arrow {
+  display: block;
+  position: relative;
+  background-size: contain;
+  width: 41px;
+  height: 37px;
+  background-size: 7px auto;
+  border: 1px solid rgba(37, 40, 49, 0.2);
+  border-radius: 8px;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.floors-pagination__arrow::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../img/svg/btn-back-arrow.svg) no-repeat center center;
+  transform: rotate(90deg);
+  transform-origin: center center;
+}
+
+.floors-pagination__arrow:hover {
+  border: 1px solid rgba(37, 40, 49, 0.5);
+}
+
+.floors-pagination__arrow--prev {
+  margin-top: 24px;
+}
+
+.floors-pagination__main {
+  margin-top: 16px;
+}
+
+.floors-pagination__arrow--next {
+  margin-top: 16px;
+}
+
+.floors-pagination__arrow--next::before {
+  transform: rotate(-90deg);
+}
+
+.fpagi-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.fpagi-controls__item {
+  padding: 9px 7px;
+  min-width: 41px;
+  min-height: 41px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: rgba(42, 44, 55, 0.1);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+  color: #2a2c37;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.fpagi-controls__item--active,
+.fpagi-controls__item:hover {
+  background: #53667f;
+  color: #fff;
+}
+
+.fpagi-controls__item--active {
+  pointer-events: none;
+}
+
+.fpagi-controls--left {
+  flex-direction: column;
+}
+
+.fpagi-controls--floors-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.floors-main__entrance-switch {
+  margin-top: 16px;
 }
 
 .single-floor {
-  width: 800px;
+  width: 892px;
   max-width: 100%;
   position: relative;
 }
@@ -8401,6 +8509,24 @@ a.project-card:hover {
   background-size: contain;
   width: 15px;
   height: 15px;
+}
+
+.floors-icons {
+  display: flex;
+  flex-direction: column;
+  width: 96px;
+  gap: 16px;
+}
+
+.floors-icon {
+  width: 100%;
+  background: rgba(42, 44, 55, 0.03);
+  border-radius: 6px;
+}
+
+.floors-icon img {
+  width: 100%;
+  height: auto;
 }
 
 @media only screen and (min-width: 641px) {

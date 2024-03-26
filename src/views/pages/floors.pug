@@ -5,7 +5,16 @@ block variables
 	- const title = "Страница квартиры"
 
 block content
+	script.
+		window.lockedApartmentsFix={
+			//[id жк]_[id литера]_[подъезд]_[этаж]_[квартира]
+			//смещение в процентах относительно размера path
+			/*"1_1_2_9_3":{
+				left:-50,
+				top:+50
+			}*/
 
+		};
 	section.apartment-page.apartment-page--floors
 		.container
 			.apartment-page-top
@@ -16,22 +25,50 @@ block content
 						.apartment-breadcrumbs__item
 							a(href="") ЖК «Эстет»
 						.apartment-breadcrumbs__item
-							a(href="") Литер 1
+							span Литер 1
 						.apartment-breadcrumbs__item
-							a(href="") 11 этаж
-						.apartment-breadcrumbs__item
-							span №256
+							span Выберите квартиру
 			.floors-block
 				.floors-pagination
+					.floors-block__title.floors-pagination__title Этаж
+
+					.floors-pagination__arrow.floors-pagination__arrow--prev
+					.floors-pagination__main
+						.fpagi-controls.fpagi-controls--left
+							.fpagi-controls__item 12
+							.fpagi-controls__item 11
+							.fpagi-controls__item 10
+							.fpagi-controls__item.fpagi-controls__item--active 9
+							.fpagi-controls__item 8
+							.fpagi-controls__item 7
+							.fpagi-controls__item 6
+							.fpagi-controls__item 5
+					.floors-pagination__arrow.floors-pagination__arrow--next
+
+
 				.floors-main
-					.single-floor.js-single-floor
-						img(src="img/floors/1_1_ 2_2-10.png", alt="")
-						include ../../img/floors/1_1_ 2_2-10.svg
-						//.single-locked-icon
-					.single-floor.js-single-floor.js-single-floor-test-lock
-						img(src="img/floors/1_1_ 2_2-10.png", alt="")
-						include ../../img/floors/1_1_ 2_2-10.svg
-						//.single-locked-icon
+					.floors-block__title.floors-main__title Подъезд
+					.floors-main__entrance-switch
+						.fpagi-controls.fpagi-controls--right
+							.fpagi-controls__item.fpagi-controls__item--active 1
+							.fpagi-controls__item 2
+							.fpagi-controls__item 3
+
+					.floors-maps
+
+						.floors-maps__item.single-floor.js-single-floor(data-complex-id="1" data-building-id="1" data-entrance="2"  data-floor="9")
+							img(src="img/floors/1_1_ 2_2-10.png", alt="")
+							include ../../img/floors/1_1_ 2_2-10.svg
+							//.single-locked-icon
+						.single-floor.js-single-floor.js-single-floor-test-lock(data-complex-id="1" data-building-id="1" data-entrance="2" data-floor="9")
+							img(src="img/floors/1_1_ 2_2-10.png", alt="")
+							include ../../img/floors/1_1_ 2_2-10.svg
+							//.single-locked-icon
 				.floors-right
+					.floors-icons
+						.floors-icon
+							img(src="img/floors-r-1.svg", alt="")
+						.floors-icon
+							img(src="img/floors-r-2.svg", alt="")
 
 	.prefooter-padding

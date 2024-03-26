@@ -19,9 +19,9 @@ function myUnlockBody() {
 }
 
 $(function () {
-	const getScrollbarWidth = function(){
-		var cssSBWidthVariableName= '--js-scrollbar-width';
-		var css1vwInPxWidthVariableName= '--js-real-vw';
+	const getScrollbarWidth = function () {
+		var cssSBWidthVariableName = '--js-scrollbar-width';
+		var css1vwInPxWidthVariableName = '--js-real-vw';
 
 		const prevWidth = window
 			.getComputedStyle(document.documentElement)
@@ -35,7 +35,7 @@ $(function () {
 		const prevVwWidth = window
 			.getComputedStyle(document.documentElement)
 			.getPropertyValue(css1vwInPxWidthVariableName);
-		const newVwWidth = `${document.body.clientWidth/100}px`;
+		const newVwWidth = `${document.body.clientWidth / 100}px`;
 
 		if (newVwWidth !== prevVwWidth) {
 			document.documentElement.style.setProperty(css1vwInPxWidthVariableName, newVwWidth);
@@ -727,42 +727,73 @@ $(function () {
 
 
 	$('.js-genplan-icon').each(function () {
-		$(this).on('mouseover mouseenter',function(){
+		$(this).on('mouseover mouseenter', function () {
 			$(this).addClass('genplan-icon--active').siblings('.genplan-icon--active').removeClass('genplan-icon--active');
 		});
 	});
 
-	$('.js-genplan-block__pic').on('mouseover mouseenter',function(){
+	$('.js-genplan-block__pic').on('mouseover mouseenter', function () {
 		$(this).closest('.genplan-wrap').find($('.js-genplan-icon')).removeClass('genplan-icon--active');
 
 	});
 
 
 
-	function lockPath(pathEl){
-		var parentBlock=pathEl.closest('.js-single-floor');
-		var offsetPB=parentBlock.offset();
-		var offsetEl=pathEl.offset();
-		var pathElBR=pathEl[0].getBoundingClientRect();
-		var left=(offsetEl.left-offsetPB.left + pathElBR.width*0.5)/parentBlock.width()*100;
-		var top=(offsetEl.top-offsetPB.top + pathElBR.height*0.5)/parentBlock.height()*100;
+	function lockPath(pathEl, parentBlock, complexId, buildingId, entrance, floor) {
+		if (parentBlock === false) {
+			parentBlock = pathEl.closest('.js-single-floor');
+			complexId = parentBlock.attr('data-complex-id');
+			buildingId = parentBlock.attr('data-building-id');
+			entrance = parentBlock.attr('data-entrance');
+			floor = parentBlock.attr('data-floor');
+		}
+		var elId = pathEl.attr('id');
+		var corrections = window.lockedApartmentsFix[complexId + '_' + buildingId + '_' + entrance + '_' + floor + '_' + elId];
+		var posCorrection = {
+			left: 0,
+			top: 0
+		};
+		var offsetPB = parentBlock.offset();
+		var offsetEl = pathEl.offset();
+		var pathElBR = pathEl[0].getBoundingClientRect();
+
+		if (typeof (corrections) !== 'undefined') {
+			posCorrection = {
+				left: pathElBR.width / 100 * corrections.left,
+				top: pathElBR.height / 100 * corrections.top
+			}
+			console.log(posCorrection);
+		}
+
+
+		var left = (offsetEl.left - offsetPB.left + pathElBR.width * 0.5 + posCorrection.left) / parentBlock.width() * 100;
+		var top = (offsetEl.top - offsetPB.top + pathElBR.height * 0.5 + posCorrection.top) / parentBlock.height() * 100;
 
 
 		pathEl.addClass('floor-svg-locked');
-		parentBlock.append('<div class="single-locked-icon" style="left: '+left+'%; top: '+top+'%; " data-id="'+pathEl.attr('id')+'"></div>');
+		parentBlock.append('<div class="single-locked-icon" style="left: ' + left + '%; top: ' + top + '%; " data-id="' + elId + '"></div>');
 	}
 
-	lockPath($('.js-single-floor svg [id="3"]'));
+	lockPath($('.js-single-floor svg [id="3"]'), false);
 
-	$('.js-single-floor-test-lock svg path').each(function(){
-		lockPath($(this));
-	})
+	$('.js-single-floor-test-lock').each(function () {
+		var
+			parentBlock = $(this),
+			complexId = parentBlock.attr('data-complex-id'),
+			buildingId = parentBlock.attr('data-building-id'),
+			entrance = parentBlock.attr('data-entrance'),
+			floor = parentBlock.attr('data-floor');
 
-	$('.js-single-floor path').on('click',function(){
-		console.log('clicked '+$(this).attr('id'));
+		$(this).find('svg path,svg rect').each(function () {
+			lockPath($(this), parentBlock, complexId, buildingId, entrance, floor);
+		});
 	});
-	$('.js-single-floor path').on('mouseover',function(){
-		console.log('mouseover '+$(this).attr('id'));
+
+	$('.js-single-floor path').on('click', function () {
+		console.log('clicked ' + $(this).attr('id'));
+	});
+	$('.js-single-floor path').on('mouseover', function () {
+		console.log('mouseover ' + $(this).attr('id'));
 	});
 
 	//$('.js-single-floor svg *:not(g)')
