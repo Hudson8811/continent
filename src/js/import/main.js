@@ -739,4 +739,32 @@ $(function () {
 
 
 
+	function lockPath(pathEl){
+		var parentBlock=pathEl.closest('.js-single-floor');
+		var offsetPB=parentBlock.offset();
+		var offsetEl=pathEl.offset();
+		var pathElBR=pathEl[0].getBoundingClientRect();
+		var left=(offsetEl.left-offsetPB.left + pathElBR.width*0.5)/parentBlock.width()*100;
+		var top=(offsetEl.top-offsetPB.top + pathElBR.height*0.5)/parentBlock.height()*100;
+
+
+		pathEl.addClass('floor-svg-locked');
+		parentBlock.append('<div class="single-locked-icon" style="left: '+left+'%; top: '+top+'%; " data-id="'+pathEl.attr('id')+'"></div>');
+	}
+
+	lockPath($('.js-single-floor svg [id="3"]'));
+
+	$('.js-single-floor-test-lock svg path').each(function(){
+		lockPath($(this));
+	})
+
+	$('.js-single-floor path').on('click',function(){
+		console.log('clicked '+$(this).attr('id'));
+	});
+	$('.js-single-floor path').on('mouseover',function(){
+		console.log('mouseover '+$(this).attr('id'));
+	});
+
+	//$('.js-single-floor svg *:not(g)')
+
 });

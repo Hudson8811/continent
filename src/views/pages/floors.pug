@@ -1,0 +1,37 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+	- const title = "Страница квартиры"
+
+block content
+
+	section.apartment-page.apartment-page--floors
+		.container
+			.apartment-page-top
+				.apartment-page-top__back
+					a.back-btn.back-btn--border(href="") Назад
+				.apartment-page-top__bc
+					.apartment-breadcrumbs
+						.apartment-breadcrumbs__item
+							a(href="") ЖК «Эстет»
+						.apartment-breadcrumbs__item
+							a(href="") Литер 1
+						.apartment-breadcrumbs__item
+							a(href="") 11 этаж
+						.apartment-breadcrumbs__item
+							span №256
+			.floors-block
+				.floors-pagination
+				.floors-main
+					.single-floor.js-single-floor
+						img(src="img/floors/1_1_ 2_2-10.png", alt="")
+						include ../../img/floors/1_1_ 2_2-10.svg
+						//.single-locked-icon
+					.single-floor.js-single-floor.js-single-floor-test-lock
+						img(src="img/floors/1_1_ 2_2-10.png", alt="")
+						include ../../img/floors/1_1_ 2_2-10.svg
+						//.single-locked-icon
+				.floors-right
+
+	.prefooter-padding

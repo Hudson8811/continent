@@ -1,0 +1,81 @@
+.floors-block {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.floors-pagination {}
+
+.floors-main {}
+
+.single-floor {
+    width: 800px;
+    max-width: 100%;
+    position: relative;
+
+    img {}
+
+    svg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+
+        path,rect{
+            fill: rgba(83, 102, 127, 0.0);
+            transition-duration: .3s;
+            cursor: pointer;
+        }
+
+        path,rect{
+            &:hover {
+            opacity: .7;
+            fill: rgba(83, 102, 127, 0.15);
+        }
+        }
+
+        .floor-svg-locked {
+            fill: rgba(42, 44, 55, 0.1);
+            pointer-events: none;
+        }
+    }
+}
+
+.single-locked-icon {
+    position: absolute;
+    display: block;
+    border-radius: 6px;
+    background: #fff;
+    width: 40px;
+    height: 40px;
+    transform: translate(-50%, -50%);
+
+    @include max(md) {
+
+        width: 22px;
+        height: 22px;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: url(../img/svg/locked.svg) no-repeat center center;
+        background-size: contain;
+        width: 15px;
+        height: 15px;
+
+        @include max(md) {
+
+            width: 9px;
+            height: 9px;
+        }
+    }
+
+}
+
+.floors-right {}

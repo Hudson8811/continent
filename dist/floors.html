@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Страница квартиры</title>
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://api-maps.yandex.ru/v3/?apikey=a56bdf2e-6f25-46f4-b535-ca3077437c25&amp;lang=ru_RU"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="sh-left-icon"><img src="img/header-left-icon.png" alt=""></div>
+      <div class="sh-container container">
+        <div class="sh-container__left"><a class="sh-logo" href=""><img src="img/header-logo.svg" alt="logo"></a>
+          <nav class="sh-menu">
+            <ul class="sh-menu-list">
+              <li class="sh-menu-item"><a class="sh-menu-item__link" href="">Квартиры</a></li>
+              <li class="sh-menu-item"><a class="sh-menu-item__link" href="">Объекты</a></li>
+              <li class="sh-menu-item"><a class="sh-menu-item__link" href="">Ипотека</a></li>
+              <li class="sh-menu-item"><a class="sh-menu-item__link" href="">О компании</a></li>
+            </ul>
+          </nav>
+          <div class="sh-mega-menu-trigger js-mega-menu-trigger"><img src="img/svg/sh-mega-trigger.svg"></div>
+        </div>
+        <div class="sh-container__right"><a class="sh-phone" href="">+7 900 00 01 02</a>
+          <div class="sh-buttons"><a class="sh-button" href="">
+              <div class="sh-button__icon">
+                <svg class="sh-button__icon-mob">
+                  <use xlink:href="img/sprites/sprite.svg#sh-heart-mob"></use>
+                </svg>
+                <svg class="sh-button__icon-desktop">
+                  <use xlink:href="img/sprites/sprite.svg#sh-heart"></use>
+                </svg>
+              </div>
+              <div class="sh-button__counter">1</div></a><a class="sh-button js-call-me-modal" href="#">
+              <div class="sh-button__icon">
+                <svg class="sh-button__icon-mob">
+                  <use xlink:href="img/sprites/sprite.svg#sh-phone-mob"></use>
+                </svg>
+                <svg class="sh-button__icon-desktop">
+                  <use xlink:href="img/sprites/sprite.svg#sh-phone"></use>
+                </svg>
+              </div></a></div>
+          <div class="sh-burger sh-mob-menu-trigger js-mob-menu-trigger"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+      <div class="mega-menu-wrap">
+        <div class="container">
+          <div class="mega-menu">
+            <div class="mega-menu__col">
+              <div class="mega-menu__col-title">Все объекты</div>
+              <ul class="mega-menu-list">
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href="">ЖК «Эстет»</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu__col">
+              <div class="mega-menu__col-title">Квартиры</div>
+              <ul class="mega-menu-list">
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href=""> Студии</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href=""> 1-комнатные квартиры</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href=""> 2-комнатные квартиры</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href=""> 3-комнатные квартиры</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu__col">
+              <div class="mega-menu__col-title">Покупка</div>
+              <ul class="mega-menu-list">
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href=""> Способы покупки</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href=""> Ипотека</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu__col">
+              <div class="mega-menu__col-title">Еще</div>
+              <ul class="mega-menu-list">
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href="">Контакты</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href="">Новости и Акции</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href="">Коммерческая недвижимость</a></li>
+                <li class="mega-menu-list__item"><a class="mega-menu-list__link" href="">Разрешительная документация</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="mob-menu-block">
+      <div class="sh-placeholder"></div>
+      <div class="mob-menu-block__part">
+        <div class="mob-menu mob-menu--large"><a class="mob-menu__item" href="">Квартиры</a><a class="mob-menu__item" href="">Объекты</a><a class="mob-menu__item" href="">О компании</a><a class="mob-menu__item" href="">Ипотека</a></div>
+      </div>
+      <div class="mob-menu-block__part">
+        <div class="mob-menu mob-menu"><a class="mob-menu__item" href="">Способы покупки</a><a class="mob-menu__item" href="">Контакты</a><a class="mob-menu__item" href="">Новости и Акции</a><a class="mob-menu__item" href="">Коммерческая недвижимость</a><a class="mob-menu__item" href="">Разрешительная документация</a></div>
+      </div>
+      <div class="mob-menu-block__part"><a class="mob-menu-phone" href="">
+          <div class="mob-menu-phone__icon">
+            <div class="sh-button js-call-me-modal" href="#">
+              <div class="sh-button__icon">
+                <svg class="sh-button__icon-mob">
+                  <use xlink:href="img/sprites/sprite.svg#sh-phone-mob"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="mob-menu-phone__text">+7 900 00 01 02</div></a></div>
+    </div>
+    <div class="sh-placeholder"></div>
+    <main class="site-main">
+      <section class="apartment-page apartment-page--floors">
+        <div class="container">
+          <div class="apartment-page-top">
+            <div class="apartment-page-top__back"><a class="back-btn back-btn--border" href="">Назад</a></div>
+            <div class="apartment-page-top__bc">
+              <div class="apartment-breadcrumbs">
+                <div class="apartment-breadcrumbs__item"><a href="">ЖК «Эстет»</a></div>
+                <div class="apartment-breadcrumbs__item"><a href="">Литер 1</a></div>
+                <div class="apartment-breadcrumbs__item"><a href="">11 этаж</a></div>
+                <div class="apartment-breadcrumbs__item"><span>№256</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="floors-block">
+            <div class="floors-pagination"></div>
+            <div class="floors-main">
+              <div class="single-floor js-single-floor"><img src="img/floors/1_1_ 2_2-10.png" alt=""><svg width="783" height="366" viewBox="0 0 783 366" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<path id="1" d="M199 41H269.364V28H328V41.4574V186H199V41Z" fill="white"/>
+<path id="2" d="M68 54H132.5V41H199V186H88.0726V171H68V54Z" fill="white"/>
+<path id="3" d="M2.87126 67.5H66L66.1288 170.698H88.5V232H125.5V354H65H58V365H1.5V338.658H3.00002L2.87126 67.5Z" fill="white"/>
+<path id="4" d="M126 232.5H175.5V217H212.25V232.5H249V354.464H182V365H130V354H126V232.5Z" fill="white"/>
+<path id="5" d="M380 237.5H330V217H289.5V232.5H249V354.464H320.358V365H375.74H380V354V237.5Z" fill="white"/>
+<path id="6" d="M381 232H434V216H470V232H511V354.5H439.5V364.5L381 365V351V232Z" fill="white"/>
+<path id="7" d="M511 232H578V217.5H670.5V232H715V354.105H573.5V364.82H515.5V354.105H511V232Z" fill="white"/>
+<path id="8" d="M716 67.5H782V365H720V346.692H716V230H696.5V170H716V67.5Z" fill="white"/>
+<path id="9" d="M715 54.265H650V42H584V186H694.69V170H715V54.265Z" fill="white"/>
+<path id="10" d="M583.5 40.5H517V28H454V186H563H583V168.444L583.5 40.5Z" fill="white"/>
+
+</svg>
+
+                <!--.single-locked-icon-->
+              </div>
+              <div class="single-floor js-single-floor js-single-floor-test-lock"><img src="img/floors/1_1_ 2_2-10.png" alt=""><svg width="783" height="366" viewBox="0 0 783 366" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<path id="1" d="M199 41H269.364V28H328V41.4574V186H199V41Z" fill="white"/>
+<path id="2" d="M68 54H132.5V41H199V186H88.0726V171H68V54Z" fill="white"/>
+<path id="3" d="M2.87126 67.5H66L66.1288 170.698H88.5V232H125.5V354H65H58V365H1.5V338.658H3.00002L2.87126 67.5Z" fill="white"/>
+<path id="4" d="M126 232.5H175.5V217H212.25V232.5H249V354.464H182V365H130V354H126V232.5Z" fill="white"/>
+<path id="5" d="M380 237.5H330V217H289.5V232.5H249V354.464H320.358V365H375.74H380V354V237.5Z" fill="white"/>
+<path id="6" d="M381 232H434V216H470V232H511V354.5H439.5V364.5L381 365V351V232Z" fill="white"/>
+<path id="7" d="M511 232H578V217.5H670.5V232H715V354.105H573.5V364.82H515.5V354.105H511V232Z" fill="white"/>
+<path id="8" d="M716 67.5H782V365H720V346.692H716V230H696.5V170H716V67.5Z" fill="white"/>
+<path id="9" d="M715 54.265H650V42H584V186H694.69V170H715V54.265Z" fill="white"/>
+<path id="10" d="M583.5 40.5H517V28H454V186H563H583V168.444L583.5 40.5Z" fill="white"/>
+
+</svg>
+
+                <!--.single-locked-icon-->
+              </div>
+            </div>
+            <div class="floors-right"></div>
+          </div>
+        </div>
+      </section>
+      <div class="prefooter-padding"></div>
+    </main>
+    <footer class="site-footer">
+      <div class="container container--footer">
+        <div class="sf-top"><a class="sf-top__logo" href="/"><img src="img/footer-logo.png" alt="">
+            <!--picture
+            source(srcset="img/mob-footer-logo.png" media="(max-width: 640px)")
+            
+            
+            --></a>
+          <ul class="sf-top__menu sf-menu">
+            <li class="sf-menu-item"><a href="">Квартиры</a></li>
+            <li class="sf-menu-item"><a href="">Ипотека</a></li>
+            <li class="sf-menu-item"><a href="">О компании</a></li>
+          </ul>
+          <div class="sf-top__btns"><a class="btn js-call-me-modal" href="#"> Заказать звонок</a></div>
+          <div class="sf-contacts sf-contacts--mob"><a href="">+7 (861) 202-22-01</a></div>
+        </div>
+        <div class="sf-bottom">
+          <div class="sf-bottom__left">
+            <div class="sf-copyright">
+              <p>© 2023. Все права защищены.</p>
+              <p>Сайт носит информационный характер и не является публичной офертой согласно положениям Статьи 437 Гражданского кодекса Российской Федерации.</p>
+            </div>
+            <ul class="sf-bottom-links">
+              <li class="sf-bottom-link"><a href="">Положение о защите персональных данных</a></li>
+              <li class="sf-bottom-link"><a href=""> Пользовательское соглашение</a></li>
+            </ul>
+          </div>
+          <div class="sf-bottom__right">
+            <div class="sf-contacts sf-contacts--desktop"><a href="">+7 (861) 202-22-01</a></div>
+            <div class="socials sf-socials"><a class="socials__item" href="">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#soc-vk"></use>
+                </svg></a><a class="socials__item" href="">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#soc-ok"></use>
+                </svg></a><a class="socials__item" href="">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#soc-tg"></use>
+                </svg></a><a class="socials__item" href="">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#soc-yt"></use>
+                </svg></a></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <noindex>
+      <div style="display:none;">
+        <div class="simple-modal" id="call-me-modal">
+          <div class="simple-modal__inner">
+            <div class="simple-modal__content">
+              <div class="simple-modal__title">Заказать обратный звонок</div>
+              <div class="simple-modal__form">
+                <div class="simple-modal__inputs">
+                  <div class="simple-modal__input">
+                    <input class="simple-input" type="text" name="" placeholder="Ваше имя">
+                  </div>
+                  <div class="simple-modal__input">
+                    <input class="simple-input js-phonemask" type="text" name="" placeholder="Телефон">
+                  </div>
+                  <div class="simple-modal__input"><a class="btn btn--w100" href=""><span>Заказать звонок</span></a></div>
+                </div>
+                <div class="simple-modal__privacy">Нажимая на кнопку, вы принимаете <a href="#">политику конфиденциальности</a> и даете согласие на обработку персональных данных</div>
+              </div>
+            </div>
+            <div class="simple-modal__close" data-fancybox-close>
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#modal-close"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="simple-modal" id="answer-modal">
+          <div class="simple-modal__inner">
+            <div class="simple-modal__content">
+              <div class="simple-modal__title">Задать вопрос</div>
+              <div class="simple-modal__form">
+                <div class="simple-modal__inputs">
+                  <div class="simple-modal__input">
+                    <input class="simple-input" type="text" name="" placeholder="Ваше имя">
+                  </div>
+                  <div class="simple-modal__input">
+                    <input class="simple-input js-phonemask" type="text" name="" placeholder="Телефон">
+                  </div>
+                  <div class="simple-modal__input">
+                    <textarea class="simple-input js-textarea-autosize" type="text" name="" textarea rows="2" placeholder="Ваш вопрос"></textarea>
+                  </div>
+                  <div class="simple-modal__input"><a class="btn btn--w100" href=""><span>Задать вопрос</span></a></div>
+                </div>
+                <div class="simple-modal__privacy">Нажимая на кнопку, вы принимаете <a href="#">политику конфиденциальности</a> и даете согласие на обработку персональных данных</div>
+              </div>
+            </div>
+            <div class="simple-modal__close" data-fancybox-close>
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#modal-close"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </noindex>
+    <script src="js/main.js"></script>
+  </body>
+</html>
