@@ -7467,6 +7467,10 @@ a.project-card:hover {
   font-family: "SONGER SemiExpanded", sans-serif;
 }
 
+.apartment-card__price--mt0 {
+  margin-top: 0;
+}
+
 .apartment-card__new-price {
   font-weight: 500;
   font-size: 20px;
@@ -8342,6 +8346,28 @@ a.project-card:hover {
   margin-top: 12px;
 }
 
+.floors-block-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.floors-block-top__back {
+  min-width: 102px;
+}
+
+.floors-block-top__bc {
+  width: 892px;
+  max-width: 100%;
+  position: relative;
+}
+
+.floors-block-top__right {
+  min-width: 161px;
+  min-height: 1px;
+}
+
 .floors-block {
   display: flex;
   justify-content: space-between;
@@ -8361,6 +8387,7 @@ a.project-card:hover {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 41px;
 }
 
 .floors-pagination__arrow {
@@ -8409,6 +8436,16 @@ a.project-card:hover {
   transform: rotate(-90deg);
 }
 
+.fpagi-floor-controls {
+  display: none;
+  max-height: 370px;
+  overflow: hidden;
+}
+
+.fpagi-floor-controls--active {
+  display: block;
+}
+
 .fpagi-controls {
   display: flex;
   gap: 6px;
@@ -8452,17 +8489,40 @@ a.project-card:hover {
   flex-direction: column;
 }
 
+.floors-main {
+  width: 892px;
+  max-width: 100%;
+}
+
 .floors-main__entrance-switch {
   margin-top: 16px;
 }
 
+.floors-maps {
+  margin-top: 64px;
+  padding-bottom: 364px;
+}
+
+.floors-maps__item {
+  display: none;
+}
+
+.floors-maps__item--active {
+  display: block;
+}
+
 .single-floor {
-  width: 892px;
+  width: 100%;
   max-width: 100%;
   position: relative;
 }
 
-.single-floor svg {
+.single-floor__pictures img {
+  pointer-events: none;
+  width: 100%;
+}
+
+.single-floor__pictures svg {
   position: absolute;
   left: 0;
   top: 0;
@@ -8470,20 +8530,25 @@ a.project-card:hover {
   height: 100%;
 }
 
-.single-floor svg path,
-.single-floor svg rect {
+.single-floor__pictures svg path,
+.single-floor__pictures svg rect {
   fill: rgba(83, 102, 127, 0);
   transition-duration: 0.3s;
   cursor: pointer;
 }
 
-.single-floor svg path:hover,
-.single-floor svg rect:hover {
+.single-floor__pictures svg path:hover,
+.single-floor__pictures svg rect:hover {
   opacity: 0.7;
   fill: rgba(83, 102, 127, 0.15);
 }
 
-.single-floor svg .floor-svg-locked {
+.single-floor__pictures svg .floor-svg-apartment-active {
+  opacity: 0.7;
+  fill: rgba(83, 102, 127, 0.15);
+}
+
+.single-floor__pictures svg .floor-svg-locked {
   fill: rgba(42, 44, 55, 0.1);
   pointer-events: none;
 }
@@ -8511,10 +8576,45 @@ a.project-card:hover {
   height: 15px;
 }
 
+.floors-popup {
+  position: absolute;
+  left: 0px;
+  top: 100%;
+  border: 1px solid rgba(83, 102, 127, 0.25);
+  border-radius: 12px;
+  width: 321px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.16), 0 0 4px 0 rgba(0, 0, 0, 0.04);
+  background: #fff;
+  z-index: 10;
+  transform: translate(-50%, 0);
+  opacity: 0;
+  pointer-events: none;
+  transition-duration: 0.3s;
+}
+
+.floors-popup:hover,
+.floors-popup--active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.floors-popup .apartment-card {
+  background: none;
+  padding: 32px;
+}
+
+.floors-popup .apartment-card__picture {
+  margin-top: 19px;
+  width: calc(100% - 34px);
+}
+
+.floors-right {
+  width: 96px;
+}
+
 .floors-icons {
   display: flex;
   flex-direction: column;
-  width: 96px;
   gap: 16px;
 }
 

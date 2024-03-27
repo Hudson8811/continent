@@ -13,14 +13,455 @@ block content
 				left:-50,
 				top:+50
 			}*/
+		};
+
+
+		window.entranceInfo={
+			//[id жк]_[id литера]_[подъезд]
+			"1_1_1":{
+				icons:["img/floors-r-1.svg","img/floors-r-2.svg"]
+			},
+			"1_1_2":{
+				icons:["img/floors-r-2.svg","img/floors-r-1.svg"]
+			},
+			"1_1_3":{
+				icons:["img/floors-r-1.svg","img/floors-r-2.svg"]
+			}
+		};
+
+
+		window.apartmentsInfo={
+			//[id жк]_[id литера]_[подъезд]_[этаж]:{[квартира]:}
+			"1_1_1_9":{
+				"1":{
+					externalId:'11111111',
+					locked:true,
+					link:'/apartment.html',
+					price: '1 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"2":{
+					externalId:'11111112',
+					locked:true,
+					link:'/apartment.html',
+					price: '2 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"3":{
+					externalId:'11111113',
+					locked:true,
+					link:'/apartment.html',
+					price: '3 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"4":{
+					externalId:'11111114',
+					locked:true,
+					link:'/apartment.html',
+					price: '4 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"5":{
+					externalId:'11111115',
+					locked:true,
+					link:'/apartment.html',
+					price: '5 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"6":{
+					externalId:'11111116',
+					locked:true,
+					link:'/apartment.html',
+					price: '6 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"7":{
+					externalId:'11111117',
+					locked:true,
+					link:'/apartment.html',
+					price: '7 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"8":{
+					externalId:'11111118',
+					locked:true,
+					link:'/apartment.html',
+					price: '8 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"9":{
+					externalId:'11111119',
+					link:'/apartment.html',
+					price: '9 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"10":{
+					externalId:'11111120',
+					locked:true,
+					link:'/apartment.html',
+					price: '10 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				}
+			},
+
+			"1_1_2_8":{
+				"1":{
+					externalId:'11211111',
+					link:'/apartment.html',
+					price: '1 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"2":{
+					externalId:'11211112',
+					link:'/apartment.html',
+					price: '2 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"3":{
+					externalId:'11211113',
+					link:'/apartment.html',
+					price: '3 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"4":{
+					externalId:'11211114',
+					link:'/apartment.html',
+					price: '4 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"5":{
+					externalId:'11211115',
+					link:'/apartment.html',
+					price: '5 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"6":{
+					externalId:'11211116',
+					link:'/apartment.html',
+					price: '6 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"7":{
+					externalId:'11211117',
+					link:'/apartment.html',
+					price: '7 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"8":{
+					externalId:'11211118',
+					link:'/apartment.html',
+					price: '8 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"9":{
+					externalId:'11211119',
+					link:'/apartment.html',
+					price: '9 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"10":{
+					externalId:'11211120',
+					link:'/apartment.html',
+					price: '10 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				}
+			},
+			"1_1_2_9":{
+				"1":{
+					externalId:'11311111',
+					link:'/apartment.html',
+					price: '1 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"2":{
+					externalId:'11311112',
+					locked:true,
+					link:'/apartment.html',
+					price: '2 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"3":{
+					externalId:'11311113',
+					link:'/apartment.html',
+					price: '3 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"4":{
+					externalId:'11311114',
+					locked:true,
+					link:'/apartment.html',
+					price: '4 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"5":{
+					externalId:'11311115',
+					link:'/apartment.html',
+					price: '5 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"6":{
+					externalId:'11311116',
+					link:'/apartment.html',
+					price: '6 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"7":{
+					externalId:'11311117',
+					link:'/apartment.html',
+					price: '7 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"8":{
+					externalId:'11311118',
+					link:'/apartment.html',
+					price: '8 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"9":{
+					externalId:'11311119',
+					link:'/apartment.html',
+					price: '9 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"10":{
+					externalId:'11311120',
+					link:'/apartment.html',
+					price: '10 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				}
+			},
+			"1_1_2_10":{
+				"1":{
+					externalId:'11411111',
+					link:'/apartment.html',
+					price: '1 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"2":{
+					externalId:'11411112',
+					link:'/apartment.html',
+					price: '2 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"3":{
+					externalId:'11411113',
+					link:'/apartment.html',
+					price: '3 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"4":{
+					externalId:'11411114',
+					link:'/apartment.html',
+					price: '4 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"5":{
+					externalId:'11411115',
+					link:'/apartment.html',
+					price: '5 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"6":{
+					externalId:'11411116',
+					link:'/apartment.html',
+					price: '6 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"7":{
+					externalId:'11411117',
+					link:'/apartment.html',
+					price: '7 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"8":{
+					externalId:'11411118',
+					link:'/apartment.html',
+					price: '8 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"9":{
+					externalId:'11411119',
+					link:'/apartment.html',
+					price: '9 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"10":{
+					externalId:'11411120',
+					link:'/apartment.html',
+					price: '10 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				}
+			},
+			"1_1_3_9":{
+				"1":{
+					externalId:'11511111',
+					link:'/apartment.html',
+					price: '1 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"2":{
+					externalId:'11511112',
+					link:'/apartment.html',
+					price: '2 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"3":{
+					externalId:'11511113',
+					link:'/apartment.html',
+					price: '3 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"4":{
+					externalId:'11511114',
+					link:'/apartment.html',
+					price: '4 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"5":{
+					externalId:'11511115',
+					link:'/apartment.html',
+					price: '5 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"6":{
+					externalId:'11511116',
+					link:'/apartment.html',
+					price: '6 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"7":{
+					externalId:'11511117',
+					link:'/apartment.html',
+					price: '7 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"8":{
+					externalId:'11511118',
+					link:'/apartment.html',
+					price: '8 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"9":{
+					externalId:'11511119',
+					link:'/apartment.html',
+					price: '9 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				},
+				"10":{
+					externalId:'11511120',
+					link:'/apartment.html',
+					price: '10 937 853 руб.',
+					pricePerM: '124 018 руб. м<sup>2</sup>',
+					image: '/img/apartment-card.png',
+					props:['3-комн.','73.5 м<sup>2</sup>','20 этаж']
+				}
+			}
 
 		};
 	section.apartment-page.apartment-page--floors
 		.container
-			.apartment-page-top
-				.apartment-page-top__back
+			.floors-block-top
+				.floors-block-top__back
 					a.back-btn.back-btn--border(href="") Назад
-				.apartment-page-top__bc
+				.floors-block-top__bc
 					.apartment-breadcrumbs
 						.apartment-breadcrumbs__item
 							a(href="") ЖК «Эстет»
@@ -28,47 +469,135 @@ block content
 							span Литер 1
 						.apartment-breadcrumbs__item
 							span Выберите квартиру
-			.floors-block
+				.floors-block-top__right
+			.floors-block.js-floors-block
 				.floors-pagination
 					.floors-block__title.floors-pagination__title Этаж
 
-					.floors-pagination__arrow.floors-pagination__arrow--prev
+					.floors-pagination__arrow.floors-pagination__arrow--prev.js-prev-etage
 					.floors-pagination__main
-						.fpagi-controls.fpagi-controls--left
-							.fpagi-controls__item 12
-							.fpagi-controls__item 11
-							.fpagi-controls__item 10
-							.fpagi-controls__item.fpagi-controls__item--active 9
-							.fpagi-controls__item 8
-							.fpagi-controls__item 7
-							.fpagi-controls__item 6
-							.fpagi-controls__item 5
-					.floors-pagination__arrow.floors-pagination__arrow--next
+						.fpagi-floor-controls(data-entrance="1")
+							.fpagi-controls.fpagi-controls--left
+								.fpagi-controls__item.js-change-etage(data-id="11") 11
+								.fpagi-controls__item.js-change-etage(data-id="10") 10
+								.fpagi-controls__item.js-change-etage(data-id="9") 9
+								.fpagi-controls__item.js-change-etage(data-id="8") 8
+								.fpagi-controls__item.js-change-etage(data-id="7") 7
+								.fpagi-controls__item.js-change-etage(data-id="6") 6
+								.fpagi-controls__item.js-change-etage(data-id="5") 5
+								.fpagi-controls__item.js-change-etage(data-id="4") 4
+								.fpagi-controls__item.js-change-etage(data-id="3") 3
+								.fpagi-controls__item.js-change-etage(data-id="2") 2
+								.fpagi-controls__item.js-change-etage(data-id="1") 1
+						.fpagi-floor-controls.fpagi-floor-controls--active(data-entrance="2")
+							.fpagi-controls.fpagi-controls--left
+								.fpagi-controls__item.js-change-etage(data-id="21") 21
+								.fpagi-controls__item.js-change-etage(data-id="20") 20
+								.fpagi-controls__item.js-change-etage(data-id="19") 19
+								.fpagi-controls__item.js-change-etage(data-id="18") 18
+								.fpagi-controls__item.js-change-etage(data-id="17") 17
+								.fpagi-controls__item.js-change-etage(data-id="16") 16
+								.fpagi-controls__item.js-change-etage(data-id="15") 15
+								.fpagi-controls__item.js-change-etage(data-id="14") 14
+								.fpagi-controls__item.js-change-etage(data-id="13") 13
+								.fpagi-controls__item.js-change-etage(data-id="12") 12
+								.fpagi-controls__item.js-change-etage(data-id="11") 11
+								.fpagi-controls__item.js-change-etage(data-id="10") 10
+								.fpagi-controls__item.fpagi-controls__item--active.js-change-etage(data-id="9") 9
+								.fpagi-controls__item.js-change-etage(data-id="8") 8
+								.fpagi-controls__item.js-change-etage(data-id="7") 7
+								.fpagi-controls__item.js-change-etage(data-id="6") 6
+								.fpagi-controls__item.js-change-etage(data-id="5") 5
+								.fpagi-controls__item.js-change-etage(data-id="4") 4
+								.fpagi-controls__item.js-change-etage(data-id="3") 3
+								.fpagi-controls__item.js-change-etage(data-id="2") 2
+								.fpagi-controls__item.js-change-etage(data-id="1") 1
+						.fpagi-floor-controls(data-entrance="3")
+							.fpagi-controls.fpagi-controls--left
+								.fpagi-controls__item.js-change-etage(data-id="10") 10
+								.fpagi-controls__item.js-change-etage(data-id="9") 9
+								.fpagi-controls__item.js-change-etage(data-id="8") 8
+								.fpagi-controls__item.js-change-etage(data-id="7") 7
+								.fpagi-controls__item.js-change-etage(data-id="6") 6
+								.fpagi-controls__item.js-change-etage(data-id="5") 5
+								.fpagi-controls__item.js-change-etage(data-id="4") 4
+								.fpagi-controls__item.js-change-etage(data-id="3") 3
+								.fpagi-controls__item.js-change-etage(data-id="2") 2
+								.fpagi-controls__item.js-change-etage(data-id="1") 1
+					.floors-pagination__arrow.floors-pagination__arrow--next.js-next-etage
 
 
 				.floors-main
-					.floors-block__title.floors-main__title Подъезд
+					.floors-block__title.floors-main__title Подъезд <div style="opacity:0.4;color:red; line-height:1;">(доступно будет на вёрстке для тестов переключение между (П->Эт) 1->9, 2->8, 2->9, 2->10, 3->9)</div>
 					.floors-main__entrance-switch
 						.fpagi-controls.fpagi-controls--right
-							.fpagi-controls__item.fpagi-controls__item--active 1
-							.fpagi-controls__item 2
-							.fpagi-controls__item 3
+							.fpagi-controls__item.fpagi-controls__item--active.js-change-entrance 1
+							.fpagi-controls__item.js-change-entrance 2
+							.fpagi-controls__item.js-change-entrance 3
 
 					.floors-maps
+						.floors-maps__item
+							.single-floor.js-single-floor(data-complex-id="1" data-building-id="1" data-entrance="1"  data-floor="9")
+								.single-floor__pictures
+									img(src="img/floors/1_1_2_9_2-10.png", alt="")
+									include ../../img/floors/1_1_2_9_2-10.svg
 
-						.floors-maps__item.single-floor.js-single-floor(data-complex-id="1" data-building-id="1" data-entrance="2"  data-floor="9")
-							img(src="img/floors/1_1_ 2_2-10.png", alt="")
-							include ../../img/floors/1_1_ 2_2-10.svg
-							//.single-locked-icon
-						.single-floor.js-single-floor.js-single-floor-test-lock(data-complex-id="1" data-building-id="1" data-entrance="2" data-floor="9")
-							img(src="img/floors/1_1_ 2_2-10.png", alt="")
-							include ../../img/floors/1_1_ 2_2-10.svg
-							//.single-locked-icon
+
+
+						.floors-maps__item
+							.single-floor.js-single-floor(data-complex-id="1" data-building-id="1" data-entrance="2" data-floor="8")
+								.single-floor__pictures
+									img(src="img/floors/1_1_2_9_2-10.png", alt="")
+									include ../../img/floors/1_1_2_9_2-10.svg
+
+						.floors-maps__item.floors-maps__item--active
+							.single-floor.js-single-floor(data-complex-id="1" data-building-id="1" data-entrance="2"  data-floor="9")
+								.single-floor__pictures
+									img(src="img/floors/1_1_2_9_2-10.png", alt="")
+									include ../../img/floors/1_1_2_9_2-10.svg
+								//.single-locked-icon
+
+								//.floors-popup
+									a.apartment-card.apartment-card--w100(href="")
+										.apartment-card__text
+											.apartment-card__price.apartment-card__price--mt0
+												.apartment-card__new-price 7 937 853 руб.
+											.apartment-card__price-per-m 124 018 руб. м<sup>2</sup>
+											.apartment-card__props.apartment-inline-props
+												.apartment-inline-prop 3-комн.
+												.apartment-inline-prop 73.5 м<sup>2</sup>
+												.apartment-inline-prop 20 этаж
+										.apartment-card__favourite-toggle.favourite-toggle.js-favourite-toggle(data-apartment-id="1")
+											svg
+												use(xlink:href="img/sprites/sprite.svg#heart")
+										.apartment-card__picture
+											img(src="img/apartment-card.png", alt="")
+
+
+
+						.floors-maps__item
+							.single-floor.js-single-floor(data-complex-id="1" data-building-id="1" data-entrance="2" data-floor="10")
+								.single-floor__pictures
+									img(src="img/floors/1_1_2_9_2-10.png", alt="")
+									include ../../img/floors/1_1_2_9_2-10.svg
+
+						.floors-maps__item
+							.single-floor.js-single-floor(data-complex-id="1" data-building-id="1" data-entrance="3"  data-floor="9")
+								.single-floor__pictures
+									img(src="img/floors/1_1_2_9_2-10.png", alt="")
+									include ../../img/floors/1_1_2_9_2-10.svg
+
 				.floors-right
-					.floors-icons
+					.floors-icons.js-floors-icons
 						.floors-icon
 							img(src="img/floors-r-1.svg", alt="")
 						.floors-icon
 							img(src="img/floors-r-2.svg", alt="")
+
+
+
+
+
+
 
 	.prefooter-padding

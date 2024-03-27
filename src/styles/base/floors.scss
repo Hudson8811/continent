@@ -1,3 +1,29 @@
+.floors-block-top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+
+	&__back {
+		min-width: 102px;
+	}
+
+	&__bc {
+		width: 892px;
+		max-width: 100%;
+		position: relative;
+	}
+
+	&__right {
+		min-width: 161px;
+		min-height: 1px;
+	}
+}
+
+
+
+
+
 .floors-block {
 	display: flex;
 	justify-content: space-between;
@@ -17,6 +43,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
+	width: 41px;
 
 	&__title {}
 
@@ -71,7 +98,14 @@
 }
 
 
-
+.fpagi-floor-controls{
+	display: none;
+	max-height: 370px;
+	overflow: hidden;
+	&--active{
+		display: block;
+	}
+}
 .fpagi-controls {
 	display: flex;
 	gap: 6px;
@@ -86,8 +120,6 @@
 		align-items: center;
 		border-radius: 8px;
 		background: rgba(42, 44, 55, 0.1);
-
-
 		font-weight: 400;
 		font-size: 16px;
 		line-height: 140%;
@@ -123,49 +155,67 @@
 	.fpagi-controls__item--active {}
 }
 
-
 .floors-main {
-
+	width: 892px;
+	max-width: 100%;
 	&__entrance-switch {
 		margin-top: 16px;
-
 	}
+}
 
+.floors-maps {
+	margin-top: 64px;
+	padding-bottom: 364px;
+
+	&__item{
+		display: none;
+		&--active{
+			display: block;
+		}
+	}
 }
 
 .single-floor {
-	width: 892px;
+	width: 100%;
 	max-width: 100%;
 	position: relative;
 
-	img {}
-
-	svg {
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-
-		path,
-		rect {
-			fill: rgba(83, 102, 127, 0.0);
-			transition-duration: .3s;
-			cursor: pointer;
+	&__pictures{
+		img {
+			pointer-events: none;
+			width: 100%;
 		}
+		svg {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
 
-		path,
-		rect {
-			&:hover {
+			path,
+			rect {
+				fill: rgba(83, 102, 127, 0.0);
+				transition-duration: .3s;
+				cursor: pointer;
+			}
+
+			path,
+			rect {
+				&:hover {
+					opacity: .7;
+					fill: rgba(83, 102, 127, 0.15);
+				}
+			}
+			.floor-svg-apartment-active{
 				opacity: .7;
 				fill: rgba(83, 102, 127, 0.15);
 			}
+			.floor-svg-locked {
+				fill: rgba(42, 44, 55, 0.1);
+				pointer-events: none;
+			}
 		}
 
-		.floor-svg-locked {
-			fill: rgba(42, 44, 55, 0.1);
-			pointer-events: none;
-		}
 	}
 }
 
@@ -205,13 +255,46 @@
 
 }
 
-.floors-right {}
+.floors-popup {
+	position: absolute;
+	left: 0px;
+	top: 100%;
+	border: 1px solid rgba(83, 102, 127, 0.25);
+	border-radius: 12px;
+	width: 321px;
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.16), 0 0 4px 0 rgba(0, 0, 0, 0.04);
+	background: #fff;
+	z-index: 10;
+	transform: translate(-50%, 0);
+
+	opacity: 0;
+	pointer-events: none;
+	transition-duration: .3s;
+
+	&:hover,&--active{
+		opacity: 1;
+		pointer-events: all;
+	}
+	.apartment-card{
+		background: none;
+		padding: 32px;
+
+		&__picture {
+			margin-top: 19px;
+			width: calc(100% - 34px);
+		}
+	}
+}
+
+.floors-right {
+	width: 96px;
+
+}
 
 
 .floors-icons {
 	display: flex;
 	flex-direction: column;
-	width: 96px;
 	gap: 16px;
 }
 
@@ -224,4 +307,6 @@
 		width: 100%;
 		height: auto;
 	}
+
+
 }
