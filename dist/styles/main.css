@@ -8373,6 +8373,7 @@ a.project-card:hover {
   justify-content: space-between;
   margin-top: 50px;
   gap: 24px;
+  transition-duration: 0.3s;
 }
 
 .floors-block__title {
@@ -8381,6 +8382,11 @@ a.project-card:hover {
   line-height: 140%;
   letter-spacing: -0.02em;
   color: #000;
+}
+
+.floors-block--hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .floors-pagination {
@@ -8480,10 +8486,6 @@ a.project-card:hover {
   pointer-events: none;
 }
 
-.fpagi-controls--left {
-  flex-direction: column;
-}
-
 .fpagi-controls--floors-left {
   display: flex;
   flex-direction: column;
@@ -8500,7 +8502,6 @@ a.project-card:hover {
 
 .floors-maps {
   margin-top: 64px;
-  padding-bottom: 364px;
 }
 
 .floors-maps__item {
@@ -8728,6 +8729,10 @@ a.project-card:hover {
   .genplan-icon--active + .genplan-info {
     opacity: 1;
     pointer-events: all;
+  }
+
+  .fpagi-controls--left {
+    flex-direction: column;
   }
 }
 
@@ -9937,6 +9942,87 @@ a.project-card:hover {
     pointer-events: all;
   }
 
+  .floors-block-top {
+    display: block;
+  }
+
+  .floors-block-top__bc {
+    margin-top: 24px;
+    width: 100%;
+  }
+
+  .floors-block-top__right {
+    display: none;
+  }
+
+  .floors-block {
+    margin-top: 21px;
+    flex-direction: column;
+  }
+
+  .floors-block__title {
+    font-size: 14px;
+  }
+
+  .floors-pagination {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .floors-pagination__title {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .floors-pagination__arrow {
+    width: 34px;
+    height: 34px;
+  }
+
+  .floors-pagination__arrow::before {
+    transform: rotate(0deg);
+  }
+
+  .floors-pagination__arrow--prev {
+    margin-top: 0;
+  }
+
+  .floors-pagination__main {
+    margin-top: 0;
+    margin-left: 13px;
+  }
+
+  .floors-pagination__arrow--next {
+    margin-left: 13px;
+    margin-top: 0;
+  }
+
+  .floors-pagination__arrow--next::before {
+    transform: rotate(180deg);
+  }
+
+  .fpagi-controls__item {
+    padding: 7px 5px;
+    min-width: 34px;
+    min-height: 34px;
+    font-size: 14px;
+  }
+
+  .floors-main {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .floors-main__title {
+    margin-top: 24px;
+  }
+
+  .floors-maps {
+    margin-top: 0;
+  }
+
   .single-locked-icon {
     width: 22px;
     height: 22px;
@@ -9945,6 +10031,20 @@ a.project-card:hover {
   .single-locked-icon::after {
     width: 9px;
     height: 9px;
+  }
+
+  .floors-right {
+    width: 100%;
+  }
+
+  .floors-icons {
+    gap: 24px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .floors-icon {
+    width: 96px;
   }
 }
 

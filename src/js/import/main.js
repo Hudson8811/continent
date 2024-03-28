@@ -18,6 +18,21 @@ function myUnlockBody() {
 	$('body').removeClass('hide-scrollbar');
 }
 
+function refreshFavourites(){
+	var favouriteApartments = Cookies.get('favouriteApartments');
+		if (typeof (favouriteApartments) !== 'undefined') {
+			favouriteApartments = JSON.parse(favouriteApartments);
+			$('.js-favourite-toggle').each(function () {
+				var thisapartmentId = $(this).attr('data-apartment-id');
+				if (favouriteApartments.includes(thisapartmentId)) {
+					$(this).addClass('favourite-toggle--active')
+				}
+			})
+		}
+}
+
+
+
 $(function () {
 	const getScrollbarWidth = function () {
 		var cssSBWidthVariableName = '--js-scrollbar-width';
@@ -642,17 +657,7 @@ $(function () {
 
 
 	if ($('.js-favourite-toggle').length > 0) {
-		var favouriteApartments = Cookies.get('favouriteApartments');
-		if (typeof (favouriteApartments) !== 'undefined') {
-			favouriteApartments = JSON.parse(favouriteApartments);
-			$('.js-favourite-toggle').each(function () {
-				var thisapartmentId = $(this).attr('data-apartment-id');
-				if (favouriteApartments.includes(thisapartmentId)) {
-					$(this).addClass('favourite-toggle--active')
-				}
-			})
-		}
-
+		refreshFavourites();
 
 	}
 

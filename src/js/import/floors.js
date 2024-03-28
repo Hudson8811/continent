@@ -56,7 +56,7 @@ function processRoom(pathEl, parentBlock, complexId, buildingId, entrance, floor
 		parentBlock.append('<div class="single-locked-icon" style="' + positionCss + '" data-id="' + room + '"></div>');
 	}
 
-	if (!window.isMax960) {
+	if (!window.isMobileMap) {
 		generateFloorApartmentPopup(parentBlock, roomInfo, positionCss);
 	}
 
@@ -80,34 +80,38 @@ function refreshEntranceIcons(complexId, buildingId, entrance) {
 }
 function initSingleFloor(parentBlock) {
 	//var parentBlock = $(this);//.js-single-floor
-	if (parentBlock.hasClass('single-floor--locked')) {
-		return;
-	}
+
+	parentBlock.closest('.floors-maps__item').addClass('floors-maps__item--active').siblings('.floors-maps__item--active').removeClass('floors-maps__item--active');
 
 	var complexId = parentBlock.attr('data-complex-id'),
 		buildingId = parentBlock.attr('data-building-id'),
 		entrance = parentBlock.attr('data-entrance'),
 		floor = parentBlock.attr('data-floor');
+	refreshEntranceIcons(complexId, buildingId, entrance);
+
+	if (parentBlock.hasClass('single-floor--init')) {
+		return;
+	}
 
 	var floorApratmentsInfo = window.apartmentsInfo[complexId + '_' + buildingId + '_' + entrance + '_' + floor];
 	if (typeof (floorApratmentsInfo) === 'undefined') {
 		console.log('err floorApratmentsInfo  100');
 	}
 
-	refreshEntranceIcons(complexId, buildingId, entrance);
 	parentBlock.find('.single-floor__pictures svg path[id],.single-floor__pictures svg rect[id]').each(function () {
 		var room = $(this).attr('id');
 		var roomInfo = floorApratmentsInfo[room];
 		processRoom($(this), parentBlock, complexId, buildingId, entrance, floor, room, roomInfo);
-
 	});
 
-	parentBlock.addClass('single-floor--locked')
+	refreshFavourites();
+	parentBlock.addClass('single-floor--init')
+
 }
 
 
 $(function () {
-	window.isMax960 = window.matchMedia('(max-width:960px)').matches;
+	window.isMobileMap = window.matchMedia('(max-width:1200px)').matches;
 
 
 	$('.js-floors-block').on('click', '.js-single-floor .single-floor__pictures path', function () {
@@ -115,7 +119,7 @@ $(function () {
 		//window.open($(this).attr('data-link'), '_blank');
 	});
 
-	if (!window.isMax960) {
+	if (!window.isMobileMap) {
 		$('.js-floors-block').on('mouseenter', '.js-single-floor .single-floor__pictures path', function () {
 			$(this).closest('svg').find('.floor-svg-apartment-active').removeClass('floor-svg-apartment-active');
 			$(this).addClass('floor-svg-apartment-active');
@@ -128,25 +132,48 @@ $(function () {
 	}
 
 
-	initSingleFloor($('.floors-maps__item--active .js-single-floor'));
-
-
-
 	$('.js-change-entrance').on('click', function () {
 		$(this).addClass('fpagi-controls__item--active').siblings().removeClass('fpagi-controls__item--active');
+		var id=$(this).attr('data-id');
+		var prevEntranceActiveFloor=parseInt($('.fpagi-floor-controls--active .fpagi-controls__item--active').attr('data-id'));
+
+		$('.fpagi-floor-controls[data-entrance="'+id+'"]').addClass('fpagi-floor-controls--active').siblings('.fpagi-floor-controls--active').removeClass('fpagi-floor-controls--active');
+
+		var floorsInEntrance=Array.from($('.fpagi-floor-controls--active .js-change-floor').map(function(id,el){
+			return parseInt($(el).attr('data-id'));
+		}))
+		//во избежание пустоты массивов
+		floorsInEntrance.push(999999);
+		floorsInEntrance.push(-999999);
+
+		var closestRight = Math.min(...floorsInEntrance.filter(v => v >= prevEntranceActiveFloor));
+		var closestLeft = Math.max(...floorsInEntrance.filter(v => v < prevEntranceActiveFloor));
+		var newActiveFloorId=prevEntranceActiveFloor;
+
+		if(Math.abs(floorsInEntrance-closestRight)>Math.abs(floorsInEntrance-closestLeft)){
+			newActiveFloorId=closestLeft;
+		}
+		else{
+			newActiveFloorId=closestRight;
+		}
+		actualizeFloor($('.fpagi-floor-controls--active .js-change-floor[data-id="'+newActiveFloorId+'"]'));
 	});
 
-	function actualizeFloorSwitch(activeElem) {
+	function actualizeFloor(activeElem) {
+		$('.floors-block').addClass('floors-block--hidden');
+		setTimeout(() => {
 		var parentEl = activeElem.closest('.fpagi-controls');
-		const prevToShow = 3;
-		const nextToShow = 4;
-		var elementsToShow = 8;
+
+		var elementsToShow = window.isMobileMap?5:8;
+		var prevToShow = Math.floor((elementsToShow-1)/2);
+		var nextToShow = elementsToShow-prevToShow;
+
 		var prevCount = activeElem.prevAll().length;
 		var nextCount = activeElem.nextAll().length;
 
-		parentEl.find('.js-change-etage').hide();
+		parentEl.find('.js-change-floor').hide();
 		activeElem.addClass('fpagi-controls__item--active').siblings().removeClass('fpagi-controls__item--active');
-		parentEl.find('.js-change-etage').hide();
+		parentEl.find('.js-change-floor').hide();
 
 		prevModifiedCount = Math.min(prevCount, prevToShow);
 		nextModifiedCount = Math.min(nextCount, nextToShow);
@@ -163,24 +190,39 @@ $(function () {
 			prevN.show();
 			prevN.nextAll().slice(0, elementsToShow-1).show();
 		}
+
+
+		var floor=activeElem.attr('data-id');
+		var entranceId=$('.js-change-entrance.fpagi-controls__item--active').attr('data-id');
+
+		console.log('entranceId='+entranceId);
+		console.log('floor='+floor);
+
+		initSingleFloor($('.js-single-floor[data-entrance="'+entranceId+'"][data-floor="'+floor+'"]'));
+		setTimeout(() => {
+			$('.floors-block').removeClass('floors-block--hidden');
+		}, 100);
+	}, 300);
 	}
-	actualizeFloorSwitch($('.fpagi-floor-controls--active .js-change-etage[data-id="9"]'));
+
+	actualizeFloor($('.fpagi-floor-controls--active .fpagi-controls__item--active'));
 
 
-	$('.js-change-etage').on('click', function () {
-		actualizeFloorSwitch($(this));
+
+	$('.js-change-floor').on('click', function () {
+		actualizeFloor($(this));
 		//$.extend({}, object1, object2);
 	});
-	$('.js-prev-etage').on('click', function () {
+	$('.js-prev-floor').on('click', function () {
 		var prev=$('.fpagi-floor-controls--active .fpagi-controls__item--active').prev();
 		if(prev.length>0){
-			actualizeFloorSwitch(prev);
+			actualizeFloor(prev);
 		}
 	});
-	$('.js-next-etage').on('click', function () {
+	$('.js-next-floor').on('click', function () {
 		var next=$('.fpagi-floor-controls--active .fpagi-controls__item--active').next();
 		if(next.length>0){
-			actualizeFloorSwitch(next);
+			actualizeFloor(next);
 		}
 	});
 
