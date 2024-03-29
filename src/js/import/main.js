@@ -118,6 +118,8 @@ $(function () {
 	});
 
 
+
+
 	$('.js-cards-slider').each(function () {
 
 		var swiper = new Swiper($(this)[0], {
@@ -167,20 +169,72 @@ $(function () {
 	$('.js-benefits-cards-slider').each(function () {
 
 		var swiper = new Swiper($(this)[0], {
-			slidesPerView: 1,
+			slidesPerView: 'auto',
 			spaceBetween: 10,
 			autoHeight: false,
 			breakpoints: {
 				// when window width is >= 320px
 				641: {
 					autoHeight: false,
-					slidesPerView: 2,
+					slidesPerView: 'auto',
 					spaceBetween: 22
 				},
 
 				961: {
 					autoHeight: false,
-					slidesPerView: 2,
+					slidesPerView: 'auto',
+					spaceBetween: 32
+				},
+
+				1201: {
+					autoHeight: false,
+					//slidesPerView: 3.117,
+					slidesPerView: 'auto',
+					spaceBetween: 32
+				}
+			},
+			pagination: {
+				el: $(this).find('.js-swiper-pagination')[0],
+				type: "fraction",
+				renderFraction: function (currentClass, totalClass) {
+					return '<span class="slider-controls-pagination__digit slider-controls-pagination__digit--current ' + currentClass + '"></span>' +
+						'<span class="slider-controls-pagination__delimiter"></span> ' +
+						'<span class="slider-controls-pagination__digit slider-controls-pagination__digit--total ' + totalClass + '"></span>';
+				}
+			},
+			navigation: {
+				nextEl: $(this).find('.js-swiper-button-next')[0],
+				prevEl: $(this).find('.js-swiper-button-prev')[0],
+			},
+
+			/*autoplay: {
+				delay: 5000,
+			},*/
+		});
+	});
+
+	$('.js-building-progress-cards-slider').each(function () {
+
+		var swiper = new Swiper($(this)[0], {
+			slidesPerView: 1,
+			spaceBetween: 16,
+			autoHeight: false,
+			breakpoints: {
+				// when window width is >= 320px
+				481: {
+					autoHeight: false,
+					slidesPerView: 1,
+					spaceBetween: 16
+				},
+				641: {
+					autoHeight: false,
+					slidesPerView: 'auto',
+					spaceBetween: 22
+				},
+
+				961: {
+					autoHeight: false,
+					slidesPerView: 'auto',
 					spaceBetween: 32
 				},
 
@@ -642,6 +696,12 @@ $(function () {
 	}
 
 
+	$('.js-simplebar').each(function () {
+		var simpleBar = new SimpleBar($(this)[0], {
+			autoHide: false
+		});
+
+	});
 
 
 	$(window).on("resize", function () {
@@ -787,9 +847,6 @@ $(function () {
 		$(sliderSection).find('.js-aplans-thumb-inp').on('change', function () {
 			var infoId = $(this).attr('data-info-id');
 
-console.log('-----------');
-console.log(infoId);
-
 			swiper.slides.filter(function(el){return !(el.classList.contains('aplans-info-slider-slide--disabled'));}).forEach((slide, index) => {
 				console.log($(slide).attr('data-info-id'));
 				if ($(slide).attr('data-info-id') === infoId) {
@@ -798,11 +855,6 @@ console.log(infoId);
 					return;
 				}
 			});
-
-			//$(this).closest('section').find('.partment-plans-thumb--active').removeClass('partment-plans-thumb--active');
-
-			//.apartment-plans-thumb.apartment-plans-thumb--active
-
 		});
 
 		$(sliderSection).on('click', '.js-apartment-plans-group-toggle', function () {
@@ -837,4 +889,43 @@ console.log(infoId);
 
 	});
 
+
+
+
+	$('.js-impobj-slider').each(function () {
+
+		var sliderSection = $(this).closest('section');
+		var swiper = new Swiper($(this)[0], {
+			pagination: {
+				el: $(this).find('.js-swiper-pagination')[0],
+				type: "fraction",
+				renderFraction: function (currentClass, totalClass) {
+					return '<span class="slider-controls-pagination__digit slider-controls-pagination__digit--current ' + currentClass + '"></span>' +
+						'<span class="slider-controls-pagination__delimiter"></span> ' +
+						'<span class="slider-controls-pagination__digit slider-controls-pagination__digit--total ' + totalClass + '"></span>';
+				}
+			},
+			navigation: {
+				nextEl: $(this).find('.js-swiper-button-next')[0],
+				prevEl: $(this).find('.js-swiper-button-prev')[0],
+			},
+
+			autoplay: {
+				delay: 5000,
+			},
+		});
+
+		$(sliderSection).find('.js-impobj-control').on('click', function () {
+			var target = $(this).attr('data-target');
+			swiper.slides.forEach((slide, index) => {
+				if (slide.getAttribute('data-target') === target) {
+					swiper.slideTo(index);
+					return;
+				}
+			});
+		});
+	});
+
+
+	$(this).find('.js-impobj-slider')
 });

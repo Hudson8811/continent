@@ -856,6 +856,7 @@
 
 .slider-controls--on-white {
 	background: none;
+    backdrop-filter: none;
 
 	.slider-controls-pagination {
 		color: #252831;
@@ -914,7 +915,8 @@
 
 		}
 		@include max(lg) {
-			width: calc((100 * var(--js-real-vw) - 30px * 2 - 32px * 2) / 3);
+			//width: calc((100 * var(--js-real-vw) - 30px * 2 - 32px * 2) / 3);
+			width: 260px;
 			//max-width: calc(100% - 30px * 2);
 		}
 

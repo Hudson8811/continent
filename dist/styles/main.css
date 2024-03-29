@@ -5703,6 +5703,10 @@ html {
   margin-top: 24px;
 }
 
+.ftb-slde-info__address + * + * {
+  margin-top: 12px;
+}
+
 .ftb-slde-info__labels {
   margin-top: 24px;
 }
@@ -5711,7 +5715,6 @@ html {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 24px;
 }
 
 .ftb-labels__item {
@@ -7958,6 +7961,7 @@ a.project-card:hover {
 
 .slider-controls--on-white {
   background: none;
+  backdrop-filter: none;
 }
 
 .slider-controls--on-white .slider-controls-pagination {
@@ -8005,25 +8009,19 @@ a.project-card:hover {
   padding: 64px 0;
 }
 
-.pftb-info-flex {
+.pftb-info-flex-wrap {
   border-top: 1px solid rgba(255, 255, 255, 0.25);
+  padding-top: 16px;
+}
+
+.pftb-info-flex {
   display: flex;
   gap: 32px;
-  padding-top: 16px;
   margin-left: -32px;
 }
 
 .pftb-info-item {
   width: calc((100% + 32px - 160px) / 6);
-}
-
-.pftb-info-item:not(:first-child) {
-  border-left: 1px solid rgba(255, 255, 255, 0.25);
-  padding-left: 32px;
-}
-
-.pftb-info-item:first-child {
-  padding-left: 32px;
 }
 
 .pftb-info-item__name {
@@ -8044,7 +8042,9 @@ a.project-card:hover {
 }
 
 .benefit-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   width: 100%;
   position: relative;
   z-index: 1;
@@ -8127,6 +8127,10 @@ a.project-card:hover {
   flex-wrap: wrap;
 }
 
+.subscribe-block__left {
+  max-width: 100%;
+}
+
 .subscribe-block__title {
   width: 532px;
   max-width: 100%;
@@ -8178,7 +8182,21 @@ a.project-card:hover {
   gap: 24px;
 }
 
-.genplan-desctipton {
+.genplan-descripton {
+  display: flex;
+  align-items: center;
+}
+
+.genplan-descripton__icon {
+  min-width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  background: url(../img/svg/i-icon-24.svg) no-repeat center center;
+  background-size: contain;
+  opacity: 0.5;
+}
+
+.genplan-descripton__text {
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
@@ -8186,8 +8204,8 @@ a.project-card:hover {
   color: #252831;
 }
 
-.genplan-desctipton__icon {
-  padding-left: 34px;
+.container--genplan-section-mob-bottom {
+  margin-top: 24px;
 }
 
 .genplan-wrap {
@@ -8369,6 +8387,25 @@ a.project-card:hover {
   border: 1px solid rgba(37, 40, 49, 0.25);
   width: 100%;
   flex-grow: 1;
+  position: relative;
+}
+
+.apartment-plans-thumbs__inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+
+.apartment-plans-thumbs__inner .simplebar-track.simplebar-vertical {
+  top: 12px;
+  bottom: 12px;
+}
+
+.apartment-plans-thumbs__inner .simplebar-scrollbar::before {
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .apartment-plans-thumb {
@@ -8552,6 +8589,289 @@ a.project-card:hover {
 
 .aplansi-prop + .aplansi-prop {
   margin-top: 24px;
+}
+
+.important-objects-flex {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 48px;
+}
+
+.important-objects-flex__left {
+  display: flex;
+  flex-direction: column;
+  width: 32.676%;
+}
+
+.important-objects-flex__left > * {
+  flex-grow: 1;
+  width: 100%;
+}
+
+.important-objects-flex__right {
+  display: flex;
+  flex-direction: column;
+  width: calc(67.32336% - 32px);
+}
+
+.important-objects-flex__right > * {
+  flex-grow: 1;
+  width: 100%;
+}
+
+.impobj-slider {
+  position: relative;
+}
+
+.impobj-slider__controls-wrap {
+  left: 32px;
+  top: 32px;
+  position: absolute;
+  z-index: 3;
+}
+
+.impobj-slide {
+  overflow: hidden;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.impobj-slide__pic {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.impobj-slide__pic img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.impobj-slide__pic::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
+  opacity: 0.75;
+}
+
+.impobj-slide__text {
+  padding: 90px 32px 32px;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  z-index: 3;
+}
+
+.impobj-slide__title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.impobj-slide__dist {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-top: 10px;
+  padding-left: 21px;
+  background: url(../img/svg/dist-on-car.svg) no-repeat left center;
+  background-size: 11px auto;
+}
+
+.impobj-map {
+  position: relative;
+}
+
+.impobj-map__pic {
+  width: 100%;
+}
+
+.impobj-map__pic img {
+  height: auto;
+  width: 100%;
+}
+
+.impobj-map-object {
+  width: 50px;
+  height: 50px;
+  display: block;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  padding: 5px;
+  background: #f6f6f6;
+  border: 1px solid rgba(83, 102, 127, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.impobj-map-object__pic {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.3s;
+}
+
+.impobj-map-object__pic svg {
+  width: 18px;
+  height: 18px;
+}
+
+.impobj-map-object__pic svg {
+  fill: #53667f;
+  transition-duration: 0.3s;
+}
+
+.impobj-map-object:hover .impobj-map-object__pic {
+  background: #53667f;
+}
+
+.impobj-map-object:hover .impobj-map-object__pic svg {
+  fill: #fff;
+}
+
+.impobj-map-object:hover .impobj-map-object__text {
+  opacity: 1;
+}
+
+.impobj-map-object__text {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, 0);
+  margin-top: 10px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.05);
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px 15px;
+  pointer-events: none;
+  white-space: nowrap;
+  transition-duration: 0.3s;
+  opacity: 0;
+}
+
+.newssec--light .newssec-main {
+  border-top: 1px solid rgba(37, 40, 49, 0.25);
+}
+
+.newssec--light .news-card__title {
+  color: #252831;
+}
+
+.newssec--light .news-card__desc {
+  color: rgba(37, 40, 49, 0.8);
+}
+
+.gallery-card {
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.gallery-card:hover {
+  opacity: 0.7;
+}
+
+.gallery-card__pic {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-card__pic::before {
+  content: "";
+  display: block;
+  padding-top: 76.5957%;
+}
+
+.gallery-card__pic img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.gallery-card__text {
+  margin-top: 32px;
+  padding-right: 42px;
+  position: relative;
+}
+
+.gallery-card__title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 110%;
+  letter-spacing: -0.02em;
+  color: #252831;
+  font-family: "SONGER SemiExpanded", sans-serif;
+}
+
+.gallery-card__desc {
+  margin-top: 12px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+  color: rgba(37, 40, 49, 0.8);
+}
+
+.gallery-card__arrow {
+  position: absolute;
+  right: -4px;
+  top: -4px;
+}
+
+.gallery-card__arrow svg {
+  width: 41px;
+  height: 41px;
+}
+
+.gallery-card__hidden {
+  display: none;
+}
+
+.building-progress-top-wrap {
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(37, 40, 49, 0.25);
+  margin-bottom: 48px;
+}
+
+.cards-slider__top--building-progress {
+  position: relative;
+}
+
+.cards-slider__swiper-wrapper--building-progress {
+  margin-top: 0;
 }
 
 .floors-block-top {
@@ -8930,6 +9250,14 @@ a.project-card:hover {
     display: block;
   }
 
+  .genplan-descripton--mob {
+    display: none;
+  }
+
+  .container--genplan-section-mob-bottom {
+    display: none;
+  }
+
   .genplan-block__infos--mobile {
     display: none;
   }
@@ -8937,6 +9265,14 @@ a.project-card:hover {
   .genplan-icon--active + .genplan-info {
     opacity: 1;
     pointer-events: all;
+  }
+
+  .tabs-controls--building-progress {
+    position: absolute;
+    top: calc(50% + 5px);
+    left: calc(50% + 16px);
+    transform: translate(-50%, -50%);
+    z-index: 2;
   }
 
   .fpagi-controls--left {
@@ -8981,6 +9317,17 @@ a.project-card:hover {
   }
 }
 
+@media only screen and (min-width: 1300px) {
+  .pftb-info-item:not(:first-child) {
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+    padding-left: 32px;
+  }
+
+  .pftb-info-item:first-child {
+    padding-left: 32px;
+  }
+}
+
 @media only screen and (min-width: 1600px) {
   .cards-slider-slide--project-page {
     width: 469.3333333333px;
@@ -9006,6 +9353,17 @@ a.project-card:hover {
 @media only screen and (max-width: 1470px) {
   .pw-control--customxlg-w50 {
     width: calc(50% - 16px);
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .pftb-info-flex {
+    flex-wrap: wrap;
+  }
+
+  .pftb-info-item {
+    width: calc((100% + 32px - 96px) / 3);
+    flex-wrap: wrap;
   }
 }
 
@@ -9227,7 +9585,44 @@ a.project-card:hover {
   }
 
   .cards-slider-slide--project-page {
-    width: calc((100 * var(--js-real-vw) - 60px - 64px) / 3);
+    width: 260px;
+  }
+
+  .pftb-info {
+    padding: 32px 0;
+  }
+
+  .pftb-info-flex {
+    gap: 24px;
+    margin-left: -24px;
+  }
+
+  .pftb-info-item {
+    width: calc((100% + 24px - 72px) / 3);
+  }
+
+  .benefit-card {
+    min-height: 380px;
+  }
+
+  .benefit-card__text {
+    padding: 16px;
+    width: 100%;
+  }
+
+  .benefit-card__title {
+    font-size: 20px;
+  }
+
+  .benefit-card__desc {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 130%;
+  }
+
+  .subscribe-block {
+    background: #263344;
+    padding: 32px 16px;
   }
 }
 
@@ -9330,6 +9725,29 @@ a.project-card:hover {
 
   .ftb-slde-info__btn-wrap .btn {
     width: 100%;
+  }
+
+  .ftb-slde-info__address {
+    font-size: 13px;
+    line-height: 110%;
+    padding-left: 16px;
+  }
+
+  .ftb-slde-info__address + * {
+    margin-top: 12px;
+  }
+
+  .ftb-slde-info__address + * + * {
+    margin-top: 8px;
+  }
+
+  .ftb-slde-info__labels {
+    margin-top: 12px;
+  }
+
+  .ftb-labels__item {
+    padding: 6px 12px;
+    font-size: 13px;
   }
 
   .filters--with-breadcrumbs .container--sec-filters {
@@ -10128,6 +10546,41 @@ a.project-card:hover {
     margin-top: 24px;
   }
 
+  .pftb-info-flex-wrap {
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .pftb-info-item__name {
+    font-size: 15px;
+    line-height: 140%;
+  }
+
+  .pftb-info-item__val {
+    font-size: 15px;
+  }
+
+  .subscribe-block__title {
+    font-size: 18px;
+    line-height: 110%;
+  }
+
+  .subscribe-form__privacy-text {
+    margin-top: 24px;
+  }
+
+  .genplan-descripton__text {
+    font-size: 14px;
+  }
+
+  .genplan-descripton--desktop {
+    display: none;
+  }
+
+  .genplan-wrap {
+    margin-top: 24px;
+  }
+
   .genplan-wrap-inner {
     overflow-x: auto;
     max-width: 100%;
@@ -10135,6 +10588,20 @@ a.project-card:hover {
 
   .genplan-block__infos--desktop .genplan-icon {
     display: none !important;
+  }
+
+  .genplan-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .genplan-icon__pic {
+    width: 40px;
+    height: 40px;
+  }
+
+  .genplan-icon__pic img {
+    width: 26px;
   }
 
   .genplan-info {
@@ -10148,6 +10615,71 @@ a.project-card:hover {
   .genplan-info--active {
     opacity: 1;
     pointer-events: all;
+  }
+
+  .apartment-plans {
+    margin-top: 24px;
+    display: block;
+  }
+
+  .apartment-plans__left {
+    width: 100%;
+    display: none;
+  }
+
+  .apartment-plans__right {
+    width: 100%;
+  }
+
+  .aplans-info-slider__controls-wrap {
+    display: flex;
+    margin-top: 12px;
+  }
+
+  .apartment-plans-info {
+    border: 1px solid rgba(37, 40, 49, 0.15);
+  }
+
+  .important-objects-flex {
+    margin-top: 24px;
+    display: block;
+  }
+
+  .important-objects-flex__left {
+    width: 100%;
+  }
+
+  .important-objects-flex__right {
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  .gallery-card__text {
+    margin-top: 12px;
+  }
+
+  .gallery-card__title {
+    font-size: 16px;
+    line-height: 110%;
+  }
+
+  .gallery-card__desc {
+    font-size: 14px;
+    line-height: 140%;
+    margin-top: 8px;
+  }
+
+  .building-progress-top-wrap {
+    padding-bottom: 23px;
+    margin-bottom: 24px;
+  }
+
+  .cards-slider__top--building-progress {
+    display: block;
+  }
+
+  .tabs-controls--building-progress {
+    margin-top: 24px;
   }
 
   .floors-block-top {
@@ -10257,6 +10789,16 @@ a.project-card:hover {
 }
 
 @media only screen and (max-width: 640px) {
+  .half-container--building-progress {
+    max-width: calc(100% - 32px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .half-container__sub-container--building-progress {
+    max-width: 100%;
+  }
+
   .btn--with-arrow {
     padding: 14px 14px;
   }
@@ -10564,6 +11106,31 @@ a.project-card:hover {
   .images-slider-slide::before {
     padding-top: 131.9444%;
   }
+
+  .pftb-info-item {
+    width: calc((100% + 24px - 48px) / 2);
+  }
+
+  .pftb-info-item:not(:nth-child(2n-1)) {
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+    padding-left: 24px;
+  }
+
+  .pftb-info-item:nth-child(2n+1) {
+    padding-left: 24px;
+  }
+
+  .subscribe-form__inputs {
+    flex-wrap: wrap;
+  }
+
+  .subscribe-form__input {
+    width: 100%;
+  }
+
+  .subscribe-form__privacy-text {
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -10601,6 +11168,14 @@ a.project-card:hover {
   .project-card-info:nth-child(2n-1) {
     padding-right: 16px;
   }
+
+  .pftb-info-item:not(:nth-child(3n-2)) {
+    padding-left: 24px;
+  }
+
+  .pftb-info-item:nth-child(3n+1) {
+    padding-left: 24px;
+  }
 }
 
 @media only screen and (max-width: 1279px) and (min-width: 961px) {
@@ -10621,6 +11196,17 @@ a.project-card:hover {
 @media only screen and (min-width: 961px) and (max-width: 1200px) {
   .contacts-item:nth-child(3n-1) {
     max-width: calc(33.333% + 21.3333333333px);
+  }
+}
+
+@media only screen and (min-width: 641px) and (max-width: 1300px) {
+  .pftb-info-item:not(:nth-child(3n-2)) {
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+    padding-left: 32px;
+  }
+
+  .pftb-info-item:nth-child(3n+1) {
+    padding-left: 32px;
   }
 }
 

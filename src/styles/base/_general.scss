@@ -161,6 +161,15 @@ body {
 		margin-left: 0;
 		margin-right: auto;
 	}
+	&--building-progress{
+
+		@include max(sm){
+
+			max-width: calc(100% - 32px);
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
 }
 
 
@@ -186,6 +195,11 @@ body {
 	&--invert {
 		margin-left: 0;
 		margin-right: auto;
+	}
+	&--building-progress{
+		@include max(sm){
+			max-width: 100%;
+		}
 	}
 }
 

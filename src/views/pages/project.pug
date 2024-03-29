@@ -71,25 +71,26 @@ block content
 								use(xlink:href="img/sprites/sprite.svg#slider-arrow-next")
 		.pftb-info
 			.container
-				.pftb-info-flex
-					.pftb-info-item
-						.pftb-info-item__name Технология
-						.pftb-info-item__val монолит-кирпич
-					.pftb-info-item
-						.pftb-info-item__name Литеров
-						.pftb-info-item__val 1
-					.pftb-info-item
-						.pftb-info-item__name Квартир
-						.pftb-info-item__val 680
-					.pftb-info-item
-						.pftb-info-item__name Сдача
-						.pftb-info-item__val 1 кв. 2025 г.
-					.pftb-info-item
-						.pftb-info-item__name Этажей
-						.pftb-info-item__val 21
-					.pftb-info-item
-						.pftb-info-item__name Потолки
-						.pftb-info-item__val 2,7 м
+				.pftb-info-flex-wrap
+					.pftb-info-flex
+						.pftb-info-item
+							.pftb-info-item__name Технология
+							.pftb-info-item__val монолит-кирпич
+						.pftb-info-item
+							.pftb-info-item__name Литеров
+							.pftb-info-item__val 1
+						.pftb-info-item
+							.pftb-info-item__name Квартир
+							.pftb-info-item__val 680
+						.pftb-info-item
+							.pftb-info-item__name Сдача
+							.pftb-info-item__val 1 кв. 2025 г.
+						.pftb-info-item
+							.pftb-info-item__name Этажей
+							.pftb-info-item__val 21
+						.pftb-info-item
+							.pftb-info-item__name Потолки
+							.pftb-info-item__val 2,7 м
 
 
 
@@ -182,9 +183,9 @@ block content
 				.genplan-sec-top__left
 					h2.section-title.section-title--black Генплан проекта*
 				.genplan-sec-top__right
-					.genplan-desctipton
-						.genplan-desctipton__icon
-						.genplan-desctipton__text *Нажмите на иконку для открытия дополнительной информации
+					.genplan-descripton.genplan-descripton--desktop
+						.genplan-descripton__icon
+						.genplan-descripton__text *Нажмите на иконку для открытия дополнительной информации
 		.genplan-wrap
 			.genplan-wrap-inner
 				.genplan-block
@@ -301,7 +302,10 @@ block content
 						.genplan-icon__pic
 							img(src="img/svg/gp-icon-6.svg", alt="")
 
-
+		.container.container--genplan-section-mob-bottom
+			.genplan-descripton.genplan-descripton--mob
+				.genplan-descripton__icon
+				.genplan-descripton__text *Нажмите на иконку для открытия дополнительной информации
 
 
 	section.apartments-galleries.section-margin.js-simple-tabs
@@ -363,61 +367,80 @@ block content
 			.apartment-plans
 				.apartment-plans__left
 					.apartment-plans-thumbs
-						label.apartment-plans-thumb.apartment-plans-thumb--active(data-type-id="1")
-							input.js-aplans-thumb-inp(type="radio" name="plans-thumb" checked data-info-id="1" )
-							.apartment-plans-thumb__inner
-								.apartment-plans-thumb__pic
-									img(src="img/apartment-draw-large.png", alt="")
-								.apartment-plans-thumb__text
-									.apartment-plans-thumb__name Студии, от 30&nbsp;м<sup>2</sup>
-									.apartment-plans-thumb__desc от 5 млн. руб.
-								.apartment-plans-thumb__indicator
-						label.apartment-plans-thumb.apartment-plans-thumb--active(data-type-id="1")
-							input.js-aplans-thumb-inp(type="radio" name="plans-thumb" data-info-id="2" )
-							.apartment-plans-thumb__inner
-								.apartment-plans-thumb__pic
-									img(src="img/apartment-draw-large.png", alt="")
-								.apartment-plans-thumb__text
-									.apartment-plans-thumb__name Студии, от 30&nbsp;м<sup>2</sup>
-									.apartment-plans-thumb__desc от 5 млн. руб.
-								.apartment-plans-thumb__indicator
-						label.apartment-plans-thumb.apartment-plans-thumb--active(data-type-id="1")
-							input.js-aplans-thumb-inp(type="radio" name="plans-thumb" data-info-id="3" )
-							.apartment-plans-thumb__inner
-								.apartment-plans-thumb__pic
-									img(src="img/apartment-draw-large.png", alt="")
-								.apartment-plans-thumb__text
-									.apartment-plans-thumb__name Студии, от 30&nbsp;м<sup>2</sup>
-									.apartment-plans-thumb__desc от 5 млн. руб.
-								.apartment-plans-thumb__indicator
+						.apartment-plans-thumbs__inner.js-simplebar
+							label.apartment-plans-thumb.apartment-plans-thumb--active(data-type-id="1")
+								input.js-aplans-thumb-inp(type="radio" name="plans-thumb" checked data-info-id="1" )
+								.apartment-plans-thumb__inner
+									.apartment-plans-thumb__pic
+										img(src="img/apartment-draw-large.png", alt="")
+									.apartment-plans-thumb__text
+										.apartment-plans-thumb__name Студии, от 30&nbsp;м<sup>2</sup>
+										.apartment-plans-thumb__desc от 5 млн. руб.
+									.apartment-plans-thumb__indicator
+							label.apartment-plans-thumb.apartment-plans-thumb--active(data-type-id="1")
+								input.js-aplans-thumb-inp(type="radio" name="plans-thumb" data-info-id="2" )
+								.apartment-plans-thumb__inner
+									.apartment-plans-thumb__pic
+										img(src="img/apartment-draw-large.png", alt="")
+									.apartment-plans-thumb__text
+										.apartment-plans-thumb__name Студии, от 30&nbsp;м<sup>2</sup>
+										.apartment-plans-thumb__desc от 5 млн. руб.
+									.apartment-plans-thumb__indicator
+							label.apartment-plans-thumb.apartment-plans-thumb--active(data-type-id="1")
+								input.js-aplans-thumb-inp(type="radio" name="plans-thumb" data-info-id="3" )
+								.apartment-plans-thumb__inner
+									.apartment-plans-thumb__pic
+										img(src="img/apartment-draw-large.png", alt="")
+									.apartment-plans-thumb__text
+										.apartment-plans-thumb__name Студии, от 30&nbsp;м<sup>2</sup>
+										.apartment-plans-thumb__desc от 5 млн. руб.
+									.apartment-plans-thumb__indicator
+							label.apartment-plans-thumb.apartment-plans-thumb--active(data-type-id="1")
+								input.js-aplans-thumb-inp(type="radio" name="plans-thumb" data-info-id="4" )
+								.apartment-plans-thumb__inner
+									.apartment-plans-thumb__pic
+										img(src="img/apartment-draw-large.png", alt="")
+									.apartment-plans-thumb__text
+										.apartment-plans-thumb__name Студии, от 30&nbsp;м<sup>2</sup>
+										.apartment-plans-thumb__desc от 5 млн. руб.
+									.apartment-plans-thumb__indicator
+							label.apartment-plans-thumb.apartment-plans-thumb--active(data-type-id="1")
+								input.js-aplans-thumb-inp(type="radio" name="plans-thumb" data-info-id="5" )
+								.apartment-plans-thumb__inner
+									.apartment-plans-thumb__pic
+										img(src="img/apartment-draw-large.png", alt="")
+									.apartment-plans-thumb__text
+										.apartment-plans-thumb__name Студии, от 30&nbsp;м<sup>2</sup>
+										.apartment-plans-thumb__desc от 5 млн. руб.
+									.apartment-plans-thumb__indicator
 
-						label.apartment-plans-thumb(data-type-id="2")
-							input.js-aplans-thumb-inp(type="radio" name="plans-thumb" data-info-id="4" )
-							.apartment-plans-thumb__inner
-								.apartment-plans-thumb__pic
-									img(src="img/apartment-draw-large.png", alt="")
-								.apartment-plans-thumb__text
-									.apartment-plans-thumb__name 1-комнатные, от 30&nbsp;м<sup>2</sup>
-									.apartment-plans-thumb__desc от 5 млн. руб.
-								.apartment-plans-thumb__indicator
-						label.apartment-plans-thumb(data-type-id="2")
-							input.js-aplans-thumb-inp(type="radio" name="plans-thumb" data-info-id="5" )
-							.apartment-plans-thumb__inner
-								.apartment-plans-thumb__pic
-									img(src="img/apartment-draw-large.png", alt="")
-								.apartment-plans-thumb__text
-									.apartment-plans-thumb__name 1-комнатные, от 30&nbsp;м<sup>2</sup>
-									.apartment-plans-thumb__desc от 5 млн. руб.
-								.apartment-plans-thumb__indicator
-						label.apartment-plans-thumb(data-type-id="2")
-							input.js-aplans-thumb-inp(type="radio" name="plans-thumb" data-info-id="6" )
-							.apartment-plans-thumb__inner
-								.apartment-plans-thumb__pic
-									img(src="img/apartment-draw-large.png", alt="")
-								.apartment-plans-thumb__text
-									.apartment-plans-thumb__name 1-комнатные, от 30&nbsp;м<sup>2</sup>
-									.apartment-plans-thumb__desc от 5 млн. руб.
-								.apartment-plans-thumb__indicator
+							label.apartment-plans-thumb(data-type-id="2")
+								input.js-aplans-thumb-inp(type="radio" name="plans-thumb" data-info-id="4" )
+								.apartment-plans-thumb__inner
+									.apartment-plans-thumb__pic
+										img(src="img/apartment-draw-large.png", alt="")
+									.apartment-plans-thumb__text
+										.apartment-plans-thumb__name 1-комнатные, от 30&nbsp;м<sup>2</sup>
+										.apartment-plans-thumb__desc от 5 млн. руб.
+									.apartment-plans-thumb__indicator
+							label.apartment-plans-thumb(data-type-id="2")
+								input.js-aplans-thumb-inp(type="radio" name="plans-thumb" data-info-id="5" )
+								.apartment-plans-thumb__inner
+									.apartment-plans-thumb__pic
+										img(src="img/apartment-draw-large.png", alt="")
+									.apartment-plans-thumb__text
+										.apartment-plans-thumb__name 1-комнатные, от 30&nbsp;м<sup>2</sup>
+										.apartment-plans-thumb__desc от 5 млн. руб.
+									.apartment-plans-thumb__indicator
+							label.apartment-plans-thumb(data-type-id="2")
+								input.js-aplans-thumb-inp(type="radio" name="plans-thumb" data-info-id="6" )
+								.apartment-plans-thumb__inner
+									.apartment-plans-thumb__pic
+										img(src="img/apartment-draw-large.png", alt="")
+									.apartment-plans-thumb__text
+										.apartment-plans-thumb__name 1-комнатные, от 30&nbsp;м<sup>2</sup>
+										.apartment-plans-thumb__desc от 5 млн. руб.
+									.apartment-plans-thumb__indicator
 				.apartment-plans__right
 
 
@@ -476,6 +499,115 @@ block content
 								.js-swiper-button-next.slider-controls__arrow.slider-controls__arrow--next
 									svg
 										use(xlink:href="img/sprites/sprite.svg#slider-arrow-next-no-stroke")
+
+
+	section.important-objects-section.section-margin
+		.container
+			h2.section-title.section-title--black Важные объекты ЖК
+			.important-objects-flex
+				.important-objects-flex__left
+
+					.swiper.impobj-slider.js-impobj-slider
+							.swiper-wrapper.impobj-slider__swiper-wrapper
+								.swiper-slide.impobj-slide
+									.impobj-slide__pic
+										img(src="img/impobj-1.jpg", alt="")
+									.impobj-slide__text
+										.impobj-slide__title Парк «Краснодар»
+										.impobj-slide__dist 16 минут
+								.swiper-slide.impobj-slide
+									.impobj-slide__pic
+										img(src="img/impobj-2.jpg", alt="")
+									.impobj-slide__text
+										.impobj-slide__title ТРЦ «Красная Площадь»
+										.impobj-slide__dist 15 минут
+								.swiper-slide.impobj-slide.js-impobj-target(data-target="2")
+									.impobj-slide__pic
+										img(src="img/impobj-3.jpg", alt="")
+									.impobj-slide__text
+										.impobj-slide__title Ледовый дворец
+										.impobj-slide__dist 17 минут
+								.swiper-slide.impobj-slide.js-impobj-target(data-target="1")
+									.impobj-slide__pic
+										img(src="img/impobj-4.jpg", alt="")
+									.impobj-slide__text
+										.impobj-slide__title Клуб King Fit с бассейном
+										.impobj-slide__dist 8 минут
+								.swiper-slide.impobj-slide.js-impobj-target(data-target="5")
+									.impobj-slide__pic
+										img(src="img/impobj-5.jpg", alt="")
+									.impobj-slide__text
+										.impobj-slide__title Парк 300-летия полиции
+										.impobj-slide__dist 17 минут
+								.swiper-slide.impobj-slide.js-impobj-target(data-target="4")
+									.impobj-slide__pic
+										img(src="img/impobj-6.jpg", alt="")
+									.impobj-slide__text
+										.impobj-slide__title Гипермаркет «Лента»
+										.impobj-slide__dist 5 минут
+								.swiper-slide.impobj-slide.js-impobj-target(data-target="6")
+									.impobj-slide__pic
+										img(src="img/impobj-7.jpg", alt="")
+									.impobj-slide__text
+										.impobj-slide__title Краевая клиническая больница № 1
+										.impobj-slide__dist 8 минут
+								.swiper-slide.impobj-slide.js-impobj-target(data-target="3")
+									.impobj-slide__pic
+										img(src="img/impobj-8.jpg", alt="")
+									.impobj-slide__text
+										.impobj-slide__title Гипермаркет Metro
+										.impobj-slide__dist 8 минут
+
+
+
+							.impobj-slider__controls-wrap
+								.slider-controls
+									.js-swiper-button-prev.slider-controls__arrow.slider-controls__arrow--prev
+										svg
+											use(xlink:href="img/sprites/sprite.svg#slider-arrow-next")
+									.js-swiper-pagination.slider-controls-pagination
+									.js-swiper-button-next.slider-controls__arrow.slider-controls__arrow--next
+										svg
+											use(xlink:href="img/sprites/sprite.svg#slider-arrow-next")
+
+				.important-objects-flex__right
+					.impobj-map
+						.impobj-map__pic
+							img(src="img/impobj-map.svg", alt="")
+						.impobj-map-object.js-impobj-control(data-target="1" style="top:18.13559322%;left:27.94577685%;")
+							.impobj-map-object__pic
+								svg
+									use(xlink:href="img/sprites/sprite.svg#impobj-gym")
+							.impobj-map-object__text Клуб King Fit с бассейном
+						.impobj-map-object.js-impobj-control(data-target="2" style="top:47.96610169%;left:7.924921794%;")
+							.impobj-map-object__pic
+								svg
+									use(xlink:href="img/sprites/sprite.svg#impobj-skates")
+							.impobj-map-object__text Ледовый дворец
+						.impobj-map-object.js-impobj-control(data-target="3" style="top:41.69491525%;left:26.69447341%;")
+							.impobj-map-object__pic
+								svg
+									use(xlink:href="img/sprites/sprite.svg#impobj-cart")
+							.impobj-map-object__text Гипермаркет «Metro»
+						.impobj-map-object.js-impobj-control(data-target="4" style="top:42.54237288%;left:44.21272158%;")
+							.impobj-map-object__pic
+								svg
+									use(xlink:href="img/sprites/sprite.svg#impobj-cart")
+							.impobj-map-object__text Гипермаркет «Лента»
+						.impobj-map-object.js-impobj-control(data-target="5" style="top:73.22033898%;left:28.77997914%;")
+							.impobj-map-object__pic
+								svg
+									use(xlink:href="img/sprites/sprite.svg#impobj-tree")
+							.impobj-map-object__text Парк 300-летия полиции
+						.impobj-map-object.js-impobj-control(data-target="6" style="top:59.83050847%;left:66.73618352%;")
+							.impobj-map-object__pic
+								svg
+									use(xlink:href="img/sprites/sprite.svg#impobj-plus")
+							.impobj-map-object__text Краевая клиническая<br>больница № 1
+
+
+
+
 
 
 	section.purchase-ways.purchase-ways--light.section-margin
@@ -632,97 +764,71 @@ block content
 
 
 
+
 	section.cards-slider-section.section-margin
-		.container
-			.swiper.cards-slider.js-cards-slider
-				.cards-slider__top
-					.cards-slider__title
-						h2.section-title.section-title--black Похожие квартиры
-					.cards-slider__controls-placeholder-desktop
-				.swiper-wrapper.cards-slider__swiper-wrapper
-					.swiper-slide.cards-slider-slide(href="")
-						a.apartment-card.apartment-card--w100(href="")
-							.apartment-card__text
-								.apartment-card__complex ЖК «Эстет»
-								.apartment-card__price
-									.apartment-card__new-price 7 937 853 руб.
-								.apartment-card__price-per-m 124 018 руб.&nbsp;м<sup>2</sup>
-								.apartment-card__props.apartment-inline-props
-									.apartment-inline-prop 3-комн.
-									.apartment-inline-prop 73.5&nbsp;м<sup>2</sup>
-									.apartment-inline-prop 20 этаж
-							.apartment-card__favourite-toggle.favourite-toggle.js-favourite-toggle(data-apartment-id="1")
+
+		.half-container.half-container--building-progress
+			.swiper.cards-slider.js-building-progress-cards-slider
+				.half-container__sub-container.half-container__sub-container--invert.half-container__sub-container--building-progress
+					.building-progress-top-wrap
+						.cards-slider__top.cards-slider__top--building-progress
+							.cards-slider__title
+								h2.section-title.section-title--black Ход строительства
+							.tabs-controls.tabs-controls--light.tabs-controls--building-progress
+								.tabs-controls__item.tabs-controls__item--active Фото
+								.tabs-controls__item Видео
+
+							.cards-slider__controls-placeholder-desktop
+
+				.swiper-wrapper.cards-slider__swiper-wrapper.cards-slider__swiper-wrapper--building-progress
+					each val in [1,2,3,4,5]
+						.swiper-slide.cards-slider-slide.cards-slider-slide--project-page
+							.gallery-card
+								a.gallery-card__inner(href="img/hod.jpg" data-fancybox="progress-gal-1"+val)
+									.gallery-card__pic
+										img(src="img/hod.jpg", alt="")
+									.gallery-card__text
+										.gallery-card__title Декабрь 2023
+										.gallery-card__desc 5 фото
+										.gallery-card__arrow
+											svg
+												use(xlink:href="img/sprites/sprite.svg#bank-arrow-grey")
+
+								.gallery-card__hidden
+									div(href="img/hod.jpg" data-fancybox="progress-gal-1"+val)
+									div(href="img/hod.jpg" data-fancybox="progress-gal-1"+val)
+									div(href="img/hod.jpg" data-fancybox="progress-gal-1"+val)
+									div(href="img/hod.jpg" data-fancybox="progress-gal-1"+val)
+
+
+						.swiper-slide.cards-slider-slide.cards-slider-slide--project-page
+							.gallery-card
+								a.gallery-card__inner(href="img/hod.jpg" data-fancybox="progress-gal-2"+val)
+									.gallery-card__pic
+										img(src="img/hod.jpg", alt="")
+									.gallery-card__text
+										.gallery-card__title Декабрь 2023
+										.gallery-card__desc 4 фото
+										.gallery-card__arrow
+											svg
+												use(xlink:href="img/sprites/sprite.svg#bank-arrow-grey")
+								.gallery-card__hidden
+									div(href="img/hod.jpg" data-fancybox="progress-gal-2"+val)
+									div(href="img/hod.jpg" data-fancybox="progress-gal-2"+val)
+									div(href="img/hod.jpg" data-fancybox="progress-gal-2"+val)
+
+					//each val in [4,5,6,7,8,9]
+
+				.cards-slider__controls-wrap.cards-slider__controls-wrap--with-half-container
+					.half-container__sub-container.half-container__sub-container--invert
+						.slider-controls.slider-controls--on-white
+							.js-swiper-button-prev.slider-controls__arrow.slider-controls__arrow--prev
 								svg
-									use(xlink:href="img/sprites/sprite.svg#heart")
-							.apartment-card__picture
-								img(src="img/apartment-draw-large.png", alt="")
-
-					.swiper-slide.cards-slider-slide(href="")
-						a.apartment-card.apartment-card--w100(href="")
-							.apartment-card__text
-								.apartment-card__complex ЖК «Эстет»
-								.apartment-card__price
-									.apartment-card__new-price 7 937 853 руб.
-								.apartment-card__price-per-m 124 018 руб.&nbsp;м<sup>2</sup>
-								.apartment-card__props.apartment-inline-props
-									.apartment-inline-prop 3-комн.
-									.apartment-inline-prop 73.5&nbsp;м<sup>2</sup>
-									.apartment-inline-prop 20 этаж
-							.apartment-card__favourite-toggle.favourite-toggle.js-favourite-toggle(data-apartment-id="2")
+									use(xlink:href="img/sprites/sprite.svg#slider-arrow-next-no-stroke")
+							.js-swiper-pagination.slider-controls-pagination
+							.js-swiper-button-next.slider-controls__arrow.slider-controls__arrow--next
 								svg
-									use(xlink:href="img/sprites/sprite.svg#heart")
-							.apartment-card__picture
-								img(src="img/apartment-draw-large.png", alt="")
-
-					.swiper-slide.cards-slider-slide(href="")
-						a.apartment-card.apartment-card--w100(href="")
-							.apartment-card__text
-								.apartment-card__complex ЖК «Эстет»
-								.apartment-card__price
-									.apartment-card__new-price 7 937 853 руб.
-									.apartment-card__old-price 8 937 853 руб.
-								.apartment-card__price-per-m 124 018 руб.&nbsp;м<sup>2</sup>
-								.apartment-card__props.apartment-inline-props
-									.apartment-inline-prop 3-комн.
-									.apartment-inline-prop 73.5&nbsp;м<sup>2</sup>
-									.apartment-inline-prop 20 этаж
-							.apartment-card__favourite-toggle.favourite-toggle.js-favourite-toggle(data-apartment-id="3")
-								svg
-									use(xlink:href="img/sprites/sprite.svg#heart")
-							.apartment-card__picture
-								img(src="img/apartment-draw-large.png", alt="")
-							.apartment-card__labels
-								.apartment-labels
-									.apartment-label  Акция
-
-					each val in [4,5,6,7,8,9]
-						.swiper-slide.cards-slider-slide(href="")
-							a.apartment-card.apartment-card--w100(href="")
-								.apartment-card__text
-									.apartment-card__complex ЖК «Эстет»
-									.apartment-card__price
-										.apartment-card__new-price 7 937 853 руб.
-									.apartment-card__price-per-m 124 018 руб.&nbsp;м<sup>2</sup>
-									.apartment-card__props.apartment-inline-props
-										.apartment-inline-prop 3-комн.
-										.apartment-inline-prop 73.5&nbsp;м<sup>2</sup>
-										.apartment-inline-prop 20 этаж
-								.apartment-card__favourite-toggle.favourite-toggle.js-favourite-toggle(data-apartment-id=val)
-									svg
-										use(xlink:href="img/sprites/sprite.svg#heart")
-								.apartment-card__picture
-									img(src="img/apartment-draw-large.png", alt="")
-
-
-				.cards-slider__controls-wrap
-					.slider-controls.slider-controls--on-white
-						.js-swiper-button-prev.slider-controls__arrow.slider-controls__arrow--prev
-							svg
-								use(xlink:href="img/sprites/sprite.svg#slider-arrow-next-no-stroke")
-						.js-swiper-pagination.slider-controls-pagination
-						.js-swiper-button-next.slider-controls__arrow.slider-controls__arrow--next
-							svg
-								use(xlink:href="img/sprites/sprite.svg#slider-arrow-next-no-stroke")
+									use(xlink:href="img/sprites/sprite.svg#slider-arrow-next-no-stroke")
 
 					//	.js-swiper-button-prev.cards-slider__arrow.slider-controls__arrow--prev
 							svg
@@ -732,6 +838,51 @@ block content
 							svg
 								use(xlink:href="img/sprites/sprite.svg#slider-arrow-next")
 
+
+
+
+
+
+
+
+
+
+
+	section.newssec.newssec--light.section-margin
+		.container
+			.newssec-top
+				.newssec-top__left
+					h2.section-title.section-title--black Акции и новости
+				.newssec-top__right
+					.tabs-controls.tabs-controls--light
+						.tabs-controls__item.tabs-controls__item--active Акции
+						.tabs-controls__item Новости
+			.newssec-main
+				.newssec-grid.newssec-grid--front
+					a.news-card.news-card--front(href="")
+						.news-card__pic
+							img(src="img/new-pic-1.jpg", alt="")
+							.news-card__text-over-pic Выбирай свой<br> паркинг
+						.news-card__text
+							.news-card__title Выбирай свой паркинг
+							.news-card__desc Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.
+					a.news-card.news-card--front(href="")
+						.news-card__pic
+							img(src="img/new-pic-2.jpg", alt="")
+							.news-card__text-over-pic  ипотека 1%
+						.news-card__text
+							.news-card__title Ипотека 1% до 30 сентября
+							.news-card__desc Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.
+					a.news-card.news-card--front(href="")
+						.news-card__pic
+							img(src="img/new-pic-3.jpg", alt="")
+							.news-card__text-over-pic Коммерческие помещения
+						.news-card__text
+							.news-card__title Коммерческие помещения
+							.news-card__desc Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.
+				.showmore-wrap
+					a.btn.btn--light(href="")
+						span Все акции и новости
 
 
 
