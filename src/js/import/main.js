@@ -18,17 +18,17 @@ function myUnlockBody() {
 	$('body').removeClass('hide-scrollbar');
 }
 
-function refreshFavourites(){
+function refreshFavourites() {
 	var favouriteApartments = Cookies.get('favouriteApartments');
-		if (typeof (favouriteApartments) !== 'undefined') {
-			favouriteApartments = JSON.parse(favouriteApartments);
-			$('.js-favourite-toggle').each(function () {
-				var thisapartmentId = $(this).attr('data-apartment-id');
-				if (favouriteApartments.includes(thisapartmentId)) {
-					$(this).addClass('favourite-toggle--active')
-				}
-			})
-		}
+	if (typeof (favouriteApartments) !== 'undefined') {
+		favouriteApartments = JSON.parse(favouriteApartments);
+		$('.js-favourite-toggle').each(function () {
+			var thisapartmentId = $(this).attr('data-apartment-id');
+			if (favouriteApartments.includes(thisapartmentId)) {
+				$(this).addClass('favourite-toggle--active')
+			}
+		})
+	}
 }
 
 
@@ -744,5 +744,97 @@ $(function () {
 
 
 
+	$('.js-aplans-info-slider').each(function () {
+		var sliderSection = $(this).closest('section');
+		var swiper = new Swiper($(this)[0], {
+			slidesPerView: 1,
+			spaceBetween: 10,
+			//autoHeight: true,
+			effect: "fade",
+			breakpoints: {
+				961: {
+					//autoHeight: true,
+				}
+			},
+			pagination: {
+				el: $(this).find('.js-swiper-pagination')[0],
+				type: "fraction",
+				renderFraction: function (currentClass, totalClass) {
+					return '<span class="slider-controls-pagination__digit slider-controls-pagination__digit--current ' + currentClass + '"></span>' +
+						'<span class="slider-controls-pagination__delimiter"></span> ' +
+						'<span class="slider-controls-pagination__digit slider-controls-pagination__digit--total ' + totalClass + '"></span>';
+				}
+			},
+			navigation: {
+				nextEl: $(this).find('.js-swiper-button-next')[0],
+				prevEl: $(this).find('.js-swiper-button-prev')[0],
+			},
+			keyboard: {
+				enabled: false
+			},
+			mousewheel: {
+				enabled: false
+			},
+			allowTouchMove: false
+
+			/*autoplay: {
+				delay: 5000,
+			},*/
+		});
+
+
+
+		$(sliderSection).find('.js-aplans-thumb-inp').on('change', function () {
+			var infoId = $(this).attr('data-info-id');
+
+console.log('-----------');
+console.log(infoId);
+
+			swiper.slides.filter(function(el){return !(el.classList.contains('aplans-info-slider-slide--disabled'));}).forEach((slide, index) => {
+				console.log($(slide).attr('data-info-id'));
+				if ($(slide).attr('data-info-id') === infoId) {
+					swiper.slideTo(index);
+
+					return;
+				}
+			});
+
+			//$(this).closest('section').find('.partment-plans-thumb--active').removeClass('partment-plans-thumb--active');
+
+			//.apartment-plans-thumb.apartment-plans-thumb--active
+
+		});
+
+		$(sliderSection).on('click', '.js-apartment-plans-group-toggle', function () {
+			$(this).addClass('tabs-controls__item--active').siblings('.tabs-controls__item').removeClass('tabs-controls__item--active')
+			var typeId = $(this).attr('data-type-id');
+			var thumbs = $(this).closest('section').find('.apartment-plans-thumb');
+			thumbs.filter('.apartment-plans-thumb--active').removeClass('apartment-plans-thumb--active');
+			thumbs.filter('[data-type-id="' + typeId + '"]').addClass('apartment-plans-thumb--active');
+
+
+			var slides = $(this).closest('section').find('.aplans-info-slider-slide');
+			slides.filter(':not([data-type-id="' + typeId + '"])').addClass('aplans-info-slider-slide--disabled')/*.css('display','none')*/;
+			slides.filter('[data-type-id="' + typeId + '"]').removeClass('aplans-info-slider-slide--disabled')/*.css('display','block')*/;
+
+			swiper.update();
+			swiper.updateSize();
+
+			thumbs.filter('.apartment-plans-thumb--active').first().find('.js-aplans-thumb-inp').prop('checked',true).trigger('change');
+			//.updateAutoHeight(speed)
+			//$(this).closest('section').find('.partment-plans-thumb--active').removeClass('partment-plans-thumb--active');
+
+			//.apartment-plans-thumb.apartment-plans-thumb--active
+
+		});
+		$(sliderSection).find('.js-apartment-plans-group-toggle:first').trigger('click');
+
+
+		/*.js-aplans-thumb-inp
+		data-info-id*/
+
+
+
+	});
 
 });

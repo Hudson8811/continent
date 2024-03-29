@@ -109,64 +109,14 @@ function initSingleFloor(parentBlock) {
 
 }
 
-
-$(function () {
-	window.isMobileMap = window.matchMedia('(max-width:1200px)').matches;
-
-
-	$('.js-floors-block').on('click', '.js-single-floor .single-floor__pictures path', function () {
-		document.location.href = $(this).attr('data-link');
-		//window.open($(this).attr('data-link'), '_blank');
-	});
-
-	if (!window.isMobileMap) {
-		$('.js-floors-block').on('mouseenter', '.js-single-floor .single-floor__pictures path', function () {
-			$(this).closest('svg').find('.floor-svg-apartment-active').removeClass('floor-svg-apartment-active');
-			$(this).addClass('floor-svg-apartment-active');
-			$('.js-floors-popup[data-external-id="' + $(this).attr('data-external-id') + '"]').addClass('floors-popup--active').siblings('.floors-popup--active').removeClass('floors-popup--active');
-		});
-		$('.js-floors-block').on('mouseleave', '.floors-maps__item', function () {
-			$('.floors-maps__item--active .floors-popup--active').removeClass('floors-popup--active');
-			$('.floors-maps__item--active svg  .floor-svg-apartment-active').removeClass('floor-svg-apartment-active');
-		});
-	}
-
-
-	$('.js-change-entrance').on('click', function () {
-		$(this).addClass('fpagi-controls__item--active').siblings().removeClass('fpagi-controls__item--active');
-		var id=$(this).attr('data-id');
-		var prevEntranceActiveFloor=parseInt($('.fpagi-floor-controls--active .fpagi-controls__item--active').attr('data-id'));
-
-		$('.fpagi-floor-controls[data-entrance="'+id+'"]').addClass('fpagi-floor-controls--active').siblings('.fpagi-floor-controls--active').removeClass('fpagi-floor-controls--active');
-
-		var floorsInEntrance=Array.from($('.fpagi-floor-controls--active .js-change-floor').map(function(id,el){
-			return parseInt($(el).attr('data-id'));
-		}))
-		//во избежание пустоты массивов
-		floorsInEntrance.push(999999);
-		floorsInEntrance.push(-999999);
-
-		var closestRight = Math.min(...floorsInEntrance.filter(v => v >= prevEntranceActiveFloor));
-		var closestLeft = Math.max(...floorsInEntrance.filter(v => v < prevEntranceActiveFloor));
-		var newActiveFloorId=prevEntranceActiveFloor;
-
-		if(Math.abs(floorsInEntrance-closestRight)>Math.abs(floorsInEntrance-closestLeft)){
-			newActiveFloorId=closestLeft;
-		}
-		else{
-			newActiveFloorId=closestRight;
-		}
-		actualizeFloor($('.fpagi-floor-controls--active .js-change-floor[data-id="'+newActiveFloorId+'"]'));
-	});
-
-	function actualizeFloor(activeElem) {
-		$('.floors-block').addClass('floors-block--hidden');
-		setTimeout(() => {
+function actualizeFloor(activeElem) {
+	$('.floors-block').addClass('floors-block--hidden');
+	setTimeout(() => {
 		var parentEl = activeElem.closest('.fpagi-controls');
 
-		var elementsToShow = window.isMobileMap?5:8;
-		var prevToShow = Math.floor((elementsToShow-1)/2);
-		var nextToShow = elementsToShow-prevToShow;
+		var elementsToShow = window.isMobileMap ? 5 : 8;
+		var prevToShow = Math.floor((elementsToShow - 1) / 2);
+		var nextToShow = elementsToShow - prevToShow;
 
 		var prevCount = activeElem.prevAll().length;
 		var nextCount = activeElem.nextAll().length;
@@ -183,50 +133,102 @@ $(function () {
 			activeElem.nextAll().slice(0, 7).show();
 		} else {
 			if (nextModifiedCount < nextToShow) {
-				prevModifiedCount+=nextToShow-nextModifiedCount;
+				prevModifiedCount += nextToShow - nextModifiedCount;
 				prevModifiedCount = Math.min(prevCount, prevModifiedCount);
 			}
 			var prevN = activeElem.prevAll().slice(prevModifiedCount - 1, prevModifiedCount);
 			prevN.show();
-			prevN.nextAll().slice(0, elementsToShow-1).show();
+			prevN.nextAll().slice(0, elementsToShow - 1).show();
 		}
 
 
-		var floor=activeElem.attr('data-id');
-		var entranceId=$('.js-change-entrance.fpagi-controls__item--active').attr('data-id');
+		var floor = activeElem.attr('data-id');
+		var entranceId = $('.js-change-entrance.fpagi-controls__item--active').attr('data-id');
 
-		console.log('entranceId='+entranceId);
-		console.log('floor='+floor);
+		console.log('entranceId=' + entranceId);
+		console.log('floor=' + floor);
 
-		initSingleFloor($('.js-single-floor[data-entrance="'+entranceId+'"][data-floor="'+floor+'"]'));
+		initSingleFloor($('.js-single-floor[data-entrance="' + entranceId + '"][data-floor="' + floor + '"]'));
 		setTimeout(() => {
 			$('.floors-block').removeClass('floors-block--hidden');
 		}, 100);
 	}, 300);
+}
+
+$(function () {
+	window.isMobileMap = window.matchMedia('(max-width:1200px)').matches;
+
+	if ($('.js-floors-block').length > 0) {
+
+		$('.js-floors-block').on('click', '.js-single-floor .single-floor__pictures path', function () {
+			document.location.href = $(this).attr('data-link');
+			//window.open($(this).attr('data-link'), '_blank');
+		});
+
+		if (!window.isMobileMap) {
+			$('.js-floors-block').on('mouseenter', '.js-single-floor .single-floor__pictures path', function () {
+				$(this).closest('svg').find('.floor-svg-apartment-active').removeClass('floor-svg-apartment-active');
+				$(this).addClass('floor-svg-apartment-active');
+				$('.js-floors-popup[data-external-id="' + $(this).attr('data-external-id') + '"]').addClass('floors-popup--active').siblings('.floors-popup--active').removeClass('floors-popup--active');
+			});
+			$('.js-floors-block').on('mouseleave', '.floors-maps__item', function () {
+				$('.floors-maps__item--active .floors-popup--active').removeClass('floors-popup--active');
+				$('.floors-maps__item--active svg  .floor-svg-apartment-active').removeClass('floor-svg-apartment-active');
+			});
+		}
+
+
+		$('.js-change-entrance').on('click', function () {
+			$(this).addClass('fpagi-controls__item--active').siblings().removeClass('fpagi-controls__item--active');
+			var id = $(this).attr('data-id');
+			var prevEntranceActiveFloor = parseInt($('.fpagi-floor-controls--active .fpagi-controls__item--active').attr('data-id'));
+
+			$('.fpagi-floor-controls[data-entrance="' + id + '"]').addClass('fpagi-floor-controls--active').siblings('.fpagi-floor-controls--active').removeClass('fpagi-floor-controls--active');
+
+			var floorsInEntrance = Array.from($('.fpagi-floor-controls--active .js-change-floor').map(function (id, el) {
+				return parseInt($(el).attr('data-id'));
+			}))
+			//во избежание пустоты массивов
+			floorsInEntrance.push(999999);
+			floorsInEntrance.push(-999999);
+
+			var closestRight = Math.min(...floorsInEntrance.filter(v => v >= prevEntranceActiveFloor));
+			var closestLeft = Math.max(...floorsInEntrance.filter(v => v < prevEntranceActiveFloor));
+			var newActiveFloorId = prevEntranceActiveFloor;
+
+			if (Math.abs(floorsInEntrance - closestRight) > Math.abs(floorsInEntrance - closestLeft)) {
+				newActiveFloorId = closestLeft;
+			}
+			else {
+				newActiveFloorId = closestRight;
+			}
+			actualizeFloor($('.fpagi-floor-controls--active .js-change-floor[data-id="' + newActiveFloorId + '"]'));
+		});
+
+
+		actualizeFloor($('.fpagi-floor-controls--active .fpagi-controls__item--active'));
+
+
+
+		$('.js-change-floor').on('click', function () {
+			actualizeFloor($(this));
+			//$.extend({}, object1, object2);
+		});
+		$('.js-prev-floor').on('click', function () {
+			var prev = $('.fpagi-floor-controls--active .fpagi-controls__item--active').prev();
+			if (prev.length > 0) {
+				actualizeFloor(prev);
+			}
+		});
+		$('.js-next-floor').on('click', function () {
+			var next = $('.fpagi-floor-controls--active .fpagi-controls__item--active').next();
+			if (next.length > 0) {
+				actualizeFloor(next);
+			}
+		});
+
+
 	}
-
-	actualizeFloor($('.fpagi-floor-controls--active .fpagi-controls__item--active'));
-
-
-
-	$('.js-change-floor').on('click', function () {
-		actualizeFloor($(this));
-		//$.extend({}, object1, object2);
-	});
-	$('.js-prev-floor').on('click', function () {
-		var prev=$('.fpagi-floor-controls--active .fpagi-controls__item--active').prev();
-		if(prev.length>0){
-			actualizeFloor(prev);
-		}
-	});
-	$('.js-next-floor').on('click', function () {
-		var next=$('.fpagi-floor-controls--active .fpagi-controls__item--active').next();
-		if(next.length>0){
-			actualizeFloor(next);
-		}
-	});
-
-
 
 	/*
 		function lockPath(pathEl, parentBlock, complexId, buildingId, entrance, floor,room) {

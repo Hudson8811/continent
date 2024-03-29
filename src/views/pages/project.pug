@@ -206,7 +206,7 @@ block content
 										.genplan-info-prop__val от 5 млн. руб.
 									.genplan-info-prop
 										.genplan-info-prop__name Площадь
-										.genplan-info-prop__val 35 - 100 м2
+										.genplan-info-prop__val 35 - 100&nbsp;м<sup>2</sup>
 									.genplan-info-prop
 										.genplan-info-prop__name Квартир
 										.genplan-info-prop__val 680
@@ -347,6 +347,135 @@ block content
 												use(xlink:href="img/sprites/sprite.svg#slider-arrow-next")
 
 
+
+	section.apartment-plans-section.section-margin.js-simple-tabs
+		.container
+			.apartments-galleries-top
+				.apartments-galleries-top__left
+					h2.section-title.section-title--black Подберите квартиру
+				.apartments-galleries-top__right
+					.tabs-controls.tabs-controls--light
+						.tabs-controls__item.tabs-controls__item--active.js-apartment-plans-group-toggle(data-type-id="1") Студии
+						.tabs-controls__item.js-apartment-plans-group-toggle(data-type-id="2") 1-комнатные
+						.tabs-controls__item.js-apartment-plans-group-toggle(data-type-id="3") 2-комнатные
+						.tabs-controls__item.js-apartment-plans-group-toggle(data-type-id="4") 3-комнатные
+
+			.apartment-plans
+				.apartment-plans__left
+					.apartment-plans-thumbs
+						label.apartment-plans-thumb.apartment-plans-thumb--active(data-type-id="1")
+							input.js-aplans-thumb-inp(type="radio" name="plans-thumb" checked data-info-id="1" )
+							.apartment-plans-thumb__inner
+								.apartment-plans-thumb__pic
+									img(src="img/apartment-draw-large.png", alt="")
+								.apartment-plans-thumb__text
+									.apartment-plans-thumb__name Студии, от 30&nbsp;м<sup>2</sup>
+									.apartment-plans-thumb__desc от 5 млн. руб.
+								.apartment-plans-thumb__indicator
+						label.apartment-plans-thumb.apartment-plans-thumb--active(data-type-id="1")
+							input.js-aplans-thumb-inp(type="radio" name="plans-thumb" data-info-id="2" )
+							.apartment-plans-thumb__inner
+								.apartment-plans-thumb__pic
+									img(src="img/apartment-draw-large.png", alt="")
+								.apartment-plans-thumb__text
+									.apartment-plans-thumb__name Студии, от 30&nbsp;м<sup>2</sup>
+									.apartment-plans-thumb__desc от 5 млн. руб.
+								.apartment-plans-thumb__indicator
+						label.apartment-plans-thumb.apartment-plans-thumb--active(data-type-id="1")
+							input.js-aplans-thumb-inp(type="radio" name="plans-thumb" data-info-id="3" )
+							.apartment-plans-thumb__inner
+								.apartment-plans-thumb__pic
+									img(src="img/apartment-draw-large.png", alt="")
+								.apartment-plans-thumb__text
+									.apartment-plans-thumb__name Студии, от 30&nbsp;м<sup>2</sup>
+									.apartment-plans-thumb__desc от 5 млн. руб.
+								.apartment-plans-thumb__indicator
+
+						label.apartment-plans-thumb(data-type-id="2")
+							input.js-aplans-thumb-inp(type="radio" name="plans-thumb" data-info-id="4" )
+							.apartment-plans-thumb__inner
+								.apartment-plans-thumb__pic
+									img(src="img/apartment-draw-large.png", alt="")
+								.apartment-plans-thumb__text
+									.apartment-plans-thumb__name 1-комнатные, от 30&nbsp;м<sup>2</sup>
+									.apartment-plans-thumb__desc от 5 млн. руб.
+								.apartment-plans-thumb__indicator
+						label.apartment-plans-thumb(data-type-id="2")
+							input.js-aplans-thumb-inp(type="radio" name="plans-thumb" data-info-id="5" )
+							.apartment-plans-thumb__inner
+								.apartment-plans-thumb__pic
+									img(src="img/apartment-draw-large.png", alt="")
+								.apartment-plans-thumb__text
+									.apartment-plans-thumb__name 1-комнатные, от 30&nbsp;м<sup>2</sup>
+									.apartment-plans-thumb__desc от 5 млн. руб.
+								.apartment-plans-thumb__indicator
+						label.apartment-plans-thumb(data-type-id="2")
+							input.js-aplans-thumb-inp(type="radio" name="plans-thumb" data-info-id="6" )
+							.apartment-plans-thumb__inner
+								.apartment-plans-thumb__pic
+									img(src="img/apartment-draw-large.png", alt="")
+								.apartment-plans-thumb__text
+									.apartment-plans-thumb__name 1-комнатные, от 30&nbsp;м<sup>2</sup>
+									.apartment-plans-thumb__desc от 5 млн. руб.
+								.apartment-plans-thumb__indicator
+				.apartment-plans__right
+
+
+
+
+					.swiper.aplans-info-slider.js-aplans-info-slider
+						.swiper-wrapper.aplans-info__swiper-wrapper
+							each val in [1,2,3]
+								.swiper-slide.aplans-info-slider-slide(href="" data-type-id="1" data-info-id=val)
+									.apartment-plans-info.apartment-plans-info--active
+										.apartment-plans-info__text
+											.apartment-plans-info__title='Студия '+val
+											.apartment-plans-info__props.aplansi-props
+												.aplansi-prop
+													.aplansi-prop__name Площадь
+													.aplansi-prop__val 30 - 39&nbsp;м<sup>2</sup>
+												.aplansi-prop
+													.aplansi-prop__name Стоимость
+													.aplansi-prop__val 5-6.3 млн. руб.
+												.aplansi-prop
+													.aplansi-prop__name Квартир
+													.aplansi-prop__val 20
+										.apartment-plans-info__picture
+											img(src="img/apartment-draw-large.png", alt="")
+										.apartment-plans-info__bottom
+											a.btn(href="")
+												span Показать 20 квартир с данной планировкой
+							each val in [4,5,6]
+								.swiper-slide.aplans-info-slider-slide(href="" data-type-id="2" data-info-id=val)
+									.apartment-plans-info.apartment-plans-info--active
+										.apartment-plans-info__text
+											.apartment-plans-info__title='1-комнатные '+(val-3)
+											.apartment-plans-info__props.aplansi-props
+												.aplansi-prop
+													.aplansi-prop__name Площадь
+													.aplansi-prop__val 30 - 39&nbsp;м<sup>2</sup>
+												.aplansi-prop
+													.aplansi-prop__name Стоимость
+													.aplansi-prop__val 5-6.3 млн. руб.
+												.aplansi-prop
+													.aplansi-prop__name Квартир
+													.aplansi-prop__val 20
+										.apartment-plans-info__picture
+											img(src="img/apartment-draw-large.png", alt="")
+										.apartment-plans-info__bottom
+											a.btn(href="")
+												span Показать 20 квартир с данной планировкой
+
+
+						.aplans-info-slider__controls-wrap
+							.slider-controls.slider-controls--on-white
+								.js-swiper-button-prev.slider-controls__arrow.slider-controls__arrow--prev
+									svg
+										use(xlink:href="img/sprites/sprite.svg#slider-arrow-next-no-stroke")
+								.js-swiper-pagination.slider-controls-pagination
+								.js-swiper-button-next.slider-controls__arrow.slider-controls__arrow--next
+									svg
+										use(xlink:href="img/sprites/sprite.svg#slider-arrow-next-no-stroke")
 
 
 	section.purchase-ways.purchase-ways--light.section-margin
@@ -517,16 +646,16 @@ block content
 								.apartment-card__complex ЖК «Эстет»
 								.apartment-card__price
 									.apartment-card__new-price 7 937 853 руб.
-								.apartment-card__price-per-m 124 018 руб. м<sup>2</sup>
+								.apartment-card__price-per-m 124 018 руб.&nbsp;м<sup>2</sup>
 								.apartment-card__props.apartment-inline-props
 									.apartment-inline-prop 3-комн.
-									.apartment-inline-prop 73.5 м<sup>2</sup>
+									.apartment-inline-prop 73.5&nbsp;м<sup>2</sup>
 									.apartment-inline-prop 20 этаж
 							.apartment-card__favourite-toggle.favourite-toggle.js-favourite-toggle(data-apartment-id="1")
 								svg
 									use(xlink:href="img/sprites/sprite.svg#heart")
 							.apartment-card__picture
-								img(src="img/apartment-card.png", alt="")
+								img(src="img/apartment-draw-large.png", alt="")
 
 					.swiper-slide.cards-slider-slide(href="")
 						a.apartment-card.apartment-card--w100(href="")
@@ -534,16 +663,16 @@ block content
 								.apartment-card__complex ЖК «Эстет»
 								.apartment-card__price
 									.apartment-card__new-price 7 937 853 руб.
-								.apartment-card__price-per-m 124 018 руб. м<sup>2</sup>
+								.apartment-card__price-per-m 124 018 руб.&nbsp;м<sup>2</sup>
 								.apartment-card__props.apartment-inline-props
 									.apartment-inline-prop 3-комн.
-									.apartment-inline-prop 73.5 м<sup>2</sup>
+									.apartment-inline-prop 73.5&nbsp;м<sup>2</sup>
 									.apartment-inline-prop 20 этаж
 							.apartment-card__favourite-toggle.favourite-toggle.js-favourite-toggle(data-apartment-id="2")
 								svg
 									use(xlink:href="img/sprites/sprite.svg#heart")
 							.apartment-card__picture
-								img(src="img/apartment-card.png", alt="")
+								img(src="img/apartment-draw-large.png", alt="")
 
 					.swiper-slide.cards-slider-slide(href="")
 						a.apartment-card.apartment-card--w100(href="")
@@ -552,16 +681,16 @@ block content
 								.apartment-card__price
 									.apartment-card__new-price 7 937 853 руб.
 									.apartment-card__old-price 8 937 853 руб.
-								.apartment-card__price-per-m 124 018 руб. м<sup>2</sup>
+								.apartment-card__price-per-m 124 018 руб.&nbsp;м<sup>2</sup>
 								.apartment-card__props.apartment-inline-props
 									.apartment-inline-prop 3-комн.
-									.apartment-inline-prop 73.5 м<sup>2</sup>
+									.apartment-inline-prop 73.5&nbsp;м<sup>2</sup>
 									.apartment-inline-prop 20 этаж
 							.apartment-card__favourite-toggle.favourite-toggle.js-favourite-toggle(data-apartment-id="3")
 								svg
 									use(xlink:href="img/sprites/sprite.svg#heart")
 							.apartment-card__picture
-								img(src="img/apartment-card.png", alt="")
+								img(src="img/apartment-draw-large.png", alt="")
 							.apartment-card__labels
 								.apartment-labels
 									.apartment-label  Акция
@@ -573,16 +702,16 @@ block content
 									.apartment-card__complex ЖК «Эстет»
 									.apartment-card__price
 										.apartment-card__new-price 7 937 853 руб.
-									.apartment-card__price-per-m 124 018 руб. м<sup>2</sup>
+									.apartment-card__price-per-m 124 018 руб.&nbsp;м<sup>2</sup>
 									.apartment-card__props.apartment-inline-props
 										.apartment-inline-prop 3-комн.
-										.apartment-inline-prop 73.5 м<sup>2</sup>
+										.apartment-inline-prop 73.5&nbsp;м<sup>2</sup>
 										.apartment-inline-prop 20 этаж
 								.apartment-card__favourite-toggle.favourite-toggle.js-favourite-toggle(data-apartment-id=val)
 									svg
 										use(xlink:href="img/sprites/sprite.svg#heart")
 								.apartment-card__picture
-									img(src="img/apartment-card.png", alt="")
+									img(src="img/apartment-draw-large.png", alt="")
 
 
 				.cards-slider__controls-wrap
