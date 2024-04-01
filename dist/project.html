@@ -432,14 +432,15 @@
           </div>
         </div>
         <div class="genplan-wrap">
-          <div class="genplan-wrap-inner">
+          <div class="genplan-wrap-inner js-scrollable-with-info-mob js-scrollable-with-info-mob--genplan">
             <div class="genplan-block">
               <div class="genplan-block__pic js-genplan-block__pic" style="min-width:761px;"><img src="img/genplan.jpg" alt=""></div>
               <div class="genplan-block__icons genplan-block__icons--desktop">
                 <div class="genplan-icon js-genplan-icon" data-id="1" style="top: 20.169%; left: 39.188%;">
                   <div class="genplan-icon__pic"><img src="img/svg/gp-icon-1.svg" alt=""></div>
                 </div>
-                <div class="genplan-info" data-id="1" style="top: 20.169%; left: 39.188%;">
+                <div class="genplan-info genplan-info--object" data-id="1" style="top: 20.169%; left: 39.188%;">
+                  <div class="genplan-info__mob-close js-genplan-info__mob-close"></div>
                   <div class="genplan-info__text">
                     <div class="genplan-info__title">ЖК «Эстет»</div>
                     <div class="genplan-info__desc">Сдача: 1 кв. 2025 г.</div>
@@ -472,6 +473,7 @@
                   <div class="genplan-icon__pic"><img src="img/svg/gp-icon-2.svg" alt=""></div>
                 </div>
                 <div class="genplan-info genplan-info--on-top" data-id="2" style="top: 57.339%; left: 64.813%;">
+                  <div class="genplan-info__mob-close js-genplan-info__mob-close"></div>
                   <div class="genplan-info__picture"><img src="img/genplan-simple-img-1.jpg" alt=""></div>
                   <div class="genplan-info__text genplan-info__text--simple">
                     <div class="genplan-info__title">скейт-парк</div>
@@ -482,6 +484,7 @@
                   <div class="genplan-icon__pic"><img src="img/svg/gp-icon-3.svg" alt=""></div>
                 </div>
                 <div class="genplan-info genplan-info--on-top" data-id="3" style="top: 56.494%; left: 81.25%;">
+                  <div class="genplan-info__mob-close js-genplan-info__mob-close"></div>
                   <div class="genplan-info__picture"><img src="img/genplan-simple-img-2.jpg" alt=""></div>
                   <div class="genplan-info__text genplan-info__text--simple">
                     <div class="genplan-info__title">Баскетбольная площадка</div>
@@ -492,6 +495,7 @@
                   <div class="genplan-icon__pic"><img src="img/svg/gp-icon-4.svg" alt=""></div>
                 </div>
                 <div class="genplan-info genplan-info--on-top" data-id="4" style="top: 80.781%; left: 32.5%;">
+                  <div class="genplan-info__mob-close js-genplan-info__mob-close"></div>
                   <div class="genplan-info__picture"><img src="img/genplan-simple-img-5.jpg" alt=""></div>
                   <div class="genplan-info__text genplan-info__text--simple">
                     <div class="genplan-info__title">2 теннисных корта</div>
@@ -502,6 +506,7 @@
                   <div class="genplan-icon__pic"><img src="img/svg/gp-icon-5.svg" alt=""></div>
                 </div>
                 <div class="genplan-info genplan-info--on-top" data-id="5" style="top: 85.533%; left: 47.563%;">
+                  <div class="genplan-info__mob-close js-genplan-info__mob-close"></div>
                   <div class="genplan-info__picture"><img src="img/genplan-simple-img-4.jpg" alt=""></div>
                   <div class="genplan-info__text genplan-info__text--simple">
                     <div class="genplan-info__title">Уличные тренажеры</div>
@@ -512,6 +517,7 @@
                   <div class="genplan-icon__pic"><img src="img/svg/gp-icon-6.svg" alt=""></div>
                 </div>
                 <div class="genplan-info genplan-info--on-top" data-id="6" style="top: 75.713%; left: 78.75%;">
+                  <div class="genplan-info__mob-close js-genplan-info__mob-close"></div>
                   <div class="genplan-info__picture"><img src="img/genplan-simple-img-3.jpg" alt=""></div>
                   <div class="genplan-info__text genplan-info__text--simple">
                     <div class="genplan-info__title">зоны для йоги и растяжки</div>
@@ -520,6 +526,7 @@
                 </div>
               </div>
             </div>
+            <div class="js-mob-scrollable-info mob-scrollable-info"><span>Для перемещения по генплану двигайте изображение влево-вправо</span></div>
             <!--.genplan-block__icons.genplan-block__icons--mobile
             .genplan-icon.js-genplan-icon(data-id="1" style="top: 20.169%; left: 39.188%;")
             	.genplan-icon__pic
@@ -539,9 +546,9 @@
             .genplan-icon.js-genplan-icon(data-id="6" style="top: 75.713%; left: 78.75%;")
             	.genplan-icon__pic
             		img(src="img/svg/gp-icon-6.svg", alt="")
-            
             -->
           </div>
+          <div class="genplan-infos-wrap-mob js-genplan-infos-wrap-mob"></div>
         </div>
         <div class="container container--genplan-section-mob-bottom">
           <div class="genplan-descripton genplan-descripton--mob">
@@ -838,6 +845,10 @@
                         </div>
                       </div>
                       <div class="apartment-plans-info__picture"><img src="img/apartment-draw-large.png" alt=""></div>
+                      <div class="apartment-plans-info__text-mob">
+                        <div class="apartment-plans-info__mob-title">Студия 1</div>
+                        <div class="apartment-plans-info__mob-desc"> 5-6.3 млн. руб.</div>
+                      </div>
                       <div class="apartment-plans-info__bottom"><a class="btn" href=""><span>Показать 20 квартир с данной планировкой</span></a></div>
                     </div>
                   </div>
@@ -861,6 +872,10 @@
                         </div>
                       </div>
                       <div class="apartment-plans-info__picture"><img src="img/apartment-draw-large.png" alt=""></div>
+                      <div class="apartment-plans-info__text-mob">
+                        <div class="apartment-plans-info__mob-title">Студия 2</div>
+                        <div class="apartment-plans-info__mob-desc"> 5-6.3 млн. руб.</div>
+                      </div>
                       <div class="apartment-plans-info__bottom"><a class="btn" href=""><span>Показать 20 квартир с данной планировкой</span></a></div>
                     </div>
                   </div>
@@ -884,6 +899,10 @@
                         </div>
                       </div>
                       <div class="apartment-plans-info__picture"><img src="img/apartment-draw-large.png" alt=""></div>
+                      <div class="apartment-plans-info__text-mob">
+                        <div class="apartment-plans-info__mob-title">Студия 3</div>
+                        <div class="apartment-plans-info__mob-desc"> 5-6.3 млн. руб.</div>
+                      </div>
                       <div class="apartment-plans-info__bottom"><a class="btn" href=""><span>Показать 20 квартир с данной планировкой</span></a></div>
                     </div>
                   </div>
@@ -907,6 +926,10 @@
                         </div>
                       </div>
                       <div class="apartment-plans-info__picture"><img src="img/apartment-draw-large.png" alt=""></div>
+                      <div class="apartment-plans-info__text-mob">
+                        <div class="apartment-plans-info__mob-title">1-комнатные 1</div>
+                        <div class="apartment-plans-info__mob-desc"> 5-6.3 млн. руб.</div>
+                      </div>
                       <div class="apartment-plans-info__bottom"><a class="btn" href=""><span>Показать 20 квартир с данной планировкой</span></a></div>
                     </div>
                   </div>
@@ -930,6 +953,10 @@
                         </div>
                       </div>
                       <div class="apartment-plans-info__picture"><img src="img/apartment-draw-large.png" alt=""></div>
+                      <div class="apartment-plans-info__text-mob">
+                        <div class="apartment-plans-info__mob-title">1-комнатные 2</div>
+                        <div class="apartment-plans-info__mob-desc"> 5-6.3 млн. руб.</div>
+                      </div>
                       <div class="apartment-plans-info__bottom"><a class="btn" href=""><span>Показать 20 квартир с данной планировкой</span></a></div>
                     </div>
                   </div>
@@ -953,6 +980,10 @@
                         </div>
                       </div>
                       <div class="apartment-plans-info__picture"><img src="img/apartment-draw-large.png" alt=""></div>
+                      <div class="apartment-plans-info__text-mob">
+                        <div class="apartment-plans-info__mob-title">1-комнатные 3</div>
+                        <div class="apartment-plans-info__mob-desc"> 5-6.3 млн. руб.</div>
+                      </div>
                       <div class="apartment-plans-info__bottom"><a class="btn" href=""><span>Показать 20 квартир с данной планировкой</span></a></div>
                     </div>
                   </div>
@@ -1044,14 +1075,18 @@
                 <div class="impobj-slider__controls-wrap">
                   <div class="slider-controls">
                     <div class="js-swiper-button-prev slider-controls__arrow slider-controls__arrow--prev">
+                      <!--svguse(xlink:href="img/sprites/sprite.svg#slider-arrow-next")
+                      -->
                       <svg>
-                        <use xlink:href="img/sprites/sprite.svg#slider-arrow-next"></use>
+                        <use xlink:href="img/sprites/sprite.svg#slider-arrow-next-no-stroke"></use>
                       </svg>
                     </div>
                     <div class="js-swiper-pagination slider-controls-pagination"></div>
                     <div class="js-swiper-button-next slider-controls__arrow slider-controls__arrow--next">
+                      <!--svguse(xlink:href="img/sprites/sprite.svg#slider-arrow-next")
+                      -->
                       <svg>
-                        <use xlink:href="img/sprites/sprite.svg#slider-arrow-next"></use>
+                        <use xlink:href="img/sprites/sprite.svg#slider-arrow-next-no-stroke"></use>
                       </svg>
                     </div>
                   </div>
@@ -1059,56 +1094,60 @@
               </div>
             </div>
             <div class="important-objects-flex__right">
-              <div class="impobj-map">
-                <div class="impobj-map__pic"><img src="img/impobj-map.svg" alt=""></div>
-                <div class="impobj-map-object js-impobj-control" data-target="1" style="top:18.13559322%;left:27.94577685%;">
-                  <div class="impobj-map-object__pic">
-                    <svg>
-                      <use xlink:href="img/sprites/sprite.svg#impobj-gym"></use>
-                    </svg>
+              <div class="impobj-map-wrap js-scrollable-with-info-mob">
+                <div class="impobj-map">
+                  <div class="impobj-map__pic"><img src="img/impobj-map.svg" alt=""></div>
+                  <div class="impobj-map-object js-impobj-control" data-target="1" style="top:18.13559322%;left:27.94577685%;">
+                    <div class="impobj-map-object__pic">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#impobj-gym"></use>
+                      </svg>
+                    </div>
+                    <div class="impobj-map-object__text">Клуб King Fit с бассейном</div>
                   </div>
-                  <div class="impobj-map-object__text">Клуб King Fit с бассейном</div>
-                </div>
-                <div class="impobj-map-object js-impobj-control" data-target="2" style="top:47.96610169%;left:7.924921794%;">
-                  <div class="impobj-map-object__pic">
-                    <svg>
-                      <use xlink:href="img/sprites/sprite.svg#impobj-skates"></use>
-                    </svg>
+                  <div class="impobj-map-object js-impobj-control" data-target="2" style="top:47.96610169%;left:7.924921794%;">
+                    <div class="impobj-map-object__pic">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#impobj-skates"></use>
+                      </svg>
+                    </div>
+                    <div class="impobj-map-object__text">Ледовый дворец</div>
                   </div>
-                  <div class="impobj-map-object__text">Ледовый дворец</div>
-                </div>
-                <div class="impobj-map-object js-impobj-control" data-target="3" style="top:41.69491525%;left:26.69447341%;">
-                  <div class="impobj-map-object__pic">
-                    <svg>
-                      <use xlink:href="img/sprites/sprite.svg#impobj-cart"></use>
-                    </svg>
+                  <div class="impobj-map-object js-impobj-control" data-target="3" style="top:41.69491525%;left:26.69447341%;">
+                    <div class="impobj-map-object__pic">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#impobj-cart"></use>
+                      </svg>
+                    </div>
+                    <div class="impobj-map-object__text">Гипермаркет «Metro»</div>
                   </div>
-                  <div class="impobj-map-object__text">Гипермаркет «Metro»</div>
-                </div>
-                <div class="impobj-map-object js-impobj-control" data-target="4" style="top:42.54237288%;left:44.21272158%;">
-                  <div class="impobj-map-object__pic">
-                    <svg>
-                      <use xlink:href="img/sprites/sprite.svg#impobj-cart"></use>
-                    </svg>
+                  <div class="impobj-map-object js-impobj-control" data-target="4" style="top:42.54237288%;left:44.21272158%;">
+                    <div class="impobj-map-object__pic">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#impobj-cart"></use>
+                      </svg>
+                    </div>
+                    <div class="impobj-map-object__text">Гипермаркет «Лента»</div>
                   </div>
-                  <div class="impobj-map-object__text">Гипермаркет «Лента»</div>
-                </div>
-                <div class="impobj-map-object js-impobj-control" data-target="5" style="top:73.22033898%;left:28.77997914%;">
-                  <div class="impobj-map-object__pic">
-                    <svg>
-                      <use xlink:href="img/sprites/sprite.svg#impobj-tree"></use>
-                    </svg>
+                  <div class="impobj-map-object js-impobj-control" data-target="5" style="top:73.22033898%;left:28.77997914%;">
+                    <div class="impobj-map-object__pic">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#impobj-tree"></use>
+                      </svg>
+                    </div>
+                    <div class="impobj-map-object__text">Парк 300-летия полиции</div>
                   </div>
-                  <div class="impobj-map-object__text">Парк 300-летия полиции</div>
-                </div>
-                <div class="impobj-map-object js-impobj-control" data-target="6" style="top:59.83050847%;left:66.73618352%;">
-                  <div class="impobj-map-object__pic">
-                    <svg>
-                      <use xlink:href="img/sprites/sprite.svg#impobj-plus"></use>
-                    </svg>
+                  <div class="impobj-map-object js-impobj-control" data-target="6" style="top:59.83050847%;left:66.73618352%;">
+                    <div class="impobj-map-object__pic">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#impobj-plus"></use>
+                      </svg>
+                    </div>
+                    <div class="impobj-map-object__text">Краевая клиническая<br>больница № 1</div>
                   </div>
-                  <div class="impobj-map-object__text">Краевая клиническая<br>больница № 1</div>
+                  <div class="js-mob-scrollable-info mob-scrollable-info mob-scrollable-info--bg"></div>
                 </div>
+                <div class="js-mob-scrollable-info mob-scrollable-info mob-scrollable-info--no-bg"><span>Для перемещения по карте двигайте изображение влево-вправо</span></div>
               </div>
             </div>
           </div>

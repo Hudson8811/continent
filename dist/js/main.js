@@ -177,6 +177,24 @@ function myUnlockBody() {
 	$('body').removeClass('hide-scrollbar');
 }
 
+$.fn.isXScrollable = function () {
+	return this[0].scrollWidth > this[0].clientWidth;
+};
+
+$.fn.isYScrollable = function () {
+	return this[0].scrollHeight > this[0].clientHeight;
+};
+
+$.fn.isScrollable = function () {
+	return this[0].scrollWidth > this[0].clientWidth || this[0].scrollHeight > this[0].clientHeight;
+};
+
+
+
+
+
+
+
 function refreshFavourites() {
 	var favouriteApartments = Cookies.get('favouriteApartments');
 	if (typeof (favouriteApartments) !== 'undefined') {
@@ -949,17 +967,75 @@ $(function () {
 	});
 
 
+	window.genplanOnAdaptive = window.matchMedia('(max-width:960px)').matches;
+	$(window).on("resize", function () {
+		window.genplanOnAdaptive = window.matchMedia('(max-width:960px)').matches;
+	});
 
-	$('.js-genplan-icon').each(function () {
-		$(this).on('mouseover mouseenter', function () {
-			$(this).addClass('genplan-icon--active').siblings('.genplan-icon--active').removeClass('genplan-icon--active');
+	if ($('.js-genplan-icon').length > 0) {
+
+		$('.js-genplan-icon').each(function () {
+			$(this).on('mouseover mouseenter', function () {
+				if (!window.genplanOnAdaptive) {
+					$(this).addClass('genplan-icon--active').siblings('.genplan-icon--active').removeClass('genplan-icon--active');
+				}
+			});
+			$(this).on('click', function () {
+				if (window.genplanOnAdaptive) {
+					var id = $(this).attr('data-id');
+					$(this).addClass('genplan-icon--active').siblings('.genplan-icon--active').removeClass('genplan-icon--active');
+					$(this).closest('section').find('.js-genplan-info-mob[data-id="' + id + '"]').addClass('genplan-info--mob-active').siblings('.genplan-info--mob-active').removeClass('genplan-info--mob-active');
+				}
+			});
+		});
+		$('.js-genplan-block__pic').on('mouseover mouseenter click', function () {
+			$(this).closest('.genplan-wrap').find($('.js-genplan-icon')).removeClass('genplan-icon--active');
+		});
+
+		$('.js-genplan-infos-wrap-mob').each(function () {
+			var mobWrap = $(this);
+			$(this).siblings('.genplan-wrap-inner').find('.genplan-info').each(function () {
+				$(this).clone().attr('style', '').addClass('js-genplan-info-mob genplan-info--mob').appendTo(mobWrap);
+
+			});
+		});
+		$('.js-genplan-infos-wrap-mob').on('click', '.js-genplan-info__mob-close', function () {
+			$(this).closest('section').find('.genplan-icon--active').removeClass('genplan-icon--active');
+			$(this).closest('section').find('.js-genplan-info-mob.genplan-info--mob-active').removeClass('genplan-info--mob-active');
+		});
+		$('.js-scrollable-with-info-mob--genplan').each(function () {
+			$(this).on('scroll', function () {
+				var section = $(this).closest('section');
+				section.find('.genplan-icon--active').removeClass('genplan-icon--active');
+				section.find('.js-genplan-info-mob.genplan-info--mob-active').removeClass('genplan-info--mob-active');
+			});
+		});
+
+	}
+
+	$('.js-scrollable-with-info-mob').each(function () {
+		var isOnceShown = false;
+		var $this = $(this);
+		var infoBlock = $this.find('.js-mob-scrollable-info');
+
+		if ($this.isXScrollable()) {
+			infoBlock.addClass('mob-scrollable-info--shown');
+			isOnceShown = true;
+			$this.one('scroll click', function () {
+				infoBlock.removeClass('mob-scrollable-info--shown');
+			});
+		}
+
+		$(window).on("resize", function () {
+			if (!isOnceShown && $this.isXScrollable()) {
+				infoBlock.addClass('mob-scrollable-info--shown');
+				isOnceShown = true;
+				$this.one('scroll click', function () {
+					infoBlock.removeClass('mob-scrollable-info--shown');
+				});
+			}
 		});
 	});
-
-	$('.js-genplan-block__pic').on('mouseover mouseenter', function () {
-		$(this).closest('.genplan-wrap').find($('.js-genplan-icon')).removeClass('genplan-icon--active');
-	});
-
 
 
 
@@ -970,8 +1046,11 @@ $(function () {
 			spaceBetween: 10,
 			//autoHeight: true,
 			effect: "fade",
+			allowTouchMove: true,
 			breakpoints: {
 				961: {
+					effect: "fade",
+					allowTouchMove: false
 					//autoHeight: true,
 				}
 			},
@@ -994,7 +1073,6 @@ $(function () {
 			mousewheel: {
 				enabled: false
 			},
-			allowTouchMove: false
 
 			/*autoplay: {
 				delay: 5000,
@@ -1006,7 +1084,7 @@ $(function () {
 		$(sliderSection).find('.js-aplans-thumb-inp').on('change', function () {
 			var infoId = $(this).attr('data-info-id');
 
-			swiper.slides.filter(function(el){return !(el.classList.contains('aplans-info-slider-slide--disabled'));}).forEach((slide, index) => {
+			swiper.slides.filter(function (el) { return !(el.classList.contains('aplans-info-slider-slide--disabled')); }).forEach((slide, index) => {
 				console.log($(slide).attr('data-info-id'));
 				if ($(slide).attr('data-info-id') === infoId) {
 					swiper.slideTo(index);
@@ -1031,7 +1109,7 @@ $(function () {
 			swiper.update();
 			swiper.updateSize();
 
-			thumbs.filter('.apartment-plans-thumb--active').first().find('.js-aplans-thumb-inp').prop('checked',true).trigger('change');
+			thumbs.filter('.apartment-plans-thumb--active').first().find('.js-aplans-thumb-inp').prop('checked', true).trigger('change');
 			//.updateAutoHeight(speed)
 			//$(this).closest('section').find('.partment-plans-thumb--active').removeClass('partment-plans-thumb--active');
 
