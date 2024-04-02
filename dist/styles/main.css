@@ -11323,6 +11323,7 @@ a.project-card:hover {
 
   .fwbanner {
     display: block;
+    min-height: 200vw;
   }
 
   .fwbanner-info {
