@@ -1186,7 +1186,7 @@ $(function () {
 			var mapCenterTemp=$(this).attr('data-coordinates');
 
 			if(typeof(mapCenterTemp)!=='undefined'){
-				mapCenterTemp=mapCenterTemp.split(', ');
+				mapCenterTemp=mapCenterTemp.replaceAll(' ','').split(',');
 				if(typeof(mapCenterTemp)!=='undefined' && mapCenterTemp.length===2){
 					mapCenter=mapCenterTemp;
 				}
