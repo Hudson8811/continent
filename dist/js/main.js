@@ -1219,7 +1219,7 @@ $(function () {
 				var coorElem=$(this);
 
 				if(typeof(coordTemp)!=='undefined'){
-					coordTemp=coordTemp.split(', ');
+					coordTemp=coordTemp.replaceAll(' ','').split(',');
 					if(typeof(coordTemp)!=='undefined' && coordTemp.length===2){
 						coord=coordTemp;
 					}
