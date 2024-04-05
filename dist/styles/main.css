@@ -10294,11 +10294,6 @@ a.project-card:hover {
     margin-top: 24px;
   }
 
-  .news-card {
-    width: calc(100% - 32px);
-    margin-bottom: 24px;
-  }
-
   .news-card__text-over-pic {
     font-weight: 800;
     font-size: 20px;
@@ -11283,6 +11278,11 @@ a.project-card:hover {
 
   .page-top-buttons .btn {
     width: 100%;
+  }
+
+  .news-card {
+    width: calc(100% - 32px);
+    margin-bottom: 24px;
   }
 
   .contacts .prefooter-padding {
