@@ -7,6 +7,7 @@ $(function () {
 
 	async function initMap() {
 		// Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
+		if(typeof(ymaps3)==='undefined') return;
 		await ymaps3.ready;
 
 		const {YMap, YMapDefaultSchemeLayer, YMapMarker, YMapDefaultFeaturesLayer} = ymaps3;

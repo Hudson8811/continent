@@ -469,7 +469,7 @@ $(function () {
 				"</span>"
 			);
 		} else {
-			var $state = $("<span>" + state.text + "</span>");
+			var $state = $("<span>" + $(state.element).html() + "</span>");
 		}
 
 		return $state;
@@ -597,59 +597,69 @@ $(function () {
 		// Your custom options
 	});
 
-	window.isdef = function( variable ){
+	window.isdef = function (variable) {
 		return typeof variable !== 'undefined';
 	};
 
 
 
-	$('.js-call-me-modal,a[href="#js-call-me-modal"]').on('click', function (e) {
+	$('body').on('click', '.js-call-me-modal,a[href="#js-call-me-modal"]',function (e) {
 		e.preventDefault();
 		e.stopPropagation();
 
-		var btn = $( this );
+		var modal = $('#call-me-modal');
+		var btn = $(this);
 		var title = 'Заказать обратный звонок';
-		var dataTitle = btn.attr( 'data-title' );
-		if( isdef( dataTitle ) && dataTitle.length > 0 ){
+		var dataTitle = btn.attr('data-title');
+		if (isdef(dataTitle) && dataTitle.length > 0) {
 			title = dataTitle;
 		}
-		if( isdef( dataTitle ) && dataTitle === 'btn'){
+		if (isdef(dataTitle) && dataTitle === 'btn') {
 			title = btn.text();
 		}
 		window.prevModalTitle = title;
-		var target = title;
-		var dataTarget = btn.attr( 'data-target' );
-		if( isdef( dataTarget ) && dataTarget.length > 0 ){
-			target = dataTarget;
+		var subject = title;
+		var dataSubject = btn.attr('data-subject');
+		if (isdef(dataSubject) && dataSubject.length > 0) {
+			subject = dataSubject;
 		}
-		$( '#call-me-modal' ).attr( 'data-custom-title', title );
-		$( '#call-me-modal .simple-modal__title' ).html( title );
-		//TODO: прописывать тему и источник
+
+		modal.attr('data-custom-title', title);
+		modal.find('.simple-modal__title').html(title);
+
+		modal.find('.js-webform-field-subject').val(subject);
+		modal.find('.js-webform-field-source').val(document.location.href);
+
 		Fancybox.show([{ src: "#call-me-modal", type: "inline", closeButton: false }]);
 	});
 
-	$('.js-answer-modal,a[href="#js-answer-modal"]').on('click', function (e) {
+	$('body').on('click','.js-answer-modal,a[href="#js-answer-modal"]', function (e) {
 		e.preventDefault();
 		e.stopPropagation();
 
-		var btn = $( this );
+		var modal = $('#answer-modal');
+		var btn = $(this);
 		var title = 'Задать вопрос';
-		var dataTitle = btn.attr( 'data-title' );
-		if( isdef( dataTitle ) && dataTitle.length > 0 ){
+		var dataTitle = btn.attr('data-title');
+		if (isdef(dataTitle) && dataTitle.length > 0) {
 			title = dataTitle;
 		}
-		if( isdef( dataTitle ) && dataTitle === 'btn'){
+		if (isdef(dataTitle) && dataTitle === 'btn') {
 			title = btn.text();
 		}
 		window.prevModalTitle = title;
-		var target = title;
-		var dataTarget = btn.attr( 'data-target' );
-		if( isdef( dataTarget ) && dataTarget.length > 0 ){
-			target = dataTarget;
+		var subject = title;
+		var dataSubject = btn.attr('data-subject');
+		if (isdef(dataSubject) && dataSubject.length > 0) {
+			subject = dataSubject;
 		}
-		$( '#answer-modal' ).attr( 'data-custom-title', title );
-		$( '#answer-modal .simple-modal__title' ).html( title );
-		//TODO: прописывать тему и источник
+
+		modal.attr('data-custom-title', title);
+		modal.find('.simple-modal__title').html(title);
+
+		modal.find('.js-webform-field-subject').val(subject);
+		modal.find('.js-webform-field-source').val(document.location.href);
+
 		Fancybox.show([{ src: "#answer-modal", type: "inline", closeButton: false }]);
 	});
 
@@ -670,7 +680,7 @@ $(function () {
 	});
 
 	$('.js-phonemask').each(function () {
-		var phoneIm = new Inputmask("+7 (999) 999-99-99");
+		var phoneIm = new Inputmask("+7 (999) 999-99-99", { clearIncomplete: true });
 		phoneIm.mask($(this)[0]);
 
 	});

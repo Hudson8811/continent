@@ -10,6 +10,8 @@
 @@include("./libs/debounce.js")
 @@include("./libs/simplebar.min.js")
 @@include("./libs/js.cookie.min.js")
+@@include("./libs/url.js")
+
 
 //my files
 @@include("./import/components.js")

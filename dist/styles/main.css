@@ -4582,6 +4582,10 @@ html {
   margin-top: 32px;
 }
 
+.simple-modal__input {
+  display: block;
+}
+
 .simple-modal__input + .simple-modal__input {
   margin-top: 16px;
 }

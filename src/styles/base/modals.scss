@@ -55,6 +55,7 @@
 	}
 
 	&__input {
+		display: block;
 		&+.simple-modal__input {
 			margin-top: 16px;
 			@include max(sm){

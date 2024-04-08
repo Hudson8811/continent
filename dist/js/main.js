@@ -134,6 +134,456 @@ var SimpleBar=function(){"use strict";var e=function(t,i){return e=Object.setPro
 
 /*! js-cookie v3.0.1 | MIT */
 !function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e=e||self,function(){var n=e.Cookies,o=e.Cookies=t();o.noConflict=function(){return e.Cookies=n,o}}())}(this,(function(){"use strict";function e(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var o in n)e[o]=n[o]}return e}return function t(n,o){function r(t,r,i){if("undefined"!=typeof document){"number"==typeof(i=e({},o,i)).expires&&(i.expires=new Date(Date.now()+864e5*i.expires)),i.expires&&(i.expires=i.expires.toUTCString()),t=encodeURIComponent(t).replace(/%(2[346B]|5E|60|7C)/g,decodeURIComponent).replace(/[()]/g,escape);var c="";for(var u in i)i[u]&&(c+="; "+u,!0!==i[u]&&(c+="="+i[u].split(";")[0]));return document.cookie=t+"="+n.write(r,t)+c}}return Object.create({set:r,get:function(e){if("undefined"!=typeof document&&(!arguments.length||e)){for(var t=document.cookie?document.cookie.split("; "):[],o={},r=0;r<t.length;r++){var i=t[r].split("="),c=i.slice(1).join("=");try{var u=decodeURIComponent(i[0]);if(o[u]=n.read(c,u),e===u)break}catch(e){}}return e?o[e]:o}},remove:function(t,n){r(t,"",e({},n,{expires:-1}))},withAttributes:function(n){return t(this.converter,e({},this.attributes,n))},withConverter:function(n){return t(e({},this.converter,n),this.attributes)}},{attributes:{value:Object.freeze(o)},converter:{value:Object.freeze(n)}})}({read:function(e){return'"'===e[0]&&(e=e.slice(1,-1)),e.replace(/(%[\dA-F]{2})+/gi,decodeURIComponent)},write:function(e){return encodeURIComponent(e).replace(/%(2[346BF]|3[AC-F]|40|5[BDE]|60|7[BCD])/g,decodeURIComponent)}},{path:"/"})}));
+//https://raw.githubusercontent.com/Mikhus/domurl/master/url.min.js
+/*!
+ * Lightweight URL manipulation with JavaScript
+ * This library is independent of any other libraries and has pretty simple
+ * interface and lightweight code-base.
+ * Some ideas of query string parsing had been taken from Jan Wolter
+ * @see http://unixpapa.com/js/querystring.html
+ *
+ * @license MIT
+ * @author Mykhailo Stadnyk <mikhus@gmail.com> and contributors
+ * @see https://github.com/Mikhus/domurl/graphs/contributors
+ */
+(function (ns) {
+	'use strict';
+
+	var RX_PROTOCOL = /^[a-z]+:/;
+	var RX_PORT = /[-a-z0-9]+(\.[-a-z0-9])*:\d+/i;
+	var RX_CREDS = /\/\/(.*?)(?::(.*?))?@/;
+	var RX_WIN = /^win/i;
+	var RX_PROTOCOL_REPL = /:$/;
+	var RX_QUERY_REPL = /^\?/;
+	var RX_HASH_REPL = /^#/;
+	var RX_PATH = /(.*\/)/;
+	var RX_PATH_FIX = /^\/{2,}/;
+	// https://news.ycombinator.com/item?id=3939454
+	var RX_PATH_IE_FIX = /(^\/?)/;
+	var RX_SINGLE_QUOTE = /'/g;
+	var RX_DECODE_1 = /%([ef][0-9a-f])%([89ab][0-9a-f])%([89ab][0-9a-f])/gi;
+	var RX_DECODE_2 = /%([cd][0-9a-f])%([89ab][0-9a-f])/gi;
+	var RX_DECODE_3 = /%([0-7][0-9a-f])/gi;
+	var RX_PLUS = /\+/g;
+	var RX_PATH_SEMI = /^\w:$/;
+	var RX_URL_TEST = /[^/#?]/;
+
+	// configure given url options
+	function urlConfig(url) {
+		var config = {
+			path: true,
+			query: true,
+			hash: true
+		};
+
+		if (!url) {
+			return config;
+		}
+
+		if (RX_PROTOCOL.test(url)) {
+			config.protocol = true;
+			config.host = true;
+
+			if (RX_PORT.test(url)) {
+				config.port = true;
+			}
+
+			if (RX_CREDS.test(url)) {
+				config.user = true;
+				config.pass = true;
+			}
+		}
+
+		return config;
+	}
+
+	var isNode = typeof window === 'undefined' &&
+		typeof global !== 'undefined' &&
+		typeof require === 'function';
+	var isIe = !isNode && ns.navigator && ns.navigator.userAgent &&
+		~ns.navigator.userAgent.indexOf('MSIE');
+
+	// Trick to bypass Webpack's require at compile time
+	var nodeRequire = isNode ? ns['require'] : null;
+
+	// mapping between what we want and <a> element properties
+	var map = {
+		protocol: 'protocol',
+		host: 'hostname',
+		port: 'port',
+		path: 'pathname',
+		query: 'search',
+		hash: 'hash'
+	};
+
+	// jscs: disable
+	/**
+	 * default ports as defined by http://url.spec.whatwg.org/#default-port
+	 * We need them to fix IE behavior,
+	 * @see https://github.com/Mikhus/jsurl/issues/2
+	 */
+	// jscs: enable
+	var defaultPorts = {
+		ftp: 21,
+		gopher: 70,
+		http: 80,
+		https: 443,
+		ws: 80,
+		wss: 443
+	};
+
+	var _currNodeUrl;
+	function getCurrUrl() {
+		if (isNode) {
+			if (!_currNodeUrl) {
+				_currNodeUrl = ('file://' +
+					(process.platform.match(RX_WIN) ? '/' : '') +
+					nodeRequire('fs').realpathSync('.')
+				);
+			}
+			return _currNodeUrl;
+		} else if (document.location.href === 'about:srcdoc') {
+			return self.parent.document.location.href;
+		} else {
+			return document.location.href;
+		}
+	}
+
+	function parse(self, url, absolutize) {
+		var link, i, auth;
+
+		if (!url) {
+			url = getCurrUrl();
+		}
+
+		if (isNode) {
+			link = nodeRequire('url').parse(url);
+		}
+
+		else {
+			link = document.createElement('a');
+			link.href = url;
+		}
+
+		var config = urlConfig(url);
+
+		auth = url.match(RX_CREDS) || [];
+
+		for (i in map) {
+			if (config[i]) {
+				self[i] = link[map[i]] || '';
+			} else {
+				self[i] = '';
+			}
+		}
+
+		// fix-up some parts
+		self.protocol = self.protocol.replace(RX_PROTOCOL_REPL, '');
+		self.query = self.query.replace(RX_QUERY_REPL, '');
+		self.hash = decode(self.hash.replace(RX_HASH_REPL, ''));
+		self.user = decode(auth[1] || '');
+		self.pass = decode(auth[2] || '');
+		/* jshint ignore:start */
+		self.port = (
+			// loosely compare because port can be a string
+			defaultPorts[self.protocol] == self.port || self.port == 0
+		) ? '' : self.port; // IE fix, Android browser fix
+		/* jshint ignore:end */
+
+		if (!config.protocol && RX_URL_TEST.test(url.charAt(0))) {
+			self.path = url.split('?')[0].split('#')[0];
+		}
+
+		if (!config.protocol && absolutize) {
+			// is IE and path is relative
+			var base = new Url(getCurrUrl().match(RX_PATH)[0]);
+			var basePath = base.path.split('/');
+			var selfPath = self.path.split('/');
+			var props = ['protocol', 'user', 'pass', 'host', 'port'];
+			var s = props.length;
+
+			basePath.pop();
+
+			for (i = 0; i < s; i++) {
+				self[props[i]] = base[props[i]];
+			}
+
+			while (selfPath[0] === '..') { // skip all "../
+				basePath.pop();
+				selfPath.shift();
+			}
+
+			self.path =
+				(url.charAt(0) !== '/' ? basePath.join('/') : '') +
+				'/' + selfPath.join('/')
+				;
+		}
+
+		self.path = self.path.replace(RX_PATH_FIX, '/');
+		isIe && (self.path = self.path.replace(RX_PATH_IE_FIX, '/'));
+
+		self.paths(self.paths());
+
+		self.query = new QueryString(self.query);
+	}
+
+	function encode(s) {
+		return encodeURIComponent(s).replace(RX_SINGLE_QUOTE, '%27');
+	}
+
+	function decode(s) {
+		s = s.replace(RX_PLUS, ' ');
+		s = s.replace(RX_DECODE_1, function (code, hex1, hex2, hex3) {
+			var n1 = parseInt(hex1, 16) - 0xE0;
+			var n2 = parseInt(hex2, 16) - 0x80;
+
+			if (n1 === 0 && n2 < 32) {
+				return code;
+			}
+
+			var n3 = parseInt(hex3, 16) - 0x80;
+			var n = (n1 << 12) + (n2 << 6) + n3;
+
+			if (n > 0xFFFF) {
+				return code;
+			}
+
+			return String.fromCharCode(n);
+		});
+		s = s.replace(RX_DECODE_2, function (code, hex1, hex2) {
+			var n1 = parseInt(hex1, 16) - 0xC0;
+
+			if (n1 < 2) {
+				return code;
+			}
+
+			var n2 = parseInt(hex2, 16) - 0x80;
+
+			return String.fromCharCode((n1 << 6) + n2);
+		});
+
+		return s.replace(RX_DECODE_3, function (code, hex) {
+			return String.fromCharCode(parseInt(hex, 16));
+		});
+	}
+
+	/**
+	 * Class QueryString
+	 *
+	 * @param {string} qs - string representation of QueryString
+	 * @constructor
+	 */
+	function QueryString(qs) {
+		var parts = qs.split('&');
+
+		for (var i = 0, s = parts.length; i < s; i++) {
+			var keyVal = parts[i].split('=');
+			var key = decodeURIComponent(keyVal[0].replace(RX_PLUS, ' ')).replace('[]', '');
+
+			if (!key) {
+				continue;
+			}
+
+			var value = keyVal[1] !== undefined ? decode(keyVal[1]) : null;
+
+			if (this[key] === undefined) {
+				this[key] = value;
+			} else {
+				if (!(this[key] instanceof Array)) {
+					this[key] = [this[key]];
+				}
+
+				this[key].push(value);
+			}
+		}
+	}
+
+	/**
+	 * Converts QueryString object back to string representation
+	 *
+	 * @returns {string}
+	 */
+	QueryString.prototype.toString = function () {
+		var s = '';
+		var e = encode;
+		var i, ii;
+
+		for (i in this) {
+			var w = this[i];
+
+			if (w instanceof Function || w === undefined) {
+				continue;
+			}
+
+			if (w instanceof Array) {
+				var len = w.length;
+
+				if (!len) {
+					// Parameter is an empty array, so treat as
+					// an empty argument
+					/*s += (s ? '&' : '') + e(i) + '=';*/
+					continue;
+				}
+
+				for (ii = 0; ii < len; ii++) {
+					var v = w[ii];
+					if (v === undefined) {
+						continue;
+					}
+					s += s ? '&' : '';
+					s += e(i) + (v === null
+						? ''
+						: '[]=' + e(v));
+				}
+				continue;
+			}
+
+			// Plain value
+			s += s ? '&' : '';
+			s += e(i) + (w === null ? '' : '=' + e(w));
+		}
+
+		return s;
+	};
+
+	/**
+	 * Class Url
+	 *
+	 * @param {string} [url] - string URL representation
+	 * @param {boolean} [noTransform] - do not transform to absolute URL
+	 * @constructor
+	 */
+	function Url(url, noTransform) {
+		parse(this, url, !noTransform);
+	}
+
+	/**
+	 * Clears QueryString, making it contain no params at all
+	 *
+	 * @returns {Url}
+	 */
+	Url.prototype.clearQuery = function () {
+		for (var key in this.query) {
+			if (!(this.query[key] instanceof Function)) {
+				delete this.query[key];
+			}
+		}
+
+		return this;
+	};
+
+	/**
+	 * Returns total number of parameters in QueryString
+	 *
+	 * @returns {number}
+	 */
+	Url.prototype.queryLength = function () {
+		var count = 0;
+
+		for (var key in this.query) {
+			if (!(this.query[key] instanceof Function)) {
+				count++;
+			}
+		}
+
+		return count;
+	};
+
+	/**
+	 * Returns true if QueryString contains no parameters, false otherwise
+	 *
+	 * @returns {boolean}
+	 */
+	Url.prototype.isEmptyQuery = function () {
+		return this.queryLength() === 0;
+	};
+
+	/**
+	 *
+	 * @param {Array} [paths] - an array pf path parts (if given will modify
+	 *                          Url.path property
+	 * @returns {Array} - an array representation of the Url.path property
+	 */
+	Url.prototype.paths = function (paths) {
+		var prefix = '';
+		var i = 0;
+		var s;
+
+		if (paths && paths.length && paths + '' !== paths) {
+			if (this.isAbsolute()) {
+				prefix = '/';
+			}
+
+			for (s = paths.length; i < s; i++) {
+				paths[i] = !i && RX_PATH_SEMI.test(paths[i])
+					? paths[i]
+					: encode(paths[i]);
+			}
+
+			this.path = prefix + paths.join('/');
+		}
+
+		paths = (this.path.charAt(0) === '/' ?
+			this.path.slice(1) : this.path).split('/');
+
+		for (i = 0, s = paths.length; i < s; i++) {
+			paths[i] = decode(paths[i]);
+		}
+
+		return paths;
+	};
+
+	/**
+	 * Performs URL-specific encoding of the given string
+	 *
+	 * @method Url#encode
+	 * @param {string} s - string to encode
+	 * @returns {string}
+	 */
+	Url.prototype.encode = encode;
+
+	/**
+	 * Performs URL-specific decoding of the given encoded string
+	 *
+	 * @method Url#decode
+	 * @param {string} s - string to decode
+	 * @returns {string}
+	 */
+	Url.prototype.decode = decode;
+
+	/**
+	 * Checks if current URL is an absolute resource locator (globally absolute
+	 * or absolute path to current server)
+	 *
+	 * @returns {boolean}
+	 */
+	Url.prototype.isAbsolute = function () {
+		return this.protocol || this.path.charAt(0) === '/';
+	};
+
+	/**
+	 * Returns string representation of current Url object
+	 *
+	 * @returns {string}
+	 */
+	Url.prototype.toString = function () {
+		return (
+			(this.protocol && (this.protocol + '://')) +
+			(this.user && (
+				encode(this.user) + (this.pass && (':' + encode(this.pass))
+				) + '@')) +
+			(this.host && this.host) +
+			(this.port && (':' + this.port)) +
+			(this.path && this.path) +
+			(this.query.toString() && ('?' + this.query)) +
+			(this.hash && ('#' + encode(this.hash)))
+		);
+	};
+
+	ns[ns.exports ? 'exports' : 'Url'] = Url;
+}(typeof module !== 'undefined' && module.exports ? module : window));
+
+
 
 //my files
 
@@ -628,7 +1078,7 @@ $(function () {
 				"</span>"
 			);
 		} else {
-			var $state = $("<span>" + state.text + "</span>");
+			var $state = $("<span>" + $(state.element).html() + "</span>");
 		}
 
 		return $state;
@@ -756,59 +1206,69 @@ $(function () {
 		// Your custom options
 	});
 
-	window.isdef = function( variable ){
+	window.isdef = function (variable) {
 		return typeof variable !== 'undefined';
 	};
 
 
 
-	$('.js-call-me-modal,a[href="#js-call-me-modal"]').on('click', function (e) {
+	$('body').on('click', '.js-call-me-modal,a[href="#js-call-me-modal"]',function (e) {
 		e.preventDefault();
 		e.stopPropagation();
 
-		var btn = $( this );
+		var modal = $('#call-me-modal');
+		var btn = $(this);
 		var title = 'Заказать обратный звонок';
-		var dataTitle = btn.attr( 'data-title' );
-		if( isdef( dataTitle ) && dataTitle.length > 0 ){
+		var dataTitle = btn.attr('data-title');
+		if (isdef(dataTitle) && dataTitle.length > 0) {
 			title = dataTitle;
 		}
-		if( isdef( dataTitle ) && dataTitle === 'btn'){
+		if (isdef(dataTitle) && dataTitle === 'btn') {
 			title = btn.text();
 		}
 		window.prevModalTitle = title;
-		var target = title;
-		var dataTarget = btn.attr( 'data-target' );
-		if( isdef( dataTarget ) && dataTarget.length > 0 ){
-			target = dataTarget;
+		var subject = title;
+		var dataSubject = btn.attr('data-subject');
+		if (isdef(dataSubject) && dataSubject.length > 0) {
+			subject = dataSubject;
 		}
-		$( '#call-me-modal' ).attr( 'data-custom-title', title );
-		$( '#call-me-modal .simple-modal__title' ).html( title );
-		//TODO: прописывать тему и источник
+
+		modal.attr('data-custom-title', title);
+		modal.find('.simple-modal__title').html(title);
+
+		modal.find('.js-webform-field-subject').val(subject);
+		modal.find('.js-webform-field-source').val(document.location.href);
+
 		Fancybox.show([{ src: "#call-me-modal", type: "inline", closeButton: false }]);
 	});
 
-	$('.js-answer-modal,a[href="#js-answer-modal"]').on('click', function (e) {
+	$('body').on('click','.js-answer-modal,a[href="#js-answer-modal"]', function (e) {
 		e.preventDefault();
 		e.stopPropagation();
 
-		var btn = $( this );
+		var modal = $('#answer-modal');
+		var btn = $(this);
 		var title = 'Задать вопрос';
-		var dataTitle = btn.attr( 'data-title' );
-		if( isdef( dataTitle ) && dataTitle.length > 0 ){
+		var dataTitle = btn.attr('data-title');
+		if (isdef(dataTitle) && dataTitle.length > 0) {
 			title = dataTitle;
 		}
-		if( isdef( dataTitle ) && dataTitle === 'btn'){
+		if (isdef(dataTitle) && dataTitle === 'btn') {
 			title = btn.text();
 		}
 		window.prevModalTitle = title;
-		var target = title;
-		var dataTarget = btn.attr( 'data-target' );
-		if( isdef( dataTarget ) && dataTarget.length > 0 ){
-			target = dataTarget;
+		var subject = title;
+		var dataSubject = btn.attr('data-subject');
+		if (isdef(dataSubject) && dataSubject.length > 0) {
+			subject = dataSubject;
 		}
-		$( '#answer-modal' ).attr( 'data-custom-title', title );
-		$( '#answer-modal .simple-modal__title' ).html( title );
-		//TODO: прописывать тему и источник
+
+		modal.attr('data-custom-title', title);
+		modal.find('.simple-modal__title').html(title);
+
+		modal.find('.js-webform-field-subject').val(subject);
+		modal.find('.js-webform-field-source').val(document.location.href);
+
 		Fancybox.show([{ src: "#answer-modal", type: "inline", closeButton: false }]);
 	});
 
@@ -829,7 +1289,7 @@ $(function () {
 	});
 
 	$('.js-phonemask').each(function () {
-		var phoneIm = new Inputmask("+7 (999) 999-99-99");
+		var phoneIm = new Inputmask("+7 (999) 999-99-99", { clearIncomplete: true });
 		phoneIm.mask($(this)[0]);
 
 	});
@@ -1218,6 +1678,7 @@ $(function () {
 
 	async function initMap() {
 		// Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
+		if(typeof(ymaps3)==='undefined') return;
 		await ymaps3.ready;
 
 		const {YMap, YMapDefaultSchemeLayer, YMapMarker, YMapDefaultFeaturesLayer} = ymaps3;
