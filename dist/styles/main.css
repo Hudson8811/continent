@@ -4552,6 +4552,14 @@ html {
   --js-real-vw: 1vw;
 }
 
+.swiper-slide--disabled {
+  display: none !important;
+}
+
+.d-n-i {
+  display: none !important;
+}
+
 .simple-modal {
   width: 588px;
   background: none;

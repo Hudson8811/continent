@@ -782,14 +782,14 @@ block content
 							.cards-slider__title
 								h2.section-title.section-title--black Ход строительства
 							.tabs-controls.tabs-controls--light.tabs-controls--building-progress
-								.tabs-controls__item.tabs-controls__item--active Фото
-								.tabs-controls__item Видео
+								.tabs-controls__item.tabs-controls__item--active.js-building-progress-slider-filter(data-type-id="1") Фото
+								.tabs-controls__item.js-building-progress-slider-filter(data-type-id="2") Видео
 
 							.cards-slider__controls-placeholder-desktop
 
 				.swiper-wrapper.cards-slider__swiper-wrapper.cards-slider__swiper-wrapper--building-progress
 					each val in [1,2,3,4,5]
-						.swiper-slide.cards-slider-slide.cards-slider-slide--project-page
+						.swiper-slide.cards-slider-slide.cards-slider-slide--project-page(data-type-id="1")
 							.gallery-card
 								a.gallery-card__inner(href="img/hod.jpg" data-fancybox="progress-gal-1"+val)
 									.gallery-card__pic
@@ -808,13 +808,13 @@ block content
 									div(href="img/hod.jpg" data-fancybox="progress-gal-1"+val)
 
 
-						.swiper-slide.cards-slider-slide.cards-slider-slide--project-page
+						.swiper-slide.cards-slider-slide.cards-slider-slide--project-page(data-type-id="2")
 							.gallery-card
 								a.gallery-card__inner(href="img/hod.jpg" data-fancybox="progress-gal-2"+val)
 									.gallery-card__pic
 										img(src="img/hod.jpg", alt="")
 									.gallery-card__text
-										.gallery-card__title Декабрь 2023
+										.gallery-card__title Декабрь 2023-видео
 										.gallery-card__desc 4 фото
 										.gallery-card__arrow
 											svg
@@ -855,35 +855,56 @@ block content
 
 
 
-	section.newssec.newssec--light.section-margin
+	section.newssec.newssec--light.section-margin.js-newssec-tabs-section
 		.container
 			.newssec-top
 				.newssec-top__left
 					h2.section-title.section-title--black Акции и новости
 				.newssec-top__right
 					.tabs-controls.tabs-controls--light
-						.tabs-controls__item.tabs-controls__item--active Акции
-						.tabs-controls__item Новости
+						.tabs-controls__item.tabs-controls__item--active.js-newssec-tabs-control(data-type="1") Акции
+						.tabs-controls__item.js-newssec-tabs-control(data-type="2") Новости
 			.newssec-main
 				.newssec-grid.newssec-grid--front
-					a.news-card.news-card--front(href="")
+					a.news-card.news-card--front.js-newssec-card(data-type="1" href="")
 						.news-card__pic
 							img(src="img/new-pic-1.jpg", alt="")
 							.news-card__text-over-pic Выбирай свой<br> паркинг
 						.news-card__text
 							.news-card__title Выбирай свой паркинг
 							.news-card__desc Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.
-					a.news-card.news-card--front(href="")
+					a.news-card.news-card--front.js-newssec-card(data-type="1" href="")
 						.news-card__pic
 							img(src="img/new-pic-2.jpg", alt="")
 							.news-card__text-over-pic  ипотека 1%
 						.news-card__text
 							.news-card__title Ипотека 1% до 30 сентября
 							.news-card__desc Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.
-					a.news-card.news-card--front(href="")
+					a.news-card.news-card--front.js-newssec-card(data-type="1" href="")
 						.news-card__pic
 							img(src="img/new-pic-3.jpg", alt="")
 							.news-card__text-over-pic Коммерческие помещения
+						.news-card__text
+							.news-card__title Коммерческие помещения
+							.news-card__desc Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.
+					a.news-card.news-card--front.js-newssec-card(data-type="2" href="")
+						.news-card__pic
+							img(src="img/new-pic-1.jpg", alt="")
+							.news-card__text-over-pic Выбирай свой<br> паркинг 2
+						.news-card__text
+							.news-card__title Выбирай свой паркинг
+							.news-card__desc Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.
+					a.news-card.news-card--front.js-newssec-card(data-type="2" href="")
+						.news-card__pic
+							img(src="img/new-pic-2.jpg", alt="")
+							.news-card__text-over-pic  ипотека 1% 2
+						.news-card__text
+							.news-card__title Ипотека 1% до 30 сентября
+							.news-card__desc Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.
+					a.news-card.news-card--front.js-newssec-card(data-type="2" href="")
+						.news-card__pic
+							img(src="img/new-pic-3.jpg", alt="")
+							.news-card__text-over-pic Коммерческие помещения 2
 						.news-card__text
 							.news-card__title Коммерческие помещения
 							.news-card__desc Скидка на парковку в новом ЖК! Подземная парковка, удобство и безопасность по половине.
