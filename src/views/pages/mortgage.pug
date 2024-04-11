@@ -104,18 +104,21 @@ block content
 									a.btn(href="")
 										span Оставить заявку
 
-								.mortgage-pw-bottom__text 4 варианта<br> от 54 679 ₽/мес.
+								.mortgage-pw-bottom__text
+									span.js-pw-variants-count 4 варианта
+									br
+									span.js-pw-from-min  от 54 679 ₽/мес.
 
 					.purchase-ways-flex__main
 						.pw-summary.pw-summary--mortgage
 							.pw-summary-item
 								.pw-summary-item__left
 									.pw-summary-item__title Ежемесячный платеж
-									.pw-summary-item__text от 54 679 ₽/мес.
+									.pw-summary-item__text.js-pw-from-min от 54 679 ₽/мес.
 							.pw-summary-item
 								.pw-summary-item__left
 									.pw-summary-item__title Ставка
-									.pw-summary-item__text от 5.7%
+									.pw-summary-item__text.js-pw-from-coeff от 5.7%
 								.pw-summary-item__right
 									.pws-circles
 										.pws-icon
@@ -123,7 +126,7 @@ block content
 										.pws-icon
 											img(src="img/svg/bank-sber.svg", alt="")
 										.pws-icon
-											span 16
+											span.js-pw-variants-count-simple 16
 							.pw-summary-btn
 								a.btn.btn--with-arrow.btn--dark.js-open-pw-banks-modal(href="")
 									span Все предложения

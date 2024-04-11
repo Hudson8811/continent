@@ -129,9 +129,9 @@ $(function () {
 				prevEl: $(this).find('.js-swiper-button-prev')[0],
 			},
 
-			autoplay: {
+			/*autoplay: {
 				delay: 5000,
-			},
+			},*/
 		});
 	});
 
@@ -732,8 +732,6 @@ $(function () {
 			termInp = section.find('.js-pw-input-term'),
 			programs = window.pwPrograms;
 
-
-
 		var bankRateFormat = wNumb({
 			suffix: '%',
 			//decimals: 3,
@@ -752,6 +750,9 @@ $(function () {
 					firstPayment = clearStrAndParseInt(firstPaymentInp.val()),
 					term = clearStrAndParseInt(termInp.val());
 
+					var minRate=Number.MAX_SAFE_INTEGER;
+					var minPayment=Number.MAX_SAFE_INTEGER;
+					var banks_count=0;
 
 				banks.each(function () {
 					var bank = $(this),
@@ -759,6 +760,11 @@ $(function () {
 					if (banksIdsForThisProgram.includes(id)) {
 						var bankRate = parseFloat(program.banks[id]);
 						var bankPayment = eval(program.formula);
+
+						minRate=Math.min(minRate, bankRate);
+						minPayment=Math.min(minPayment, bankPayment);
+						++banks_count;
+
 						bank.find('.js-bank-payment span').html(bankPaymentFormat.to(bankPayment));
 						bank.find('.js-bank-rate').html(bankRateFormat.to(bankRate));
 						bank.removeClass('pw-bank--hidden');
@@ -769,6 +775,23 @@ $(function () {
 						bank.addClass('pw-bank--hidden');
 					}
 				});
+
+				section.find('.js-pw-variants-count').html(banks_count + ' ' +num_word(banks_count,['вариант','варианта','вариантов']));
+				section.find('.js-pw-variants-count-simple').html(banks_count);
+				section.find('.js-pw-from-coeff').html("от "+bankRateFormat.to(minRate));
+				section.find('.js-pw-from-min').html("от "+bankPaymentFormat.to(minPayment)+" ₽/мес.");
+
+/*
+			.js-pw-variants-count 4 варианта
+			.js-pw-variants-count-simple 16
+			.js-pw-from-coeff от 5.7%
+			.js-pw-from-min  от 54 679 ₽/мес.
+*/
+
+
+
+
+
 			}
 			else {
 				alert('error  информация о программе отсутствует');
