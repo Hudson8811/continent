@@ -291,6 +291,7 @@
 		font-size: 10px;
 		letter-spacing: -0.04em;
 		color: #fff;
+		transition-duration: .3s;
 
 		//font-family: $inter;
 		@include max(lg) {
@@ -298,6 +299,10 @@
 			height: 12px;
 			min-width: 12px;
 			padding: 0 3px 0 2px
+		}
+
+		&--hidden{
+			opacity: 0;
 		}
 	}
 

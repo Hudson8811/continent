@@ -5312,6 +5312,11 @@ html {
   font-size: 10px;
   letter-spacing: -0.04em;
   color: #fff;
+  transition-duration: 0.3s;
+}
+
+.sh-button__counter--hidden {
+  opacity: 0;
 }
 
 .sh-button + .sh-button {

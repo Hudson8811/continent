@@ -655,7 +655,30 @@ function refreshFavourites() {
 				$(this).addClass('favourite-toggle--active')
 			}
 		})
+		if(favouriteApartments.length>0){
+			$('.sh-button__counter').html(favouriteApartments.length);
+			$('.sh-button__counter').addClass('.sh-button__counter--hidden')
+		}else{
+			$('.sh-button__counter').removeClass('.sh-button__counter--hidden')
+		}
+		refreshFavouritesCount();
 	}
+
+}
+
+
+function refreshFavouritesCount() {
+	var favouriteApartments = Cookies.get('favouriteApartments');
+	if (typeof (favouriteApartments) !== 'undefined') {
+		favouriteApartments = JSON.parse(favouriteApartments);
+		if(favouriteApartments.length>0){
+			$('.sh-button__counter').html(favouriteApartments.length);
+			$('.sh-button__counter').removeClass('sh-button__counter--hidden')
+		}else{
+			$('.sh-button__counter').addClass('sh-button__counter--hidden')
+		}
+	}
+
 }
 
 
@@ -1488,6 +1511,7 @@ $(function () {
 			$(this).addClass('favourite-toggle--active');
 		}
 
+		refreshFavouritesCount();
 
 	});
 
