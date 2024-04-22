@@ -657,12 +657,16 @@ function refreshFavourites() {
 		})
 		if(favouriteApartments.length>0){
 			$('.sh-button__counter').html(favouriteApartments.length);
-			$('.sh-button__counter').addClass('.sh-button__counter--hidden')
+			$('.sh-button__counter').removeClass('sh-button__counter--hidden')
 		}else{
-			$('.sh-button__counter').removeClass('.sh-button__counter--hidden')
+			$('.sh-button__counter').addClass('sh-button__counter--hidden')
 		}
 		refreshFavouritesCount();
 	}
+	else{
+		$('.sh-button__counter').addClass('sh-button__counter--hidden')
+	}
+
 
 }
 
@@ -673,11 +677,15 @@ function refreshFavouritesCount() {
 		favouriteApartments = JSON.parse(favouriteApartments);
 		if(favouriteApartments.length>0){
 			$('.sh-button__counter').html(favouriteApartments.length);
-			$('.sh-button__counter').removeClass('sh-button__counter--hidden')
-		}else{
 			$('.sh-button__counter').addClass('sh-button__counter--hidden')
+		}else{
+			$('.sh-button__counter').removeClass('sh-button__counter--hidden')
 		}
 	}
+	else{
+		$('.sh-button__counter').addClass('sh-button__counter--hidden')
+	}
+
 
 }
 
@@ -1116,6 +1124,13 @@ $(function () {
 			});
 			rs_inp_r[0].addEventListener('change', function () {
 				slider.set([null, this.value]);
+			});
+
+			$(rs_inp_l[0]).on('changeBoth', function () {
+				slider.set([rs_inp_l[0].value, rs_inp_r[0].value]);
+			});
+			$(rs_inp_r[0]).on('changeBoth', function () {
+				slider.set([rs_inp_l[0].value, rs_inp_r[0].value]);
 			});
 		}
 	});
