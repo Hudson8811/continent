@@ -80,6 +80,7 @@ function refreshEntranceIcons(complexId, buildingId, entrance) {
 }
 function initSingleFloor(parentBlock) {
 	//var parentBlock = $(this);//.js-single-floor
+	var is_local=document.location.href.includes('localhost') || document.location.href.includes('github.io');
 
 	parentBlock.closest('.floors-maps__item').addClass('floors-maps__item--active').siblings('.floors-maps__item--active').removeClass('floors-maps__item--active');
 
@@ -93,14 +94,29 @@ function initSingleFloor(parentBlock) {
 		return;
 	}
 
+	console.log(complexId + '_' + buildingId + '_' + entrance + '_' + floor);
+
 	var floorApratmentsInfo = window.apartmentsInfo[complexId + '_' + buildingId + '_' + entrance + '_' + floor];
 	if (typeof (floorApratmentsInfo) === 'undefined') {
 		console.log('err floorApratmentsInfo  100');
 	}
 
+	var room_numbers=Object.keys(floorApratmentsInfo).map(Number).sort(function(a, b) {return a - b;});
+
+	var numberConverter={};
+		room_numbers.forEach(function(el){
+			numberConverter[(el-room_numbers[0]+1).toString()]=el;
+	});
+
 	parentBlock.find('.single-floor__pictures svg path[id],.single-floor__pictures svg rect[id]').each(function () {
 		var room = $(this).attr('id');
-		var roomInfo = floorApratmentsInfo[room];
+		var roomInfo;
+		if(is_local){
+			roomInfo = floorApratmentsInfo[room];
+		}
+		else{
+			roomInfo = floorApratmentsInfo[numberConverter[room]];
+		}
 		processRoom($(this), parentBlock, complexId, buildingId, entrance, floor, room, roomInfo);
 	});
 
@@ -128,15 +144,21 @@ function actualizeFloor(activeElem) {
 		prevModifiedCount = Math.min(prevCount, prevToShow);
 		nextModifiedCount = Math.min(nextCount, nextToShow);
 
+
 		if (prevModifiedCount < 1) {
 			activeElem.show();
 			activeElem.nextAll().slice(0, 7).show();
 		} else {
+			var prevN ;
 			if (nextModifiedCount < nextToShow) {
 				prevModifiedCount += nextToShow - nextModifiedCount;
 				prevModifiedCount = Math.min(prevCount, prevModifiedCount);
+				prevN = activeElem.prevAll().slice(prevModifiedCount - 2, prevModifiedCount-1);
 			}
-			var prevN = activeElem.prevAll().slice(prevModifiedCount - 1, prevModifiedCount);
+			else{
+				prevN = activeElem.prevAll().slice(prevModifiedCount - 1, prevModifiedCount);
+			}
+			//var prevN = activeElem.prevAll().slice(prevModifiedCount - 1, prevModifiedCount);
 			prevN.show();
 			prevN.nextAll().slice(0, elementsToShow - 1).show();
 		}
@@ -154,6 +176,7 @@ function actualizeFloor(activeElem) {
 		}, 100);
 	}, 300);
 }
+
 
 $(function () {
 	window.isMobileMap = window.matchMedia('(max-width:1200px)').matches;
