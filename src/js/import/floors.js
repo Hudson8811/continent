@@ -26,7 +26,7 @@ function generateFloorApartmentPopup(parentBlock, roomInfo, positionCss) {
 
 
 function processRoom(pathEl, parentBlock, complexId, buildingId, entrance, floor, room, roomInfo) {
-	var corrections = window.lockedApartmentsFix[complexId + '_' + buildingId + '_' + entrance + '_' + floor + '_' + room];
+	//var corrections = window.lockedApartmentsFix[complexId + '_' + buildingId + '_' + entrance + '_' + floor + '_' + room];
 
 	var posCorrection = {
 		left: 0,
@@ -36,11 +36,19 @@ function processRoom(pathEl, parentBlock, complexId, buildingId, entrance, floor
 	var offsetEl = pathEl.offset();
 	var pathElBR = pathEl[0].getBoundingClientRect();
 
-	if (typeof (corrections) !== 'undefined') {
+	/*if (typeof (corrections) !== 'undefined') {
+		if (typeof (corrections.left) === 'undefined') { corrections.left=0; }
+		if (typeof (corrections.top) === 'undefined') { corrections.top=0; }
 		posCorrection = {
 			left: pathElBR.width / 100 * corrections.left,
 			top: pathElBR.height / 100 * corrections.top
 		}
+	}*/
+	if (typeof (roomInfo.pos_fix_left) !== 'undefined' && roomInfo.pos_fix_left!==0) {
+		posCorrection.left= pathElBR.width / 100 * roomInfo.pos_fix_left;
+	}
+	if (typeof (roomInfo.pos_fix_top) !== 'undefined'&& roomInfo.pos_fix_top!==0) {
+		posCorrection.top= pathElBR.height / 100 * roomInfo.pos_fix_top;
 	}
 
 	var infoPosLeft = (offsetEl.left - offsetPB.left + pathElBR.width * 0.5 + posCorrection.left) / parentBlock.width() * 100;
@@ -147,7 +155,7 @@ function actualizeFloor(activeElem) {
 
 		if (prevModifiedCount < 1) {
 			activeElem.show();
-			activeElem.nextAll().slice(0, 7).show();
+			activeElem.nextAll().slice(0, elementsToShow-1).show();
 		} else {
 			var prevN ;
 			if (nextModifiedCount < nextToShow) {

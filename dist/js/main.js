@@ -644,7 +644,6 @@ $.fn.isScrollable = function () {
 
 
 
-
 function refreshFavourites() {
 	var favouriteApartments = Cookies.get('favouriteApartments');
 	if (typeof (favouriteApartments) !== 'undefined') {
@@ -655,19 +654,9 @@ function refreshFavourites() {
 				$(this).addClass('favourite-toggle--active')
 			}
 		})
-		if(favouriteApartments.length>0){
-			$('.sh-button__counter').html(favouriteApartments.length);
-			$('.sh-button__counter').removeClass('sh-button__counter--hidden')
-		}else{
-			$('.sh-button__counter').addClass('sh-button__counter--hidden')
-		}
-		refreshFavouritesCount();
-	}
-	else{
-		$('.sh-button__counter').addClass('sh-button__counter--hidden')
 	}
 
-
+	refreshFavouritesCount();
 }
 
 
@@ -675,20 +664,17 @@ function refreshFavouritesCount() {
 	var favouriteApartments = Cookies.get('favouriteApartments');
 	if (typeof (favouriteApartments) !== 'undefined') {
 		favouriteApartments = JSON.parse(favouriteApartments);
-		if(favouriteApartments.length>0){
+		if (favouriteApartments.length > 0) {
 			$('.sh-button__counter').html(favouriteApartments.length);
-			$('.sh-button__counter').addClass('sh-button__counter--hidden')
-		}else{
 			$('.sh-button__counter').removeClass('sh-button__counter--hidden')
+		} else {
+			$('.sh-button__counter').addClass('sh-button__counter--hidden')
 		}
 	}
-	else{
+	else {
 		$('.sh-button__counter').addClass('sh-button__counter--hidden')
 	}
-
-
 }
-
 
 
 $(function () {
@@ -1113,24 +1099,66 @@ $(function () {
 
 
 
+
 		if (is_single) {
 			rs_inp_single[0].addEventListener('change', function () {
-				slider.set([this.value]);
+				//конвертируем из форматированного вывода в нормальное число
+				if (typeof (slider.options.format) !== 'undefined') {
+					this.value = slider.options.format.from(this.value);
+				}
+				//ограничим минимум минимумом слайдера, ибо есть баг с установкой меньше min
+				this.value = Math.max(slider.options.range.min, this.value);
+
+				slider.set([this.value], true, true);
 			});
 
 		} else {
 			rs_inp_l[0].addEventListener('change', function () {
-				slider.set([this.value, null]);
+				//конвертируем из форматированного вывода в нормальное число
+				if (typeof (slider.options.format) !== 'undefined') {
+					this.value = slider.options.format.from(this.value);
+				}
+				//ограничим минимум минимумом слайдера, ибо есть баг с установкой меньше min
+				this.value = Math.max(slider.options.range.min, this.value);
+
+				slider.set([this.value, null], true, true);
 			});
 			rs_inp_r[0].addEventListener('change', function () {
-				slider.set([null, this.value]);
+				//конвертируем из форматированного вывода в нормальное число
+				if (typeof (slider.options.format) !== 'undefined') {
+					this.value = slider.options.format.from(this.value);
+				}
+				//ограничим минимум минимумом слайдера, ибо есть баг с установкой меньше min
+				this.value = Math.max(slider.options.range.min, this.value);
+
+				slider.set([null, this.value], true, true);
 			});
 
 			$(rs_inp_l[0]).on('changeBoth', function () {
-				slider.set([rs_inp_l[0].value, rs_inp_r[0].value]);
+				if (typeof (slider.options.format) !== 'undefined') {
+					rs_inp_l[0].value = slider.options.format.from(rs_inp_l[0].value);
+				}
+				rs_inp_l[0].value = Math.max(slider.options.range.min, rs_inp_l[0].value);
+				if (typeof (slider.options.format) !== 'undefined') {
+					rs_inp_r[0].value = slider.options.format.from(rs_inp_r[0].value);
+				}
+				rs_inp_r[0].value = Math.max(slider.options.range.min, rs_inp_r[0].value);
+
+
+
+				slider.set([rs_inp_l[0].value, rs_inp_r[0].value], true, true);
 			});
 			$(rs_inp_r[0]).on('changeBoth', function () {
-				slider.set([rs_inp_l[0].value, rs_inp_r[0].value]);
+				if (typeof (slider.options.format) !== 'undefined') {
+					rs_inp_l[0].value = slider.options.format.from(rs_inp_l[0].value);
+				}
+				rs_inp_l[0].value = Math.max(slider.options.range.min, rs_inp_l[0].value);
+				if (typeof (slider.options.format) !== 'undefined') {
+					rs_inp_r[0].value = slider.options.format.from(rs_inp_r[0].value);
+				}
+				rs_inp_r[0].value = Math.max(slider.options.range.min, rs_inp_r[0].value);
+
+				slider.set([rs_inp_l[0].value, rs_inp_r[0].value], true, true);
 			});
 		}
 	});
@@ -1284,7 +1312,7 @@ $(function () {
 
 
 
-	$('body').on('click', '.js-call-me-modal,a[href="#js-call-me-modal"]',function (e) {
+	$('body').on('click', '.js-call-me-modal,a[href="#js-call-me-modal"]', function (e) {
 		e.preventDefault();
 		e.stopPropagation();
 
@@ -1314,7 +1342,7 @@ $(function () {
 		Fancybox.show([{ src: "#call-me-modal", type: "inline", closeButton: false }]);
 	});
 
-	$('body').on('click','.js-answer-modal,a[href="#js-answer-modal"]', function (e) {
+	$('body').on('click', '.js-answer-modal,a[href="#js-answer-modal"]', function (e) {
 		e.preventDefault();
 		e.stopPropagation();
 
@@ -1397,9 +1425,9 @@ $(function () {
 					firstPayment = clearStrAndParseInt(firstPaymentInp.val()),
 					term = clearStrAndParseInt(termInp.val());
 
-					var minRate=Number.MAX_SAFE_INTEGER;
-					var minPayment=Number.MAX_SAFE_INTEGER;
-					var banks_count=0;
+				var minRate = Number.MAX_SAFE_INTEGER;
+				var minPayment = Number.MAX_SAFE_INTEGER;
+				var banks_count = 0;
 
 				banks.each(function () {
 					var bank = $(this),
@@ -1408,8 +1436,8 @@ $(function () {
 						var bankRate = parseFloat(program.banks[id]);
 						var bankPayment = eval(program.formula);
 
-						minRate=Math.min(minRate, bankRate);
-						minPayment=Math.min(minPayment, bankPayment);
+						minRate = Math.min(minRate, bankRate);
+						minPayment = Math.min(minPayment, bankPayment);
 						++banks_count;
 
 						bank.find('.js-bank-payment span').html(bankPaymentFormat.to(bankPayment));
@@ -1423,17 +1451,17 @@ $(function () {
 					}
 				});
 
-				section.find('.js-pw-variants-count').html(banks_count + ' ' +num_word(banks_count,['вариант','варианта','вариантов']));
+				section.find('.js-pw-variants-count').html(banks_count + ' ' + num_word(banks_count, ['вариант', 'варианта', 'вариантов']));
 				section.find('.js-pw-variants-count-simple').html(banks_count);
-				section.find('.js-pw-from-coeff').html("от "+bankRateFormat.to(minRate));
-				section.find('.js-pw-from-min').html("от "+bankPaymentFormat.to(minPayment)+" ₽/мес.");
+				section.find('.js-pw-from-coeff').html("от " + bankRateFormat.to(minRate));
+				section.find('.js-pw-from-min').html("от " + bankPaymentFormat.to(minPayment) + " ₽/мес.");
 
-/*
-			.js-pw-variants-count 4 варианта
-			.js-pw-variants-count-simple 16
-			.js-pw-from-coeff от 5.7%
-			.js-pw-from-min  от 54 679 ₽/мес.
-*/
+				/*
+							.js-pw-variants-count 4 варианта
+							.js-pw-variants-count-simple 16
+							.js-pw-from-coeff от 5.7%
+							.js-pw-from-min  от 54 679 ₽/мес.
+				*/
 
 
 
@@ -1531,6 +1559,7 @@ $(function () {
 	});
 
 
+	refreshFavouritesCount();
 
 
 
@@ -1885,7 +1914,7 @@ function generateFloorApartmentPopup(parentBlock, roomInfo, positionCss) {
 
 
 function processRoom(pathEl, parentBlock, complexId, buildingId, entrance, floor, room, roomInfo) {
-	var corrections = window.lockedApartmentsFix[complexId + '_' + buildingId + '_' + entrance + '_' + floor + '_' + room];
+	//var corrections = window.lockedApartmentsFix[complexId + '_' + buildingId + '_' + entrance + '_' + floor + '_' + room];
 
 	var posCorrection = {
 		left: 0,
@@ -1895,11 +1924,19 @@ function processRoom(pathEl, parentBlock, complexId, buildingId, entrance, floor
 	var offsetEl = pathEl.offset();
 	var pathElBR = pathEl[0].getBoundingClientRect();
 
-	if (typeof (corrections) !== 'undefined') {
+	/*if (typeof (corrections) !== 'undefined') {
+		if (typeof (corrections.left) === 'undefined') { corrections.left=0; }
+		if (typeof (corrections.top) === 'undefined') { corrections.top=0; }
 		posCorrection = {
 			left: pathElBR.width / 100 * corrections.left,
 			top: pathElBR.height / 100 * corrections.top
 		}
+	}*/
+	if (typeof (roomInfo.pos_fix_left) !== 'undefined' && roomInfo.pos_fix_left!==0) {
+		posCorrection.left= pathElBR.width / 100 * roomInfo.pos_fix_left;
+	}
+	if (typeof (roomInfo.pos_fix_top) !== 'undefined'&& roomInfo.pos_fix_top!==0) {
+		posCorrection.top= pathElBR.height / 100 * roomInfo.pos_fix_top;
 	}
 
 	var infoPosLeft = (offsetEl.left - offsetPB.left + pathElBR.width * 0.5 + posCorrection.left) / parentBlock.width() * 100;
@@ -2006,7 +2043,7 @@ function actualizeFloor(activeElem) {
 
 		if (prevModifiedCount < 1) {
 			activeElem.show();
-			activeElem.nextAll().slice(0, 7).show();
+			activeElem.nextAll().slice(0, elementsToShow-1).show();
 		} else {
 			var prevN ;
 			if (nextModifiedCount < nextToShow) {
