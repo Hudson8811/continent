@@ -27,6 +27,39 @@
     <script src="https://api-maps.yandex.ru/v3/?apikey=a56bdf2e-6f25-46f4-b535-ca3077437c25&amp;lang=ru_RU"></script>
   </head>
   <body>
+    <div class="preloader">
+      <div class="preloader-inner">
+        <div class="preloader-over-logo"></div>
+        <div class="preloader-logo">
+          <div class="preloader-logo__top-text"><img src="img/preloader_top.svg" alt=""></div>
+          <div class="preloader-logo__bottom-text"><img src="img/preloader_bottom.svg" alt=""></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      if(localStorage.getItem('preloaderShown')!=='true'){
+      	setTimeout(function(){
+      		document.querySelector('.preloader').classList.add('preloader--shown');
+      
+      		setTimeout(function(){
+      			document.querySelector('.preloader').classList.add('preloader--hidden-content');
+      			setTimeout(function(){
+      				document.querySelector('.preloader').classList.add('preloader--fully-hidden');
+      				setTimeout(function(){
+      					document.querySelector('.preloader').remove()
+      				},400);
+      			},1000);
+      		},3000);
+      	},300);
+      
+      	localStorage.setItem('preloaderShown','true');
+      }
+      else{
+      	document.querySelector('.preloader').remove()
+      }
+      
+      
+    </script>
     <header class="site-header">
       <div class="sh-left-icon"><img src="img/header-left-icon.png" alt=""></div>
       <div class="sh-container container">

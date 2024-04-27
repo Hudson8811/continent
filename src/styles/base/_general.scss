@@ -161,9 +161,10 @@ body {
 		margin-left: 0;
 		margin-right: auto;
 	}
-	&--building-progress{
 
-		@include max(sm){
+	&--building-progress {
+
+		@include max(sm) {
 
 			max-width: calc(100% - 32px);
 			margin-left: auto;
@@ -192,12 +193,14 @@ body {
 	&--flex {
 		display: flex;
 	}
+
 	&--invert {
 		margin-left: 0;
 		margin-right: auto;
 	}
-	&--building-progress{
-		@include max(sm){
+
+	&--building-progress {
+		@include max(sm) {
 			max-width: 100%;
 		}
 	}
@@ -614,7 +617,7 @@ table {
 	}
 }
 
-html{
+html {
 	--js-scrollbar-width: 0px;
 	--js-real-vw: 1vw;
 }
@@ -627,6 +630,254 @@ html{
 	}
 }
 
-.d-n-i{
+.d-n-i {
 	display: none !important;
+}
+
+.preloader {
+	display: block;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #1b283a;
+	z-index: 999;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition-duration: .3s;
+
+}
+
+.preloader-inner {
+	position: relative;
+	transform: translateX(-50%);
+	transition-duration: 1s;
+}
+
+.preloader-over-logo {
+	background: #1b283a;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+
+
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		background: #1b283a;
+		right: 0;
+		top: 0;
+		width: 300%;
+		height: 100%;
+	}
+
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 1px;
+		height: 100%;
+		background: #CCCECD;
+		will-change: opacity;
+		opacity: 0;
+		transition-timing-function: ease-in;
+		transition: opacity;
+		transition-duration: 0.5s;
+	}
+
+}
+
+
+.preloader-logo {
+	padding-left: 24px;
+	position: relative;
+	z-index: 2;
+	opacity: 0;
+	will-change: opacity;
+	transition-duration: 0.5s;
+
+	&__top-text,
+	&__bottom-text {
+		transition: transform ease-out 0.5s;
+		transform: translateX(-20%);
+
+	}
+
+	&__top-text {
+		width: 100%;
+	}
+
+	&__bottom-text {
+		padding-left: 32px;
+		margin-top: 13px;
+		width: 100%;
+	}
+
+	img {}
+}
+
+.preloader--shown {
+	.preloader-inner {
+		transform: translateX(0%);
+	}
+
+	.preloader-over-logo {
+		animation-duration: 1s;
+		animation-name: preloaderOverLogo;
+		animation-fill-mode: both;
+
+		&::after {
+			opacity: 1;
+		}
+	}
+
+	.preloader-logo {
+		opacity: 1;
+
+		&__top-text {
+
+			animation-duration: 1s;
+			animation-name: preloaderTopText;
+			animation-timing-function: ease-out;
+			animation-fill-mode: both;
+		}
+
+		&__bottom-text {
+
+			animation-duration: 0.8s;
+			animation-name: preloaderBottomText;
+			animation-timing-function: ease-out;
+			animation-fill-mode: both;
+		}
+	}
+}
+
+.preloader--hidden-content {
+	.preloader-inner {
+		transform: translateX(-50%);
+	}
+
+	.preloader-over-logo {
+		animation-duration: 1s;
+		animation-name: preloaderOverLogoOut;
+		animation-fill-mode: both;
+
+		&::after {
+			transition-duration: 1s;
+			opacity: 0;
+		}
+	}
+
+
+	.preloader-logo {
+		transition-duration: 1s;
+		opacity: 0;
+
+		&__top-text {
+
+			animation-duration: 1s;
+			animation-name: preloaderTopTextOut;
+			animation-timing-function: ease-out;
+			animation-fill-mode: both;
+		}
+
+		&__bottom-text {
+
+			animation-duration: 0.8s;
+			animation-name: preloaderBottomTextOut;
+			animation-timing-function: ease-out;
+			animation-fill-mode: both;
+		}
+	}
+}
+.preloader--fully-hidden{
+	opacity: 0;
+	pointer-events: none;
+}
+@keyframes preloaderOverLogo {
+	0% {
+		transform: translateX(0%);
+	}
+
+	50% {
+		transform: translateX(-105%);
+	}
+
+	100% {
+		transform: translateX(-100%);
+	}
+
+}
+
+@keyframes preloaderTopText {
+	0% {
+		transform: translateX(-20%);
+	}
+
+	50% {
+		transform: translateX(10%);
+	}
+
+	100% {
+		transform: translateX(0%);
+	}
+
+}
+
+@keyframes preloaderBottomText {
+	0% {
+		transform: translateX(-20%);
+	}
+
+	50% {
+		transform: translateX(15%);
+	}
+
+	100% {
+		transform: translateX(0%);
+	}
+
+}
+
+
+@keyframes preloaderOverLogoOut {
+	0% {
+		transform: translateX(-100%);
+	}
+
+
+	100% {
+		transform: translateX(0%);
+	}
+
+}
+
+@keyframes preloaderTopTextOut {
+	0% {
+		transform: translateX(0%);
+	}
+
+	100% {
+		transform: translateX(-20%);
+	}
+
+}
+
+@keyframes preloaderBottomTextOut {
+	0% {
+		transform: translateX(0%);
+	}
+
+
+	100% {
+		transform: translateX(-20%);
+	}
 }

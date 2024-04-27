@@ -867,13 +867,10 @@ $(function () {
 							.js-pw-from-min  от 54 679 ₽/мес.
 				*/
 
-
-
-
-
 			}
 			else {
-				alert('error  информация о программе отсутствует');
+				$(this).closest('section').remove();
+				console.log('error  информация о программе отсутствует');
 			}
 
 
@@ -1188,6 +1185,12 @@ $(function () {
 			swiper.slides.forEach((slide, index) => {
 				if (slide.getAttribute('data-target') === target) {
 					swiper.slideTo(index);
+					if(window.matchMedia('(max-width: 960px)').matches){
+						$('html, body').stop().animate({
+							scrollTop:  $('.important-objects-section').offset().top-$('.site-header').outerHeight() - 20
+						}, 300);
+
+					}
 					return;
 				}
 			});

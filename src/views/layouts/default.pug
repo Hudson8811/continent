@@ -30,6 +30,37 @@ html(lang="ru")
 		script(src="https://api-maps.yandex.ru/v3/?apikey=a56bdf2e-6f25-46f4-b535-ca3077437c25&lang=ru_RU")
 
 	body
+		.preloader
+			.preloader-inner
+				.preloader-over-logo
+				.preloader-logo
+					.preloader-logo__top-text
+						img(src="img/preloader_top.svg", alt="")
+					.preloader-logo__bottom-text
+						img(src="img/preloader_bottom.svg", alt="")
+		script.
+			if(localStorage.getItem('preloaderShown')!=='true'){
+				setTimeout(function(){
+					document.querySelector('.preloader').classList.add('preloader--shown');
+
+					setTimeout(function(){
+						document.querySelector('.preloader').classList.add('preloader--hidden-content');
+						setTimeout(function(){
+							document.querySelector('.preloader').classList.add('preloader--fully-hidden');
+							setTimeout(function(){
+								document.querySelector('.preloader').remove()
+							},400);
+						},1000);
+					},3000);
+				},300);
+
+				localStorage.setItem('preloaderShown','true');
+			}
+			else{
+				document.querySelector('.preloader').remove()
+			}
+
+
 		block header
 			include ../../blocks/modules/header/header
 
