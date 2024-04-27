@@ -713,12 +713,22 @@ html {
 
 	&__top-text {
 		width: 100%;
+		img{
+			@media screen and (max-width:370px) {
+				width: 210px;
+			}
+		}
 	}
 
 	&__bottom-text {
 		padding-left: 32px;
 		margin-top: 13px;
 		width: 100%;
+		img{
+			@media screen and (max-width:370px) {
+				width: 164px;
+			}
+		}
 	}
 
 	img {}
@@ -814,9 +824,23 @@ html {
 	100% {
 		transform: translateX(-100%);
 	}
-
 }
+@media screen and (max-width:370px) {
 
+@keyframes preloaderOverLogo {
+	0% {
+		transform: translateX(0%);
+	}
+
+	50% {
+		transform: translateX(-102%);
+	}
+
+	100% {
+		transform: translateX(-100%);
+	}
+}
+}
 @keyframes preloaderTopText {
 	0% {
 		transform: translateX(-20%);

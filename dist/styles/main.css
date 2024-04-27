@@ -13486,6 +13486,50 @@ a.project-card:hover {
   }
 }
 
+@media screen and (max-width: 370px) {
+  .preloader-logo__top-text img {
+    width: 210px;
+  }
+
+  .preloader-logo__bottom-text img {
+    width: 164px;
+  }
+
+@-webkit-keyframes preloaderOverLogo {
+    0% {
+      -webkit-transform: translateX(0%);
+      transform: translateX(0%);
+    }
+
+    50% {
+      -webkit-transform: translateX(-102%);
+      transform: translateX(-102%);
+    }
+
+    100% {
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+    }
+}
+
+@keyframes preloaderOverLogo {
+    0% {
+      -webkit-transform: translateX(0%);
+      transform: translateX(0%);
+    }
+
+    50% {
+      -webkit-transform: translateX(-102%);
+      transform: translateX(-102%);
+    }
+
+    100% {
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+    }
+}
+}
+
 @media only screen and (min-width: 641px) and (max-width: 1200px) {
   .project-card-info:nth-child(2n) {
     padding-left: 16px;
