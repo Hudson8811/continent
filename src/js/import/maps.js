@@ -32,7 +32,7 @@ $(function () {
 			const map = new YMap(mapEl[0], {
 				location: {
 					center: mapCenter,
-					zoom: 5
+					zoom: 11
 				},
 				mode: 'vector'
 			});

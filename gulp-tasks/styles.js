@@ -28,10 +28,10 @@ gulp.task("styles", () => {
             this.emit('end');
         })
         .pipe(groupmedia())
-        .pipe(gulpif(production, autoprefixer({
+        .pipe(autoprefixer({
             cascade: false,
             grid: true
-        })))
+        }))
         .pipe(gulpif(production, mincss({
             compatibility: "ie8", level: {
                 1: {

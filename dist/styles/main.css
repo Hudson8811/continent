@@ -5332,6 +5332,7 @@ html {
   opacity: 0;
   pointer-events: none;
   transition-duration: 0.3s;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .mega-menu-wrap--active {
@@ -5635,6 +5636,10 @@ html {
 .socials__item img {
   width: 24px;
   height: 24px;
+}
+
+.front-top-banner {
+  background: #1B283A;
 }
 
 .ftb-slider-slide {
@@ -7781,12 +7786,32 @@ a.project-card:hover {
   padding-bottom: 24px;
 }
 
+.apartment-info__prices-top {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
 .apartment-info__price {
   font-weight: 500;
   font-size: 24px;
   line-height: 110%;
   letter-spacing: -0.02em;
   color: #53667f;
+  font-family: "SONGER SemiExpanded", sans-serif;
+}
+
+.apartment-info__price:not(:last-child) {
+  margin-right: 16px;
+}
+
+.apartment-info__price-old {
+  text-decoration: line-through;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 110%;
+  letter-spacing: -0.02em;
+  color: #FF4D4D;
   font-family: "SONGER SemiExpanded", sans-serif;
 }
 
@@ -10638,6 +10663,10 @@ a.project-card:hover {
 
   .apartment-info__price {
     font-size: 18px;
+  }
+
+  .apartment-info__price:not(:last-child) {
+    margin-right: 8px;
   }
 
   .apartment-info__per-meter {

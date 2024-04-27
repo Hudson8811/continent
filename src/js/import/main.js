@@ -128,6 +128,19 @@ $(function () {
 	});
 
 
+	$('.js-pw-cards-slider').each(function () {
+
+		var swiper = new Swiper($(this)[0], {
+			pagination: false,
+			navigation: false,
+			effect: "fade",
+
+			autoplay: {
+				delay: 5000,
+			},
+		});
+	});
+
 
 	$('.js-images-slider').each(function () {
 

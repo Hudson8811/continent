@@ -79,7 +79,7 @@
 			margin-top: 8px;
 		}
 
-		&--mt0{
+		&--mt0 {
 			margin-top: 0;
 		}
 	}
@@ -483,6 +483,12 @@
 		}
 	}
 
+	&__prices-top {
+		display: flex;
+		align-items: flex-end;
+		flex-wrap: wrap;
+	}
+
 	&__price {
 		font-weight: 500;
 		font-size: 24px;
@@ -494,8 +500,25 @@
 		@include max(md) {
 			font-size: 18px;
 		}
+
+		&:not(:last-child) {
+			margin-right: 16px;
+
+			@include max(md) {
+				margin-right: 8px;
+			}
+		}
 	}
 
+	&__price-old {
+		text-decoration:line-through;
+		font-weight: 400;
+		font-size: 13px;
+		line-height: 110%;
+		letter-spacing: -0.02em;
+		color: #FF4D4D;
+		font-family: $songer;
+	}
 	&__per-meter {
 		margin-top: 20px;
 		font-weight: 400;
@@ -856,7 +879,7 @@
 
 .slider-controls--on-white {
 	background: none;
-    backdrop-filter: none;
+	backdrop-filter: none;
 
 	.slider-controls-pagination {
 		color: #252831;
@@ -907,13 +930,15 @@
 	}
 
 	&--project-page {
-		@include min(1600){
+		@include min(1600) {
 			width: calc((1472px - 32px * 2) / 3);
 		}
-		@include max(1600){
+
+		@include max(1600) {
 			width: calc((100 * var(--js-real-vw) - 64px * 2 - 32px * 2) / 3);
 
 		}
+
 		@include max(lg) {
 			//width: calc((100 * var(--js-real-vw) - 30px * 2 - 32px * 2) / 3);
 			width: 260px;
@@ -924,6 +949,7 @@
 			//width: calc((100 * var(--js-real-vw) - 16px * 2 - 32px * 2) / 3);
 			//max-width: calc(100% - 16px * 2);
 		}
+
 		/*box-sizing: border-box;
 			width: 1472px;
 			max-width: 95%;
