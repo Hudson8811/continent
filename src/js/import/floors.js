@@ -138,6 +138,8 @@ function actualizeFloor(activeElem) {
 	setTimeout(() => {
 		var parentEl = activeElem.closest('.fpagi-controls');
 
+		/*
+		//эта логика более не нужна после перехода на swiper
 		var elementsToShow = window.isMobileMap ? 5 : 8;
 		var prevToShow = Math.floor((elementsToShow - 1) / 2);
 		var nextToShow = elementsToShow - prevToShow;
@@ -171,6 +173,14 @@ function actualizeFloor(activeElem) {
 			prevN.nextAll().slice(0, elementsToShow - 1).show();
 		}
 
+*/
+var swiper=window.floorsSwipers[activeElem.closest('.fpagi-floor-controls').attr('data-entrance')];
+swiper.slideTo(activeElem.index());
+
+
+
+
+	activeElem.addClass('fpagi-controls__item--active').siblings().removeClass('fpagi-controls__item--active');
 
 		var floor = activeElem.attr('data-id');
 		var entranceId = $('.js-change-entrance.fpagi-controls__item--active').attr('data-id');
@@ -188,6 +198,49 @@ function actualizeFloor(activeElem) {
 
 $(function () {
 	window.isMobileMap = window.matchMedia('(max-width:1200px)').matches;
+
+	window.floorsSwipers={};
+
+
+	$('.js-floors-controls-swiper').each(function () {
+		var nav_el=$(this).next('.fpagi-floor-controls-arrows');
+		console.log($(this)[0]);
+
+		var swiper = new Swiper($(this)[0], {
+			pagination: false,
+			navigation: {
+				nextEl: nav_el.find('.js-floors-arrow--next')[0],
+				prevEl: nav_el.find('.js-floors-arrow--prev')[0],
+			},
+			//autoHeight: true,
+			slidesPerView: 5,
+			spaceBetween: 6,
+			autoplay: false,
+			direction: 'horizontal',
+			centeredSlides: true,
+			centerInsufficientSlides: true,
+			centeredSlidesBounds: true,
+
+			breakpoints: {
+				961: {
+					direction: 'vertical',
+					slidesPerView: 8,
+				},
+			},
+		});
+
+		window.floorsSwipers[$(this).closest('.fpagi-floor-controls').attr('data-entrance')]=swiper;
+
+		/*$(this).on('swiperNeedUpdate',function(){
+			swiper.update();
+			swiper.updateAutoHeight(200);
+			swiper.updateSize();
+		});*/
+	});
+
+
+
+
 
 	if ($('.js-floors-block').length > 0) {
 

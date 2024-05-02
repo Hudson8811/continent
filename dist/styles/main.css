@@ -10971,15 +10971,22 @@ a.project-card:hover {
 }
 
 .floors-pagination__arrow--prev {
-  margin-top: 24px;
+  position: absolute;
+  left: 0;
+  top: 0px;
 }
 
 .floors-pagination__main {
-  margin-top: 16px;
+  margin-top: 24px;
+  position: relative;
+  padding-top: 53px;
+  padding-bottom: 53px;
 }
 
 .floors-pagination__arrow--next {
-  margin-top: 16px;
+  position: absolute;
+  right: 0;
+  bottom: 0px;
 }
 
 .floors-pagination__arrow--next::before {
@@ -10990,19 +10997,28 @@ a.project-card:hover {
 
 .fpagi-floor-controls {
   display: none;
-  max-height: 370px;
-  overflow: hidden;
 }
 
 .fpagi-floor-controls--active {
   display: block;
 }
 
+.floors-controls-swiper {
+  height: 370px;
+}
+
+.fpagi-floor-controls-arrows {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
 .fpagi-controls {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 6px;
 }
 
 .fpagi-controls__item {
@@ -11039,6 +11055,10 @@ a.project-card:hover {
 
 .fpagi-controls__item--active {
   pointer-events: none;
+}
+
+.fpagi-controls:not(.fpagi-controls--left) {
+  gap: 6px;
 }
 
 .fpagi-controls--floors-left {
@@ -11360,13 +11380,6 @@ a.project-card:hover {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     z-index: 2;
-  }
-
-  .fpagi-controls--left {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
   }
 }
 
@@ -13017,8 +13030,16 @@ a.project-card:hover {
   }
 
   .floors-pagination__main {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-left: 0;
+    padding-left: 45px;
+    padding-right: 45px;
+    max-width: 100%;
+  }
+
+  .floors-pagination__main {
     margin-top: 0;
-    margin-left: 13px;
   }
 
   .floors-pagination__arrow--next {
@@ -13030,6 +13051,11 @@ a.project-card:hover {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
+  }
+
+  .floors-controls-swiper {
+    height: auto;
+    width: 194px;
   }
 
   .fpagi-controls__item {

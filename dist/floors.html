@@ -625,66 +625,138 @@
             <div class="floors-block-top__right"></div>
           </div>
           <div class="floors-block floors-block--hidden js-floors-block">
+            <!--.floors-pagination
+            .floors-block__title.floors-pagination__title Этаж
+            
+            .floors-pagination__arrow.floors-pagination__arrow--prev.js-prev-floor
+            .floors-pagination__main
+            	.fpagi-floor-controls(data-entrance="1")
+            		.fpagi-controls.fpagi-controls--left
+            			.fpagi-controls__item.js-change-floor(data-id="11") 11
+            			.fpagi-controls__item.js-change-floor(data-id="10") 10
+            			.fpagi-controls__item.js-change-floor(data-id="9") 9
+            			.fpagi-controls__item.js-change-floor(data-id="8") 8
+            			.fpagi-controls__item.js-change-floor(data-id="7") 7
+            			.fpagi-controls__item.js-change-floor(data-id="6") 6
+            			.fpagi-controls__item.js-change-floor(data-id="5") 5
+            			.fpagi-controls__item.js-change-floor(data-id="4") 4
+            			.fpagi-controls__item.js-change-floor(data-id="3") 3
+            			.fpagi-controls__item.js-change-floor(data-id="2") 2
+            			.fpagi-controls__item.js-change-floor(data-id="1") 1
+            	.fpagi-floor-controls.fpagi-floor-controls--active(data-entrance="2")
+            		.fpagi-controls.fpagi-controls--left
+            			.fpagi-controls__item.js-change-floor(data-id="21") 21
+            			.fpagi-controls__item.js-change-floor(data-id="20") 20
+            			.fpagi-controls__item.js-change-floor(data-id="19") 19
+            			.fpagi-controls__item.js-change-floor(data-id="18") 18
+            			.fpagi-controls__item.js-change-floor(data-id="17") 17
+            			.fpagi-controls__item.js-change-floor(data-id="16") 16
+            			.fpagi-controls__item.js-change-floor(data-id="15") 15
+            			.fpagi-controls__item.js-change-floor(data-id="14") 14
+            			.fpagi-controls__item.js-change-floor(data-id="13") 13
+            			.fpagi-controls__item.js-change-floor(data-id="12") 12
+            			.fpagi-controls__item.js-change-floor(data-id="11") 11
+            			.fpagi-controls__item.js-change-floor(data-id="10") 10
+            			.fpagi-controls__item.fpagi-controls__item--active.js-change-floor(data-id="9") 9
+            			.fpagi-controls__item.js-change-floor(data-id="8") 8
+            			.fpagi-controls__item.js-change-floor(data-id="7") 7
+            			.fpagi-controls__item.js-change-floor(data-id="6") 6
+            			.fpagi-controls__item.js-change-floor(data-id="5") 5
+            			.fpagi-controls__item.js-change-floor(data-id="4") 4
+            			.fpagi-controls__item.js-change-floor(data-id="3") 3
+            			.fpagi-controls__item.js-change-floor(data-id="2") 2
+            			.fpagi-controls__item.js-change-floor(data-id="1") 1
+            	.fpagi-floor-controls(data-entrance="3")
+            		.fpagi-controls.fpagi-controls--left
+            			.fpagi-controls__item.js-change-floor(data-id="10") 10
+            			.fpagi-controls__item.js-change-floor(data-id="9") 9
+            			.fpagi-controls__item.js-change-floor(data-id="8") 8
+            			.fpagi-controls__item.js-change-floor(data-id="7") 7
+            			.fpagi-controls__item.js-change-floor(data-id="6") 6
+            			.fpagi-controls__item.js-change-floor(data-id="5") 5
+            			.fpagi-controls__item.js-change-floor(data-id="4") 4
+            			.fpagi-controls__item.js-change-floor(data-id="3") 3
+            			.fpagi-controls__item.js-change-floor(data-id="2") 2
+            			.fpagi-controls__item.js-change-floor(data-id="1") 1
+            .floors-pagination__arrow.floors-pagination__arrow--next.js-next-floor
+            
+            -->
             <div class="floors-pagination">
               <div class="floors-block__title floors-pagination__title">Этаж</div>
-              <div class="floors-pagination__arrow floors-pagination__arrow--prev js-prev-floor"></div>
               <div class="floors-pagination__main">
                 <div class="fpagi-floor-controls" data-entrance="1">
-                  <div class="fpagi-controls fpagi-controls--left">
-                    <div class="fpagi-controls__item js-change-floor" data-id="11">11</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="10">10</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="9">9</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="8">8</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="7">7</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="6">6</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="5">5</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="4">4</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="3">3</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="2">2</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="1">1</div>
+                  <div class="swiper floors-controls-swiper js-floors-controls-swiper">
+                    <div class="fpagi-controls fpagi-controls--left swiper-wrapper">
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="11">11</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="10">10</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="9">9</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="8">8</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="7">7</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="6">6</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="5">5</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="4">4</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="3">3</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="2">2</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="1">1</div>
+                    </div>
+                  </div>
+                  <div class="fpagi-floor-controls-arrows">
+                    <div class="floors-pagination__arrow floors-pagination__arrow--prev js-floors-arrow--prev"></div>
+                    <div class="floors-pagination__arrow floors-pagination__arrow--next js-floors-arrow--next"></div>
                   </div>
                 </div>
                 <div class="fpagi-floor-controls fpagi-floor-controls--active" data-entrance="2">
-                  <div class="fpagi-controls fpagi-controls--left">
-                    <div class="fpagi-controls__item js-change-floor" data-id="21">21</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="20">20</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="19">19</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="18">18</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="17">17</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="16">16</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="15">15</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="14">14</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="13">13</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="12">12</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="11">11</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="10">10</div>
-                    <div class="fpagi-controls__item fpagi-controls__item--active js-change-floor" data-id="9">9</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="8">8</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="7">7</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="6">6</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="5">5</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="4">4</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="3">3</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="2">2</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="1">1</div>
+                  <div class="swiper floors-controls-swiper js-floors-controls-swiper">
+                    <div class="fpagi-controls fpagi-controls--left swiper-wrapper">
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="21">21</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="20">20</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="19">19</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="18">18</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="17">17</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="16">16</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="15">15</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="14">14</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="13">13</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="12">12</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="11">11</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="10">10</div>
+                      <div class="fpagi-controls__item fpagi-controls__item--active swiper-slide js-change-floor" data-id="9">9</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="8">8</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="7">7</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="6">6</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="5">5</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="4">4</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="3">3</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="2">2</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="1">1</div>
+                    </div>
+                  </div>
+                  <div class="fpagi-floor-controls-arrows">
+                    <div class="floors-pagination__arrow floors-pagination__arrow--prev js-floors-arrow--prev"></div>
+                    <div class="floors-pagination__arrow floors-pagination__arrow--next js-floors-arrow--next"></div>
                   </div>
                 </div>
                 <div class="fpagi-floor-controls" data-entrance="3">
-                  <div class="fpagi-controls fpagi-controls--left">
-                    <div class="fpagi-controls__item js-change-floor" data-id="10">10</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="9">9</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="8">8</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="7">7</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="6">6</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="5">5</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="4">4</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="3">3</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="2">2</div>
-                    <div class="fpagi-controls__item js-change-floor" data-id="1">1</div>
+                  <div class="swiper floors-controls-swiper js-floors-controls-swiper">
+                    <div class="fpagi-controls fpagi-controls--left swiper-wrapper">
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="10">10</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="9">9</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="8">8</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="7">7</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="6">6</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="5">5</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="4">4</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="3">3</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="2">2</div>
+                      <div class="fpagi-controls__item js-change-floor swiper-slide" data-id="1">1</div>
+                    </div>
+                  </div>
+                  <div class="fpagi-floor-controls-arrows">
+                    <div class="floors-pagination__arrow floors-pagination__arrow--prev js-floors-arrow--prev"></div>
+                    <div class="floors-pagination__arrow floors-pagination__arrow--next js-floors-arrow--next"></div>
                   </div>
                 </div>
               </div>
-              <div class="floors-pagination__arrow floors-pagination__arrow--next js-next-floor"></div>
             </div>
             <div class="floors-main">
               <div class="floors-main__entrance-controls">
